@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ==========================================================================
-           1. RESET & VARIABLE SETUP
-           ========================================================================== */
         :root {
             --bg-dark: #05070f;
             --card-glass: rgba(255, 255, 255, 0.02);
@@ -28,17 +25,10 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
 
-        .aurora {
-            position: fixed; width: 50vw; height: 50vw; border-radius: 50%;
-            background: var(--primary-gradient); filter: blur(150px); opacity: 0.08; z-index: -1;
-            pointer-events: none;
-        }
+        .aurora { position: fixed; width: 50vw; height: 50vw; border-radius: 50%; background: var(--primary-gradient); filter: blur(150px); opacity: 0.08; z-index: -1; pointer-events: none; }
         .orb-1 { top: -20%; left: -10%; }
         .orb-2 { bottom: -20%; right: -10%; }
 
-        /* ==========================================================================
-           2. PROFESSIONAL NAVIGATION
-           ========================================================================== */
         header { position: sticky; top: 0; z-index: 1000; background: rgba(5, 7, 15, 0.75); backdrop-filter: blur(20px); border-bottom: 1px solid var(--card-border); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 20px; font-weight: 800; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; display: flex; align-items: center; gap: 8px;}
@@ -53,18 +43,12 @@
         .dropdown-link:hover { background: rgba(255,255,255,0.05); color: var(--text-main); }
         .menu-toggle { display: none; color: #fff; font-size: 22px; cursor: pointer; }
 
-        /* ==========================================================================
-           3. HERO SECTION (GAMIFIED COPYWRITING)
-           ========================================================================== */
         .hero-section { max-width: 900px; margin: 80px auto 40px auto; padding: 0 20px; text-align: center; }
         .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); color: #d8b4fe; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 25px; }
         .hero-section h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; }
         .hero-section h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-section p { color: var(--text-muted); font-size: clamp(15px, 2vw, 18px); max-width: 750px; margin: 20px auto 0 auto; }
 
-        /* ==========================================================================
-           4. FEATURES
-           ========================================================================== */
         .features-grid { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .feat-card { background: var(--card-glass); border: 1px solid var(--card-border); border-radius: 20px; padding: 30px; transition: 0.3s; }
         .feat-card:hover { border-color: rgba(168, 85, 247, 0.4); transform: translateY(-5px); }
@@ -72,9 +56,6 @@
         .feat-card h3 { font-size: 18px; margin-bottom: 10px; font-weight: 700; }
         .feat-card p { color: var(--text-muted); font-size: 14px; }
 
-        /* ==========================================================================
-           5. CATALOGUE & DOWNLOAD
-           ========================================================================== */
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 28px; font-weight: 800; }
         .section-title p { color: var(--text-muted); font-size: 14px; }
@@ -100,17 +81,11 @@
         .meta-highlight { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399; }
 
         .action-group { display: flex; gap: 10px; }
-        .btn-action { flex: 1; text-decoration: none; text-align: center; padding: 12px 10px; border-radius: 12px; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: 0.3s; cursor: pointer; border: none; }
-        
-        .btn-trial { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
-        .btn-trial:hover { background: rgba(255,255,255,0.1); border-color: #a855f7; }
-        
-        .btn-download { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2); }
-        .btn-download:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
+        .btn-action { width: 100%; text-decoration: none; text-align: center; padding: 14px; border-radius: 12px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-play { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2); }
+        .btn-play:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
+        .btn-locked { background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); color: var(--text-muted); cursor: not-allowed; }
 
-        /* ==========================================================================
-           6. COMMUNITY HUB
-           ========================================================================== */
         .community-section { background: rgba(99, 102, 241, 0.03); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); padding: 80px 20px; text-align: center; }
         .comm-grid { max-width: 1000px; margin: 40px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         .comm-card { background: #0b0f19; border: 1px solid var(--card-border); padding: 25px; border-radius: 20px; text-decoration: none; color: #fff; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: 0.3s; }
@@ -132,7 +107,6 @@
             .nav-menu.active { display: flex; }
             .dropdown { position: static; width: 100%; opacity: 1; transform: none; display: block; background: transparent; border: none; padding-left: 20px; }
             .menu-toggle { display: block; }
-            .action-group { flex-direction: column; }
         }
     </style>
 </head>
@@ -154,13 +128,6 @@
                         <a href="#tkp" class="dropdown-link"><i class="fa-solid fa-users" style="color: var(--tkp-color);"></i> Tes Karakteristik Pribadi (TKP)</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link">PPPK <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
-                    <div class="dropdown">
-                        <a href="#" class="dropdown-link"><i class="fa-solid fa-briefcase"></i> Kompetensi Teknis</a>
-                        <a href="#" class="dropdown-link"><i class="fa-solid fa-brain"></i> Manajerial & Sosio</a>
-                    </div>
-                </li>
                 <li class="nav-item"><a href="#komunitas" class="nav-link">Komunitas</a></li>
             </ul>
         </div>
@@ -171,26 +138,8 @@
         <h1>Ucapkan Selamat Tinggal Pada Tryout yang <span>Membosankan!</span></h1>
         <p>
             Bosan dengan metode tryout konvensional yang kaku dan bikin ngantuk? Bersiaplah menghadapi 
-            <b>Metode Kilat 10 Detik CAT Flashcard</b>. Kami menyulap simulasi ujian CPNS layaknya *game* interaktif. Pacu adrenalin Anda, latih refleks bawah sadar, dan taklukkan SKD 2026 dengan cara yang jauh lebih seru!
+            <b>Metode Kilat 10 Detik CAT Flashcard</b>. Kami menyulap simulasi ujian CPNS layaknya interaksi seru. Pacu adrenalin Anda, latih refleks bawah sadar, dan taklukkan SKD 2026!
         </p>
-    </section>
-
-    <section class="features-grid">
-        <div class="feat-card">
-            <div class="feat-icon"><i class="fa-solid fa-stopwatch"></i></div>
-            <h3>10-Second Reflex Engine</h3>
-            <p>Sistem akan memaksa otak Anda mengambil keputusan krusial di bawah tekanan waktu, melatih mental baja untuk CAT BKN.</p>
-        </div>
-        <div class="feat-card">
-            <div class="feat-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-            <h3>Deep-Dive Breakdown</h3>
-            <p>Kami tidak sekadar memberi kunci. Setiap opsi pengecoh (A-E) dibedah tuntas secara komprehensif, ilmiah, dan logis.</p>
-        </div>
-        <div class="feat-card">
-            <div class="feat-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-            <h3>100% Offline & Ringan</h3>
-            <p>Download paket lengkapnya di TeraBox, ekstrak, dan jalankan simulasi di mana saja tanpa khawatir kehabisan kuota internet.</p>
-        </div>
     </section>
 
     <main class="main-wrapper">
@@ -204,32 +153,98 @@
             <div class="modul-grid">
                 <div class="modul-card">
                     <div class="modul-info">
-                        <h4>Chapter 1: TIU Mastery (100 Soal)</h4>
+                        <h4>Chapter 1: TIU Mastery Dasar</h4>
                         <ul>
-                            <li><b>Kemampuan Verbal:</b> Analogi kata, silogisme (penarikan kesimpulan), dan analitis logika.</li>
-                            <li><b>Kemampuan Numerik:</b> Deret angka, perbandingan kuantitatif, dan soal cerita matematis.</li>
-                            <li><b>Kemampuan Figural:</b> Analogi gambar, ketidaksamaan visual, dan serial gambar.</li>
+                            <li><b>Kemampuan Verbal:</b> Menguji logika berbahasa meliputi analogi, silogisme, dan analitis.</li>
+                            <li><b>Kemampuan Numerik:</b> Menguji logika berhitung seperti deret angka, perbandingan kuantitatif.</li>
+                            <li><b>Kemampuan Figural:</b> Penalaran visual melalui gambar, ketidaksamaan, dan serial gambar.</li>
                         </ul>
                         <div class="modul-meta">
-                            <span class="meta-tag meta-highlight">Mix Soal Lengkap</span>
+                            <span class="meta-tag meta-highlight">Free Akses</span>
+                            <span class="meta-tag">100 Soal</span>
                             <span class="meta-tag">Timer 10s</span>
-                            <span class="meta-tag">Premium UI</span>
                         </div>
                     </div>
-                    
-                    <div class="action-group">
-                        <a href="trial.html" class="btn-action btn-trial">
-                            <i class="fa-solid fa-play"></i> Mainkan Trial (10 Soal)
-                        </a>
-                        <a href="https://link-terabox-anda.com/tiu-chapter-1" target="_blank" class="btn-action btn-download">
-                            <i class="fa-solid fa-cloud-arrow-down"></i> Download Full 100 Soal
-                        </a>
+                    <a href="chapter-1.html" class="btn-action btn-play">
+                        <i class="fa-solid fa-play"></i> Latihan Sekarang?
+                    </a>
+                </div>
+
+                <div class="modul-card">
+                    <div class="modul-info">
+                        <h4>Chapter 2: Numerik Lanjutan</h4>
+                        <ul>
+                            <li><b>Hitung Cepat:</b> Trik menyelesaikan pecahan desimal dalam hitungan detik.</li>
+                            <li><b>Soal Cerita:</b> Penalaran matematis berbasis skenario realitas.</li>
+                        </ul>
+                        <div class="modul-meta">
+                            <span class="meta-tag">100 Soal</span>
+                            <span class="meta-tag">Edisi TeraBox</span>
+                        </div>
                     </div>
+                    <button class="btn-action btn-locked" disabled>
+                        <i class="fa-solid fa-lock"></i> Coming Soon
+                    </button>
+                </div>
+
+                <div class="modul-card">
+                    <div class="modul-info">
+                        <h4>Chapter 3: Figural Spasial Ekstrem</h4>
+                        <ul>
+                            <li><b>Visualisasi 3D:</b> Jaring-jaring bangun ruang dan rotasi objek.</li>
+                            <li><b>Pola Tersembunyi:</b> Menebak kelanjutan gambar dengan pola distorsi.</li>
+                        </ul>
+                        <div class="modul-meta">
+                            <span class="meta-tag">100 Soal</span>
+                            <span class="meta-tag">Edisi TeraBox</span>
+                        </div>
+                    </div>
+                    <button class="btn-action btn-locked" disabled>
+                        <i class="fa-solid fa-lock"></i> Coming Soon
+                    </button>
                 </div>
             </div>
         </div>
-        
-        </main>
+
+        <div class="category-block twk-block" id="twk">
+            <div class="category-banner">
+                <i class="fa-solid fa-flag" style="color: var(--twk-color); font-size: 28px;"></i>
+                <h2>Katalog Modul TWK (Tes Wawasan Kebangsaan)</h2>
+            </div>
+            <div class="modul-grid">
+                <div class="modul-card">
+                    <div class="modul-info">
+                        <h4>Chapter 1: Pilar Negara & Integritas</h4>
+                        <p>Pemahaman mendalam mengenai implementasi Pancasila, UUD 1945, dan sistem bela negara moderen.</p>
+                        <div class="modul-meta">
+                            <span class="meta-tag">Segera Hadir</span>
+                        </div>
+                    </div>
+                    <button class="btn-action btn-locked" disabled><i class="fa-solid fa-hourglass-half"></i> Coming Soon</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-block tkp-block" id="tkp">
+            <div class="category-banner">
+                <i class="fa-solid fa-users" style="color: var(--tkp-color); font-size: 28px;"></i>
+                <h2>Katalog Modul TKP (Tes Karakteristik Pribadi)</h2>
+            </div>
+            <div class="modul-grid">
+                <div class="modul-card">
+                    <div class="modul-info">
+                        <h4>Chapter 1: Pelayanan & Jejaring Kerja</h4>
+                        <p>Analisis skenario sosiokultural, profesionalisme kerja, dan teknologi informasi.</p>
+                        <div class="modul-meta">
+                            <span class="meta-tag">Segera Hadir</span>
+                        </div>
+                    </div>
+                    <button class="btn-action btn-locked" disabled><i class="fa-solid fa-hourglass-half"></i> Coming Soon</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
 
     <section class="community-section" id="komunitas">
         <div class="section-title">
@@ -237,26 +252,9 @@
             <p>Dapatkan update file terbaru, diskusi soal, tips lolos formasi, dan trik rahasia CAT CPNS setiap harinya.</p>
         </div>
         <div class="comm-grid">
-            <a href="https://t.me/pendidikanku_mi_vida" target="_blank" class="comm-card c-tg">
-                <i class="fa-brands fa-telegram"></i>
-                <h5>Telegram Channel</h5>
-                <span>t.me/pendidikanku_mi_vida</span>
-            </a>
-            <a href="https://chat.whatsapp.com/HXHv37R44nXLDnw2hxvtie" target="_blank" class="comm-card c-wa-g">
-                <i class="fa-brands fa-whatsapp"></i>
-                <h5>Grup WhatsApp</h5>
-                <span>Diskusi Latihan Soal</span>
-            </a>
-            <a href="https://whatsapp.com/channel/0029Vb2NvXe5vKA1L0uNMf1v" target="_blank" class="comm-card c-wa-c">
-                <i class="fa-solid fa-bullhorn"></i>
-                <h5>Saluran WhatsApp</h5>
-                <span>Info & Update File</span>
-            </a>
-            <a href="#" class="comm-card c-yt">
-                <i class="fa-brands fa-youtube"></i>
-                <h5>YouTube Channel</h5>
-                <span>Video Pembahasan</span>
-            </a>
+            <a href="https://t.me/pendidikanku_mi_vida" target="_blank" class="comm-card c-tg"><i class="fa-brands fa-telegram"></i><h5>Telegram Channel</h5><span>t.me/pendidikanku_mi_vida</span></a>
+            <a href="https://chat.whatsapp.com/HXHv37R44nXLDnw2hxvtie" target="_blank" class="comm-card c-wa-g"><i class="fa-brands fa-whatsapp"></i><h5>Grup WhatsApp</h5><span>Diskusi Latihan Soal</span></a>
+            <a href="https://whatsapp.com/channel/0029Vb2NvXe5vKA1L0uNMf1v" target="_blank" class="comm-card c-wa-c"><i class="fa-solid fa-bullhorn"></i><h5>Saluran WhatsApp</h5><span>Info & Update File</span></a>
         </div>
     </section>
 
