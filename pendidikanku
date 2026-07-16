@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendidikanku - Portal Utama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #070913; --text-main: #f8fafc; --text-muted: #94a3b8;
+            --primary-gradient: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); padding: 40px 20px; text-align: center; }
+        
+        .container { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
+        .hero h1 { font-size: 28px; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-muted); font-size: 14px; margin-top: 10px; }
+        
+        .chapter-card {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px; padding: 25px; display: flex; flex-direction: column; gap: 15px;
+            text-align: left;
+        }
+        .chapter-header { display: flex; justify-content: space-between; align-items: center; }
+        .badge { background: rgba(168, 85, 247, 0.2); color: #d8b4fe; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+        
+        .btn-download {
+            background: var(--primary-gradient); color: #fff; text-decoration: none;
+            padding: 15px; border-radius: 12px; font-weight: 700; text-align: center;
+            transition: 0.3s; display: block;
+        }
+        .btn-download:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Portal Simulasi CPNS</h1>
+            <p>Download modul interaktif di bawah ini. Ekstrak file .zip dan buka di HP atau Laptop Anda.</p>
+        </div>
+
+        <!-- DAFTAR CHAPTER -->
+        <div class="chapter-card">
+            <div class="chapter-header">
+                <h2>Chapter 1: Sinonim</h2>
+                <span class="badge">100 Soal</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 13px;">Simulasi CAT 10 Detik/Soal. Format HTML Offline.</p>
+            
+            <!-- GANTI LINK INI DENGAN LINK TERABOX ANDA -->
+            <a href="https://link-terabox-anda.com/file1" class="btn-download" target="_blank">
+                <i class="fa-solid fa-cloud-arrow-down"></i> Download via TeraBox
+            </a>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-header">
+                <h2>Chapter 2: Antonim</h2>
+                <span class="badge">100 Soal</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 13px;">Simulasi CAT 10 Detik/Soal. Format HTML Offline.</p>
+            
+            <!-- GANTI LINK INI DENGAN LINK TERABOX ANDA -->
+            <a href="https://link-terabox-anda.com/file2" class="btn-download" target="_blank">
+                <i class="fa-solid fa-cloud-arrow-down"></i> Download via TeraBox
+            </a>
+        </div>
+        
+    </div>
+</body>
+</html>
