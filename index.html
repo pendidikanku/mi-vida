@@ -3,74 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIU CPNS Mastery - Portal Utama</title>
+    <title>Pendidikanku (Mi Vida) - Portal Simulasi CAT Interaktif</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* ==========================================================================
+           1. RESET & VARIABLE SETUP (PREMIUM DARK MAGIC)
+           ========================================================================== */
         :root {
-            --bg-dark: #070913; --text-main: #f8fafc; --text-muted: #94a3b8;
+            --bg-dark: #05070f;
+            --card-glass: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.07);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
             --primary-gradient: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            --tiu-color: #3b82f6;
+            --twk-color: #ef4444;
+            --tkp-color: #10b981;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-main); padding: 40px 20px; text-align: center; }
-        
-        .container { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
-        .hero h1 { font-size: 28px; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { color: var(--text-muted); font-size: 14px; margin-top: 10px; }
-        
-        .chapter-card {
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px; padding: 25px; display: flex; flex-direction: column; gap: 15px;
-            text-align: left;
+        body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
+
+        /* Ambient Orbs */
+        .aurora {
+            position: fixed; width: 50vw; height: 50vw; border-radius: 50%;
+            background: var(--primary-gradient); filter: blur(150px); opacity: 0.08; z-index: -1;
+            pointer-events: none;
         }
-        .chapter-header { display: flex; justify-content: space-between; align-items: center; }
-        .badge { background: rgba(168, 85, 247, 0.2); color: #d8b4fe; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
-        
-        .btn-download {
-            background: var(--primary-gradient); color: #fff; text-decoration: none;
-            padding: 15px; border-radius: 12px; font-weight: 700; text-align: center;
-            transition: 0.3s; display: block;
+        .orb-1 { top: -20%; left: -10%; }
+        .orb-2 { bottom: -20%; right: -10%; }
+
+        /* ==========================================================================
+           2. PROFESSIONAL NAVIGATION (MEGA MENU)
+           ========================================================================== */
+        header {
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(5, 7, 15, 0.75); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
         }
-        .btn-download:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4); }
+
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 15px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo { font-size: 20px; font-weight: 800; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+
+        .nav-menu { display: flex; gap: 25px; list-style: none; }
+        .nav-item { position: relative; }
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 14px; font-weight: 600; padding: 10px 0; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: 0.3s; }
+        .nav-link:hover { color: #a855f7; }
+
+        /* Dropdown Menu Engine */
+        .dropdown {
+            position: absolute; top: 100%; left: 0; width: 220px; 
+            background: #0b0f19; border: 1px solid var(--card-border);
+            border-radius: 12px; padding: 10px; display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover .dropdown { display: block; opacity: 1; transform: translateY(0); }
+        .dropdown-link { display: flex; align-items: center; gap: 10px; color: var(--text-muted); text-decoration: none; padding: 10px 12px; font-size: 13.5px; font-weight: 500; border-radius: 8px; transition: 0.2s; }
+        .dropdown-link:hover { background: rgba(255,255,255,0.05); color: var(--text-main); }
+        .dropdown-link i { font-size: 12px; }
+
+        /* Mobile Menu Button */
+        .menu-toggle { display: none; color: #fff; font-size: 22px; cursor: pointer; }
+
+        /* ==========================================================================
+           3. HERO HERO SECTION (GAMIFIED COPYWRITING)
+           ========================================================================== */
+        .hero-section { max-width: 900px; margin: 80px auto 40px auto; padding: 0 20px; text-align: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); color: #d8b4fe; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 25px; }
+        .hero-section h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; }
+        .hero-section h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-section p { color: var(--text-muted); font-size: clamp(15px, 2vw, 18px); max-width: 700px; margin: 20px auto 0 auto; }
+
+        /* ==========================================================================
+           4. FEATURES & ADVANTAGES (KEUNGGULAN)
+           ========================================================================== */
+        .features-grid { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .feat-card { background: var(--card-glass); border: 1px solid var(--card-border); border-radius: 20px; padding: 30px; transition: 0.3s; }
+        .feat-card:hover { border-color: rgba(168, 85, 247, 0.4); transform: translateY(-5px); }
+        .feat-icon { width: 50px; height: 50px; border-radius: 14px; background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; color: #a855f7; }
+        .feat-card h3 { font-size: 18px; margin-bottom: 10px; font-weight: 700; }
+        .feat-card p { color: var(--text-muted); font-size: 14px; }
+
+        /* ==========================================================================
+           5. SECTION CATEGORIES & DOWNLOAD
+           ========================================================================== */
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 28px; font-weight: 800; }
+        .section-title p { color: var(--text-muted); font-size: 14px; }
+
+        .main-wrapper { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 20px; }
+        .category-block { margin-bottom: 60px; }
+        .category-banner { display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 1px solid var(--card-border); padding-bottom: 15px; }
+        .category-banner i { font-size: 22px; }
+        
+        .modul-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+        .modul-card { background: linear-gradient(145deg, rgba(255,255,255,0.01), rgba(255,255,255,0.03)); border: 1px solid var(--card-border); border-radius: 24px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+        .modul-card::before { content: ''; position: absolute; top:0; left:0; width: 4px; height: 100%; }
+        
+        /* Tema Warna Strip Samping Kategori */
+        .tiu-block .modul-card::before { background: var(--tiu-color); }
+        .twk-block .modul-card::before { background: var(--twk-color); }
+        .tkp-block .modul-card::before { background: var(--tkp-color); }
+
+        .modul-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+        .modul-info p { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+        
+        .modul-meta { display: flex; gap: 10px; margin-bottom: 25px; }
+        .meta-tag { background: rgba(255,255,255,0.04); border: 1px solid var(--card-border); padding: 4px 12px; border-radius: 8px; font-size: 12px; color: #cbd5e1; font-weight: 600; }
+
+        .btn-action { width: 100%; text-decoration: none; text-align: center; padding: 14px; border-radius: 12px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; cursor: pointer; }
+        .btn-download { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2); }
+        .btn-download:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
+        .btn-locked { background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); color: var(--text-muted); cursor: not-allowed; }
+
+        /* ==========================================================================
+           6. COMMUNITY HUB (SOCIAL MEDIA INTEGRATION)
+           ========================================================================== */
+        .community-section { background: rgba(99, 102, 241, 0.03); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); padding: 80px 20px; text-align: center; }
+        .comm-grid { max-width: 1000px; margin: 40px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .comm-card { background: #0b0f19; border: 1px solid var(--card-border); padding: 25px; border-radius: 20px; text-decoration: none; color: #fff; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: 0.3s; }
+        .comm-card:hover { transform: translateY(-5px); }
+        .comm-card i { font-size: 32px; }
+        
+        /* Identitas Warna Komunitas */
+        .c-tg:hover { border-color: #24A1DE; box-shadow: 0 0 20px rgba(36, 161, 222, 0.2); }
+        .c-tg i { color: #24A1DE; }
+        .c-wa-g:hover { border-color: #25D366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.2); }
+        .c-wa-g i { color: #25D366; }
+        .c-wa-c:hover { border-color: #00a884; box-shadow: 0 0 20px rgba(0, 168, 132, 0.2); }
+        .c-wa-c i { color: #00a884; }
+        .c-yt:hover { border-color: #FF0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); }
+        .c-yt i { color: #FF0000; }
+
+        .comm-card h5 { font-size: 16px; font-weight: 700; }
+        .comm-card span { font-size: 12px; color: var(--text-muted); }
+
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.02); }
+
+        /* Responsive Layout Engine */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #05070f; border-bottom: 1px solid var(--card-border); flex-direction: column; padding: 20px; gap: 15px; }
+            .nav-menu.active { display: flex; }
+            .dropdown { position: static; width: 100%; opacity: 1; transform: none; display: block; background: transparent; border: none; padding-left: 20px; }
+            .menu-toggle { display: block; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="hero">
-            <h1>Portal Simulasi CPNS</h1>
-            <p>Download modul interaktif di bawah ini. Ekstrak file .zip dan buka di HP atau Laptop Anda.</p>
-        </div>
 
-        <!-- DAFTAR CHAPTER -->
-        <div class="chapter-card">
-            <div class="chapter-header">
-                <h2>Chapter 1: Sinonim</h2>
-                <span class="badge">100 Soal</span>
-            </div>
-            <p style="color: var(--text-muted); font-size: 13px;">Simulasi CAT 10 Detik/Soal. Format HTML Offline.</p>
-            
-            <!-- GANTI LINK INI DENGAN LINK TERABOX ANDA -->
-            <a href="https://link-terabox-anda.com/file1" class="btn-download" target="_blank">
-                <i class="fa-solid fa-cloud-arrow-down"></i> Download via TeraBox
-            </a>
-        </div>
+    <div class="aurora orb-1"></div>
+    <div class="aurora orb-2"></div>
 
-        <div class="chapter-card">
-            <div class="chapter-header">
-                <h2>Chapter 2: Antonim</h2>
-                <span class="badge">100 Soal</span>
-            </div>
-            <p style="color: var(--text-muted); font-size: 13px;">Simulasi CAT 10 Detik/Soal. Format HTML Offline.</p>
-            
-            <!-- GANTI LINK INI DENGAN LINK TERABOX ANDA -->
-            <a href="https://link-terabox-anda.com/file2" class="btn-download" target="_blank">
-                <i class="fa-solid fa-cloud-arrow-down"></i> Download via TeraBox
-            </a>
+    <!-- HEADER & MULTI-LEVEL NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i> Pendidikanku</a>
+            <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a class="nav-link">CPNS <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="dropdown">
+                        <a href="#tiu" class="dropdown-link"><i class="fa-solid fa-calculator" style="color: var(--tiu-color);"></i> Tes Inteligensia Umum (TIU)</a>
+                        <a href="#twk" class="dropdown-link"><i class="fa-solid fa-flag" style="color: var(--twk-color);"></i> Tes Wawasan Kebangsaan (TWK)</a>
+                        <a href="#tkp" class="dropdown-link"><i class="fa-solid fa-users" style="color: var(--tkp-color);"></i> Tes Karakteristik Pribadi (TKP)</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">PPPK <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-link"><i class="fa-solid fa-briefcase"></i> Kompetensi Teknis</a>
+                        <a href="#" class="dropdown-link"><i class="fa-solid fa-brain"></i> Manajerial & Sosio</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Kedinasan <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-link"><i class="fa-solid fa-building-shield"></i> SKD Kedinasan</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#komunitas" class="nav-link">Komunitas</a></li>
+            </ul>
         </div>
+    </header>
+
+    <!-- HERO SECTION: THE FUN LEARNING CONCEPT -->
+    <section class="hero-section">
+        <div class="hero-badge"><i class="fa-solid fa-bolt"></i> Elevate Your Learning Speed</div>
+        <h1>Latihan Soal Jadi Seru, <span>Memicu Adrenalin!</span></h1>
+        <p>
+            Bosan dengan metode *tryout* konvensional yang monoton dan bikin ngantuk? Bersiaplah menghadapi 
+            <b>Metode Kilat 10 Detik CAT Flashcard</b>. Kami mendesain ulang instrumen belajar menjadi media interaktif yang memicu refleks bawah sadar otak Anda. Taklukkan ujian CPNS 2026 dengan kegembiraan kompetitif!
+        </p>
+    </section>
+
+    <!-- CORE ADVANTAGES (KEUNGGULAN UTAMA) -->
+    <section class="features-grid">
+        <div class="feat-card">
+            <div class="feat-icon"><i class="fa-solid fa-stopwatch"></i></div>
+            <h3>10-Second Reflex Engine</h3>
+            <p>Memaksa otak mengambil keputusan krusial di bawah tekanan waktu nyata, melatih ketenangan mental sistem CAT BKN.</p>
+        </div>
+        <div class="feat-card">
+            <div class="feat-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3>Deep-Dive Breakdown</h3>
+            <p>Bukan sekadar kunci jawaban. Setiap opsi pengecoh (A sampai E) dibedah tuntas secara komprehensif, ilmiah, dan logis.</p>
+        </div>
+        <div class="feat-card">
+            <div class="feat-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <h3>100% Offline & Ringan</h3>
+            <p>Cukup download sekali lewat TeraBox, ekstrak, dan jalankan secara mandiri di HP atau Laptop tanpa kuota internet.</p>
+        </div>
+    </section>
+
+    <!-- MODUL CATALOGUE GRID -->
+    <main class="main-wrapper">
         
-    </div>
+        <!-- TIU CHAPTERS -->
+        <div class="category-block tiu-block" id="tiu">
+            <div class="category-banner">
+                <i class="fa-solid fa-calculator" style="color: var(--tiu-color);"></i>
+                <h2>Katalog Modul TIU (Tes Inteligensia Umum)</h2>
+            </div>
+            <div class="modul-grid">
+                <div class="modul-card">
+                    <div class="modul-info">
+                        <h4>TIU Part 1: Paket Fundamental</h4>
+                        <p>Mengasah logika silogisme, kemampuan deret angka kompleks, analogi verbal kata, dan sinonim-antonim baku KBBI.</p>
+                        <div class="modul-meta">
+                            <span class="meta-tag">100 Soal</span>
+                            <span class="meta-tag">Timer 10s</span>
+                            <span class="meta-tag">Premium UI</span>
+                        </div>
+                    </div>
+                    <!-- LINK TERABOX ANDA -->
+                    <a href="https://link-terabox-anda.com/tiu1" target="_blank" class="btn-action btn-download"><i class="fa-solid fa-circle-down"></i> Download via TeraBox</a>
+                </div>
+
+                <div class="modul-card">
+                    <div class="modul-info">
+                        <h4>TIU Part 2: Numerik & Kuantitatif</h4>
+                        <p>Fokus penuh pada penalaran analitis matematis, hitung cepat pecahan, perbandingan kuantitatif, dan soal cerita.</p>
+                        <div class="modul-meta">
+                            <span class="meta-tag">100 Soal</span>
+                            <span class="meta-tag">Timer 10s</span>
+                            <span class="meta-tag">Coming Soon</span>
+                        </div>
+                    </div>
+                    <button class="btn-action btn-locked"><i class="fa-solid fa-lock"></i> Terkunci</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TWK CHAPTERS -->
+        <div class="category-block twk-block" id="twk">
+            <div class="category-banner">
+                <i class="fa-solid fa-flag" style="color: var(--twk-color);"></i>
+                <h2>Katalog Modul TWK (Tes Wawasan Kebangsaan)</h2>
+            </div>
+            <div class="modul-grid">
+                <div class="modul-card">
+                    <div class="modul-info">
+                        <h4>TWK Part 1: Pilar Negara & Integritas</h4>
+                        <p>Pemahaman mendalam mengenai implementasi Pancasila, UUD 1945, Bhinneka Tunggal Ika, dan sistem bela negara moderen.</p>
+                        <div class="modul-meta">
+                            <span class="meta-tag">100 Soal</span>
+                            <span class="meta-tag">Timer 10s</span>
+                            <span class="meta-tag">Premium UI</span>
+                        </div>
+                    </div>
+                    <a href="https://link-terabox-anda.com/twk1" target="_blank" class="btn-action btn-download"><i class="fa-solid fa-circle-down"></i> Download via TeraBox</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TKP CHAPTERS -->
+        <div class="category-block tkp-block" id="tkp">
+            <div class="category-banner">
+                <i class="fa-solid fa-users" style="color: var(--tkp-color);"></i>
+                <h2>Katalog Modul TKP (Tes Karakteristik Pribadi)</h2>
+            </div>
+            <div class="modul-grid">
+                <div class="modul-card">
+                    <div class="modul-info">
+                        <h4>TKP Part 1: Pelayanan & Anti Radikalisme</h4>
+                        <p>Analisis skenario sosiokultural, profesionalisme kerja, jejaring kerja, teknologi informasi, dan radikalisme.</p>
+                        <div class="modul-meta">
+                            <span class="meta-tag">100 Soal</span>
+                            <span class="meta-tag">Timer 10s</span>
+                            <span class="meta-tag">Premium UI</span>
+                        </div>
+                    </div>
+                    <a href="https://link-terabox-anda.com/tkp1" target="_blank" class="btn-action btn-download"><i class="fa-solid fa-circle-down"></i> Download via TeraBox</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- INTEGRATED SOCIAL NETWORK HUB -->
+    <section class="community-section" id="komunitas">
+        <div class="section-title">
+            <h2>Bergabunglah Dalam Ekosistem Belajar</h2>
+            <p>Dapatkan pembaruan instan, diskusi soal berkala, tips lolos formasi, dan modul premium gratis setiap minggu.</p>
+        </div>
+        <div class="comm-grid">
+            <a href="https://t.me/pendidikanku_mi_vida" target="_blank" class="comm-card c-tg">
+                <i class="fa-brands fa-telegram"></i>
+                <h5>Telegram Channel</h5>
+                <span>t.me/pendidikanku_mi_vida</span>
+            </a>
+            <a href="https://chat.whatsapp.com/HXHv37R44nXLDnw2hxvtie" target="_blank" class="comm-card c-wa-g">
+                <i class="fa-brands fa-whatsapp"></i>
+                <h5>Grup WhatsApp</h5>
+                <span>Diskusi & Komunitas</span>
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vb2NvXe5vKA1L0uNMf1v" target="_blank" class="comm-card c-wa-c">
+                <i class="fa-solid fa-bullhorn"></i>
+                <h5>Saluran WhatsApp</h5>
+                <span>Pengumuman & Update File</span>
+            </a>
+            <a href="#" class="comm-card c-yt">
+                <i class="fa-brands fa-youtube"></i>
+                <h5>YouTube Channel</h5>
+                <span>Segera Hadir</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Pendidikanku (Mi Vida). All Rights Reserved. Powered by Cloudflare Edge Network.</p>
+    </footer>
+
+    <script>
+        // Mobile Toggle Navigation System
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scroll adjustment for anchor link
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                navMenu.classList.remove('active'); // Close mobile menu if open
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
