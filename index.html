@@ -20,6 +20,8 @@
             --tiu-color: #3b82f6;
             --twk-color: #ef4444;
             --tkp-color: #10b981;
+            --bumn-color: #f59e0b;
+            --utbk-color: #ec4899;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -49,13 +51,6 @@
         .hero-section h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-section p { color: var(--text-muted); font-size: clamp(15px, 2vw, 18px); max-width: 750px; margin: 20px auto 0 auto; }
 
-        .features-grid { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .feat-card { background: var(--card-glass); border: 1px solid var(--card-border); border-radius: 20px; padding: 30px; transition: 0.3s; }
-        .feat-card:hover { border-color: rgba(168, 85, 247, 0.4); transform: translateY(-5px); }
-        .feat-icon { width: 50px; height: 50px; border-radius: 14px; background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; color: #a855f7; }
-        .feat-card h3 { font-size: 18px; margin-bottom: 10px; font-weight: 700; }
-        .feat-card p { color: var(--text-muted); font-size: 14px; }
-
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 28px; font-weight: 800; }
         .section-title p { color: var(--text-muted); font-size: 14px; }
@@ -64,17 +59,24 @@
         .category-block { margin-bottom: 60px; }
         .category-banner { display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 1px solid var(--card-border); padding-bottom: 15px; }
         
+        .chapter-title { font-size: 20px; font-weight: 700; color: #a855f7; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        
         .modul-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
         .modul-card { background: linear-gradient(145deg, rgba(255,255,255,0.01), rgba(255,255,255,0.03)); border: 1px solid var(--card-border); border-radius: 24px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
         .modul-card::before { content: ''; position: absolute; top:0; left:0; width: 4px; height: 100%; }
         
-        .tiu-block .modul-card::before { background: var(--tiu-color); }
-        .twk-block .modul-card::before { background: var(--twk-color); }
-        .tkp-block .modul-card::before { background: var(--tkp-color); }
+        .tiu-card::before { background: var(--tiu-color); }
+        .twk-card::before { background: var(--twk-color); }
+        .tkp-card::before { background: var(--tkp-color); }
+        .bumn-card::before { background: var(--bumn-color); }
+        .utbk-card::before { background: var(--utbk-color); }
 
-        .modul-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .modul-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .modul-header i { font-size: 20px; }
+        .modul-info h4 { font-size: 18px; font-weight: 700; }
         .modul-info ul { color: var(--text-muted); font-size: 13.5px; margin-bottom: 20px; padding-left: 18px; }
         .modul-info ul li { margin-bottom: 5px; }
+        .modul-info p { color: var(--text-muted); font-size: 13.5px; margin-bottom: 20px; }
         
         .modul-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
         .meta-tag { background: rgba(255,255,255,0.04); border: 1px solid var(--card-border); padding: 4px 12px; border-radius: 8px; font-size: 12px; color: #cbd5e1; font-weight: 600; }
@@ -121,13 +123,13 @@
             <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a class="nav-link">CPNS <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <a href="#cpns" class="nav-link">CPNS <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="dropdown">
-                        <a href="#tiu" class="dropdown-link"><i class="fa-solid fa-calculator" style="color: var(--tiu-color);"></i> Tes Inteligensia Umum (TIU)</a>
-                        <a href="#twk" class="dropdown-link"><i class="fa-solid fa-flag" style="color: var(--twk-color);"></i> Tes Wawasan Kebangsaan (TWK)</a>
-                        <a href="#tkp" class="dropdown-link"><i class="fa-solid fa-users" style="color: var(--tkp-color);"></i> Tes Karakteristik Pribadi (TKP)</a>
+                        <a href="#cpns" class="dropdown-link"><i class="fa-solid fa-book-open" style="color: #a855f7;"></i> Chapter 1 (TIU, TWK, TKP)</a>
                     </div>
                 </li>
+                <li class="nav-item"><a href="#bumn" class="nav-link">BUMN</a></li>
+                <li class="nav-item"><a href="#utbk" class="nav-link">UTBK</a></li>
                 <li class="nav-item"><a href="#komunitas" class="nav-link">Komunitas</a></li>
             </ul>
         </div>
@@ -138,22 +140,29 @@
         <h1>Ucapkan Selamat Tinggal Pada Tryout yang <span>Membosankan!</span></h1>
         <p>
             Bosan dengan metode tryout konvensional yang kaku dan bikin ngantuk? Bersiaplah menghadapi 
-            <b>Metode Kilat 10 Detik CAT Flashcard</b>. Kami menyulap simulasi ujian CPNS layaknya interaksi seru. Pacu adrenalin Anda, latih refleks bawah sadar, dan taklukkan SKD 2026!
+            <b>Metode Kilat 10 Detik CAT Flashcard</b>. Kami menyulap simulasi ujian CPNS layaknya interaksi seru. Pacu adrenalin Anda, latih refleks bawah sadar, dan taklukkan Ujian 2026!
         </p>
     </section>
 
     <main class="main-wrapper">
         
-        <div class="category-block tiu-block" id="tiu">
+        <div class="category-block" id="cpns">
             <div class="category-banner">
-                <i class="fa-solid fa-calculator" style="color: var(--tiu-color); font-size: 28px;"></i>
-                <h2>Katalog Modul TIU (Tes Inteligensia Umum)</h2>
+                <i class="fa-solid fa-id-card" style="color: #6366f1; font-size: 28px;"></i>
+                <h2>Katalog Modul CPNS</h2>
+            </div>
+            
+            <div class="chapter-title">
+                <i class="fa-solid fa-layer-group"></i> Chapter 1
             </div>
             
             <div class="modul-grid">
-                <div class="modul-card">
+                <div class="modul-card tiu-card">
                     <div class="modul-info">
-                        <h4>Chapter 1: TIU Mastery Dasar</h4>
+                        <div class="modul-header">
+                            <i class="fa-solid fa-calculator" style="color: var(--tiu-color);"></i>
+                            <h4>TIU Mastery Dasar</h4>
+                        </div>
                         <ul>
                             <li><b>Kemampuan Verbal:</b> Menguji logika berbahasa meliputi analogi, silogisme, dan analitis.</li>
                             <li><b>Kemampuan Numerik:</b> Menguji logika berhitung seperti deret angka, perbandingan kuantitatif.</li>
@@ -165,56 +174,17 @@
                             <span class="meta-tag">Timer 10s</span>
                         </div>
                     </div>
-                    <a href="chapter-1.html" class="btn-action btn-play">
+                    <a href="https://pendidikanku.mi-vida.workers.dev/trial.html" class="btn-action btn-play">
                         <i class="fa-solid fa-play"></i> Latihan Sekarang?
                     </a>
                 </div>
 
-                <div class="modul-card">
+                <div class="modul-card twk-card">
                     <div class="modul-info">
-                        <h4>Chapter 2: Numerik Lanjutan</h4>
-                        <ul>
-                            <li><b>Hitung Cepat:</b> Trik menyelesaikan pecahan desimal dalam hitungan detik.</li>
-                            <li><b>Soal Cerita:</b> Penalaran matematis berbasis skenario realitas.</li>
-                        </ul>
-                        <div class="modul-meta">
-                            <span class="meta-tag">100 Soal</span>
-                            <span class="meta-tag">Edisi TeraBox</span>
+                        <div class="modul-header">
+                            <i class="fa-solid fa-flag" style="color: var(--twk-color);"></i>
+                            <h4>TWK - Pilar Negara & Integritas</h4>
                         </div>
-                    </div>
-                    <button class="btn-action btn-locked" disabled>
-                        <i class="fa-solid fa-lock"></i> Coming Soon
-                    </button>
-                </div>
-
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <h4>Chapter 3: Figural Spasial Ekstrem</h4>
-                        <ul>
-                            <li><b>Visualisasi 3D:</b> Jaring-jaring bangun ruang dan rotasi objek.</li>
-                            <li><b>Pola Tersembunyi:</b> Menebak kelanjutan gambar dengan pola distorsi.</li>
-                        </ul>
-                        <div class="modul-meta">
-                            <span class="meta-tag">100 Soal</span>
-                            <span class="meta-tag">Edisi TeraBox</span>
-                        </div>
-                    </div>
-                    <button class="btn-action btn-locked" disabled>
-                        <i class="fa-solid fa-lock"></i> Coming Soon
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="category-block twk-block" id="twk">
-            <div class="category-banner">
-                <i class="fa-solid fa-flag" style="color: var(--twk-color); font-size: 28px;"></i>
-                <h2>Katalog Modul TWK (Tes Wawasan Kebangsaan)</h2>
-            </div>
-            <div class="modul-grid">
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <h4>Chapter 1: Pilar Negara & Integritas</h4>
                         <p>Pemahaman mendalam mengenai implementasi Pancasila, UUD 1945, dan sistem bela negara moderen.</p>
                         <div class="modul-meta">
                             <span class="meta-tag">Segera Hadir</span>
@@ -222,24 +192,63 @@
                     </div>
                     <button class="btn-action btn-locked" disabled><i class="fa-solid fa-hourglass-half"></i> Coming Soon</button>
                 </div>
-            </div>
-        </div>
 
-        <div class="category-block tkp-block" id="tkp">
-            <div class="category-banner">
-                <i class="fa-solid fa-users" style="color: var(--tkp-color); font-size: 28px;"></i>
-                <h2>Katalog Modul TKP (Tes Karakteristik Pribadi)</h2>
-            </div>
-            <div class="modul-grid">
-                <div class="modul-card">
+                <div class="modul-card tkp-card">
                     <div class="modul-info">
-                        <h4>Chapter 1: Pelayanan & Jejaring Kerja</h4>
-                        <p>Analisis skenario sosiokultural, profesionalisme kerja, dan teknologi informasi.</p>
+                        <div class="modul-header">
+                            <i class="fa-solid fa-users" style="color: var(--tkp-color);"></i>
+                            <h4>TKP - Pelayanan & Jejaring Kerja</h4>
+                        </div>
+                        <p>Analisis skenario sosiokultural, profesionalisme kerja, dan teknologi informasi pada instansi.</p>
                         <div class="modul-meta">
                             <span class="meta-tag">Segera Hadir</span>
                         </div>
                     </div>
                     <button class="btn-action btn-locked" disabled><i class="fa-solid fa-hourglass-half"></i> Coming Soon</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-block" id="bumn">
+            <div class="category-banner">
+                <i class="fa-solid fa-briefcase" style="color: var(--bumn-color); font-size: 28px;"></i>
+                <h2>Katalog Modul BUMN</h2>
+            </div>
+            <div class="modul-grid">
+                <div class="modul-card bumn-card">
+                    <div class="modul-info">
+                        <div class="modul-header">
+                            <i class="fa-solid fa-building" style="color: var(--bumn-color);"></i>
+                            <h4>Tes Core Values (AKHLAK)</h4>
+                        </div>
+                        <p>Simulasi tes kompetensi dasar dan pemahaman nilai-nilai utama BUMN (Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif).</p>
+                        <div class="modul-meta">
+                            <span class="meta-tag">Segera Hadir</span>
+                        </div>
+                    </div>
+                    <button class="btn-action btn-locked" disabled><i class="fa-solid fa-lock"></i> Coming Soon</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-block" id="utbk">
+            <div class="category-banner">
+                <i class="fa-solid fa-university" style="color: var(--utbk-color); font-size: 28px;"></i>
+                <h2>Katalog Modul UTBK (SNBT)</h2>
+            </div>
+            <div class="modul-grid">
+                <div class="modul-card utbk-card">
+                    <div class="modul-info">
+                        <div class="modul-header">
+                            <i class="fa-solid fa-pen-nib" style="color: var(--utbk-color);"></i>
+                            <h4>Tes Potensi Skolastik (TPS)</h4>
+                        </div>
+                        <p>Latihan intensif penalaran umum, pemahaman bacaan, pengetahuan kuantitatif, dan penalaran matematika dasar.</p>
+                        <div class="modul-meta">
+                            <span class="meta-tag">Segera Hadir</span>
+                        </div>
+                    </div>
+                    <button class="btn-action btn-locked" disabled><i class="fa-solid fa-lock"></i> Coming Soon</button>
                 </div>
             </div>
         </div>
