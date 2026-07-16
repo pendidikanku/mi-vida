@@ -11,7 +11,7 @@
     
     <style>
         /* ==========================================================================
-           1. RESET & VARIABLE SETUP (PREMIUM DARK MAGIC)
+           1. RESET & VARIABLE SETUP
            ========================================================================== */
         :root {
             --bg-dark: #05070f;
@@ -28,7 +28,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
 
-        /* Ambient Orbs */
         .aurora {
             position: fixed; width: 50vw; height: 50vw; border-radius: 50%;
             background: var(--primary-gradient); filter: blur(150px); opacity: 0.08; z-index: -1;
@@ -38,53 +37,33 @@
         .orb-2 { bottom: -20%; right: -10%; }
 
         /* ==========================================================================
-           2. PROFESSIONAL NAVIGATION (MEGA MENU)
+           2. PROFESSIONAL NAVIGATION
            ========================================================================== */
-        header {
-            position: sticky; top: 0; z-index: 1000;
-            background: rgba(5, 7, 15, 0.75); backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        .nav-container {
-            max-width: 1200px; margin: 0 auto; padding: 15px 20px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .logo { font-size: 20px; font-weight: 800; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
-
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(5, 7, 15, 0.75); backdrop-filter: blur(20px); border-bottom: 1px solid var(--card-border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 20px; font-weight: 800; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; display: flex; align-items: center; gap: 8px;}
+        .logo i { color: #a855f7; }
         .nav-menu { display: flex; gap: 25px; list-style: none; }
         .nav-item { position: relative; }
         .nav-link { color: var(--text-main); text-decoration: none; font-size: 14px; font-weight: 600; padding: 10px 0; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: 0.3s; }
         .nav-link:hover { color: #a855f7; }
-
-        /* Dropdown Menu Engine */
-        .dropdown {
-            position: absolute; top: 100%; left: 0; width: 220px; 
-            background: #0b0f19; border: 1px solid var(--card-border);
-            border-radius: 12px; padding: 10px; display: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
+        .dropdown { position: absolute; top: 100%; left: 0; width: 220px; background: #0b0f19; border: 1px solid var(--card-border); border-radius: 12px; padding: 10px; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
         .nav-item:hover .dropdown { display: block; opacity: 1; transform: translateY(0); }
         .dropdown-link { display: flex; align-items: center; gap: 10px; color: var(--text-muted); text-decoration: none; padding: 10px 12px; font-size: 13.5px; font-weight: 500; border-radius: 8px; transition: 0.2s; }
         .dropdown-link:hover { background: rgba(255,255,255,0.05); color: var(--text-main); }
-        .dropdown-link i { font-size: 12px; }
-
-        /* Mobile Menu Button */
         .menu-toggle { display: none; color: #fff; font-size: 22px; cursor: pointer; }
 
         /* ==========================================================================
-           3. HERO HERO SECTION (GAMIFIED COPYWRITING)
+           3. HERO SECTION (GAMIFIED COPYWRITING)
            ========================================================================== */
         .hero-section { max-width: 900px; margin: 80px auto 40px auto; padding: 0 20px; text-align: center; }
         .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); color: #d8b4fe; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 25px; }
         .hero-section h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; }
         .hero-section h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-section p { color: var(--text-muted); font-size: clamp(15px, 2vw, 18px); max-width: 700px; margin: 20px auto 0 auto; }
+        .hero-section p { color: var(--text-muted); font-size: clamp(15px, 2vw, 18px); max-width: 750px; margin: 20px auto 0 auto; }
 
         /* ==========================================================================
-           4. FEATURES & ADVANTAGES (KEUNGGULAN)
+           4. FEATURES
            ========================================================================== */
         .features-grid { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .feat-card { background: var(--card-glass); border: 1px solid var(--card-border); border-radius: 20px; padding: 30px; transition: 0.3s; }
@@ -94,7 +73,7 @@
         .feat-card p { color: var(--text-muted); font-size: 14px; }
 
         /* ==========================================================================
-           5. SECTION CATEGORIES & DOWNLOAD
+           5. CATALOGUE & DOWNLOAD
            ========================================================================== */
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 28px; font-weight: 800; }
@@ -103,30 +82,34 @@
         .main-wrapper { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 20px; }
         .category-block { margin-bottom: 60px; }
         .category-banner { display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 1px solid var(--card-border); padding-bottom: 15px; }
-        .category-banner i { font-size: 22px; }
         
-        .modul-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+        .modul-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
         .modul-card { background: linear-gradient(145deg, rgba(255,255,255,0.01), rgba(255,255,255,0.03)); border: 1px solid var(--card-border); border-radius: 24px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
         .modul-card::before { content: ''; position: absolute; top:0; left:0; width: 4px; height: 100%; }
         
-        /* Tema Warna Strip Samping Kategori */
         .tiu-block .modul-card::before { background: var(--tiu-color); }
         .twk-block .modul-card::before { background: var(--twk-color); }
         .tkp-block .modul-card::before { background: var(--tkp-color); }
 
-        .modul-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-        .modul-info p { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+        .modul-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .modul-info ul { color: var(--text-muted); font-size: 13.5px; margin-bottom: 20px; padding-left: 18px; }
+        .modul-info ul li { margin-bottom: 5px; }
         
-        .modul-meta { display: flex; gap: 10px; margin-bottom: 25px; }
+        .modul-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
         .meta-tag { background: rgba(255,255,255,0.04); border: 1px solid var(--card-border); padding: 4px 12px; border-radius: 8px; font-size: 12px; color: #cbd5e1; font-weight: 600; }
+        .meta-highlight { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399; }
 
-        .btn-action { width: 100%; text-decoration: none; text-align: center; padding: 14px; border-radius: 12px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; cursor: pointer; }
+        .action-group { display: flex; gap: 10px; }
+        .btn-action { flex: 1; text-decoration: none; text-align: center; padding: 12px 10px; border-radius: 12px; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: 0.3s; cursor: pointer; border: none; }
+        
+        .btn-trial { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+        .btn-trial:hover { background: rgba(255,255,255,0.1); border-color: #a855f7; }
+        
         .btn-download { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2); }
         .btn-download:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
-        .btn-locked { background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); color: var(--text-muted); cursor: not-allowed; }
 
         /* ==========================================================================
-           6. COMMUNITY HUB (SOCIAL MEDIA INTEGRATION)
+           6. COMMUNITY HUB
            ========================================================================== */
         .community-section { background: rgba(99, 102, 241, 0.03); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); padding: 80px 20px; text-align: center; }
         .comm-grid { max-width: 1000px; margin: 40px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
@@ -134,27 +117,22 @@
         .comm-card:hover { transform: translateY(-5px); }
         .comm-card i { font-size: 32px; }
         
-        /* Identitas Warna Komunitas */
-        .c-tg:hover { border-color: #24A1DE; box-shadow: 0 0 20px rgba(36, 161, 222, 0.2); }
-        .c-tg i { color: #24A1DE; }
-        .c-wa-g:hover { border-color: #25D366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.2); }
-        .c-wa-g i { color: #25D366; }
-        .c-wa-c:hover { border-color: #00a884; box-shadow: 0 0 20px rgba(0, 168, 132, 0.2); }
-        .c-wa-c i { color: #00a884; }
-        .c-yt:hover { border-color: #FF0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); }
-        .c-yt i { color: #FF0000; }
+        .c-tg:hover { border-color: #24A1DE; box-shadow: 0 0 20px rgba(36, 161, 222, 0.2); } .c-tg i { color: #24A1DE; }
+        .c-wa-g:hover { border-color: #25D366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.2); } .c-wa-g i { color: #25D366; }
+        .c-wa-c:hover { border-color: #00a884; box-shadow: 0 0 20px rgba(0, 168, 132, 0.2); } .c-wa-c i { color: #00a884; }
+        .c-yt:hover { border-color: #FF0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); } .c-yt i { color: #FF0000; }
 
         .comm-card h5 { font-size: 16px; font-weight: 700; }
         .comm-card span { font-size: 12px; color: var(--text-muted); }
 
         footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.02); }
 
-        /* Responsive Layout Engine */
         @media (max-width: 768px) {
             .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #05070f; border-bottom: 1px solid var(--card-border); flex-direction: column; padding: 20px; gap: 15px; }
             .nav-menu.active { display: flex; }
             .dropdown { position: static; width: 100%; opacity: 1; transform: none; display: block; background: transparent; border: none; padding-left: 20px; }
             .menu-toggle { display: block; }
+            .action-group { flex-direction: column; }
         }
     </style>
 </head>
@@ -163,7 +141,6 @@
     <div class="aurora orb-1"></div>
     <div class="aurora orb-2"></div>
 
-    <!-- HEADER & MULTI-LEVEL NAVIGATION -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i> Pendidikanku</a>
@@ -184,136 +161,80 @@
                         <a href="#" class="dropdown-link"><i class="fa-solid fa-brain"></i> Manajerial & Sosio</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link">Kedinasan <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
-                    <div class="dropdown">
-                        <a href="#" class="dropdown-link"><i class="fa-solid fa-building-shield"></i> SKD Kedinasan</a>
-                    </div>
-                </li>
                 <li class="nav-item"><a href="#komunitas" class="nav-link">Komunitas</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- HERO SECTION: THE FUN LEARNING CONCEPT -->
     <section class="hero-section">
-        <div class="hero-badge"><i class="fa-solid fa-bolt"></i> Elevate Your Learning Speed</div>
-        <h1>Latihan Soal Jadi Seru, <span>Memicu Adrenalin!</span></h1>
+        <div class="hero-badge"><i class="fa-solid fa-gamepad"></i> Belajar Sambil Bermain</div>
+        <h1>Ucapkan Selamat Tinggal Pada Tryout yang <span>Membosankan!</span></h1>
         <p>
-            Bosan dengan metode *tryout* konvensional yang monoton dan bikin ngantuk? Bersiaplah menghadapi 
-            <b>Metode Kilat 10 Detik CAT Flashcard</b>. Kami mendesain ulang instrumen belajar menjadi media interaktif yang memicu refleks bawah sadar otak Anda. Taklukkan ujian CPNS 2026 dengan kegembiraan kompetitif!
+            Bosan dengan metode tryout konvensional yang kaku dan bikin ngantuk? Bersiaplah menghadapi 
+            <b>Metode Kilat 10 Detik CAT Flashcard</b>. Kami menyulap simulasi ujian CPNS layaknya *game* interaktif. Pacu adrenalin Anda, latih refleks bawah sadar, dan taklukkan SKD 2026 dengan cara yang jauh lebih seru!
         </p>
     </section>
 
-    <!-- CORE ADVANTAGES (KEUNGGULAN UTAMA) -->
     <section class="features-grid">
         <div class="feat-card">
             <div class="feat-icon"><i class="fa-solid fa-stopwatch"></i></div>
             <h3>10-Second Reflex Engine</h3>
-            <p>Memaksa otak mengambil keputusan krusial di bawah tekanan waktu nyata, melatih ketenangan mental sistem CAT BKN.</p>
+            <p>Sistem akan memaksa otak Anda mengambil keputusan krusial di bawah tekanan waktu, melatih mental baja untuk CAT BKN.</p>
         </div>
         <div class="feat-card">
             <div class="feat-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
             <h3>Deep-Dive Breakdown</h3>
-            <p>Bukan sekadar kunci jawaban. Setiap opsi pengecoh (A sampai E) dibedah tuntas secara komprehensif, ilmiah, dan logis.</p>
+            <p>Kami tidak sekadar memberi kunci. Setiap opsi pengecoh (A-E) dibedah tuntas secara komprehensif, ilmiah, dan logis.</p>
         </div>
         <div class="feat-card">
             <div class="feat-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
             <h3>100% Offline & Ringan</h3>
-            <p>Cukup download sekali lewat TeraBox, ekstrak, dan jalankan secara mandiri di HP atau Laptop tanpa kuota internet.</p>
+            <p>Download paket lengkapnya di TeraBox, ekstrak, dan jalankan simulasi di mana saja tanpa khawatir kehabisan kuota internet.</p>
         </div>
     </section>
 
-    <!-- MODUL CATALOGUE GRID -->
     <main class="main-wrapper">
         
-        <!-- TIU CHAPTERS -->
         <div class="category-block tiu-block" id="tiu">
             <div class="category-banner">
-                <i class="fa-solid fa-calculator" style="color: var(--tiu-color);"></i>
+                <i class="fa-solid fa-calculator" style="color: var(--tiu-color); font-size: 28px;"></i>
                 <h2>Katalog Modul TIU (Tes Inteligensia Umum)</h2>
             </div>
+            
             <div class="modul-grid">
                 <div class="modul-card">
                     <div class="modul-info">
-                        <h4>TIU Part 1: Paket Fundamental</h4>
-                        <p>Mengasah logika silogisme, kemampuan deret angka kompleks, analogi verbal kata, dan sinonim-antonim baku KBBI.</p>
+                        <h4>Chapter 1: TIU Mastery (100 Soal)</h4>
+                        <ul>
+                            <li><b>Kemampuan Verbal:</b> Analogi kata, silogisme (penarikan kesimpulan), dan analitis logika.</li>
+                            <li><b>Kemampuan Numerik:</b> Deret angka, perbandingan kuantitatif, dan soal cerita matematis.</li>
+                            <li><b>Kemampuan Figural:</b> Analogi gambar, ketidaksamaan visual, dan serial gambar.</li>
+                        </ul>
                         <div class="modul-meta">
-                            <span class="meta-tag">100 Soal</span>
+                            <span class="meta-tag meta-highlight">Mix Soal Lengkap</span>
                             <span class="meta-tag">Timer 10s</span>
                             <span class="meta-tag">Premium UI</span>
                         </div>
                     </div>
-                    <!-- LINK TERABOX ANDA -->
-                    <a href="https://link-terabox-anda.com/tiu1" target="_blank" class="btn-action btn-download"><i class="fa-solid fa-circle-down"></i> Download via TeraBox</a>
-                </div>
-
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <h4>TIU Part 2: Numerik & Kuantitatif</h4>
-                        <p>Fokus penuh pada penalaran analitis matematis, hitung cepat pecahan, perbandingan kuantitatif, dan soal cerita.</p>
-                        <div class="modul-meta">
-                            <span class="meta-tag">100 Soal</span>
-                            <span class="meta-tag">Timer 10s</span>
-                            <span class="meta-tag">Coming Soon</span>
-                        </div>
+                    
+                    <div class="action-group">
+                        <a href="trial.html" class="btn-action btn-trial">
+                            <i class="fa-solid fa-play"></i> Mainkan Trial (10 Soal)
+                        </a>
+                        <a href="https://link-terabox-anda.com/tiu-chapter-1" target="_blank" class="btn-action btn-download">
+                            <i class="fa-solid fa-cloud-arrow-down"></i> Download Full 100 Soal
+                        </a>
                     </div>
-                    <button class="btn-action btn-locked"><i class="fa-solid fa-lock"></i> Terkunci</button>
                 </div>
             </div>
         </div>
+        
+        </main>
 
-        <!-- TWK CHAPTERS -->
-        <div class="category-block twk-block" id="twk">
-            <div class="category-banner">
-                <i class="fa-solid fa-flag" style="color: var(--twk-color);"></i>
-                <h2>Katalog Modul TWK (Tes Wawasan Kebangsaan)</h2>
-            </div>
-            <div class="modul-grid">
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <h4>TWK Part 1: Pilar Negara & Integritas</h4>
-                        <p>Pemahaman mendalam mengenai implementasi Pancasila, UUD 1945, Bhinneka Tunggal Ika, dan sistem bela negara moderen.</p>
-                        <div class="modul-meta">
-                            <span class="meta-tag">100 Soal</span>
-                            <span class="meta-tag">Timer 10s</span>
-                            <span class="meta-tag">Premium UI</span>
-                        </div>
-                    </div>
-                    <a href="https://link-terabox-anda.com/twk1" target="_blank" class="btn-action btn-download"><i class="fa-solid fa-circle-down"></i> Download via TeraBox</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- TKP CHAPTERS -->
-        <div class="category-block tkp-block" id="tkp">
-            <div class="category-banner">
-                <i class="fa-solid fa-users" style="color: var(--tkp-color);"></i>
-                <h2>Katalog Modul TKP (Tes Karakteristik Pribadi)</h2>
-            </div>
-            <div class="modul-grid">
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <h4>TKP Part 1: Pelayanan & Anti Radikalisme</h4>
-                        <p>Analisis skenario sosiokultural, profesionalisme kerja, jejaring kerja, teknologi informasi, dan radikalisme.</p>
-                        <div class="modul-meta">
-                            <span class="meta-tag">100 Soal</span>
-                            <span class="meta-tag">Timer 10s</span>
-                            <span class="meta-tag">Premium UI</span>
-                        </div>
-                    </div>
-                    <a href="https://link-terabox-anda.com/tkp1" target="_blank" class="btn-action btn-download"><i class="fa-solid fa-circle-down"></i> Download via TeraBox</a>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- INTEGRATED SOCIAL NETWORK HUB -->
     <section class="community-section" id="komunitas">
         <div class="section-title">
-            <h2>Bergabunglah Dalam Ekosistem Belajar</h2>
-            <p>Dapatkan pembaruan instan, diskusi soal berkala, tips lolos formasi, dan modul premium gratis setiap minggu.</p>
+            <h2>Bergabunglah Dalam Ekosistem Belajar Kami</h2>
+            <p>Dapatkan update file terbaru, diskusi soal, tips lolos formasi, dan trik rahasia CAT CPNS setiap harinya.</p>
         </div>
         <div class="comm-grid">
             <a href="https://t.me/pendidikanku_mi_vida" target="_blank" class="comm-card c-tg">
@@ -324,42 +245,35 @@
             <a href="https://chat.whatsapp.com/HXHv37R44nXLDnw2hxvtie" target="_blank" class="comm-card c-wa-g">
                 <i class="fa-brands fa-whatsapp"></i>
                 <h5>Grup WhatsApp</h5>
-                <span>Diskusi & Komunitas</span>
+                <span>Diskusi Latihan Soal</span>
             </a>
             <a href="https://whatsapp.com/channel/0029Vb2NvXe5vKA1L0uNMf1v" target="_blank" class="comm-card c-wa-c">
                 <i class="fa-solid fa-bullhorn"></i>
                 <h5>Saluran WhatsApp</h5>
-                <span>Pengumuman & Update File</span>
+                <span>Info & Update File</span>
             </a>
             <a href="#" class="comm-card c-yt">
                 <i class="fa-brands fa-youtube"></i>
                 <h5>YouTube Channel</h5>
-                <span>Segera Hadir</span>
+                <span>Video Pembahasan</span>
             </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Pendidikanku (Mi Vida). All Rights Reserved. Powered by Cloudflare Edge Network.</p>
+        <p>&copy; 2026 Pendidikanku (Mi Vida). All Rights Reserved.</p>
     </footer>
 
     <script>
-        // Mobile Toggle Navigation System
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
+        menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); });
 
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Smooth scroll adjustment for anchor link
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                navMenu.classList.remove('active'); // Close mobile menu if open
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                navMenu.classList.remove('active');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
