@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi CAT - Pendidikanku</title>
+    <!-- Library untuk membaca Google Sheets -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <style>
+        /* (Gunakan CSS dari mesin kuis yang kita bahas sebelumnya) */
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; display: flex; justify-content: center; padding: 20px; }
+        .app-container { width: 100%; max-width: 600px; }
+    </style>
+</head>
+<body>
+    <div class="app-container" id="quizArea">
+        <h2 id="status">Menghubungkan ke Database...</h2>
+    </div>
+
+    <script>
+        // Link CSV dari Google Sheets Anda
+        const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?output=csv";
+        let activeDatabase = [];
+
+        function initApp() {
+            Papa.parse(sheetURL, {
+                download: true,
+                header: true,
+                complete: function(results) {
+                    activeDatabase = results.data.filter(row => row.Soal && row.Soal.trim() !== "").map(row => ({
+                        category: row.Kategori,
+                        question: row.Soal,
+                        options: [row.Opsi_A, row.Opsi_B, row.Opsi_C, row.Opsi_D, row.Opsi_E].filter(val => val && val.trim() !== ""),
+                        correctIndex: ['A', 'B', 'C', 'D', 'E'].indexOf(row.Kunci.toUpperCase().trim()),
+                        explanation: row.Pembahasan,
+                        breakdowns: [row.Analisis_A, row.Analisis_B, row.Analisis_C, row.Analisis_D, row.Analisis_E].filter(val => val && val.trim() !== "")
+                    }));
+                    
+                    document.getElementById('status').innerText = "Data berhasil dimuat! Memulai kuis...";
+                    // Panggil fungsi untuk menampilkan soal pertama di sini
+                }
+            });
+        }
+        window.onload = initApp;
+    </script>
+</body>
+</html>
