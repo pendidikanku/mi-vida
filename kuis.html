@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-
-    <!-- AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2313737454653945" crossorigin="anonymous"></script>
 
     <style>
@@ -54,7 +52,7 @@
         .option-btn:disabled { cursor: not-allowed; }
         .opt-label { font-weight: 700; background: #e2e8f0; padding: 5px 10px; border-radius: 8px; font-size: 14px; min-width: 32px; text-align: center; }
         
-        /* Pewarnaan Hasil Jawaban (Telah Diperbaiki) */
+        /* PEWARNAAN JAWABAN FIX */
         .option-btn.correct { background: rgba(16, 185, 129, 0.1); border-color: var(--correct); }
         .option-btn.correct .opt-label { background: var(--correct); color: white; }
         .option-btn.wrong { background: rgba(239, 68, 68, 0.1); border-color: var(--wrong); }
@@ -118,7 +116,7 @@
     </div>
 
     <script>
-        // ROUTING DATABASE CERDAS (Membaca Parameter URL)
+        // ROUTING DATABASE CERDAS
         const urlParams = new URLSearchParams(window.location.search);
         const activeModule = urlParams.get('module');
         let sheetURL = "";
@@ -127,8 +125,8 @@
             document.getElementById('loadingDesc').innerText = "Memuat Database BUMN Chapter 1...";
             sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv";
         } else if (activeModule === "cpns2") {
-            // Ganti ini nanti jika Anda sudah membuat sheet CPNS Chapter 2
-            sheetURL = "LINK_CSV_CPNS_BAB_2"; 
+            document.getElementById('loadingDesc').innerText = "Memuat Database CPNS Chapter 2...";
+            sheetURL = "LINK_CSV_CPNS_BAB_2_DISINI"; 
         } else {
             document.getElementById('loadingDesc').innerText = "Memuat Database CPNS Chapter 1...";
             sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?output=csv";
@@ -142,10 +140,18 @@
         let isAnswered = false;
         const labels = ['A', 'B', 'C', 'D', 'E'];
 
-        // Fungsi Helper untuk mencegah error perbedaan penulisan Header Kolom di Excel
+        // FUNGSI PARSER ANTI-ERROR (Membaca spasi, kapital, atau underscore dengan cerdas)
         function getColValue(row, possibleNames) {
+            let normalizedRow = {};
+            for (let key in row) {
+                let cleanKey = key.toUpperCase().replace(/[^A-Z0-9]/g, ''); // Buang karakter aneh/spasi
+                normalizedRow[cleanKey] = row[key];
+            }
             for (let name of possibleNames) {
-                if (row[name] !== undefined) return row[name];
+                let cleanName = name.toUpperCase().replace(/[^A-Z0-9]/g, '');
+                if (normalizedRow[cleanName] !== undefined && normalizedRow[cleanName] !== null) {
+                    return normalizedRow[cleanName];
+                }
             }
             return "";
         }
@@ -156,34 +162,44 @@
                 header: true,
                 skipEmptyLines: true,
                 complete: function(results) {
-                    database = results.data.filter(row => getColValue(row, ['Soal', 'SOAL', 'Pertanyaan']).trim() !== "").map(row => {
-                        let keyText = getColValue(row, ['Kunci', 'Kunci Jawaban', 'Jawaban', 'KUNCI']);
-                        let keyIndex = labels.indexOf(keyText.toUpperCase().trim());
+                    database = results.data.filter(row => getColValue(row, ['Soal', 'Pertanyaan']).trim() !== "").map(row => {
+                        
+                        // Ekstraksi Huruf Kunci Jawaban dengan Sangat Aman
+                        let rawKey = getColValue(row, ['Kunci', 'KunciJawaban', 'Jawaban']).toString().trim().toUpperCase();
+                        let keyIndex = -1;
+                        let match = rawKey.match(/^([A-E])/); // Cari huruf A-E di awalan (e.g. "D", "D. Benar")
+                        if (match) {
+                            keyIndex = labels.indexOf(match[1]);
+                        } else {
+                            let fallbackMatch = rawKey.match(/\b([A-E])\b/);
+                            if (fallbackMatch) keyIndex = labels.indexOf(fallbackMatch[1]);
+                        }
+                        if (keyIndex === -1) keyIndex = 0; // Jaga-jaga jika benar-benar kosong
 
                         return {
-                            category: getColValue(row, ['Kategori', 'KATEGORI', 'Jenis']) || "Soal",
-                            question: getColValue(row, ['Soal', 'SOAL', 'Pertanyaan']),
+                            category: getColValue(row, ['Kategori', 'Jenis', 'Materi']) || "Soal",
+                            question: getColValue(row, ['Soal', 'Pertanyaan']),
                             options: [
-                                getColValue(row, ['Opsi_A', 'Opsi A', 'A']),
-                                getColValue(row, ['Opsi_B', 'Opsi B', 'B']),
-                                getColValue(row, ['Opsi_C', 'Opsi C', 'C']),
-                                getColValue(row, ['Opsi_D', 'Opsi D', 'D']),
-                                getColValue(row, ['Opsi_E', 'Opsi E', 'E'])
+                                getColValue(row, ['OpsiA', 'A', 'PilihanA']),
+                                getColValue(row, ['OpsiB', 'B', 'PilihanB']),
+                                getColValue(row, ['OpsiC', 'C', 'PilihanC']),
+                                getColValue(row, ['OpsiD', 'D', 'PilihanD']),
+                                getColValue(row, ['OpsiE', 'E', 'PilihanE'])
                             ],
-                            correctIndex: keyIndex !== -1 ? keyIndex : 0, 
+                            correctIndex: keyIndex, 
                             explanation: getColValue(row, ['Pembahasan', 'Penjelasan']),
                             breakdowns: [
-                                getColValue(row, ['Analisis_A', 'Analisis A', 'AnalisisA']),
-                                getColValue(row, ['Analisis_B', 'Analisis B', 'AnalisisB']),
-                                getColValue(row, ['Analisis_C', 'Analisis C', 'AnalisisC']),
-                                getColValue(row, ['Analisis_D', 'Analisis D', 'AnalisisD']),
-                                getColValue(row, ['Analisis_E', 'Analisis E', 'AnalisisE'])
+                                getColValue(row, ['AnalisisA', 'PembahasanA', 'SkorA']),
+                                getColValue(row, ['AnalisisB', 'PembahasanB', 'SkorB']),
+                                getColValue(row, ['AnalisisC', 'PembahasanC', 'SkorC']),
+                                getColValue(row, ['AnalisisD', 'PembahasanD', 'SkorD']),
+                                getColValue(row, ['AnalisisE', 'PembahasanE', 'SkorE'])
                             ]
                         };
                     });
 
                     if(database.length > 0) { startQuiz(); } 
-                    else { document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Gagal memuat soal. Pastikan Link Publikasi CSV Benar.</h3>"; }
+                    else { document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Gagal memuat soal. Pastikan Link Sheets Benar.</h3>"; }
                 },
                 error: function() { document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Koneksi internet bermasalah.</h3>"; }
             });
@@ -212,12 +228,11 @@
             let optionsBox = document.getElementById('optionsBox');
             optionsBox.innerHTML = '';
             
-            // Render Opsi secara Aman (Mengatasi Bug Indeks Meleset)
             q.options.forEach((opt, index) => {
                 if (opt && opt.trim() !== "") {
                     let btn = document.createElement('button');
                     btn.className = 'option-btn';
-                    btn.dataset.id = index; // Menyimpan ID asli A=0, B=1, dst
+                    btn.dataset.id = index;
                     btn.innerHTML = `<span class="opt-label">${labels[index]}</span> <span>${opt}</span>`;
                     btn.onclick = () => selectAnswer(index);
                     optionsBox.appendChild(btn);
@@ -238,48 +253,45 @@
 
             let q = database[currentIndex];
             let buttons = document.querySelectorAll('.option-btn');
+            
+            // Logika Deteksi Sistem Poin (Mutlak vs Skoring 1-5)
             let isScored1to5 = q.category.toUpperCase().includes("TKP") || q.category.toUpperCase().includes("AKHLAK");
             
             let selectedBtn = Array.from(buttons).find(b => parseInt(b.dataset.id) === selectedIndex);
             let correctBtn = Array.from(buttons).find(b => parseInt(b.dataset.id) === q.correctIndex);
             let pointsEarned = 0;
 
-            // Matikan semua tombol
             buttons.forEach(btn => btn.disabled = true);
 
-            // LOGIKA PEMERIKSAAN JAWABAN (BUG FIXED)
             if (isScored1to5) {
-                // Untuk soal karakter/TKP/AKHLAK (Ada poin 1 sampai 5)
                 if (selectedBtn) {
                     let analysisText = q.breakdowns[selectedIndex] || "";
                     let match = analysisText.match(/Skor\s*(\d)/i);
                     pointsEarned = match ? parseInt(match[1]) : (selectedIndex === q.correctIndex ? 5 : 1);
                     
                     if (pointsEarned === 5) {
-                        selectedBtn.classList.add('correct'); // Hijau jika dapat skor tertinggi 5
+                        selectedBtn.classList.add('correct'); 
                     } else {
-                        selectedBtn.classList.add('tkp-selected'); // Oranye/Kuning jika skor 1-4
-                        if (correctBtn) correctBtn.classList.add('correct'); // Tunjukkan yang skor 5
+                        selectedBtn.classList.add('tkp-selected');
+                        if (correctBtn) correctBtn.classList.add('correct'); 
                     }
                 } else {
-                    if (correctBtn) correctBtn.classList.add('correct'); // Waktu habis
+                    if (correctBtn) correctBtn.classList.add('correct');
                 }
             } else {
-                // Untuk soal mutlak TIU/TWK/TKD (Benar = 5, Salah = 0)
                 if (selectedIndex === q.correctIndex) {
                     pointsEarned = 5;
-                    if (selectedBtn) selectedBtn.classList.add('correct'); // Hijau mutlak
+                    if (selectedBtn) selectedBtn.classList.add('correct');
                 } else {
                     pointsEarned = 0;
-                    if (selectedBtn) selectedBtn.classList.add('wrong'); // Merah mutlak
-                    if (correctBtn) correctBtn.classList.add('correct'); // Tunjukkan kunci benar (Hijau)
+                    if (selectedBtn) selectedBtn.classList.add('wrong');
+                    if (correctBtn) correctBtn.classList.add('correct');
                 }
             }
 
             score += pointsEarned;
             document.getElementById('scoreDisplay').innerText = score;
 
-            // Cetak Pembahasan
             let expBox = document.getElementById('explanationBox');
             let htmlExp = `<strong>Kunci Utama: ${labels[q.correctIndex]}</strong><br>${q.explanation}<br><br>`;
             
