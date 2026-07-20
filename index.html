@@ -430,6 +430,27 @@
                 alert("Token Salah! Pastikan Anda telah mengunduh file aksesnya secara resmi.");
             }
         }
+        // Logika Buka Gembok Chapter 2 BUMN
+        function bukaBUMN2() {
+            let pass = prompt("Silakan masukkan Token Akses BUMN Chapter 2 dari file unduhan TeraBox:");
+            if (pass === "AKHLAKBUMN2026") {
+                alert("Token Benar! Mempersiapkan Tryout BUMN Chapter 2...");
+                window.location.href = "kuis.html?module=bumn2"; 
+            } else if (pass !== null && pass.trim() !== "") {
+                alert("Token Salah! Pastikan Anda telah mengunduh file aksesnya secara resmi.");
+            }
+        }
+
+        // Logika Buka Gembok Chapter 2 UTBK
+        function bukaUTBK2() {
+            let pass = prompt("Silakan masukkan Token Akses UTBK Chapter 2:");
+            if (pass === "UTBKPTN2026") {
+                alert("Token Benar! Mempersiapkan Tryout UTBK Chapter 2...");
+                window.location.href = "kuis.html?module=utbk2"; 
+            } else if (pass !== null && pass.trim() !== "") {
+                alert("Token Salah! Pastikan Anda telah mengunduh file aksesnya.");
+            }
+        }
     </script>
 </body>
 </html>
