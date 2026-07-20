@@ -5,53 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulasi CAT - Pendidikanku</title>
     
-    <!-- FONTS & ICONS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- PAPAPARSE UNTUK GOOGLE SHEETS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2313737454653945" crossorigin="anonymous"></script>
+
     <style>
-        /* ================= DESAIN UI (Mengikuti index.html) ================= */
         :root {
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --card-border: #e2e8f0;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
+            --bg-main: #f8fafc; --bg-card: #ffffff; --card-border: #e2e8f0;
+            --text-main: #0f172a; --text-muted: #64748b;
             --primary-gradient: linear-gradient(135deg, #6366f1, #a855f7);
             --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            --correct: #10b981;
-            --wrong: #ef4444;
-            --tkp-color: #f59e0b;
+            --correct: #10b981; --wrong: #ef4444; --tkp-color: #f59e0b;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 20px; overflow-x: hidden; }
 
-        /* Orbs Latar Belakang */
         .aurora { position: fixed; width: 40vw; height: 40vw; border-radius: 50%; background: var(--primary-gradient); filter: blur(150px); opacity: 0.15; z-index: -1; pointer-events: none; }
-        .orb-1 { top: -10%; left: -10%; }
-        .orb-2 { bottom: -10%; right: -10%; }
+        .orb-1 { top: -10%; left: -10%; } .orb-2 { bottom: -10%; right: -10%; }
 
-        /* Header Sederhana */
         .header { width: 100%; max-width: 800px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); padding: 15px 25px; border-radius: 20px; border: 1px solid var(--card-border); box-shadow: var(--shadow-soft); }
         .logo { font-size: 18px; font-weight: 800; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; display: flex; align-items: center; gap: 8px;}
-        .logo i { color: #a855f7; }
         .score-badge { font-weight: 700; color: #475569; background: #e2e8f0; padding: 5px 15px; border-radius: 12px; font-size: 14px;}
 
-        /* Kontainer Utama */
         .app-container { width: 100%; max-width: 800px; background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 24px; padding: 30px; box-shadow: var(--shadow-soft); position: relative; }
         
-        /* Loading State */
         #loadingArea { text-align: center; padding: 50px 20px; }
         .loader { border: 4px solid #f3f3f3; border-top: 4px solid #a855f7; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Area Kuis */
         #quizArea { display: none; }
         .progress-container { width: 100%; background: #e2e8f0; height: 8px; border-radius: 10px; margin-bottom: 25px; overflow: hidden; }
         .progress-bar { height: 100%; background: var(--primary-gradient); width: 0%; transition: width 0.3s; }
@@ -61,41 +48,33 @@
         .timer { font-size: 18px; font-weight: 800; color: var(--wrong); display: flex; align-items: center; gap: 5px;}
 
         .question-text { font-size: 18px; font-weight: 600; line-height: 1.6; margin-bottom: 25px; color: var(--text-main); }
-
         .options-container { display: flex; flex-direction: column; gap: 12px; }
         .option-btn { width: 100%; text-align: left; background: var(--bg-main); border: 1px solid var(--card-border); padding: 15px 20px; border-radius: 16px; font-size: 15px; font-weight: 500; cursor: pointer; transition: 0.2s; color: var(--text-main); display: flex; align-items: center; gap: 15px; }
         .option-btn:hover { border-color: #a855f7; background: rgba(168, 85, 247, 0.05); }
         .option-btn:disabled { cursor: not-allowed; }
+        .opt-label { font-weight: 700; background: #e2e8f0; padding: 5px 10px; border-radius: 8px; font-size: 14px; min-width: 32px; text-align: center; }
         
-        .opt-label { font-weight: 700; background: #e2e8f0; padding: 5px 10px; border-radius: 8px; font-size: 14px; }
-        
-        /* Status Jawaban */
+        /* Pewarnaan Hasil Jawaban (Telah Diperbaiki) */
         .option-btn.correct { background: rgba(16, 185, 129, 0.1); border-color: var(--correct); }
         .option-btn.correct .opt-label { background: var(--correct); color: white; }
         .option-btn.wrong { background: rgba(239, 68, 68, 0.1); border-color: var(--wrong); }
         .option-btn.wrong .opt-label { background: var(--wrong); color: white; }
         .option-btn.tkp-selected { background: rgba(245, 158, 11, 0.1); border-color: var(--tkp-color); }
+        .option-btn.tkp-selected .opt-label { background: var(--tkp-color); color: white; }
 
-        /* Pembahasan */
         #explanationBox { display: none; margin-top: 25px; padding: 20px; background: #f1f5f9; border-left: 4px solid #a855f7; border-radius: 12px; font-size: 14px; color: var(--text-muted); }
         #explanationBox h4 { color: var(--text-main); margin-bottom: 8px; }
 
-        /* Tombol Lanjut */
         .btn-next { margin-top: 20px; width: 100%; background: var(--primary-gradient); color: white; border: none; padding: 15px; border-radius: 16px; font-size: 16px; font-weight: 700; cursor: pointer; display: none; transition: 0.3s; }
         .btn-next:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
 
-        /* Area Hasil */
         #resultArea { display: none; text-align: center; padding: 20px 0; }
         .final-score { font-size: 60px; font-weight: 800; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 20px 0; }
         .result-desc { color: var(--text-muted); margin-bottom: 30px; }
         .btn-home { text-decoration: none; display: inline-block; background: #e2e8f0; color: #0f172a; padding: 12px 25px; border-radius: 12px; font-weight: 700; transition: 0.3s; }
         .btn-home:hover { background: #cbd5e1; }
 
-        @media (max-width: 600px) {
-            .app-container { padding: 20px; }
-            .question-text { font-size: 16px; }
-            .option-btn { padding: 12px 15px; font-size: 14px; }
-        }
+        @media (max-width: 600px) { .app-container { padding: 20px; } .question-text { font-size: 16px; } .option-btn { padding: 12px 15px; font-size: 14px; } }
     </style>
 </head>
 <body>
@@ -104,30 +83,21 @@
     <div class="aurora orb-2"></div>
 
     <div class="header">
-        <a href="index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> Pendidikanku</a>
+        <a href="index.html" class="logo"><i class="fa-solid fa-graduation-cap"></i> MiVida</a>
         <div class="score-badge">Skor: <span id="scoreDisplay">0</span></div>
     </div>
 
     <div class="app-container">
         
-        <!-- LOADING SCREEN -->
         <div id="loadingArea">
             <div class="loader"></div>
             <h3 style="color: var(--text-main);">Menyiapkan Server CAT...</h3>
-            <p style="color: var(--text-muted); font-size: 14px;">Menarik soal dari Database</p>
+            <p style="color: var(--text-muted); font-size: 14px;" id="loadingDesc">Menarik soal dari Database</p>
         </div>
 
-        <!-- QUIZ SCREEN -->
         <div id="quizArea">
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            
-            <div class="question-meta">
-                <span class="category-badge" id="qCategory">TIU</span>
-                <div class="timer"><i class="fa-regular fa-clock"></i> <span id="timeText">10</span>s</div>
-            </div>
-
+            <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+            <div class="question-meta"><span class="category-badge" id="qCategory">TIU</span><div class="timer"><i class="fa-regular fa-clock"></i> <span id="timeText">10</span>s</div></div>
             <div class="question-text" id="qText">Memuat soal...</div>
             <div class="options-container" id="optionsBox"></div>
 
@@ -135,14 +105,12 @@
                 <h4><i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Pembahasan</h4>
                 <div id="expText"></div>
             </div>
-
             <button class="btn-next" id="btnNext" onclick="nextQuestion()">Soal Selanjutnya <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
-        <!-- RESULT SCREEN -->
         <div id="resultArea">
             <h2>Simulasi Selesai!</h2>
-            <p class="result-desc">Berikut adalah skor akhir Anda berdasarkan sistem CAT.</p>
+            <p class="result-desc">Berikut adalah total skor akhir pencapaian Anda.</p>
             <div class="final-score" id="finalScore">0</div>
             <a href="index.html" class="btn-home"><i class="fa-solid fa-home"></i> Kembali ke Beranda</a>
         </div>
@@ -150,87 +118,83 @@
     </div>
 
     <script>
-        // 0. Deteksi Modul dari URL Parameter
+        // ROUTING DATABASE CERDAS (Membaca Parameter URL)
         const urlParams = new URLSearchParams(window.location.search);
         const activeModule = urlParams.get('module');
-
         let sheetURL = "";
 
         if (activeModule === "bumn1") {
-            // URL CSV untuk BUMN Chapter 1 (Menggunakan GID 1111447607)
+            document.getElementById('loadingDesc').innerText = "Memuat Database BUMN Chapter 1...";
             sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv";
-            
         } else if (activeModule === "cpns2") {
-            // URL CSV untuk CPNS Chapter 2 (Ganti dengan link CSV yang sesuai nanti)
-            sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=177118517&single=true";
-            
+            // Ganti ini nanti jika Anda sudah membuat sheet CPNS Chapter 2
+            sheetURL = "LINK_CSV_CPNS_BAB_2"; 
         } else {
-            // DEFAULT: Jika tidak ada parameter (atau module=cpns1), panggil CPNS Chapter 1
+            document.getElementById('loadingDesc').innerText = "Memuat Database CPNS Chapter 1...";
             sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?output=csv";
-        }        
+        }
+        
         let database = [];
         let currentIndex = 0;
         let score = 0;
         let timeLeft = 10;
         let timerInterval;
         let isAnswered = false;
-
         const labels = ['A', 'B', 'C', 'D', 'E'];
 
-        // 1. Menarik Data dari Google Sheets saat Halaman Dimuat
+        // Fungsi Helper untuk mencegah error perbedaan penulisan Header Kolom di Excel
+        function getColValue(row, possibleNames) {
+            for (let name of possibleNames) {
+                if (row[name] !== undefined) return row[name];
+            }
+            return "";
+        }
+
         window.onload = function() {
             Papa.parse(sheetURL, {
                 download: true,
                 header: true,
                 skipEmptyLines: true,
                 complete: function(results) {
-                    // Filter baris kosong & format ulang data
-                    database = results.data.filter(row => row.Soal && row.Soal.trim() !== "").map(row => {
-                        // 1. Menarik Data dari Google Sheets saat Halaman Dimuat
-        window.onload = function() {
-            Papa.parse(sheetURL, {
-                download: true,
-                header: true,
-                skipEmptyLines: true,
-                complete: function(results) {
-                    // Filter baris kosong & format ulang data
-                    database = results.data.filter(row => row.Soal && row.Soal.trim() !== "").map(row => {
-                        
-                        // KUNCI PERBAIKAN: Bersihkan spasi gaib & \r menggunakan Regex
-                        let cleanKunci = row.Kunci ? String(row.Kunci).replace(/[^A-Ea-e]/g, '').toUpperCase() : '';
-                        let keyIndex = labels.indexOf(cleanKunci);
-                        
+                    database = results.data.filter(row => getColValue(row, ['Soal', 'SOAL', 'Pertanyaan']).trim() !== "").map(row => {
+                        let keyText = getColValue(row, ['Kunci', 'Kunci Jawaban', 'Jawaban', 'KUNCI']);
+                        let keyIndex = labels.indexOf(keyText.toUpperCase().trim());
+
                         return {
-                            category: row.Kategori || "Umum",
-                            question: row.Soal,
-                            options: [row.Opsi_A, row.Opsi_B, row.Opsi_C, row.Opsi_D, row.Opsi_E].filter(val => val !== undefined && val !== ""),
-                            correctIndex: keyIndex !== -1 ? keyIndex : 0,
-                            explanation: row.Pembahasan || "",
-                            breakdowns: [row.Analisis_A, row.Analisis_B, row.Analisis_C, row.Analisis_D, row.Analisis_E]
+                            category: getColValue(row, ['Kategori', 'KATEGORI', 'Jenis']) || "Soal",
+                            question: getColValue(row, ['Soal', 'SOAL', 'Pertanyaan']),
+                            options: [
+                                getColValue(row, ['Opsi_A', 'Opsi A', 'A']),
+                                getColValue(row, ['Opsi_B', 'Opsi B', 'B']),
+                                getColValue(row, ['Opsi_C', 'Opsi C', 'C']),
+                                getColValue(row, ['Opsi_D', 'Opsi D', 'D']),
+                                getColValue(row, ['Opsi_E', 'Opsi E', 'E'])
+                            ],
+                            correctIndex: keyIndex !== -1 ? keyIndex : 0, 
+                            explanation: getColValue(row, ['Pembahasan', 'Penjelasan']),
+                            breakdowns: [
+                                getColValue(row, ['Analisis_A', 'Analisis A', 'AnalisisA']),
+                                getColValue(row, ['Analisis_B', 'Analisis B', 'AnalisisB']),
+                                getColValue(row, ['Analisis_C', 'Analisis C', 'AnalisisC']),
+                                getColValue(row, ['Analisis_D', 'Analisis D', 'AnalisisD']),
+                                getColValue(row, ['Analisis_E', 'Analisis E', 'AnalisisE'])
+                            ]
                         };
                     });
 
-                    if(database.length > 0) {
-                        startQuiz();
-                    } else {
-                        document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Gagal memuat soal. Periksa link Google Sheets.</h3>";
-                    }
+                    if(database.length > 0) { startQuiz(); } 
+                    else { document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Gagal memuat soal. Pastikan Link Publikasi CSV Benar.</h3>"; }
                 },
-                error: function(err) {
-                    document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Koneksi internet bermasalah.</h3>";
-                }
+                error: function() { document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Koneksi internet bermasalah.</h3>"; }
             });
         };
-                    
 
-        // 2. Memulai Kuis
         function startQuiz() {
             document.getElementById('loadingArea').style.display = 'none';
             document.getElementById('quizArea').style.display = 'block';
             loadQuestion();
         }
 
-        // 3. Menampilkan Soal ke Layar
         function loadQuestion() {
             isAnswered = false;
             clearInterval(timerInterval);
@@ -238,43 +202,35 @@
             document.getElementById('timeText').innerText = timeLeft;
             
             let q = database[currentIndex];
-            
-            // Update UI
-            let progress = ((currentIndex) / database.length) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressBar').style.width = ((currentIndex) / database.length) * 100 + '%';
             document.getElementById('qCategory').innerText = q.category + ` (${currentIndex + 1}/${database.length})`;
             document.getElementById('qText').innerText = q.question;
             
-            // Sembunyikan tombol lanjut & pembahasan
             document.getElementById('btnNext').style.display = 'none';
             document.getElementById('explanationBox').style.display = 'none';
 
-            // Render Opsi
             let optionsBox = document.getElementById('optionsBox');
             optionsBox.innerHTML = '';
             
+            // Render Opsi secara Aman (Mengatasi Bug Indeks Meleset)
             q.options.forEach((opt, index) => {
                 if (opt && opt.trim() !== "") {
                     let btn = document.createElement('button');
                     btn.className = 'option-btn';
+                    btn.dataset.id = index; // Menyimpan ID asli A=0, B=1, dst
                     btn.innerHTML = `<span class="opt-label">${labels[index]}</span> <span>${opt}</span>`;
                     btn.onclick = () => selectAnswer(index);
                     optionsBox.appendChild(btn);
                 }
             });
 
-            // Mulai Timer 10 Detik
             timerInterval = setInterval(() => {
                 timeLeft--;
                 document.getElementById('timeText').innerText = timeLeft;
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    if (!isAnswered) selectAnswer(-1); // Waktu habis (TIDAK MENJAWAB)
-                }
+                if (timeLeft <= 0) { clearInterval(timerInterval); if (!isAnswered) selectAnswer(-1); }
             }, 1000);
         }
 
-        // 4. Logika Pengecekan Jawaban (Termasuk Sistem TKP)
         function selectAnswer(selectedIndex) {
             if (isAnswered) return;
             isAnswered = true;
@@ -282,77 +238,70 @@
 
             let q = database[currentIndex];
             let buttons = document.querySelectorAll('.option-btn');
+            let isScored1to5 = q.category.toUpperCase().includes("TKP") || q.category.toUpperCase().includes("AKHLAK");
+            
+            let selectedBtn = Array.from(buttons).find(b => parseInt(b.dataset.id) === selectedIndex);
+            let correctBtn = Array.from(buttons).find(b => parseInt(b.dataset.id) === q.correctIndex);
             let pointsEarned = 0;
-            let isTKP = q.category.toUpperCase().includes("TKP");
 
-            // Kunci semua tombol
+            // Matikan semua tombol
             buttons.forEach(btn => btn.disabled = true);
 
-            // Logika Penilaian
-            if (isTKP) {
-                // Tipe TKP (Skor 1-5)
-                if (selectedIndex !== -1) {
-                    buttons[selectedIndex].classList.add('tkp-selected');
-                    // Ekstrak skor dari teks analisis (Misal: "Skor 4: bla bla")
+            // LOGIKA PEMERIKSAAN JAWABAN (BUG FIXED)
+            if (isScored1to5) {
+                // Untuk soal karakter/TKP/AKHLAK (Ada poin 1 sampai 5)
+                if (selectedBtn) {
                     let analysisText = q.breakdowns[selectedIndex] || "";
                     let match = analysisText.match(/Skor\s*(\d)/i);
-                    if (match) {
-                        pointsEarned = parseInt(match[1]);
-                    } else if (selectedIndex === q.correctIndex) {
-                        pointsEarned = 5; // Fallback jika regex gagal
+                    pointsEarned = match ? parseInt(match[1]) : (selectedIndex === q.correctIndex ? 5 : 1);
+                    
+                    if (pointsEarned === 5) {
+                        selectedBtn.classList.add('correct'); // Hijau jika dapat skor tertinggi 5
+                    } else {
+                        selectedBtn.classList.add('tkp-selected'); // Oranye/Kuning jika skor 1-4
+                        if (correctBtn) correctBtn.classList.add('correct'); // Tunjukkan yang skor 5
                     }
+                } else {
+                    if (correctBtn) correctBtn.classList.add('correct'); // Waktu habis
                 }
             } else {
-                // Tipe TIU/TWK (Benar = 5, Salah = 0)
+                // Untuk soal mutlak TIU/TWK/TKD (Benar = 5, Salah = 0)
                 if (selectedIndex === q.correctIndex) {
                     pointsEarned = 5;
-                    buttons[selectedIndex].classList.add('correct');
-                } else if (selectedIndex !== -1) {
-                    pointsEarned = 0;
-                    buttons[selectedIndex].classList.add('wrong');
-                    buttons[q.correctIndex].classList.add('correct'); // Tunjukkan yang benar
+                    if (selectedBtn) selectedBtn.classList.add('correct'); // Hijau mutlak
                 } else {
-                    buttons[q.correctIndex].classList.add('correct'); // Waktu habis, tunjukkan kunci
+                    pointsEarned = 0;
+                    if (selectedBtn) selectedBtn.classList.add('wrong'); // Merah mutlak
+                    if (correctBtn) correctBtn.classList.add('correct'); // Tunjukkan kunci benar (Hijau)
                 }
             }
 
-            // Update Skor Keseluruhan
             score += pointsEarned;
             document.getElementById('scoreDisplay').innerText = score;
 
-            // Tampilkan Pembahasan
+            // Cetak Pembahasan
             let expBox = document.getElementById('explanationBox');
-            let expText = document.getElementById('expText');
+            let htmlExp = `<strong>Kunci Utama: ${labels[q.correctIndex]}</strong><br>${q.explanation}<br><br>`;
             
-            let htmlExp = `<strong>Kunci Jawaban: ${labels[q.correctIndex]}</strong><br>${q.explanation}<br><br>`;
-            
-            // Tambahkan analisis detail jika peserta memilih jawaban (terutama untuk TKP)
             if (selectedIndex !== -1 && q.breakdowns[selectedIndex]) {
                 htmlExp += `<em>Analisis Pilihan Anda:</em><br>${q.breakdowns[selectedIndex]}`;
             } else if (selectedIndex === -1) {
                 htmlExp += `<em style="color:red;">Waktu Habis! Anda tidak mendapatkan poin.</em>`;
             }
 
-            expText.innerHTML = htmlExp;
+            document.getElementById('expText').innerHTML = htmlExp;
             expBox.style.display = 'block';
 
-            // Tampilkan tombol lanjut
             let btnNext = document.getElementById('btnNext');
-            btnNext.innerHTML = (currentIndex === database.length - 1) ? 'Selesaikan Kuis <i class="fa-solid fa-flag-checkered"></i>' : 'Soal Selanjutnya <i class="fa-solid fa-arrow-right"></i>';
+            btnNext.innerHTML = (currentIndex === database.length - 1) ? 'Selesaikan Ujian <i class="fa-solid fa-flag-checkered"></i>' : 'Soal Selanjutnya <i class="fa-solid fa-arrow-right"></i>';
             btnNext.style.display = 'block';
         }
 
-        // 5. Pindah Soal atau Selesai
         function nextQuestion() {
             currentIndex++;
-            if (currentIndex < database.length) {
-                loadQuestion();
-            } else {
-                showResult();
-            }
+            if (currentIndex < database.length) { loadQuestion(); } else { showResult(); }
         }
 
-        // 6. Layar Hasil Akhir
         function showResult() {
             document.getElementById('quizArea').style.display = 'none';
             document.getElementById('resultArea').style.display = 'block';
