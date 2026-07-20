@@ -167,7 +167,29 @@
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo"><i class="fa-solid fa-graduation-cap"></i> Pendidikanku</a>
+            <a href="/" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="180" height="60">
+      <defs>
+        <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#6366f1" />
+          <stop offset="100%" stop-color="#a855f7" />
+        </linearGradient>
+      </defs>
+      
+      <g transform="translate(15, 25)">
+        <!-- Ikon 'M' Elegan -->
+        <path d="M 15 95 L 15 45 C 15 25, 45 25, 45 45 L 45 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 45 95 L 45 45 C 45 25, 75 25, 75 45 L 75 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        
+        <!-- Bintang/Kilau (Melambangkan Masa Depan Cerah/Pendidikan) -->
+        <path d="M 95 30 Q 95 15, 110 15 Q 95 15, 95 0 Q 95 15, 80 15 Q 95 15, 95 30" fill="#f59e0b"/>
+      </g>
+
+      <!-- Tipografi -->
+      <text x="140" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="64" fill="#0f172a">Mi<tspan fill="url(#mvGrad)">Vida</tspan></text>
+      <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
+    </svg>
+</a>
             <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item"><a href="#cpns" class="nav-link">CPNS (SKD)</a></li>
