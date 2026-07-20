@@ -284,9 +284,22 @@
                             <li><i class="fa-solid fa-check"></i> <b>TKD (50 Soal):</b> Word Classification, Number Sequence.</li>
                             <li><i class="fa-solid fa-check"></i> <b>AKHLAK (50 Soal):</b> Skenario etika lingkungan BUMN.</li>
                         </ul>
-                        <div class="modul-meta"><span class="meta-tag">100 Soal</span><span class="meta-tag">Segera Hadir</span></div>
+                        <div class="modul-meta">
+                            <!-- Label Premium Warna Emas/Oranye BUMN -->
+                            <span class="meta-tag" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2);"><i class="fa-solid fa-gem"></i> Premium Akses</span>
+                            <span class="meta-tag">100 Soal</span>
+                        </div>
                     </div>
-                    <button class="btn-action btn-locked" disabled><i class="fa-solid fa-lock"></i> Menyusul</button>
+                    <!-- Tombol Akses TeraBox & Buka Gembok BUMN -->
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <!-- Ganti TAUTAN_TERABOX_BUMN dengan link TeraBox untuk token BUMN -->
+                        <a href="TAUTAN_TERABOX_BUMN" target="_blank" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;">
+                            <i class="fa-solid fa-download"></i> Unduh Token
+                        </a>
+                        <button onclick="bukaBUMN1()" class="btn-action" style="flex: 1; font-size: 12px; padding: 10px; background: var(--bumn-color); color: #fff; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);">
+                            <i class="fa-solid fa-unlock"></i> Buka Gembok
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -362,6 +375,19 @@
                 window.location.href = "kuis.html?chapter=2"; 
             } else if (pass !== null && pass.trim() !== "") {
                 alert("Password Salah! Pastikan Anda telah mengunduh file aksesnya di TeraBox.");
+            }
+        }
+
+        // Logika Buka Gembok Chapter 1 BUMN
+        function bukaBUMN1() {
+            let pass = prompt("Silakan masukkan Token Akses BUMN yang terdapat di dalam file unduhan TeraBox:");
+            
+            // Password khusus BUMN
+            if (pass === "AKHLAKBUMN2026") {
+                alert("Token Benar! Mempersiapkan Tryout BUMN Chapter 1...");
+                window.location.href = "kuis.html?module=bumn1"; 
+            } else if (pass !== null && pass.trim() !== "") {
+                alert("Token Salah! Pastikan Anda telah mengunduh file aksesnya secara resmi.");
             }
         }
     </script>
