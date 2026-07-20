@@ -186,7 +186,20 @@
                 complete: function(results) {
                     // Filter baris kosong & format ulang data
                     database = results.data.filter(row => row.Soal && row.Soal.trim() !== "").map(row => {
-                        let keyIndex = labels.indexOf(row.Kunci ? row.Kunci.toUpperCase().trim() : '');
+                        // 1. Menarik Data dari Google Sheets saat Halaman Dimuat
+        window.onload = function() {
+            Papa.parse(sheetURL, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    // Filter baris kosong & format ulang data
+                    database = results.data.filter(row => row.Soal && row.Soal.trim() !== "").map(row => {
+                        
+                        // KUNCI PERBAIKAN: Bersihkan spasi gaib & \r menggunakan Regex
+                        let cleanKunci = row.Kunci ? String(row.Kunci).replace(/[^A-Ea-e]/g, '').toUpperCase() : '';
+                        let keyIndex = labels.indexOf(cleanKunci);
+                        
                         return {
                             category: row.Kategori || "Umum",
                             question: row.Soal,
@@ -208,6 +221,7 @@
                 }
             });
         };
+                    
 
         // 2. Memulai Kuis
         function startQuiz() {
