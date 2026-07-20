@@ -150,9 +150,24 @@
     </div>
 
     <script>
-        // URL Google Sheets (Format CSV)
-        const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?output=csv";
-        
+        // 0. Deteksi Modul dari URL Parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const activeModule = urlParams.get('module');
+
+        let sheetURL = "";
+
+        if (activeModule === "bumn1") {
+            // URL CSV untuk BUMN Chapter 1 (Menggunakan GID 1111447607)
+            sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv";
+            
+        } else if (activeModule === "cpns2") {
+            // URL CSV untuk CPNS Chapter 2 (Ganti dengan link CSV yang sesuai nanti)
+            sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=177118517&single=true";
+            
+        } else {
+            // DEFAULT: Jika tidak ada parameter (atau module=cpns1), panggil CPNS Chapter 1
+            sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?output=csv";
+        }        
         let database = [];
         let currentIndex = 0;
         let score = 0;
