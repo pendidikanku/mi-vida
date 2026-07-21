@@ -9,20 +9,18 @@
     <meta name="msvalidate.01" content="DC56E95D067F86B7D99F9548AEA3F639" />
 
     <!-- ================= GOOGLE ANALYTICS ========================= -->
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P72TBW9CTL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-P72TBW9CTL');
     </script>
     
     <!-- ================= SEO & META TAGS ================= -->
     <title>Pendidikanku (Mi Vida) - Simulasi CAT CPNS 2026, BUMN & UTBK</title>
     <meta name="description" content="Platform tryout dan simulasi tes CAT interaktif untuk persiapan CPNS 2026, BUMN, dan UTBK (SNBT). Latih kecepatan Anda dengan metode CAT 10 detik.">
-    <meta name="keywords" content="Simulasi CPNS, Tryout CPNS 2026, Tes TIU TWK TKP, Soal BUMN AKHLAK, Tryout UTBK SNBT, Pendidikanku Mi Vida, Lulus ASN">
+    <meta name="keywords" content="Simulasi CPNS, Tryout CPNS 2026, Tes TIU TWK TKP, Soal BUMN AKHLAK, Tryout UTBK SNBT, Pendidikanku Mi Vida, Lulus ASN, Blog CPNS">
     <meta name="author" content="Pendidikanku (Mi Vida)">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#6366f1">
@@ -64,15 +62,10 @@
     
     <style>
         :root {
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --card-border: #e2e8f0;
-            --text-main: #0f172a; 
-            --text-muted: #64748b;
+            --bg-main: #f8fafc; --bg-card: #ffffff; --card-border: #e2e8f0;
+            --text-main: #0f172a; --text-muted: #64748b;
             --primary-gradient: linear-gradient(135deg, #6366f1, #a855f7);
-            --cpns-color: #3b82f6;
-            --bumn-color: #f59e0b;
-            --utbk-color: #ec4899;
+            --cpns-color: #3b82f6; --bumn-color: #f59e0b; --utbk-color: #ec4899; --blog-color: #10b981;
             --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
             --saweria-color: #FA8C16;
         }
@@ -81,8 +74,7 @@
         body { background-color: var(--bg-main); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
         
         .aurora { position: fixed; width: 40vw; height: 40vw; border-radius: 50%; background: var(--primary-gradient); filter: blur(150px); opacity: 0.15; z-index: -1; pointer-events: none; }
-        .orb-1 { top: -10%; left: -10%; }
-        .orb-2 { bottom: -10%; right: -10%; }
+        .orb-1 { top: -10%; left: -10%; } .orb-2 { bottom: -10%; right: -10%; }
 
         header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
@@ -94,13 +86,16 @@
         .floating-saweria { position: fixed; bottom: 30px; right: 30px; background: var(--saweria-color); color: white; padding: 12px 24px; border-radius: 30px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(250, 140, 22, 0.3); display: flex; align-items: center; gap: 8px; z-index: 999; transition: 0.3s; }
         .floating-saweria:hover { transform: translateY(-5px); }
 
-        .hero-section { max-width: 900px; margin: 80px auto 50px auto; padding: 0 20px; text-align: center; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.2); color: #9333ea; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 25px; }
-        .hero-section h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; }
-        .hero-section h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-section p { color: var(--text-muted); font-size: clamp(15px, 2vw, 17px); max-width: 750px; margin: 20px auto 0 auto; }
+        /* PERUBAHAN PADA HERO SECTION UNTUK ANIMASI */
+        .hero-section { position: relative; width: 100%; padding: 100px 20px 80px 20px; overflow: hidden; margin-bottom: 40px; }
+        #techCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.8; }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; text-align: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(5px); border: 1px solid rgba(168, 85, 247, 0.3); color: #9333ea; padding: 8px 18px; border-radius: 20px; font-size: 12px; font-weight: 800; margin-bottom: 25px; box-shadow: var(--shadow-soft); }
+        .hero-content h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; }
+        .hero-content h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { color: var(--text-muted); font-size: clamp(15px, 2vw, 17px); max-width: 750px; margin: 20px auto 0 auto; }
 
-        .main-wrapper { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 20px; }
+        .main-wrapper { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 20px; position: relative; z-index: 2;}
         .category-block { background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 24px; padding: 40px; margin-bottom: 40px; box-shadow: var(--shadow-soft); }
         .category-header { text-align: center; margin-bottom: 35px; border-bottom: 1px solid var(--card-border); padding-bottom: 30px;}
         .category-header i { font-size: 36px; margin-bottom: 15px; }
@@ -127,6 +122,21 @@
         .btn-secondary { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
         .btn-secondary:hover { background: #e2e8f0; }
 
+        /* ================= CSS BLOG GRID BARU ================= */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .blog-card { background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; text-decoration: none; color: var(--text-main); transition: 0.3s; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
+        .blog-card:hover { transform: translateY(-7px); box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.4); }
+        .blog-img { width: 100%; height: 200px; position: relative; background: #e2e8f0; overflow: hidden; display: flex; align-items: center; justify-content: center;}
+        .blog-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .blog-card:hover .blog-img img { transform: scale(1.05); }
+        .blog-badge { position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.95); padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; color: #4f46e5; backdrop-filter: blur(5px); }
+        .blog-info { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .blog-info h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.3s;}
+        .blog-card:hover .blog-info h3 { color: #6366f1; }
+        .blog-info p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex-grow: 1; }
+        .blog-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; color: #94a3b8; border-top: 1px solid var(--card-border); padding-top: 15px; }
+        .read-more { color: #6366f1; display: flex; align-items: center; gap: 5px;}
+
         .community-section { background: var(--bg-card); border-top: 1px solid var(--card-border); padding: 80px 20px; text-align: center; }
         .comm-grid { max-width: 1000px; margin: 40px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         .comm-card { background: var(--bg-main); border: 1px solid var(--card-border); padding: 25px; border-radius: 20px; text-decoration: none; color: var(--text-main); display: flex; flex-direction: column; align-items: center; gap: 12px; transition: 0.3s; }
@@ -142,6 +152,7 @@
             .menu-toggle { display: block; }
             .category-block { padding: 25px 15px; }
             .floating-saweria { bottom: 15px; right: 15px; padding: 10px 20px; font-size: 13px; }
+            .hero-section { padding: 60px 20px 40px 20px; }
         }
     </style>
 </head>
@@ -173,22 +184,27 @@
                   <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
                 </svg>
             </a>
-            <!-- Tambahan aria-label dan role pada tombol hamburger -->
             <i class="fa-solid fa-bars menu-toggle" id="menuToggle" aria-label="Buka navigasi menu" role="button" tabindex="0"></i>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#cpns" class="nav-link">CPNS (SKD)</a></li>
                 <li><a href="#bumn" class="nav-link">BUMN</a></li>
                 <li><a href="#utbk" class="nav-link">UTBK (SNBT)</a></li>
+                <li><a href="#blog" class="nav-link">Edukasi & Blog</a></li>
                 <li><a href="#komunitas" class="nav-link">Komunitas</a></li>
             </ul>
         </div>
     </header>
 
     <main>
+        
+        <!-- HERO SECTION DENGAN ANIMASI MASA DEPAN -->
         <section class="hero-section">
-            <div class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Belajar Interaktif & Menyenangkan</div>
-            <h1>Ucapkan Selamat Tinggal Pada Tryout yang <span>Membosankan!</span></h1>
-            <p>Bosan dengan metode tryout konvensional yang kaku dan bikin ngantuk? Bersiaplah menghadapi <b>Metode Kilat CAT Flashcard</b>. Kami menyulap simulasi ujian layaknya permainan seru yang memacu refleks bawah sadar Anda.</p>
+            <canvas id="techCanvas"></canvas> <!-- Canvas untuk animasi jaringan -->
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fa-solid fa-microchip" aria-hidden="true" style="color:#6366f1;"></i> AI-Powered & Interaktif</div>
+                <h1>Ucapkan Selamat Tinggal Pada Tryout yang <span>Membosankan!</span></h1>
+                <p>Bosan dengan metode tryout konvensional yang kaku dan bikin ngantuk? Bersiaplah menghadapi <b>Metode Kilat CAT Flashcard</b>. Kami menyulap simulasi ujian layaknya permainan seru yang memacu refleks bawah sadar Anda.</p>
+            </div>
         </section>
 
         <div class="main-wrapper">
@@ -320,6 +336,54 @@
                     </div>
                 </div>
             </section>
+
+            <!-- ================= BLOG / EDUKASI SECTION ================= -->
+            <section class="category-block" id="blog" style="border-top: 5px solid #10b981;">
+                <div class="category-header">
+                    <i class="fa-solid fa-newspaper" style="color: var(--blog-color);" aria-hidden="true"></i>
+                    <h2>MiVida Edukasi (Artikel & Panduan)</h2>
+                    <div class="category-desc">
+                        <strong>Pusat Strategi & Informasi Terkini</strong><br>
+                        Tingkatkan peluang lolos Anda dengan membaca panduan, tips trik, dan bedah materi SKD maupun BUMN terbaru langsung dari tim akademik kami.
+                    </div>
+                </div>
+                
+                <div class="blog-grid">
+                    <!-- Artikel 1 (Pillar Page CPNS) -->
+                    <a href="blog/panduan-lengkap-lolos-skd-cpns.html" class="blog-card">
+                        <div class="blog-img">
+                            <!-- Menggunakan fallback error agar tidak rusak jika file gambar lokal belum Anda masukkan -->
+                            <img src="images/hero-cpns.jpg" alt="Panduan Lolos SKD CPNS 2026" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMmU4ZjAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzY0NzQ4YiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5NaVZpZGEgRWR1a2FzaTwvdGV4dD48L3N2Zz4='">
+                            <span class="blog-badge"><i class="fa-solid fa-id-card-clip"></i> CPNS 2026</span>
+                        </div>
+                        <div class="blog-info">
+                            <h3>Panduan Lengkap Lolos SKD CPNS 2026: Bedah Materi, Strategi & Simulasi</h3>
+                            <p>Pelajari trik cepat ngerjain soal TWK, TIU, dan TKP, lengkap dengan rahasia tembus passing grade tanpa hafalan buta...</p>
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Juli 2026</span>
+                                <span class="read-more">Baca Artikel <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Artikel 2 (Dummy Coming Soon) -->
+                    <a href="#blog" class="blog-card">
+                        <div class="blog-img">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmOGZhZmMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzY0NzQ4YiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5DZXJpdGEgU3Vrc2VzIEJVTU48L3N2Zz4=" alt="Bocoran BUMN">
+                            <span class="blog-badge" style="color: #d97706;"><i class="fa-solid fa-briefcase"></i> BUMN</span>
+                        </div>
+                        <div class="blog-info">
+                            <h3>Bocoran Soal Core Values AKHLAK BUMN dan Cara Menjawabnya</h3>
+                            <p>Rekrutmen BUMN tidak hanya mencari individu yang cerdas kognitif, tapi yang berakhlak. Ini rahasia menjawab soal studi kasus kepemimpinan...</p>
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-clock"></i> Segera Rilis</span>
+                                <span class="read-more" style="color:#94a3b8;">Nantikan <i class="fa-solid fa-lock"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
         </div>
     </main>
 
@@ -340,10 +404,80 @@
     </footer>
 
     <script>
+        // ================= KODE ANIMASI FUTURISTIK (NETWORK PARTICLES) =================
+        const canvas = document.getElementById('techCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            // Menyesuaikan tinggi canvas dengan bagian hero
+            height = canvas.height = document.querySelector('.hero-section').offsetHeight;
+            particles = [];
+            // Jumlah partikel dikurangi di HP agar tidak berat
+            let particleCount = window.innerWidth < 768 ? 35 : 80;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 1.5; // Kecepatan
+                this.vy = (Math.random() - 0.5) * 1.5;
+                this.radius = Math.random() * 2 + 1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                // Pantulkan jika menyentuh ujung layar
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(99, 102, 241, 0.4)';
+                ctx.fill();
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                // Gambar garis (jaring) ke partikel terdekat
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        // Semakin dekat, semakin tebal warnanya
+                        ctx.strokeStyle = `rgba(168, 85, 247, ${1 - distance/120})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        }
+
+        initCanvas();
+        animateCanvas();
+        window.addEventListener('resize', initCanvas);
+        // =========================================================================
+
+
+        // Logika Menu dan Navigasi Bawaan
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
         
-        // Aksesibilitas keyboard untuk tombol menu
         menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); });
         menuToggle.addEventListener('keypress', (e) => { if (e.key === 'Enter') navMenu.classList.toggle('active'); });
 
@@ -355,7 +489,6 @@
             });
         });
 
-        // Fungsi Tunggal Pembuka Gembok TeraBox
         function bukaPremium(kunciRahasia, modulTujuan) {
             let pass = prompt("Silakan masukkan Password dari dokumen yang Anda unduh di TeraBox:");
             if (pass === kunciRahasia) {
