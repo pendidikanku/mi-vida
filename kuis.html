@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulasi CAT - Pendidikanku</title>
     
+    <!-- ================= VERIFIKASI SEARCH ENGINE & SEO ================= -->
+    <meta name="google-site-verification" content="75ubCjiYygPqON9b7GRoJXlubSUXxWrpn52Il3S9M7U" />
+    <meta name="msvalidate.01" content="DC56E95D067F86B7D99F9548AEA3F639" />
+    <title>Simulasi CAT - Pendidikanku (Mi Vida)</title>
+    <meta name="description" content="Layar ujian tryout dan simulasi CAT interaktif Pendidikanku. Berlatih CPNS, BUMN, dan UTBK dengan metode timer kilat 10 detik.">
+    <meta name="robots" content="noindex, follow"> <!-- Kuis tidak perlu di-index untuk menghindari duplicate content -->
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- ================= FAVICON ELEGAN (SVG INLINE) ================= -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%23a855f7'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23g)'/><path d='M25 70 L25 40 C25 20 50 20 50 40 L50 70 M50 70 L50 40 C50 20 75 20 75 40 L75 70' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/><circle cx='80' cy='20' r='6' fill='%23f59e0b'/></svg>">
+    
+    <!-- ================= FONTS, ICONS & LIBRARIES ================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -116,22 +127,26 @@
     </div>
 
     <script>
-        // ROUTING DATABASE CERDAS
+        // ROUTING DATABASE CERDAS (Mampu mengubah URL /pubhtml menjadi CSV Murni secara otomatis)
         const urlParams = new URLSearchParams(window.location.search);
         const activeModule = urlParams.get('module');
-        let sheetURL = "";
+        let rawURL = "";
 
         if (activeModule === "bumn1") {
             document.getElementById('loadingDesc').innerText = "Memuat Database BUMN Chapter 1...";
-            sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv";
+            rawURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=1111447607&single=true";
         } else if (activeModule === "cpns2") {
             document.getElementById('loadingDesc').innerText = "Memuat Database CPNS Chapter 2...";
-            sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=177118517&single=true"; 
+            rawURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=177118517&single=true"; 
         } else {
             document.getElementById('loadingDesc').innerText = "Memuat Database CPNS Chapter 1...";
-            sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=1999742481&single=true";
+            rawURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=1999742481&single=true";
         }
         
+        // KONVERTER AJAIB: Apapun URL dari Anda, mesin akan memaksanya menjadi format CSV agar tidak error
+        let sheetURL = rawURL.replace("/pubhtml", "/pub").replace("?gid=", "?output=csv&gid=");
+        if(!sheetURL.includes("output=csv")) sheetURL += "&output=csv";
+
         let database = [];
         let currentIndex = 0;
         let score = 0;
@@ -144,7 +159,7 @@
         function getColValue(row, possibleNames) {
             let normalizedRow = {};
             for (let key in row) {
-                let cleanKey = key.toUpperCase().replace(/[^A-Z0-9]/g, ''); // Buang karakter aneh/spasi
+                let cleanKey = key.toUpperCase().replace(/[^A-Z0-9]/g, ''); 
                 normalizedRow[cleanKey] = row[key];
             }
             for (let name of possibleNames) {
@@ -162,19 +177,25 @@
                 header: true,
                 skipEmptyLines: true,
                 complete: function(results) {
+                    // Cek jika error pembacaan data HTML nyasar
+                    if (!results.data || results.data.length === 0 || !results.data[0].hasOwnProperty(Object.keys(results.data[0])[0])) {
+                        document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Gagal mengurai CSV. Harap pastikan format publikasi Google Sheets benar.</h3>";
+                        return;
+                    }
+
                     database = results.data.filter(row => getColValue(row, ['Soal', 'Pertanyaan']).trim() !== "").map(row => {
                         
                         // Ekstraksi Huruf Kunci Jawaban dengan Sangat Aman
                         let rawKey = getColValue(row, ['Kunci', 'KunciJawaban', 'Jawaban']).toString().trim().toUpperCase();
                         let keyIndex = -1;
-                        let match = rawKey.match(/^([A-E])/); // Cari huruf A-E di awalan (e.g. "D", "D. Benar")
+                        let match = rawKey.match(/^([A-E])/); 
                         if (match) {
                             keyIndex = labels.indexOf(match[1]);
                         } else {
                             let fallbackMatch = rawKey.match(/\b([A-E])\b/);
                             if (fallbackMatch) keyIndex = labels.indexOf(fallbackMatch[1]);
                         }
-                        if (keyIndex === -1) keyIndex = 0; // Jaga-jaga jika benar-benar kosong
+                        if (keyIndex === -1) keyIndex = 0; 
 
                         return {
                             category: getColValue(row, ['Kategori', 'Jenis', 'Materi']) || "Soal",
@@ -199,7 +220,7 @@
                     });
 
                     if(database.length > 0) { startQuiz(); } 
-                    else { document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Gagal memuat soal. Pastikan Link Sheets Benar.</h3>"; }
+                    else { document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Koneksi Database Kosong.</h3>"; }
                 },
                 error: function() { document.getElementById('loadingArea').innerHTML = "<h3 style='color:red;'>Koneksi internet bermasalah.</h3>"; }
             });
@@ -254,7 +275,6 @@
             let q = database[currentIndex];
             let buttons = document.querySelectorAll('.option-btn');
             
-            // Logika Deteksi Sistem Poin (Mutlak vs Skoring 1-5)
             let isScored1to5 = q.category.toUpperCase().includes("TKP") || q.category.toUpperCase().includes("AKHLAK");
             
             let selectedBtn = Array.from(buttons).find(b => parseInt(b.dataset.id) === selectedIndex);
