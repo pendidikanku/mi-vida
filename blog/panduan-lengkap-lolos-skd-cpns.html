@@ -23,7 +23,6 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#6366f1">
     
-    <!-- Ganti URL di bawah dengan struktur folder Anda jika perlu -->
     <link rel="canonical" href="https://mivida.id/blog/panduan-lengkap-lolos-skd-cpns">
     
     <!-- ================= FAVICON ================= -->
@@ -120,12 +119,22 @@
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
         .nav-link { color: var(--text-main); text-decoration: none; font-size: 14px; font-weight: 600; padding: 10px 15px; }
 
-        .blog-layout { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 300px; gap: 40px; }
+        /* PERBAIKAN LAYOUT GRID: Konten Utama (kiri) 1fr, Sidebar (kanan) 300px */
+        .blog-layout { 
+            max-width: 1100px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+            display: grid; 
+            grid-template-columns: 1fr 300px; 
+            gap: 40px; 
+            align-items: start; /* Penting agar sidebar tidak memanjang ke bawah */
+        }
         
-        .article-header { text-align: center; margin-bottom: 40px; }
-        .article-badge { display: inline-block; background: rgba(99, 102, 241, 0.1); color: #4f46e5; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 13px; margin-bottom: 20px; }
-        .article-header h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.3; margin-bottom: 20px; }
-        .article-meta { color: var(--text-muted); font-size: 14px; }
+        .article-header { margin-bottom: 40px; }
+        .article-badge { display: inline-block; background: rgba(99, 102, 241, 0.1); color: #4f46e5; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 13px; margin-bottom: 20px; }
+        .article-header h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.3; margin-bottom: 20px; color: #0f172a; }
+        .article-meta { color: var(--text-muted); font-size: 14px; display: flex; align-items: center; gap: 10px; }
+        .author-avatar { width: 40px; height: 40px; background: var(--primary-gradient); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
         .article-content { background: var(--bg-card); padding: 40px; border-radius: 24px; border: 1px solid var(--card-border); box-shadow: var(--shadow-soft); font-size: 17px; color: #334155; }
         .article-content h2 { font-size: 24px; font-weight: 800; color: var(--text-main); margin: 40px 0 20px 0; border-bottom: 2px solid var(--card-border); padding-bottom: 10px; }
@@ -133,28 +142,33 @@
         .article-content p { margin-bottom: 20px; }
         .article-content ul, .article-content ol { margin-bottom: 20px; padding-left: 20px; }
         .article-content li { margin-bottom: 10px; }
-        .article-content strong { color: var(--text-main); }
+        .article-content strong { color: var(--text-main); font-weight: 700; }
         
-        .img-placeholder { width: 100%; height: 250px; background: #e2e8f0; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 600; margin: 30px 0; border: 2px dashed #cbd5e1; }
+        .img-placeholder { width: 100%; min-height: 250px; background: #f1f5f9; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 600; margin: 30px 0; border: 2px dashed #cbd5e1; text-align: center; padding: 20px;}
 
-        .cta-box { background: var(--primary-gradient); padding: 30px; border-radius: 16px; color: white; text-align: center; margin: 40px 0; }
-        .cta-box h3 { color: white !important; margin-top: 0; }
-        .cta-btn { display: inline-block; background: white; color: #6366f1; padding: 12px 25px; border-radius: 12px; font-weight: 700; text-decoration: none; margin-top: 15px; transition: 0.3s; }
-        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .cta-box { background: var(--primary-gradient); padding: 35px; border-radius: 16px; color: white; text-align: center; margin: 40px 0; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3); }
+        .cta-box h3 { color: white !important; margin-top: 0; font-size: 24px; border: none; padding: 0;}
+        .cta-btn { display: inline-block; background: white; color: #6366f1; padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; margin-top: 15px; transition: 0.3s; font-size: 16px;}
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
         .sidebar { position: sticky; top: 100px; }
-        .toc { background: var(--bg-card); padding: 25px; border-radius: 20px; border: 1px solid var(--card-border); }
-        .toc h3 { font-size: 18px; margin-bottom: 15px; }
+        .toc { background: var(--bg-card); padding: 25px; border-radius: 20px; border: 1px solid var(--card-border); box-shadow: var(--shadow-soft); }
+        .toc h3 { font-size: 18px; margin-bottom: 15px; color: var(--text-main); border-bottom: 1px solid var(--card-border); padding-bottom: 10px;}
         .toc ul { list-style: none; padding: 0; }
         .toc li { margin-bottom: 12px; font-size: 14px; }
-        .toc a { color: var(--text-muted); text-decoration: none; transition: 0.2s; display: block; }
-        .toc a:hover { color: #6366f1; padding-left: 5px; }
+        .toc a { color: var(--text-muted); text-decoration: none; transition: 0.2s; display: block; line-height: 1.4; }
+        .toc a:hover { color: #6366f1; transform: translateX(5px); }
 
         .faq-section { background: #f8fafc; padding: 30px; border-radius: 16px; margin-top: 40px; border: 1px solid var(--card-border); }
-        .faq-item { margin-bottom: 20px; }
-        .faq-item h3 { font-size: 18px; color: var(--text-main); margin-bottom: 5px; }
+        .faq-item { margin-bottom: 25px; }
+        .faq-item h3 { font-size: 18px; color: var(--text-main); margin-bottom: 8px; }
+        .faq-item:last-child { margin-bottom: 0; }
 
-        @media (max-width: 992px) { .blog-layout { grid-template-columns: 1fr; } .sidebar { position: static; margin-bottom: 40px; } .article-content { padding: 25px; } }
+        @media (max-width: 992px) { 
+            .blog-layout { grid-template-columns: 1fr; } 
+            .sidebar { position: static; order: -1; margin-bottom: 30px; } 
+            .article-content { padding: 25px; } 
+        }
     </style>
 </head>
 <body>
@@ -162,8 +176,8 @@
     <header>
         <div class="nav-container">
             <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
-                <!-- Logo MiVida SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="140" height="40">
+                <!-- Logo MiVida -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="120" height="35">
                   <defs><linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
                   <g transform="translate(15, 25)">
                     <path d="M 15 95 L 15 45 C 15 25, 45 25, 45 45 L 45 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
@@ -174,149 +188,157 @@
                 </svg>
             </a>
             <nav>
-                <a href="../index.html" class="nav-link"><i class="fa-solid fa-home"></i> Kembali ke Beranda</a>
+                <a href="../index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i> Beranda</a>
             </nav>
         </div>
     </header>
 
     <div class="blog-layout">
         
-        <aside class="sidebar">
-            <div class="toc">
-                <h3><i class="fa-solid fa-list"></i> Daftar Isi</h3>
-                <ul>
-                    <li><a href="#apa-itu-skd">1. Apa itu SKD CPNS?</a></li>
-                    <li><a href="#materi-twk">2. Materi TWK (Wawasan Kebangsaan)</a></li>
-                    <li><a href="#materi-tiu">3. Materi TIU (Intelegensia Umum)</a></li>
-                    <li><a href="#materi-tkp">4. Materi TKP (Karakteristik Pribadi)</a></li>
-                    <li><a href="#sistem-cat">5. Cara Kerja Sistem CAT</a></li>
-                    <li><a href="#passing-grade">6. Passing Grade CPNS</a></li>
-                    <li><a href="#kesalahan">7. Kesalahan Umum Peserta</a></li>
-                    <li><a href="#strategi">8. Strategi Belajar & Tips Lolos</a></li>
-                    <li><a href="#jadwal">9. Jadwal Belajar 30 Hari</a></li>
-                    <li><a href="#simulasi">10. Simulasi CAT MiVida</a></li>
-                    <li><a href="#faq">11. FAQ</a></li>
-                </ul>
-            </div>
-        </aside>
-
+        <!-- BAGIAN UTAMA (KIRI) -->
         <main>
             <article>
                 <div class="article-header">
-                    <span class="article-badge">Panduan CPNS 2026</span>
-                    <h1>Panduan Lengkap Lolos SKD CPNS 2026: Strategi, Materi & Simulasi</h1>
+                    <span class="article-badge"><i class="fa-solid fa-book-open"></i> Panduan CPNS 2026</span>
+                    <h1>Panduan Lengkap Lolos SKD CPNS 2026: Bedah Materi, Strategi, & Simulasi</h1>
                     <div class="article-meta">
-                        Oleh <strong>MiVida Edukasi</strong> | Diperbarui: Juli 2026
+                        <div class="author-avatar">MV</div>
+                        <div>
+                            <strong>MiVida Edukasi</strong><br>
+                            Diperbarui: Juli 2026
+                        </div>
                     </div>
                 </div>
 
                 <div class="article-content">
                     
-                    <div class="img-placeholder" title="Hero Image: Peserta sedang fokus belajar CPNS">
-                        [Ruang untuk Hero Image / Banner Artikel]
+                    <div class="img-placeholder" title="Hero Image: Calon ASN sedang fokus belajar CPNS">
+                        [Hero Image: Foto resolusi tinggi seseorang yang sedang fokus belajar CPNS di depan laptop]
                     </div>
 
-                    <p>Menghadapi ujian CPNS membutuhkan lebih dari sekadar keberuntungan. Kunci utamanya adalah persiapan yang matang, pemahaman mendalam tentang materi, dan kecepatan manajemen waktu. Melalui panduan komprehensif ini, Anda akan mempelajari cara menaklukkan <strong>SKD CPNS</strong> dan mengamankan posisi Anda sebagai ASN di tahun 2026.</p>
+                    <p>Siapa sih yang nggak mau lolos CPNS? Menjadi ASN mungkin impian banyak orang, tapi kenyataannya, saingannya bisa mencapai jutaan pelamar setiap tahunnya. Pertanyaannya, apakah kamu sudah punya strategi yang pas, atau masih belajar asal-asalan tanpa arah?</p>
+                    
+                    <p>Menghadapi seleksi CPNS itu bukan sekadar adu pintar, tapi adu strategi dan kesiapan mental. Kunci utamanya ada di tahap pertama: <strong>SKD CPNS</strong>. Yuk, kita bedah tuntas panduan belajar CPNS tahun 2026 ini, mulai dari materi yang sering keluar, jebakan sistem CAT, sampai jadwal belajar yang terbukti ampuh bikin kamu tembus <em>passing grade</em>.</p>
 
-                    <h2 id="apa-itu-skd">Apa itu SKD?</h2>
-                    <p><strong>SKD CPNS</strong> (Seleksi Kompetensi Dasar) adalah gerbang pertama dan paling krusial dalam rangkaian rekrutmen Calon Pegawai Negeri Sipil. Ujian ini menggunakan sistem <strong>CAT BKN</strong> (Computer Assisted Test) yang memastikan transparansi dan akurasi penilaian.</p>
-                    <p>Tujuan utama dari tes CPNS ini adalah untuk menyaring kandidat terbaik berdasarkan tiga pilar utama: wawasan kebangsaan, kecerdasan intelektual, dan karakteristik psikologis yang sesuai dengan nilai-nilai pelayanan publik ASN.</p>
+                    <h2 id="apa-itu-skd">1. Apa Itu SKD CPNS Sebenernya?</h2>
+                    <p>Buat kamu yang baru pertama kali ikut seleksi ASN, <strong>SKD CPNS</strong> (Seleksi Kompetensi Dasar) adalah "gerbang neraka" pertama yang harus kamu lewati. Ujian ini menggunakan sistem <strong>CAT BKN</strong> (Computer Assisted Test), di mana kamu akan berhadapan langsung dengan komputer dan <em>timer</em> yang terus berjalan mundur.</p>
+                    <p>Tes ini didesain bukan cuma buat cari orang pintar, tapi cari orang yang punya wawasan negara yang bagus, nalar logika yang jalan, dan mental pelayanan publik yang siap sedia. Gagal di SKD, berarti mimpimu jadi ASN tahun ini harus pupus.</p>
 
-                    <h2 id="materi-twk">Materi TWK (Tes Wawasan Kebangsaan)</h2>
-                    <p>Dalam bagian ini, Anda akan diuji mengenai penguasaan pengetahuan dan kemampuan mengimplementasikan nilai-nilai 4 Pilar Kebangsaan Indonesia. Ingat, saat ini BKN lebih fokus pada <strong>soal HOTS</strong> (High Order Thinking Skills) yang menuntut penalaran kasus, bukan sekadar hafalan sejarah.</p>
+                    <h2 id="materi-twk">2. Bedah Materi TWK (Ujian Rasa HOTS)</h2>
+                    <p>Dulu, materi Tes Wawasan Kebangsaan (TWK) itu gampang ditebak, rata-rata cuma nanya "Tahun berapa peristiwa X terjadi?" atau "Sebutkan isi pasal Y!". Tapi sekarang? BKN udah <em>level-up</em>. Soal-soalnya sekarang menggunakan format <strong>HOTS</strong> (High Order Thinking Skills).</p>
+                    <p>Kamu nggak cuma dituntut buat hafal, tapi harus bisa menganalisis kasus. Berikut kisi-kisi terbarunya:</p>
                     <ul>
-                        <li><strong>Nasionalisme:</strong> Mewujudkan kepentingan nasional melalui cita-cita yang sama.</li>
-                        <li><strong>Integritas:</strong> Menjunjung tinggi kejujuran dan ketangguhan moral dalam etika birokrasi.</li>
-                        <li><strong>Bela Negara:</strong> Mempertahankan eksistensi bangsa dari ancaman.</li>
-                        <li><strong>Pilar Negara:</strong> Pemahaman mendalam tentang Pancasila, UUD 1945, NKRI, dan Bhinneka Tunggal Ika.</li>
-                    </ul>
-                    <div class="img-placeholder">[Ruang untuk Infografik Ringkasan Materi TWK]</div>
-
-                    <h2 id="materi-tiu">Materi TIU (Tes Intelegensia Umum)</h2>
-                    <p><strong>Soal TIU</strong> bertujuan untuk mengukur tingkat kecerdasan dan logika analitis peserta. Ini adalah ladang poin jika Anda rutin melakukan <em>latihan soal</em>.</p>
-                    <ul>
-                        <li><strong>Kemampuan Verbal:</strong> Analogi (logika kata), Silogisme (penarikan kesimpulan), dan Analitis (memecahkan masalah kompleks).</li>
-                        <li><strong>Kemampuan Numerik:</strong> Berhitung cepat, Deret Angka, Perbandingan kuantitatif, dan Soal Cerita.</li>
-                        <li><strong>Kemampuan Figural:</strong> Analogi gambar, Ketidaksamaan pola, dan Serial (kelanjutan pola).</li>
+                        <li><strong>Nasionalisme:</strong> Gimana cara kamu membuktikan cinta tanah air di tengah era digital.</li>
+                        <li><strong>Integritas:</strong> Studi kasus soal kejujuran dan anti-korupsi di lingkungan kerja birokrasi.</li>
+                        <li><strong>Bela Negara:</strong> Tindakan nyata mempertahankan negara dari ancaman non-militer (seperti hoaks atau radikalisme).</li>
+                        <li><strong>Pilar Negara:</strong> Pemahaman makna tersirat dari Pancasila, UUD 1945, dan Bhinneka Tunggal Ika.</li>
                     </ul>
 
-                    <h2 id="materi-tkp">Materi TKP (Tes Karakteristik Pribadi)</h2>
-                    <p>Berbeda dengan TWK dan TIU di mana ada jawaban benar atau salah mutlak, <strong>soal TKP</strong> memiliki skor berjenjang (1 sampai 5). Bagian ini mencari kandidat dengan jiwa pelayanan publik tertinggi.</p>
+                    <h2 id="materi-tiu">3. Menaklukkan TIU (Intelegensia Umum)</h2>
+                    <p>Nah, <strong>soal TIU</strong> ini ibarat "tulang punggung" buat ngangkat total nilai SKD kamu. Banyak peserta yang ngerasa lemah di matematika jadi takut duluan. Padahal, kalau kamu tahu rumus cepatnya dan sering <em>latihan soal</em>, bagian ini justru paling gampang diprediksi jawabannya.</p>
                     <ul>
-                        <li><strong>Pelayanan Publik:</strong> Sikap ramah dan solutif terhadap masyarakat.</li>
-                        <li><strong>Jejaring Kerja:</strong> Kemampuan membangun hubungan kolaboratif.</li>
-                        <li><strong>Sosial Budaya:</strong> Kemampuan beradaptasi dalam masyarakat majemuk.</li>
-                        <li><strong>TIK:</strong> Penguasaan teknologi informasi untuk meningkatkan kinerja.</li>
-                        <li><strong>Anti Radikalisme:</strong> Pengetahuan tentang bahaya radikalisme.</li>
+                        <li><strong>Kemampuan Verbal:</strong> Sinonim, antonim, analogi kata, dan silogisme (menarik kesimpulan dari premis yang menjebak).</li>
+                        <li><strong>Kemampuan Numerik:</strong> Deret angka yang polanya suka aneh-aneh, hitungan pecahan, dan soal cerita perbandingan.</li>
+                        <li><strong>Kemampuan Figural:</strong> Tes visual nyari pola gambar selanjutnya. Kuncinya: jeli melihat rotasi dan penambahan elemen gambar!</li>
                     </ul>
-                    <div class="img-placeholder">[Ruang untuk Infografik Trik Menjawab Soal TKP]</div>
 
-                    <h2 id="sistem-cat">Cara Kerja Sistem CAT BKN</h2>
-                    <p>Sistem <strong>CAT BKN</strong> dirancang agar peserta langsung mengerjakan soal di depan komputer. Waktu akan berjalan mundur (biasanya 100 menit untuk 110 soal). Nilai SKD Anda akan langsung muncul di layar segera setelah Anda mengklik tombol "Selesai". Sistem ini memastikan tidak ada manipulasi nilai, sehingga kelulusan murni berdasarkan hasil belajar Anda.</p>
-
-                    <h2 id="passing-grade">Passing Grade CPNS</h2>
-                    <p>Agar bisa melaju ke tahap SKB (Seleksi Kompetensi Bidang), Anda wajib melampaui <strong>Passing Grade CPNS</strong> (Nilai Ambang Batas). Meskipun angka resminya ditetapkan oleh KemenPAN-RB setiap tahun, standarnya biasanya berkisar di:</p>
+                    <h2 id="materi-tkp">4. Jebakan Batman di Materi TKP</h2>
+                    <p>Kelihatannya gampang karena nggak ada jawaban salah (skornya 1 sampai 5). Tapi percaya deh, <strong>soal TKP</strong> (Tes Karakteristik Pribadi) ini yang paling sering bikin peserta gagal lolos <em>passing grade</em> karena jawabannya mirip-mirip semua!</p>
+                    <p>Triknya? Jangan pilih jawaban yang menurut kamu "paling baik", tapi pilihlah jawaban yang <strong>paling sesuai dengan standar operasional ASN</strong>. Materi yang sering diujikan meliputi:</p>
                     <ul>
-                        <li><strong>TWK:</strong> 65 poin</li>
-                        <li><strong>TIU:</strong> 80 poin</li>
-                        <li><strong>TKP:</strong> 166 poin</li>
+                        <li>Pelayanan Publik (Gimana respon kamu ngadepin warga yang ngamuk-ngamuk).</li>
+                        <li>Jejaring Kerja (Cara kamu kolaborasi sama rekan kerja yang beda divisi).</li>
+                        <li>Penguasaan TIK (Apakah kamu tipe yang melek teknologi atau kolot).</li>
+                        <li>Anti Radikalisme (Ini materi baru yang poinnya cukup krusial).</li>
                     </ul>
-                    <p><em>Catatan: Memenuhi ambang batas saja tidak cukup. Anda harus masuk ke dalam perankingan (biasanya 3x jumlah formasi yang dibutuhkan).</em></p>
+                    
+                    <div class="img-placeholder">[Infografik: Perbandingan Poin TWK, TIU, dan TKP]</div>
 
-                    <h2 id="kesalahan">Kesalahan Umum Peserta</h2>
-                    <p>Banyak peserta yang gagal bukan karena kurang pintar, melainkan karena:</p>
+                    <h2 id="sistem-cat">5. Gimana Sih Cara Kerja Sistem CAT?</h2>
+                    <p>Kalau kamu belum pernah tes pakai CAT BKN, bayangin aja kamu lagi ngerjain kuis *online* pakai komputer jadul, tapi dengan tingkat stres maksimal. Waktu ujiannya cuma <strong>100 menit untuk 110 soal</strong>. Artinya? Kamu punya waktu kurang dari 1 menit buat ngerjain satu soal!</p>
+                    <p>Sistem ini super transparan. Nilai kamu bakal langsung ketahuan sepersekian detik setelah kamu klik tombol "Selesai". Nggak ada tuh ceritanya bisa titip-titipan nilai sama orang dalam.</p>
+
+                    <h2 id="passing-grade">6. Aturan Main Passing Grade CPNS</h2>
+                    <p>Biar bisa lanjut ke tahap berikutnya (SKB), nilai kamu harus ngelewatin <strong>Passing Grade CPNS</strong> alias Nilai Ambang Batas. Berdasarkan aturan sebelumnya, batas amannya biasanya ada di angka:</p>
+                    <ul>
+                        <li><strong>TWK:</strong> Minimal 65 poin</li>
+                        <li><strong>TIU:</strong> Minimal 80 poin</li>
+                        <li><strong>TKP:</strong> Minimal 166 poin</li>
+                    </ul>
+                    <p>Tapi ingat! Lolos passing grade aja nggak jaminan lolos, lho. Kalau formasi yang kamu lamar cuma butuh 1 orang, berarti kamu harus masuk peringkat 3 besar nasional di formasi tersebut. Jadi, targetkan nilai setinggi mungkin!</p>
+
+                    <h2 id="kesalahan">7. Kesalahan Fatal Peserta Pemula</h2>
+                    <p>Berdasarkan pengalaman ribuan peserta tiap tahunnya, ini dia dosa besar yang bikin mereka gagal:</p>
                     <ol>
-                        <li><strong>Manajemen Waktu yang Buruk:</strong> Terlalu lama memikirkan satu <em>soal TIU</em> yang sulit hingga kehabisan waktu untuk soal TKP.</li>
-                        <li><strong>Menghafal Membabi Buta:</strong> Soal CPNS saat ini menuntut penalaran (HOTS), bukan sekadar mengingat pasal UUD 1945.</li>
-                        <li><strong>Mengabaikan Tryout CPNS:</strong> Tidak terbiasa dengan tekanan waktu layar CAT.</li>
+                        <li><strong>Manajemen Waktu Amburadul:</strong> Mentok di satu soal hitungan TIU selama 5 menit, akhirnya puluhan soal TKP di belakang nggak sempet dibaca dan cuma nembak jawaban.</li>
+                        <li><strong>Mabuk Hafalan:</strong> Sibuk ngafalin pasal-pasal UUD 1945 sampai begadang, pas ujian yang keluar malah soal logika implementasi.</li>
+                        <li><strong>Meleset Evaluasi:</strong> Sibuk ngumpulin <em>bank soal CPNS</em> ratusan PDF, tapi jarang ikut <em>tryout CPNS</em> buat ngetes kecepatan ngerjain soal di depan layar.</li>
                     </ol>
 
-                    <h2 id="strategi">Strategi Belajar & Tips Lolos CPNS</h2>
-                    <p>Berikut adalah <strong>tips lolos CPNS</strong> yang terbukti efektif:</p>
+                    <h2 id="strategi">8. Strategi & Tips Lolos CPNS 2026</h2>
+                    <p>Oke, sekarang kita masuk ke "dagingnya". Gimana caranya biar kamu bisa beda dari ratusan ribu pelamar lain? Coba terapkan <strong>tips lolos CPNS</strong> ini:</p>
                     <ul>
-                        <li><strong>Gunakan Teknik Pomodoro:</strong> Belajar fokus selama 25 menit, lalu istirahat 5 menit untuk menjaga otak tetap segar.</li>
-                        <li><strong>Kerjakan Soal TKP Terlebih Dahulu:</strong> Soal TKP panjang dan butuh konsentrasi baca. Kerjakan di awal saat otak masih segar, disusul TWK, dan terakhir TIU (hitungan).</li>
-                        <li><strong>Evaluasi Kelemahan:</strong> Gunakan platform latihan yang menyediakan pembahasan soal terperinci.</li>
+                        <li><strong>Kerjakan dari yang Paling Menyita Fokus (TKP):</strong> Teks TKP itu panjang-panjang. Kerjain ini dulu pas otak masih <em>fresh</em> dan oksigen masih banyak. Setelah itu lanjut TWK, dan jadikan TIU sebagai hidangan penutup.</li>
+                        <li><strong>Aturan 40 Detik:</strong> Kalau dalam 40 detik kamu nggak nemu pola jawaban TIU, <em>skip!</em> Tinggalin dulu, nanti bisa balik lagi kalau ada sisa waktu.</li>
+                        <li><strong>Cari Kata Kunci:</strong> Di soal TKP, biasakan <em>skimming</em> (baca cepat) untuk mencari subjek masalahnya apa, baru lihat opsi jawabannya.</li>
                     </ul>
 
-                    <h2 id="jadwal">Jadwal Belajar 30 Hari (Blueprint)</h2>
-                    <p>Jika Anda memiliki waktu 1 bulan sebelum ujian, bagi fokus Anda secara terstruktur:</p>
+                    <h2 id="jadwal">9. Jadwal Ngebut Belajar 30 Hari</h2>
+                    <p>Cuma punya waktu sebulan? Nggak usah panik. Ini cetak biru jadwal <em>belajar online</em> yang bisa kamu tiru:</p>
                     <ul>
-                        <li><strong>Minggu 1:</strong> Fokus total pada penguasaan materi dasar dan rumus TIU.</li>
-                        <li><strong>Minggu 2:</strong> Pendalaman materi TWK dan sejarah konstitusi.</li>
-                        <li><strong>Minggu 3:</strong> Latihan analisis soal TKP dan pencarian <em>keywords</em> indikator soal.</li>
-                        <li><strong>Minggu 4:</strong> Fokus 100% pada <em>simulasi online</em> dan evaluasi manajemen waktu.</li>
+                        <li><strong>Minggu 1 (Fondasi):</strong> Fokus habisin materi berhitung dasar dan rumus-rumus TIU. Hafalkan juga silogisme.</li>
+                        <li><strong>Minggu 2 (Sejarah & Konstitusi):</strong> Baca rangkuman TWK. Jangan dihafal mati, tapi pahami "kenapa" peristiwa itu terjadi.</li>
+                        <li><strong>Minggu 3 (Pola Pikir ASN):</strong> Latihan ngebedah soal-soal TKP. Kenali pola jawaban yang nilainya 5.</li>
+                        <li><strong>Minggu 4 (Fase Simulasi):</strong> Stop belajar materi baru! Fokus 100% ikut <em>simulasi online</em> buat ngebiasain mata dan otak kerja di bawah tekanan <em>timer</em>.</li>
                     </ul>
 
-                    <h2 id="simulasi">Pentingnya Simulasi CAT & Tryout</h2>
-                    <p>Membaca buku tebal saja tidak akan cukup jika Anda tidak pernah merasakan simulasi ujian yang sebenarnya. <strong>Latihan CAT CPNS</strong> sangat krusial untuk melatih refleks bawah sadar Anda.</p>
+                    <h2 id="simulasi">10. Kenapa Kamu Wajib Banget Ikut Tryout CAT?</h2>
+                    <p>Membaca buku setebal bantal nggak akan ada gunanya kalau pas hari H kamu tremor lihat *timer* berjalan. <strong>Latihan CAT CPNS</strong> itu ibarat latihan mental atlet sebelum bertanding.</p>
                     
                     <div class="cta-box">
-                        <h3>Siap Menguji Kemampuan Anda?</h3>
-                        <p>Kami di MiVida telah menyiapkan <strong>Simulasi CAT CPNS</strong> dengan metode kilat 10 detik per soal untuk melatih kecepatan tingkat ekstrem Anda. Coba bank soal CPNS terbaru kami sekarang!</p>
-                        <a href="../kuis.html?module=cpns1" class="cta-btn"><i class="fa-solid fa-play"></i> Mulai Tryout CPNS Gratis</a>
+                        <h3>Udah Pede Sama Persiapan Kamu?</h3>
+                        <p>Teori doang nggak cukup! Yuk, tes refleks otak dan kecepatan tangan kamu pakai sistem <strong>Simulasi CAT 10 Detik</strong> dari MiVida. Rasakan sensasi ujian aslinya dan lihat seberapa besar peluang kamu lolos tahun ini!</p>
+                        <a href="../kuis.html?module=cpns1" class="cta-btn"><i class="fa-solid fa-rocket"></i> Mulai Tryout Gratis Sekarang</a>
                     </div>
 
-                    <h2 id="faq" class="faq-section">FAQ Seputar SKD CPNS</h2>
+                    <h2 id="faq" class="faq-section">11. Pertanyaan yang Sering Muncul (FAQ)</h2>
                     <div class="faq-item">
-                        <h3>Apakah SKD CPNS sulit?</h3>
-                        <p>Tingkat kesulitan SKD bergantung pada persiapan peserta. Dengan memahami materi TWK, TIU, dan TKP serta rutin berlatih menggunakan simulasi CAT, peluang memperoleh nilai tinggi akan sangat terbuka lebar.</p>
+                        <h3>Sebenernya SKD CPNS itu susah nggak sih?</h3>
+                        <p>Susah kalau kamu belajarnya pakai sistem SKS (Sistem Kebut Semalam). Tapi bakal jadi jauh lebih gampang kalau kamu udah terbiasa dengan pola soalnya, terutama lewat rutinitas <em>simulasi CAT</em>.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Berapa lama waktu ideal belajar SKD CPNS?</h3>
-                        <p>Banyak peserta sukses mulai belajar sekitar 1 hingga 3 bulan sebelum jadwal ujian resmi. Konsistensi harian jauh lebih penting daripada belajar semalam suntuk (*sistem kebut semalam*).</p>
+                        <h3>Berapa lama waktu ideal buat belajar?</h3>
+                        <p>Rata-rata peserta yang lolos mulai mempersiapkan diri 2 sampai 3 bulan sebelum tes. Kuncinya ada di konsistensi. Belajar 1 jam setiap hari jauh lebih nancep di otak dibanding belajar 7 jam nonstop pas *weekend*.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Apakah MiVida menyediakan tryout gratis?</h3>
-                        <p>Ya! MiVida menyediakan akses <strong>latihan CAT gratis</strong> untuk membantu calon ASN berlatih mengerjakan soal interaktif dan memantau perkembangan manajemen waktu secara nyata.</p>
+                        <h3>Ada nggak sih platform tryout yang gratis?</h3>
+                        <p>Tentu ada! Di <strong>MiVida</strong>, kamu bisa akses <em>latihan CAT gratis</em> untuk ngasah insting kamu ngejawab soal SKD, lengkap dengan UI yang rapi dan <em>timer</em> yang bikin deg-degan kayak aslinya.</p>
                     </div>
-
-                    <h2 id="kesimpulan">Kesimpulan</h2>
-                    <p>Kelulusan seleksi CPNS 2026 ada di tangan Anda. Mulailah mengumpulkan <strong>bank soal CPNS</strong>, buat jadwal <em>belajar online</em> yang disiplin, pahami trik <em>passing grade</em>, dan manfaatkan platform <strong>simulasi CAT MiVida</strong> untuk memoles ketajaman analisis Anda. Selamat berjuang, calon ASN!</p>
 
                 </div>
             </article>
         </main>
+
+        <!-- BAGIAN SIDEBAR (KANAN) -->
+        <aside class="sidebar">
+            <div class="toc">
+                <h3><i class="fa-solid fa-list-ul"></i> Daftar Isi</h3>
+                <ul>
+                    <li><a href="#apa-itu-skd">1. Apa Itu SKD CPNS?</a></li>
+                    <li><a href="#materi-twk">2. Bedah Materi TWK</a></li>
+                    <li><a href="#materi-tiu">3. Menaklukkan TIU</a></li>
+                    <li><a href="#materi-tkp">4. Jebakan Materi TKP</a></li>
+                    <li><a href="#sistem-cat">5. Cara Kerja Sistem CAT</a></li>
+                    <li><a href="#passing-grade">6. Passing Grade CPNS</a></li>
+                    <li><a href="#kesalahan">7. Kesalahan Fatal Peserta</a></li>
+                    <li><a href="#strategi">8. Strategi & Tips Lolos</a></li>
+                    <li><a href="#jadwal">9. Jadwal Belajar 30 Hari</a></li>
+                    <li><a href="#simulasi">10. Wajib Ikut Tryout</a></li>
+                    <li><a href="#faq">11. Tanya Jawab (FAQ)</a></li>
+                </ul>
+            </div>
+        </aside>
+
     </div>
 
     <footer>
