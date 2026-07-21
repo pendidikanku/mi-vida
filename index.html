@@ -10,14 +10,14 @@
 
     <!-- ================= GOOGLE ANALYTICS ========================= -->
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P72TBW9CTL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P72TBW9CTL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-P72TBW9CTL');
-</script>
+      gtag('config', 'G-P72TBW9CTL');
+    </script>
     
     <!-- ================= SEO & META TAGS ================= -->
     <title>Pendidikanku (Mi Vida) - Simulasi CAT CPNS 2026, BUMN & UTBK</title>
@@ -150,14 +150,14 @@
     <div class="aurora orb-1"></div>
     <div class="aurora orb-2"></div>
 
-    <a href="https://saweria.co/mivida" target="_blank" class="floating-saweria">
-        <i class="fa-solid fa-mug-hot"></i> Traktir Kopi
+    <a href="https://saweria.co/mivida" target="_blank" class="floating-saweria" aria-label="Donasi via Saweria">
+        <i class="fa-solid fa-mug-hot" aria-hidden="true"></i> Traktir Kopi
     </a>
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo" style="display: flex; align-items: center; text-decoration: none;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="160" height="50">
+            <a href="/" class="logo" style="display: flex; align-items: center; text-decoration: none;" aria-label="Beranda Pendidikanku">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="160" height="50" aria-hidden="true">
                   <defs>
                     <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stop-color="#6366f1" />
@@ -173,7 +173,8 @@
                   <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
                 </svg>
             </a>
-            <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
+            <!-- Tambahan aria-label dan role pada tombol hamburger -->
+            <i class="fa-solid fa-bars menu-toggle" id="menuToggle" aria-label="Buka navigasi menu" role="button" tabindex="0"></i>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#cpns" class="nav-link">CPNS (SKD)</a></li>
                 <li><a href="#bumn" class="nav-link">BUMN</a></li>
@@ -183,146 +184,143 @@
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-badge"><i class="fa-solid fa-gamepad"></i> Belajar Interaktif & Menyenangkan</div>
-        <h1>Ucapkan Selamat Tinggal Pada Tryout yang <span>Membosankan!</span></h1>
-        <p>Bosan dengan metode tryout konvensional yang kaku dan bikin ngantuk? Bersiaplah menghadapi <b>Metode Kilat CAT Flashcard</b>. Kami menyulap simulasi ujian layaknya permainan seru yang memacu refleks bawah sadar Anda.</p>
-    </section>
+    <main>
+        <section class="hero-section">
+            <div class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Belajar Interaktif & Menyenangkan</div>
+            <h1>Ucapkan Selamat Tinggal Pada Tryout yang <span>Membosankan!</span></h1>
+            <p>Bosan dengan metode tryout konvensional yang kaku dan bikin ngantuk? Bersiaplah menghadapi <b>Metode Kilat CAT Flashcard</b>. Kami menyulap simulasi ujian layaknya permainan seru yang memacu refleks bawah sadar Anda.</p>
+        </section>
 
-    <main class="main-wrapper">
-        
-        <!-- ================= CPNS SECTION ================= -->
-        <div class="category-block" id="cpns">
-            <div class="category-header">
-                <i class="fa-solid fa-id-card-clip" style="color: var(--cpns-color);"></i>
-                <h2>Katalog Modul CPNS (SKD)</h2>
-                <div class="category-desc">
-                    <strong>Mengapa Terdapat 3 Sub-Tes pada Ujian CPNS?</strong><br>
-                    Sistem CAT BKN mendesain SKD untuk menjaring aparatur yang paripurna. <b>TIU</b> ditujukan untuk menguji kecerdasan intelektual. <b>TWK</b> digunakan untuk memastikan pemahaman pilar negara yang kuat. Sementara <b>TKP</b> bertujuan mengukur tingkat integritas dan karakter pelayanan publik.
-                </div>
-            </div>
+        <div class="main-wrapper">
             
-            <div class="modul-grid">
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <div class="modul-title"><i class="fa-solid fa-layer-group"></i> Chapter 1: SKD Fundamental</div>
-                        <ul class="modul-composition">
-                            <li><i class="fa-solid fa-check"></i> <b>TIU (35 Soal):</b> Analogi, Silogisme, Deret Angka, Figural.</li>
-                            <li><i class="fa-solid fa-check"></i> <b>TWK (30 Soal):</b> Nasionalisme, Integritas, Bela Negara.</li>
-                            <li><i class="fa-solid fa-check"></i> <b>TKP (45 Soal):</b> Pelayanan Publik, Jejaring Kerja, TIK.</li>
-                        </ul>
-                        <div class="modul-meta"><span class="meta-tag meta-highlight">Free Akses</span><span class="meta-tag">110 Soal</span></div>
+            <!-- ================= CPNS SECTION ================= -->
+            <section class="category-block" id="cpns">
+                <div class="category-header">
+                    <i class="fa-solid fa-id-card-clip" style="color: var(--cpns-color);" aria-hidden="true"></i>
+                    <h2>Katalog Modul CPNS (SKD)</h2>
+                    <div class="category-desc">
+                        <strong>Mengapa Terdapat 3 Sub-Tes pada Ujian CPNS?</strong><br>
+                        Sistem CAT BKN mendesain SKD untuk menjaring aparatur yang paripurna. <b>TIU</b> ditujukan untuk menguji kecerdasan intelektual. <b>TWK</b> digunakan untuk memastikan pemahaman pilar negara yang kuat. Sementara <b>TKP</b> bertujuan mengukur tingkat integritas dan karakter pelayanan publik.
                     </div>
-                    <a href="kuis.html?module=cpns1" class="btn-action btn-play"><i class="fa-solid fa-play"></i> Latihan Sekarang</a>
                 </div>
+                
+                <div class="modul-grid">
+                    <div class="modul-card">
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Chapter 1: SKD Fundamental</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Analogi, Silogisme, Deret Angka, Figural.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Nasionalisme, Integritas, Bela Negara.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Pelayanan Publik, Jejaring Kerja, TIK.</li>
+                            </ul>
+                            <div class="modul-meta"><span class="meta-tag meta-highlight">Free Akses</span><span class="meta-tag">110 Soal</span></div>
+                        </div>
+                        <a href="kuis.html?module=cpns1" class="btn-action btn-play"><i class="fa-solid fa-play" aria-hidden="true"></i> Latihan Sekarang</a>
+                    </div>
 
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <div class="modul-title"><i class="fa-solid fa-fire"></i> Chapter 2: SKD Ekstrem (HOTS)</div>
-                        <ul class="modul-composition">
-                            <li><i class="fa-solid fa-check"></i> <b>TIU (35 Soal):</b> Soal cerita matematika penalaran tinggi.</li>
-                            <li><i class="fa-solid fa-check"></i> <b>TWK (30 Soal):</b> Studi kasus implementasi Pancasila masa kini.</li>
-                            <li><i class="fa-solid fa-check"></i> <b>TKP (45 Soal):</b> Skenario konflik manajerial instansi.</li>
-                        </ul>
-                        <div class="modul-meta"><span class="meta-tag meta-terabox"><i class="fa-solid fa-gem"></i> Premium Akses</span><span class="meta-tag">110 Soal</span></div>
-                    </div>
-                    <div style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://1024terabox.com/s/10RK3_5ncHAwfK-JdCWWV4w" target="_blank" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-download"></i> Unduh Password</a>
-                        <button onclick="bukaPremium('MIVIDACPNS2026', 'cpns2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock"></i> Buka Gembok</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= BUMN SECTION ================= -->
-        <div class="category-block" id="bumn">
-            <div class="category-header">
-                <i class="fa-solid fa-briefcase" style="color: var(--bumn-color);"></i>
-                <h2>Katalog Modul Rekrutmen BUMN</h2>
-                <div class="category-desc">
-                    <strong>Pentingnya Core Values AKHLAK & TKD</strong><br>
-                    Rekrutmen BUMN tidak hanya mencari orang pintar, tetapi individu yang memiliki tata nilai. <b>TKD</b> menyaring kecepatan kognitif, sedangkan <b>AKHLAK</b> memastikan Anda sejalan dengan tata nilai kepemimpinan BUMN.
-                </div>
-            </div>
-            
-            <div class="modul-grid">
-                <!-- BUMN CHAPTER 1 (PREMIUM TERABOX) -->
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <div class="modul-title"><i class="fa-solid fa-building"></i> Chapter 1: BUMN Foundation</div>
-                        <ul class="modul-composition">
-                            <li><i class="fa-solid fa-check"></i> <b>TKD (50 Soal):</b> Deret Angka, Logika Analitik, Spasial.</li>
-                            <li><i class="fa-solid fa-check"></i> <b>AKHLAK (50 Soal):</b> Implementasi Etika Core Values BUMN.</li>
-                        </ul>
-                        <div class="modul-meta">
-                            <span class="meta-tag meta-terabox" style="color: #f59e0b; border-color: #f59e0b;"><i class="fa-solid fa-gem"></i> Premium Akses</span>
-                            <span class="meta-tag">100 Soal</span>
+                    <div class="modul-card">
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-fire" aria-hidden="true"></i> Chapter 2: SKD Ekstrem (HOTS)</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Soal cerita matematika penalaran tinggi.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Studi kasus implementasi Pancasila masa kini.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Skenario konflik manajerial instansi.</li>
+                            </ul>
+                            <div class="modul-meta"><span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span><span class="meta-tag">110 Soal</span></div>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <a href="https://1024terabox.com/s/10RK3_5ncHAwfK-JdCWWV4w" target="_blank" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-download" aria-hidden="true"></i> Unduh Password</a>
+                            <button onclick="bukaPremium('MIVIDACPNS2026', 'cpns2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Gembok</button>
                         </div>
                     </div>
-                    <!-- Tombol BUMN Chapter 1 -->
-                    <div style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="https://1024terabox.com/s/1nIiG5wijs_QuYrJhUP55ZQ" target="_blank" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-download"></i> Unduh Token</a>
-                        
-                        <button onclick="bukaPremium('AKHLAKBUMN2026', 'bumn1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--bumn-color); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-unlock"></i> Buka Gembok</button>
-                    </div>
                 </div>
+            </section>
 
-                <!-- BUMN CHAPTER 2 (MENYUSUL / COMING SOON) -->
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <div class="modul-title"><i class="fa-solid fa-bolt"></i> Chapter 2: BUMN Pro Level</div>
-                        <ul class="modul-composition">
-                            <li><i class="fa-solid fa-check"></i> <b>TKD (50 Soal):</b> Studi Numerik Kompleks.</li>
-                            <li><i class="fa-solid fa-check"></i> <b>AKHLAK (50 Soal):</b> Resolusi Konflik Kepemimpinan BUMN.</li>
-                        </ul>
-                        <div class="modul-meta"><span class="meta-tag">100 Soal</span><span class="meta-tag">Segera Hadir</span></div>
+            <!-- ================= BUMN SECTION ================= -->
+            <section class="category-block" id="bumn">
+                <div class="category-header">
+                    <i class="fa-solid fa-briefcase" style="color: var(--bumn-color);" aria-hidden="true"></i>
+                    <h2>Katalog Modul Rekrutmen BUMN</h2>
+                    <div class="category-desc">
+                        <strong>Pentingnya Core Values AKHLAK & TKD</strong><br>
+                        Rekrutmen BUMN tidak hanya mencari orang pintar, tetapi individu yang memiliki tata nilai. <b>TKD</b> menyaring kecepatan kognitif, sedangkan <b>AKHLAK</b> memastikan Anda sejalan dengan tata nilai kepemimpinan BUMN.
                     </div>
-                    <button class="btn-action btn-locked" disabled><i class="fa-solid fa-lock"></i> Menyusul</button>
                 </div>
-            </div>
-        </div>
-        
-        <!-- ================= UTBK SECTION ================= -->
-        <div class="category-block" id="utbk">
-            <div class="category-header">
-                <i class="fa-solid fa-university" style="color: var(--utbk-color);"></i>
-                <h2>Katalog Modul UTBK (SNBT)</h2>
-                <div class="category-desc">
-                    <strong>Mengapa Fokus Pada Penilaian Skolastik?</strong><br>
-                    Sistem seleksi masuk PTN modern telah menghapus tes kemampuan akademik hafalan, menggantinya dengan <b>TPS</b> dan <b>Literasi</b>. Tujuannya untuk menguji kemampuan nalar dan logika kritis calon mahasiswa.
+                
+                <div class="modul-grid">
+                    <div class="modul-card">
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-building" aria-hidden="true"></i> Chapter 1: BUMN Foundation</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKD (50 Soal):</b> Deret Angka, Logika Analitik, Spasial.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>AKHLAK (50 Soal):</b> Implementasi Etika Core Values BUMN.</li>
+                            </ul>
+                            <div class="modul-meta">
+                                <span class="meta-tag meta-terabox" style="color: #f59e0b; border-color: #f59e0b;"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span>
+                                <span class="meta-tag">100 Soal</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <a href="https://1024terabox.com/s/1nIiG5wijs_QuYrJhUP55ZQ" target="_blank" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-download" aria-hidden="true"></i> Unduh Token</a>
+                            <button onclick="bukaPremium('AKHLAKBUMN2026', 'bumn1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--bumn-color); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Gembok</button>
+                        </div>
+                    </div>
+
+                    <div class="modul-card">
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Chapter 2: BUMN Pro Level</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKD (50 Soal):</b> Studi Numerik Kompleks.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>AKHLAK (50 Soal):</b> Resolusi Konflik Kepemimpinan BUMN.</li>
+                            </ul>
+                            <div class="modul-meta"><span class="meta-tag">100 Soal</span><span class="meta-tag">Segera Hadir</span></div>
+                        </div>
+                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Menyusul</button>
+                    </div>
                 </div>
-            </div>
+            </section>
             
-            <div class="modul-grid">
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <div class="modul-title"><i class="fa-solid fa-pen-nib"></i> Chapter 1: TPS Fundamental</div>
-                        <ul class="modul-composition">
-                            <li><i class="fa-solid fa-check"></i> <b>TPS (40 Soal):</b> Penalaran Umum & Kuantitatif.</li>
-                            <li><i class="fa-solid fa-check"></i> <b>Literasi (40 Soal):</b> Bacaan B. Indonesia & Inggris.</li>
-                        </ul>
-                        <div class="modul-meta"><span class="meta-tag meta-highlight">Free Akses</span><span class="meta-tag">80 Soal</span></div>
+            <!-- ================= UTBK SECTION ================= -->
+            <section class="category-block" id="utbk">
+                <div class="category-header">
+                    <i class="fa-solid fa-university" style="color: var(--utbk-color);" aria-hidden="true"></i>
+                    <h2>Katalog Modul UTBK (SNBT)</h2>
+                    <div class="category-desc">
+                        <strong>Mengapa Fokus Pada Penilaian Skolastik?</strong><br>
+                        Sistem seleksi masuk PTN modern telah menghapus tes kemampuan akademik hafalan, menggantinya dengan <b>TPS</b> dan <b>Literasi</b>. Tujuannya untuk menguji kemampuan nalar dan logika kritis calon mahasiswa.
                     </div>
-                    <a href="kuis.html?module=utbk1" class="btn-action btn-play" style="background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-play"></i> Latihan Sekarang</a>
                 </div>
+                
+                <div class="modul-grid">
+                    <div class="modul-card">
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Chapter 1: TPS Fundamental</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TPS (40 Soal):</b> Penalaran Umum & Kuantitatif.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>Literasi (40 Soal):</b> Bacaan B. Indonesia & Inggris.</li>
+                            </ul>
+                            <div class="modul-meta"><span class="meta-tag meta-highlight">Free Akses</span><span class="meta-tag">80 Soal</span></div>
+                        </div>
+                        <a href="kuis.html?module=utbk1" class="btn-action btn-play" style="background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-play" aria-hidden="true"></i> Latihan Sekarang</a>
+                    </div>
 
-                <div class="modul-card">
-                    <div class="modul-info">
-                        <div class="modul-title"><i class="fa-solid fa-book-open"></i> Chapter 2: Tembus PTN Favorit</div>
-                        <ul class="modul-composition">
-                            <li><i class="fa-solid fa-check"></i> <b>TPS (40 Soal):</b> Hots Matematika Dasar.</li>
-                            <li><i class="fa-solid fa-check"></i> <b>Literasi (40 Soal):</b> Analisis Wacana Kritis (Jurnal).</li>
-                        </ul>
-                        <div class="modul-meta"><span class="meta-tag meta-terabox" style="color: #ec4899; border-color: #ec4899;"><i class="fa-solid fa-gem"></i> Premium Akses</span><span class="meta-tag">80 Soal</span></div>
-                    </div>
-                    <div style="display: flex; gap: 10px; margin-top: 15px;">
-                        <a href="#" target="_blank" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-download"></i> Unduh Password</a>
-                        <button onclick="bukaPremium('LULUSPTN2026', 'utbk2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-unlock"></i> Buka Gembok</button>
+                    <div class="modul-card">
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Chapter 2: Tembus PTN Favorit</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TPS (40 Soal):</b> Hots Matematika Dasar.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>Literasi (40 Soal):</b> Analisis Wacana Kritis (Jurnal).</li>
+                            </ul>
+                            <div class="modul-meta"><span class="meta-tag meta-terabox" style="color: #ec4899; border-color: #ec4899;"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span><span class="meta-tag">80 Soal</span></div>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <a href="#" target="_blank" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-download" aria-hidden="true"></i> Unduh Password</a>
+                            <button onclick="bukaPremium('LULUSPTN2026', 'utbk2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Gembok</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-
     </main>
 
     <section class="community-section" id="komunitas">
@@ -330,10 +328,10 @@
         <p style="color: var(--text-muted); font-size: 14px;">Dapatkan update soal terbaru, tips trik lulus, dan dukung kami terus berkarya.</p>
         
         <div class="comm-grid">
-            <a href="https://t.me/pendidikanku_mi_vida" target="_blank" class="comm-card c-tg"><i class="fa-brands fa-telegram"></i><h5>Telegram Channel</h5><span>Diskusi & Materi</span></a>
-            <a href="https://chat.whatsapp.com/HXHv37R44nXLDnw2hxvtie" target="_blank" class="comm-card c-wa-g"><i class="fa-brands fa-whatsapp"></i><h5>Grup WhatsApp</h5><span>Interaksi Anggota</span></a>
-            <a href="https://whatsapp.com/channel/0029Vb2NvXe5vKA1L0uNMf1v" target="_blank" class="comm-card c-wa-c"><i class="fa-solid fa-bullhorn"></i><h5>Saluran WhatsApp</h5><span>Pengumuman Resmi</span></a>
-            <a href="https://saweria.co/mivida" target="_blank" class="comm-card c-saweria"><i class="fa-solid fa-hand-holding-dollar"></i><h5>Dukung Kami</h5><span>Donasi via Saweria</span></a>
+            <a href="https://t.me/pendidikanku_mi_vida" target="_blank" class="comm-card c-tg" aria-label="Grup Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i><h5>Telegram Channel</h5><span>Diskusi & Materi</span></a>
+            <a href="https://chat.whatsapp.com/HXHv37R44nXLDnw2hxvtie" target="_blank" class="comm-card c-wa-g" aria-label="Grup WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><h5>Grup WhatsApp</h5><span>Interaksi Anggota</span></a>
+            <a href="https://whatsapp.com/channel/0029Vb2NvXe5vKA1L0uNMf1v" target="_blank" class="comm-card c-wa-c" aria-label="Saluran WhatsApp"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><h5>Saluran WhatsApp</h5><span>Pengumuman Resmi</span></a>
+            <a href="https://saweria.co/mivida" target="_blank" class="comm-card c-saweria" aria-label="Donasi Saweria"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i><h5>Dukung Kami</h5><span>Donasi via Saweria</span></a>
         </div>
     </section>
 
@@ -344,7 +342,10 @@
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
+        
+        // Aksesibilitas keyboard untuk tombol menu
         menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+        menuToggle.addEventListener('keypress', (e) => { if (e.key === 'Enter') navMenu.classList.toggle('active'); });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
