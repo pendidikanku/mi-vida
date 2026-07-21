@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiVida Edukasi - Portal Artikel, Tips & Trik Lolos CPNS dan BUMN</title>
+    <meta name="description" content="Kumpulan artikel edukasi, panduan belajar, kisi-kisi, dan trik cepat menjawab soal CPNS, BUMN, dan UTBK dari MiVida.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #f8fafc; --bg-card: #ffffff; --card-border: #e2e8f0;
+            --text-main: #0f172a; --text-muted: #64748b;
+            --primary-gradient: linear-gradient(135deg, #6366f1, #a855f7);
+            --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+        
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 14px; font-weight: 600; padding: 10px 15px; }
+
+        .blog-header { text-align: center; padding: 60px 20px 40px 20px; max-width: 800px; margin: 0 auto; }
+        .blog-header h1 { font-size: 36px; font-weight: 800; margin-bottom: 15px; }
+        .blog-header h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .blog-header p { color: var(--text-muted); font-size: 16px; }
+
+        .blog-container { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 20px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        
+        .blog-card { background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; text-decoration: none; color: var(--text-main); transition: 0.3s; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
+        .blog-card:hover { transform: translateY(-7px); box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.4); }
+        .blog-img { width: 100%; height: 200px; background: #e2e8f0; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;}
+        .blog-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .blog-card:hover .blog-img img { transform: scale(1.05); }
+        .blog-badge { position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.95); padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; color: #4f46e5; backdrop-filter: blur(5px); }
+        
+        .blog-info { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .blog-info h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; transition: color 0.3s;}
+        .blog-card:hover .blog-info h3 { color: #6366f1; }
+        .blog-info p { font-size: 14.5px; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
+        
+        .blog-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; color: #94a3b8; border-top: 1px solid var(--card-border); padding-top: 15px; }
+        .read-more { color: #6366f1; display: flex; align-items: center; gap: 5px;}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="120" height="35">
+                  <defs><linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
+                  <g transform="translate(15, 25)"><path d="M 15 95 L 15 45 C 15 25, 45 25, 45 45 L 45 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><path d="M 45 95 L 45 45 C 45 25, 75 25, 75 45 L 75 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><path d="M 95 30 Q 95 15, 110 15 Q 95 15, 95 0 Q 95 15, 80 15 Q 95 15, 95 30" fill="#f59e0b"/></g>
+                  <text x="140" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="64" fill="#0f172a">Mi<tspan fill="url(#mvGrad)">Vida</tspan></text>
+                </svg>
+            </a>
+            <nav><a href="../index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a></nav>
+        </div>
+    </header>
+
+    <section class="blog-header">
+        <h1>Jurnal & <span>Edukasi</span> MiVida</h1>
+        <p>Pusat informasi, strategi jitu, dan bedah materi mendalam untuk persiapan CPNS, BUMN, dan UTBK 2026. Ditulis dari kacamata mentor ahli.</p>
+    </section>
+
+    <div class="blog-container">
+        <div class="blog-grid">
+            
+            <!-- KARTU ARTIKEL 1 -->
+            <a href="panduan-lengkap-lolos-skd-cpns.html" class="blog-card">
+                <div class="blog-img">
+                    <img src="../images/hero-cpns.jpg" alt="Panduan Lolos SKD CPNS 2026" onerror="this.style.display='none'">
+                    <span class="blog-badge"><i class="fa-solid fa-book-open"></i> CPNS</span>
+                </div>
+                <div class="blog-info">
+                    <h3>Panduan Lengkap Lolos SKD CPNS 2026: Bedah Materi & Strategi</h3>
+                    <p>Pelajari strategi lolos SKD CPNS 2026 lengkap dengan materi TWK, TIU, TKP, sistem CAT, jadwal belajar, dan tips sukses anti gagal.</p>
+                    <div class="blog-meta">
+                        <span>Juli 2026</span><span class="read-more">Baca <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- KARTU ARTIKEL 2 (YANG BARU DIBUAT) -->
+            <a href="materi-tiu-cpns-lengkap.html" class="blog-card">
+                <div class="blog-img">
+                    <img src="../images/hero-tiu.jpg" alt="Materi TIU CPNS" onerror="this.style.display='none'">
+                    <span class="blog-badge" style="color: #10b981;"><i class="fa-solid fa-calculator"></i> TIU / Numerik</span>
+                </div>
+                <div class="blog-info">
+                    <h3>Bedah Tuntas Materi TIU CPNS 2026: Rumus Cepat & Cara Jawab Kilat</h3>
+                    <p>Kuasai rumus cepat numerik, trik silogisme verbal, dan pola figural rahasia. Taklukkan soal hitungan sulit dalam waktu kurang dari 40 detik!</p>
+                    <div class="blog-meta">
+                        <span>Juli 2026</span><span class="read-more">Baca <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
