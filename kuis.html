@@ -184,13 +184,13 @@
         });
 
         // ================= LOGIKA SISTEM CAT & TIMER =================
-        // Database URL Google Sheet CSV
+        // Database URL Google Sheet CSV (Tautan diperbaiki ke /pub bukan /pubhtml)
         const moduleUrls = {
-            "cpns1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=1999742481&single=true&output=csv",
-            "cpns2": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=177118517&single=true&output=csv",
+            "cpns1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1999742481&single=true&output=csv",
+            "cpns2": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=177118517&single=true&output=csv",
             "cpns3": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=2124912226&single=true&output=csv",
             "cpns4": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1284587631&single=true&output=csv",
-            "bumn1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=1111447607&single=true&output=csv"
+            "bumn1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv"
         };
 
         let currentModuleId = new URLSearchParams(window.location.search).get('module') || 'cpns1';
@@ -203,8 +203,9 @@
         let totalDetik = 100 * 60; 
         let timerInterval;
 
-        // Dummy Data jika gagal fetch (Agar UI tetap bisa diuji)
+        // Dummy Data jika gagal fetch (Fallback Cadangan)
         function generateDummyData() {
+            bankSoal = [];
             for(let i=1; i<=110; i++) {
                 let kategori = i <= 30 ? "TWK" : (i <= 65 ? "TIU" : "TKP");
                 bankSoal.push({
@@ -227,20 +228,55 @@
 
             Papa.parse(url, {
                 download: true,
-                header: true, // mengambil baris pertama sebagai key object
+                header: true,
+                skipEmptyLines: true,
                 complete: function(results) {
-                    // Filter agar hanya memuat baris yang soalnya tidak kosong
-                    bankSoal = results.data.filter(row => row.soal && row.soal.trim() !== "");
-                    
-                    if(bankSoal.length === 0) {
-                        generateDummyData(); // Fallback jika format salah
-                    } else {
-                        // Pastikan ada kategorinya jika kolom kosong
-                        bankSoal.forEach((soal, index) => {
-                            if(!soal.kategori) {
-                                soal.kategori = (index + 1) <= 30 ? "TWK" : ((index + 1) <= 65 ? "TIU" : "TKP");
+                    if(!results.data || results.data.length === 0) {
+                        generateDummyData();
+                        return;
+                    }
+
+                    let parsedSoal = [];
+
+                    // Fungsi pembantu agar tidak peduli huruf besar/kecil di nama kolom Google Sheet
+                    results.data.forEach((row, index) => {
+                        const getVal = (possibleKeys) => {
+                            for (let k of possibleKeys) {
+                                for (let key in row) {
+                                    if (key.trim().toLowerCase() === k.toLowerCase() && row[key] !== undefined && row[key] !== null) {
+                                        return row[key].toString().trim();
+                                    }
+                                }
                             }
-                        });
+                            return "";
+                        };
+
+                        let teksSoal = getVal(["soal", "teks_soal", "question", "pertanyaan"]);
+                        
+                        if (teksSoal !== "") {
+                            let kat = getVal(["kategori", "category", "jenis"]);
+                            if (!kat) {
+                                kat = (index + 1) <= 30 ? "TWK" : ((index + 1) <= 65 ? "TIU" : "TKP");
+                            }
+
+                            parsedSoal.push({
+                                nomor: index + 1,
+                                kategori: kat,
+                                soal: teksSoal,
+                                A: getVal(["a", "opsi_a", "pilihan_a"]),
+                                B: getVal(["b", "opsi_b", "pilihan_b"]),
+                                C: getVal(["c", "opsi_c", "pilihan_c"]),
+                                D: getVal(["d", "opsi_d", "pilihan_d"]),
+                                E: getVal(["e", "opsi_e", "pilihan_e"]),
+                                Kunci: getVal(["kunci", "jawaban", "kunci_jawaban", "key"])
+                            });
+                        }
+                    });
+
+                    if(parsedSoal.length === 0) {
+                        generateDummyData();
+                    } else {
+                        bankSoal = parsedSoal;
                         siapMulai();
                     }
                 },
@@ -400,7 +436,7 @@
                 let jawab = jawabanPeserta[i];
                 
                 if(soal.kategori === 'TKP') {
-                    // Logic nilai 1-5 untuk TKP. Karena ini dummy data, kita buat simulasi poin
+                    // Logic nilai 1-5 untuk TKP
                     if(jawab) skorTKP += Math.floor(Math.random() * 2) + 4; // Anggap rata-rata pilih poin 4/5
                 } else {
                     // Benar +5, Salah 0
