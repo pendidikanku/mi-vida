@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Jangan index file sistem atau script jika ada
+Disallow: /images/
+
+# Panggil Sitemap agar Google otomatis membacanya secara berkala
 Sitemap: https://mivida.id/sitemap.xml
