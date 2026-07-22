@@ -26,7 +26,7 @@
     <meta name="theme-color" content="#6366f1">
     <link rel="canonical" href="https://mivida.id/">
     
-    <!-- ================= FAVICON ELEGAN (SVG INLINE) ================= -->
+    <!-- ================= FAVICON ================= -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%23a855f7'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23g)'/><path d='M25 70 L25 40 C25 20 50 20 50 40 L50 70 M50 70 L50 40 C50 20 75 20 75 40 L75 70' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/><circle cx='80' cy='20' r='6' fill='%23f59e0b'/></svg>">
     
     <!-- ================= OPEN GRAPH & TWITTER CARDS ================= -->
@@ -37,13 +37,6 @@
     <meta property="og:description" content="Belajar CPNS dan BUMN 2026 layaknya didampingi mentor. Tingkatkan skor Anda dengan metode CAT yang humanis dan efektif.">
     <meta property="og:site_name" content="Pendidikanku">
     <meta property="og:image" content="https://mivida.id/images/hero-cpns.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pendidikanku - Simulasi CAT Edukatif">
-    <meta name="twitter:description" content="Lulus CPNS dan BUMN 2026 dengan pendekatan belajar yang lebih manusiawi.">
-    <meta name="twitter:image" content="https://mivida.id/images/hero-cpns.jpg">
     
     <!-- Schema Markup JSON-LD -->
     <script type="application/ld+json">
@@ -56,12 +49,6 @@
           "url": "https://mivida.id/",
           "name": "Pendidikanku (Mi Vida)",
           "description": "Portal Simulasi CAT CPNS, BUMN & UTBK Terlengkap dengan Pendekatan Edukasi Humanis."
-        },
-        {
-          "@type": "EducationalOrganization",
-          "@id": "https://mivida.id/#organization",
-          "name": "MiVida Pendidikanku",
-          "url": "https://mivida.id/"
         }
       ]
     }
@@ -119,8 +106,29 @@
         .category-header h2 { font-size: 28px; font-weight: 800; margin-bottom: 15px;}
         .category-desc { color: var(--text-muted); font-size: 14.5px; max-width: 800px; margin: 0 auto; background: var(--bg-main); padding: 20px; border-radius: 16px; border: 1px solid var(--card-border); text-align: left;}
         
-        .modul-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 30px;}
-        .modul-card { background: var(--bg-main); border: 1px solid var(--card-border); border-radius: 20px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
+        /* ====== UPDATE: GRID BERGESER KE SAMPING (SCROLL HORIZONTAL) ====== */
+        .modul-grid { 
+            display: flex; 
+            gap: 20px; 
+            margin-top: 30px; 
+            overflow-x: auto; 
+            padding-bottom: 20px; /* Ruang untuk scrollbar */
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        /* Custom Scrollbar untuk estetika */
+        .modul-grid::-webkit-scrollbar { height: 8px; }
+        .modul-grid::-webkit-scrollbar-track { background: var(--bg-main); border-radius: 10px; }
+        .modul-grid::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .modul-grid::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .modul-card { 
+            background: var(--bg-main); border: 1px solid var(--card-border); border-radius: 20px; padding: 25px; 
+            display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; 
+            min-width: 340px; /* Mencegah kartu mengecil, memaksa scroll */
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+        }
         .modul-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); border-color: rgba(99, 102, 241, 0.3);}
         
         .modul-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;}
@@ -138,9 +146,7 @@
         .btn-play:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
         .btn-secondary { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
         .btn-secondary:hover { background: #e2e8f0; }
-        
-        /* Style khusus untuk tombol yang dikunci */
-        .btn-locked { background: #f1f5f9; color: #94a3b8; cursor: not-allowed; border: 1px solid #e2e8f0; }
+        .btn-locked { background: #e2e8f0; color: #94a3b8; cursor: not-allowed; }
 
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
         .blog-card { background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; text-decoration: none; color: var(--text-main); transition: 0.3s; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
@@ -154,7 +160,6 @@
         .blog-card:hover .blog-info h3 { color: #6366f1; }
         .blog-info p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex-grow: 1; }
         .blog-meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; color: #94a3b8; border-top: 1px solid var(--card-border); padding-top: 15px; }
-        .read-more { color: #6366f1; display: flex; align-items: center; gap: 5px;}
         
         .blog-explore-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 30px; background: rgba(16, 185, 129, 0.1); color: #047857; font-weight: 700; text-decoration: none; border-radius: 30px; margin-top: 35px; border: 1px solid rgba(16, 185, 129, 0.3); transition: 0.3s;}
         .blog-explore-btn:hover { background: #10b981; color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2); }
@@ -175,6 +180,7 @@
             .category-block { padding: 25px 15px; }
             .floating-saweria { bottom: 15px; right: 15px; padding: 10px 20px; font-size: 13px; }
             .hero-section { padding: 60px 20px 40px 20px; }
+            .modul-card { min-width: 85vw; } /* Di HP, card memakan 85% layar agar terlihat ada next card */
         }
     </style>
 </head>
@@ -245,7 +251,7 @@
                 </div>
                 
                 <div class="modul-grid">
-                    <!-- Chapter 1 (Free) -->
+                    <!-- CPNS Chapter 1 (Free) -->
                     <div class="modul-card">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Chapter 1: SKD Fundamental</h3>
@@ -259,7 +265,7 @@
                         <a href="kuis.html?module=cpns1" class="btn-action btn-play"><i class="fa-solid fa-play" aria-hidden="true"></i> Latihan Sekarang</a>
                     </div>
 
-                    <!-- Chapter 2 (Premium TeraBox) -->
+                    <!-- CPNS Chapter 2 (Premium) -->
                     <div class="modul-card">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-fire" aria-hidden="true"></i> Chapter 2: SKD Ekstrem (HOTS)</h3>
@@ -275,21 +281,21 @@
                             <button onclick="bukaPremium('MIVIDACPNS2026', 'cpns2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Gembok</button>
                         </div>
                     </div>
-                    
-                    <!-- Chapter 3 (BARU DITAMBAHKAN - Premium GDrive/Sheets) -->
+
+                    <!-- CPNS Chapter 3 (BARU DITAMBAHKAN) -->
                     <div class="modul-card">
                         <div class="modul-info">
-                            <h3 class="modul-title"><i class="fa-solid fa-crown" aria-hidden="true"></i> Chapter 3: SKD Final Prediksi</h3>
+                            <h3 class="modul-title"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i> Chapter 3: SKD Final Tryout</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Simulasi Waktu Nyata SKD BKN.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Fokus Penalaran & Pilar Negara.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Anti-Radikalisme & TIK Terapan.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Pemecahan masalah kombinatorika & figural 3D.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Hubungan internasional & kebijakan publik.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Indikator anti-radikalisme & etika instansi.</li>
                             </ul>
                             <div class="modul-meta"><span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span><span class="meta-tag">110 Soal</span></div>
                         </div>
                         <div style="display: flex; gap: 10px; margin-top: 15px;">
-                            <!-- Link menggunakan URL Google Sheets yang Anda berikan -->
-                            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=2124912226&single=true" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-link" aria-hidden="true"></i> Akses Password</a>
+                            <!-- Karena belum ada link Terabox khusus chapter 3, tombol ini diarahkan ke # dulu -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;" onclick="alert('Link TeraBox Chapter 3 segera diunggah!')"><i class="fa-solid fa-download" aria-hidden="true"></i> Unduh Password</a>
                             <button onclick="bukaPremium('MIVIDACPNS3', 'cpns3')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Gembok</button>
                         </div>
                     </div>
@@ -340,7 +346,7 @@
                 </div>
             </section>
             
-            <!-- ================= UTBK SECTION (DIUBAH MENJADI MENYUSUL) ================= -->
+            <!-- ================= UTBK SECTION (DIKUNCI SEMUA) ================= -->
             <section class="category-block" id="utbk">
                 <div class="category-header">
                     <i class="fa-solid fa-university" style="color: var(--utbk-color);" aria-hidden="true"></i>
@@ -352,7 +358,7 @@
                 </div>
                 
                 <div class="modul-grid">
-                    <!-- UTBK Chapter 1 (Menyusul) -->
+                    <!-- UTBK Chapter 1 (Dikunci) -->
                     <div class="modul-card">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Chapter 1: TPS Fundamental</h3>
@@ -365,7 +371,7 @@
                         <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Menyusul</button>
                     </div>
 
-                    <!-- UTBK Chapter 2 (Menyusul) -->
+                    <!-- UTBK Chapter 2 (Dikunci) -->
                     <div class="modul-card">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Chapter 2: Tembus PTN Favorit</h3>
@@ -448,7 +454,6 @@
     </footer>
 
     <script>
-        // ================= KODE ANIMASI FUTURISTIK =================
         const canvas = document.getElementById('techCanvas');
         const ctx = canvas.getContext('2d');
         let width, height, particles;
@@ -511,7 +516,6 @@
         animateCanvas();
         window.addEventListener('resize', initCanvas);
 
-        // ================= LOGIKA NAVIGASI & MENU =================
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
         
@@ -526,14 +530,14 @@
             });
         });
 
+        // Modifikasi fungsi bukaPremium untuk menerima password berbeda setiap modul
         function bukaPremium(kunciRahasia, modulTujuan) {
-            // Teks alert dimodifikasi agar lebih universal bagi pengguna Google Sheets/Terabox
-            let pass = prompt("Silakan masukkan Password dari dokumen/link yang telah Anda akses:");
+            let pass = prompt("Silakan masukkan Password dari dokumen yang Anda unduh di TeraBox:");
             if (pass === kunciRahasia) {
                 alert("Password Benar! Mengalihkan ke halaman Ujian...");
                 window.location.href = "kuis.html?module=" + modulTujuan; 
             } else if (pass !== null && pass.trim() !== "") {
-                alert("Password Salah! Silakan buka tautan resminya terlebih dahulu untuk mendapatkan Password.");
+                alert("Password Salah! Silakan unduh dokumen resminya terlebih dahulu.");
             }
         }
     </script>
