@@ -1,5 +1,25 @@
 [
     {
+        "url": "rahasia-skor-maksimal-tkp-cpns.html",
+        "image": "../images/hero-tkp.jpg",
+        "badgeIcon": "fa-user-shield",
+        "badgeText": "Karakter & Kepribadian",
+        "badgeColor": "#059669",
+        "title": "Rahasia Skor Maksimal TKP CPNS 2026: Trik Menemukan Jawaban Poin 5",
+        "desc": "Bedah tuntas 6 pilar kisi-kisi TKP ASN 2026. Pelajari rahasia membedakan jawaban bernilai 4 dan poin 5 agar lulus passing grade.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "tembus-twk-cpns-hots.html",
+        "image": "../images/hero-twk.jpg",
+        "badgeIcon": "fa-flag",
+        "badgeText": "Nasionalisme & TWK",
+        "badgeColor": "#dc2626",
+        "title": "Tembus TWK CPNS 2026: Cara Jitu Menjawab Soal HOTS Tanpa Menghafal Buta",
+        "desc": "Kuasai materi TWK CPNS dengan trik penalaran Pancasila. Jawab soal cerita panjang dengan mudah melalui metode kata kunci (keyword).",
+        "date": "Juli 2026"
+    },
+    {
         "url": "panduan-latihan-cat-cpns-terlengkap.html",
         "image": "../images/ilustrasi-peserta-ujian-cpns-fokus.jpg",
         "badgeIcon": "fa-laptop-code",
@@ -29,26 +49,4 @@
         "desc": "Pelajari strategi lolos SKD CPNS 2026 lengkap dengan materi TWK, TIU, TKP, sistem CAT, jadwal belajar, dan tips sukses anti gagal.",
         "date": "Juli 2026"
     }
-
-    {
-        "url": "tembus-twk-cpns-hots.html",
-        "image": "../images/hero-twk.jpg",
-        "badgeIcon": "fa-user-shield",
-        "badgeText": "Karakter & Kepribadian",
-        "badgeColor": "#059669",
-        "title": "Tembus TWK CPNS 2026: Cara Jitu Menjawab Soal HOTS Tanpa Menghafal Buta",
-        "desc": "Mengajarkan cara mengenali kata kunci pada studi kasus panjang, sehingga peserta tahu ini masuk pengamalan sila ke-berapa tanpa harus menghafal teks asli UUD 1945.",
-        "date": "Juli 2026"
-    },
-
-    {
-        "url": "rahasia-skor-maksimal-tkp-cpns.html",
-        "image": "../images/hero-tkp.jpg",
-        "badgeIcon": "fa-user-shield",
-        "badgeText": "Karakter & Kepribadian",
-        "badgeColor": "#059669",
-        "title": "Rahasia Skor Maksimal TKP CPNS 2026: Trik Menemukan Jawaban Poin 5",
-        "desc": "Bedah tuntas 6 pilar kisi-kisi TKP ASN 2026. Pelajari rahasia membedakan jawaban bernilai 4 dan poin 5 agar lulus passing grade.",
-        "date": "Juli 2026"
-    },
 ]
