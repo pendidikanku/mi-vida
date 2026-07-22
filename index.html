@@ -45,7 +45,7 @@
     <meta name="twitter:description" content="Lulus CPNS dan BUMN 2026 dengan pendekatan belajar yang lebih manusiawi.">
     <meta name="twitter:image" content="https://mivida.id/images/hero-cpns.jpg">
     
-    <!-- Schema Markup JSON-LD (DIPERKUAT SEBAGAI INSTITUSI EDUKASI) -->
+    <!-- Schema Markup JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -70,7 +70,7 @@
     <!-- ================= GOOGLE ADSENSE ================= -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2313737454653945" crossorigin="anonymous"></script>
     
-    <!-- ================= FONTS & ICONS (DIOPTIMALKAN PRELOADNYA) ================= -->
+    <!-- ================= FONTS & ICONS ================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
@@ -107,7 +107,6 @@
         #techCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.8; }
         .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; text-align: center; }
         
-        /* Modifikasi lencana agar terlihat lebih hangat dan edukatif */
         .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px); border: 1px solid rgba(99, 102, 241, 0.3); color: #4f46e5; padding: 8px 20px; border-radius: 20px; font-size: 12.5px; font-weight: 800; margin-bottom: 25px; box-shadow: var(--shadow-soft); }
         .hero-content h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; }
         .hero-content h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -139,6 +138,9 @@
         .btn-play:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
         .btn-secondary { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
         .btn-secondary:hover { background: #e2e8f0; }
+        
+        /* Style khusus untuk tombol yang dikunci */
+        .btn-locked { background: #f1f5f9; color: #94a3b8; cursor: not-allowed; border: 1px solid #e2e8f0; }
 
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
         .blog-card { background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; text-decoration: none; color: var(--text-main); transition: 0.3s; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
@@ -181,7 +183,6 @@
     <div class="aurora orb-1"></div>
     <div class="aurora orb-2"></div>
 
-    <!-- PENGGUNAAN rel="noopener noreferrer" PADA LINK EKSTERNAL -->
     <a href="https://saweria.co/mivida" target="_blank" rel="noopener noreferrer" class="floating-saweria" aria-label="Donasi via Saweria">
         <i class="fa-solid fa-mug-hot" aria-hidden="true"></i> Traktir Kopi
     </a>
@@ -218,9 +219,7 @@
 
     <main>
         
-        <!-- BAGIAN HERO YANG TELAH DIUBAH MENJADI LEBIH HUMANIS DAN EDUKATIF -->
         <section class="hero-section">
-            <!-- Canvas dibiarkan sebagai elemen estetika visual belakang yang ringan -->
             <canvas id="techCanvas"></canvas> 
             <div class="hero-content">
                 <div class="hero-badge">
@@ -246,6 +245,7 @@
                 </div>
                 
                 <div class="modul-grid">
+                    <!-- Chapter 1 (Free) -->
                     <div class="modul-card">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Chapter 1: SKD Fundamental</h3>
@@ -259,6 +259,7 @@
                         <a href="kuis.html?module=cpns1" class="btn-action btn-play"><i class="fa-solid fa-play" aria-hidden="true"></i> Latihan Sekarang</a>
                     </div>
 
+                    <!-- Chapter 2 (Premium TeraBox) -->
                     <div class="modul-card">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-fire" aria-hidden="true"></i> Chapter 2: SKD Ekstrem (HOTS)</h3>
@@ -272,6 +273,24 @@
                         <div style="display: flex; gap: 10px; margin-top: 15px;">
                             <a href="https://1024terabox.com/s/10RK3_5ncHAwfK-JdCWWV4w" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-download" aria-hidden="true"></i> Unduh Password</a>
                             <button onclick="bukaPremium('MIVIDACPNS2026', 'cpns2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Gembok</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Chapter 3 (BARU DITAMBAHKAN - Premium GDrive/Sheets) -->
+                    <div class="modul-card">
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-crown" aria-hidden="true"></i> Chapter 3: SKD Final Prediksi</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Simulasi Waktu Nyata SKD BKN.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Fokus Penalaran & Pilar Negara.</li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Anti-Radikalisme & TIK Terapan.</li>
+                            </ul>
+                            <div class="modul-meta"><span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span><span class="meta-tag">110 Soal</span></div>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <!-- Link menggunakan URL Google Sheets yang Anda berikan -->
+                            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=2124912226&single=true" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-link" aria-hidden="true"></i> Akses Password</a>
+                            <button onclick="bukaPremium('MIVIDACPNS3', 'cpns3')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Gembok</button>
                         </div>
                     </div>
                 </div>
@@ -321,7 +340,7 @@
                 </div>
             </section>
             
-            <!-- ================= UTBK SECTION ================= -->
+            <!-- ================= UTBK SECTION (DIUBAH MENJADI MENYUSUL) ================= -->
             <section class="category-block" id="utbk">
                 <div class="category-header">
                     <i class="fa-solid fa-university" style="color: var(--utbk-color);" aria-hidden="true"></i>
@@ -333,6 +352,7 @@
                 </div>
                 
                 <div class="modul-grid">
+                    <!-- UTBK Chapter 1 (Menyusul) -->
                     <div class="modul-card">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Chapter 1: TPS Fundamental</h3>
@@ -340,11 +360,12 @@
                                 <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TPS (40 Soal):</b> Penalaran Umum & Kuantitatif.</li>
                                 <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>Literasi (40 Soal):</b> Bacaan B. Indonesia & Inggris.</li>
                             </ul>
-                            <div class="modul-meta"><span class="meta-tag meta-highlight">Free Akses</span><span class="meta-tag">80 Soal</span></div>
+                            <div class="modul-meta"><span class="meta-tag">80 Soal</span><span class="meta-tag">Segera Hadir</span></div>
                         </div>
-                        <a href="kuis.html?module=utbk1" class="btn-action btn-play" style="background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-play" aria-hidden="true"></i> Latihan Sekarang</a>
+                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Menyusul</button>
                     </div>
 
+                    <!-- UTBK Chapter 2 (Menyusul) -->
                     <div class="modul-card">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Chapter 2: Tembus PTN Favorit</h3>
@@ -352,12 +373,9 @@
                                 <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TPS (40 Soal):</b> Hots Matematika Dasar.</li>
                                 <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>Literasi (40 Soal):</b> Analisis Wacana Kritis (Jurnal).</li>
                             </ul>
-                            <div class="modul-meta"><span class="meta-tag meta-terabox" style="color: #ec4899; border-color: #ec4899;"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span><span class="meta-tag">80 Soal</span></div>
+                            <div class="modul-meta"><span class="meta-tag">80 Soal</span><span class="meta-tag">Segera Hadir</span></div>
                         </div>
-                        <div style="display: flex; gap: 10px; margin-top: 15px;">
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-download" aria-hidden="true"></i> Unduh Password</a>
-                            <button onclick="bukaPremium('LULUSPTN2026', 'utbk2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Gembok</button>
-                        </div>
+                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Menyusul</button>
                     </div>
                 </div>
             </section>
@@ -431,8 +449,6 @@
 
     <script>
         // ================= KODE ANIMASI FUTURISTIK =================
-        // Canvas dipertahankan untuk estetika visual yang tidak memberatkan halaman,
-        // namun narasinya telah sepenuhnya beralih ke nilai edukasi manusiawi.
         const canvas = document.getElementById('techCanvas');
         const ctx = canvas.getContext('2d');
         let width, height, particles;
@@ -511,12 +527,13 @@
         });
 
         function bukaPremium(kunciRahasia, modulTujuan) {
-            let pass = prompt("Silakan masukkan Password dari dokumen yang Anda unduh di TeraBox:");
+            // Teks alert dimodifikasi agar lebih universal bagi pengguna Google Sheets/Terabox
+            let pass = prompt("Silakan masukkan Password dari dokumen/link yang telah Anda akses:");
             if (pass === kunciRahasia) {
                 alert("Password Benar! Mengalihkan ke halaman Ujian...");
                 window.location.href = "kuis.html?module=" + modulTujuan; 
             } else if (pass !== null && pass.trim() !== "") {
-                alert("Password Salah! Silakan unduh dokumen resminya terlebih dahulu.");
+                alert("Password Salah! Silakan buka tautan resminya terlebih dahulu untuk mendapatkan Password.");
             }
         }
     </script>
