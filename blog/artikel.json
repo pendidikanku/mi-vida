@@ -1,0 +1,32 @@
+[
+    {
+        "url": "panduan-latihan-cat-cpns-terlengkap.html",
+        "image": "../images/ilustrasi-peserta-ujian-cpns-fokus.jpg",
+        "badgeIcon": "fa-laptop-code",
+        "badgeText": "Panduan Sukses",
+        "badgeColor": "#4f46e5",
+        "title": "Panduan Lengkap Latihan CAT CPNS 2026: Strategi Tembus SKD dari Nol",
+        "desc": "Pelajari panduan lengkap latihan CAT CPNS 2026 dari nol. Temukan strategi jitu, kisi-kisi TWK, TIU, TKP, dan simulasi tryout terbaik.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "materi-tiu-cpns-lengkap.html",
+        "image": "../images/hero-tiu.jpg",
+        "badgeIcon": "fa-calculator",
+        "badgeText": "TIU / Numerik",
+        "badgeColor": "#10b981",
+        "title": "Bedah Tuntas Materi TIU CPNS 2026: Rumus Cepat & Cara Jawab Kilat",
+        "desc": "Kuasai rumus cepat numerik, trik silogisme verbal, dan pola figural rahasia. Taklukkan soal hitungan sulit dalam waktu singkat!",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "panduan-lengkap-lolos-skd-cpns.html",
+        "image": "../images/hero-cpns.jpg",
+        "badgeIcon": "fa-book-open",
+        "badgeText": "CPNS",
+        "badgeColor": "#4f46e5",
+        "title": "Panduan Lengkap Lolos SKD CPNS 2026: Bedah Materi & Strategi",
+        "desc": "Pelajari strategi lolos SKD CPNS 2026 lengkap dengan materi TWK, TIU, TKP, sistem CAT, jadwal belajar, dan tips sukses anti gagal.",
+        "date": "Juli 2026"
+    }
+]
