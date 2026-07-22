@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Library PapaParse ditambahkan untuk mengambil dan membaca format CSV Google Sheet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    
     <style>
         /* Anti-Seleksi untuk keamanan soal */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; user-select: none; }
@@ -181,13 +184,14 @@
         });
 
         // ================= LOGIKA SISTEM CAT & TIMER =================
-        // Database URL Google Sheet CSV
+        
+        // Memperbaiki link ke bentuk /pub agar mengambil data CSV mentah (bukan html) serta menutup kutip yang hilang
         const moduleUrls = {
-            "cpns1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=1999742481&single=true&output=csv",
-            "cpns2": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=177118517&single=true&output=csv",
+            "cpns1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1999742481&single=true&output=csv",
+            "cpns2": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=177118517&single=true&output=csv",
             "cpns3": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=2124912226&single=true&output=csv",
-            "cpns4": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1284587631&single=true&output=csv,
-            "bumn1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pubhtml?gid=1111447607&single=true&output=csv"
+            "cpns4": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1284587631&single=true&output=csv",
+            "bumn1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv"
         };
 
         let currentModuleId = new URLSearchParams(window.location.search).get('module') || 'cpns1';
@@ -200,13 +204,13 @@
         let totalDetik = 100 * 60; 
         let timerInterval;
 
-        // Dummy Data jika gagal fetch (Agar UI tetap bisa diuji)
+        // Dummy Data jika gagal fetch atau link error (Agar UI tetap jalan)
         function generateDummyData() {
             for(let i=1; i<=110; i++) {
                 let kategori = i <= 30 ? "TWK" : (i <= 65 ? "TIU" : "TKP");
                 bankSoal.push({
                     nomor: i, kategori: kategori,
-                    soal: `Contoh simulasi teks soal untuk nomor ${i} bagian ${kategori}. Ini adalah data sementara karena tautan CSV belum dihubungkan dengan benar.`,
+                    soal: `Contoh simulasi teks soal untuk nomor ${i} bagian ${kategori}. Ini adalah data sementara karena tautan CSV tidak terbaca.`,
                     A: "Pilihan Jawaban A", B: "Pilihan Jawaban B", C: "Pilihan Jawaban C", D: "Pilihan Jawaban D", E: "Pilihan Jawaban E",
                     Kunci: kategori === 'TKP' ? "A-5,B-4,C-3,D-2,E-1" : "A"
                 });
@@ -214,11 +218,27 @@
             mulaiUjian();
         }
 
-        // Simulasi Fetching (Di dunia nyata gunakan library PapaParse untuk membedah CSV)
-        setTimeout(() => { 
-            // Kita gunakan data dummy untuk simulasi fungsi agar tidak error
-            generateDummyData(); 
-        }, 1500);
+        // ================= FETCHING DATA DARI GOOGLE SHEET =================
+        let urlCSV = moduleUrls[currentModuleId] || moduleUrls['cpns1'];
+        
+        Papa.parse(urlCSV, {
+            download: true,
+            header: true, // Asumsi Google Sheet memiliki header kolom (kategori, soal, A, B, C, D, E, Kunci)
+            complete: function(results) {
+                // Memfilter agar tidak mengambil baris kosong dari Google Sheet
+                bankSoal = results.data.filter(row => row.soal && row.soal.trim() !== "");
+                
+                if (bankSoal.length > 0) {
+                    mulaiUjian(); // Jalankan ujian jika soal berhasil ditarik
+                } else {
+                    generateDummyData(); // Fallback jika sheet kosong
+                }
+            },
+            error: function(err) {
+                console.error("Gagal memuat soal CSV:", err);
+                generateDummyData(); // Fallback jika gagal fetch (koneksi, diblokir)
+            }
+        });
 
         function mulaiUjian() {
             document.getElementById('loadingScreen').style.display = 'none';
@@ -281,13 +301,16 @@
             // Render Opsi
             let opsHTML = '';
             ['A', 'B', 'C', 'D', 'E'].forEach(huruf => {
-                let isChecked = jawabanPeserta[indeks] === huruf;
-                opsHTML += `
-                    <label class="opsi-label ${isChecked ? 'terpilih' : ''}" onclick="pilihOpsi(${indeks}, '${huruf}')">
-                        <input type="radio" name="opsi" value="${huruf}" ${isChecked ? 'checked' : ''}>
-                        <span><strong>${huruf}.</strong> ${soalObj[huruf]}</span>
-                    </label>
-                `;
+                // Jangan merender opsi jika datanya kosong
+                if(soalObj[huruf] && soalObj[huruf].trim() !== "") {
+                    let isChecked = jawabanPeserta[indeks] === huruf;
+                    opsHTML += `
+                        <label class="opsi-label ${isChecked ? 'terpilih' : ''}" onclick="pilihOpsi(${indeks}, '${huruf}')">
+                            <input type="radio" name="opsi" value="${huruf}" ${isChecked ? 'checked' : ''}>
+                            <span><strong>${huruf}.</strong> ${soalObj[huruf]}</span>
+                        </label>
+                    `;
+                }
             });
             document.getElementById('opsi-list').innerHTML = opsHTML;
 
