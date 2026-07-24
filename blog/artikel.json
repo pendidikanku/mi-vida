@@ -1,7 +1,7 @@
 [
     {
         "url": "cara-daftar-cpns-panduan-lengkap-sscasn.html",
-        "image": "../images/hero-daftar-cpns.jpg",
+        "image": "../images/hero-daftar-cpns.png",
         "badgeIcon": "fa-laptop-file",
         "badgeText": "Tutorial Pendaftaran",
         "badgeColor": "#db2777",
@@ -11,7 +11,7 @@
     },
     {
         "url": "rincian-formasi-cpns-jurusan-paling-dicari.html",
-        "image": "../images/hero-formasi.jpg",
+        "image": "../images/Formasi-Cpns.png",
         "badgeIcon": "fa-building-user",
         "badgeText": "Analisis Instansi",
         "badgeColor": "#059669",
@@ -21,7 +21,7 @@
     },
     {
         "url": "jadwal-cpns-pendaftaran-dan-timeline-lengkap.html",
-        "image": "../images/hero-jadwal.jpg",
+        "image": "../images/jadwal-cpns.png",
         "badgeIcon": "fa-calendar-days",
         "badgeText": "Jadwal & Timeline",
         "badgeColor": "#7c3aed",
@@ -31,7 +31,7 @@
     },
     {
         "url": "kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru.html",
-        "image": "../images/hero-kisi-kisi.jpg",
+        "image": "../images/kisi-kisi-cpns.png",
         "badgeIcon": "fa-map-location-dot",
         "badgeText": "Peta Belajar",
         "badgeColor": "#d97706",
@@ -41,7 +41,7 @@
     },
     {
         "url": "passing-grade-cpns-nilai-ambang-batas.html",
-        "image": "../images/hero-passing-grade.jpg",
+        "image": "../images/passing-grade.png",
         "badgeIcon": "fa-circle-info",
         "badgeText": "Info Resmi",
         "badgeColor": "#2563eb",
@@ -51,7 +51,7 @@
     },
     {
         "url": "rahasia-skor-maksimal-tkp-cpns.html",
-        "image": "../images/hero-tkp.jpg",
+        "image": "../images/tkp-cpns.png",
         "badgeIcon": "fa-user-shield",
         "badgeText": "Karakter & Kepribadian",
         "badgeColor": "#059669",
@@ -61,7 +61,7 @@
     },
     {
         "url": "tembus-twk-cpns-hots.html",
-        "image": "../images/hero-twk.jpg",
+        "image": "../images/twk-cpns.png",
         "badgeIcon": "fa-flag",
         "badgeText": "Nasionalisme & TWK",
         "badgeColor": "#dc2626",
@@ -71,7 +71,7 @@
     },
     {
         "url": "panduan-latihan-cat-cpns-terlengkap.html",
-        "image": "../images/ilustrasi-peserta-ujian-cpns-fokus.jpg",
+        "image": "../images/ilustrasi-peserta-ujian-cpns-fokus.png",
         "badgeIcon": "fa-laptop-code",
         "badgeText": "Panduan Sukses",
         "badgeColor": "#4f46e5",
@@ -81,7 +81,7 @@
     },
     {
         "url": "materi-tiu-cpns-lengkap.html",
-        "image": "../images/hero-tiu.jpg",
+        "image": "../images/tiu-cpns.png",
         "badgeIcon": "fa-calculator",
         "badgeText": "TIU / Numerik",
         "badgeColor": "#10b981",
@@ -91,7 +91,7 @@
     },
     {
         "url": "panduan-lengkap-lolos-skd-cpns.html",
-        "image": "../images/hero-cpns.jpg",
+        "image": "../images/lolos-skd-cpns.png",
         "badgeIcon": "fa-book-open",
         "badgeText": "CPNS",
         "badgeColor": "#4f46e5",
