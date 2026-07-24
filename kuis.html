@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem CAT BKN - MiVida Edukasi</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Library pembaca CSV Google Sheet -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <!-- Script Verifikasi Keamanan URL (Dijalankan Pertama Kali) -->
+    <script>
+        const currModule = new URLSearchParams(window.location.search).get('module') || 'cpns1';
+        const validTokens = {
+            "cpns1": "FREE",
+            "cpns2": "MIVIDACPNS2026",
+            "cpns3": "MIVIDA12439CPNS3",
+            "cpns4": "Akj19ajdCPNS4",
+            "bumn1": "AKHLAKBUMN2026"
+        };
+        const userToken = sessionStorage.getItem('token_' + currModule);
+        
+        // Cek apakah token ada dan valid. Jika tidak, tendang keluar!
+        if (!userToken || userToken !== validTokens[currModule]) {
+            alert("Akses Ditolak!\n\nAnda tidak bisa mengakses halaman ini secara langsung tanpa memasukkan Kunci Gembok yang sah.");
+            window.location.href = "index.html"; // Mengarahkan kembali ke homepage
+        }
+    </script>
 
     <style>
         /* Anti-Seleksi untuk keamanan soal */
@@ -18,6 +37,9 @@
         
         .cat-header { background: #fff; padding: 15px 30px; border-bottom: 2px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.02);}
         .cat-title { font-weight: 800; font-size: 18px; color: #3b82f6; display: flex; align-items: center; gap: 10px;}
+        .btn-home { color: #475569; background: #f1f5f9; padding: 8px 12px; border-radius: 8px; text-decoration: none; margin-right: 5px; transition: 0.2s; display: inline-flex; align-items: center; justify-content: center;}
+        .btn-home:hover { background: #e2e8f0; color: #0f172a; }
+
         .timer-box { background: #fee2e2; color: #dc2626; padding: 8px 20px; border-radius: 20px; font-weight: 800; font-size: 16px; border: 1px solid #fca5a5; display: flex; align-items: center; gap: 8px;}
         .timer-warning { background: #7f1d1d; color: white; animation: pulse 1s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
@@ -29,13 +51,13 @@
         .soal-teks { font-size: 17px; line-height: 1.7; margin-bottom: 30px; font-weight: 500;}
         
         .opsi-list { display: flex; flex-direction: column; gap: 12px; }
-        .opsi-label { display: flex; align-items: flex-start; gap: 15px; padding: 15px 20px; border: 1px solid #cbd5e1; border-radius: 12px; cursor: pointer; transition: 0.2s; font-size: 15px; }
+        .opsi-label { display: flex; align-items: flex-start; gap: 15px; padding: 15px 20px; border: 1px solid #cbd5e1; border-radius: 12px; cursor: pointer; transition: 0.2s; font-size: 15.5px; }
         .opsi-label:hover { background: #f8fafc; border-color: #94a3b8; }
         .opsi-label input[type="radio"] { margin-top: 4px; transform: scale(1.2); accent-color: #3b82f6;}
         .opsi-label.terpilih { background: #eff6ff; border-color: #3b82f6; box-shadow: 0 0 0 1px #3b82f6; font-weight: 600;}
 
-        .action-panel { display: flex; justify-content: space-between; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 25px;}
-        .btn { padding: 12px 25px; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.2s; border: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;}
+        .action-panel { display: flex; justify-content: space-between; gap: 15px; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 25px;}
+        .btn { padding: 14px 25px; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.2s; border: none; font-size: 14.5px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;}
         .btn-prev { background: #f1f5f9; color: #475569; } .btn-prev:hover { background: #e2e8f0; }
         .btn-ragu { background: #fef3c7; color: #d97706; } .btn-ragu:hover { background: #fde68a; }
         .btn-next { background: #3b82f6; color: white; } .btn-next:hover { background: #2563eb; }
@@ -44,7 +66,7 @@
         .navigasi-title { font-weight: 800; margin-bottom: 15px; font-size: 16px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;}
         .grid-nomor { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-height: 400px; overflow-y: auto; padding-right: 5px;}
         
-        /* Custom scrollbar untuk navigasi nomor */
+        /* Custom scrollbar */
         .grid-nomor::-webkit-scrollbar { width: 5px; }
         .grid-nomor::-webkit-scrollbar-track { background: #f1f5f9; }
         .grid-nomor::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 5px;}
@@ -58,7 +80,7 @@
         .btn-selesai { width: 100%; background: #10b981; color: white; margin-top: 20px; padding: 15px; font-size: 15px; }
         .btn-selesai:hover { background: #059669; }
 
-        /* ====== TAMPILAN EVALUASI & HASIL (SKOR) ====== */
+        /* ====== TAMPILAN EVALUASI ====== */
         #hasil-panel { display: none; max-width: 800px; margin: 40px auto; background: #fff; border-radius: 24px; padding: 50px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;}
         .hasil-header { text-align: center; margin-bottom: 40px; }
         .skor-total { font-size: 64px; font-weight: 800; color: #0f172a; line-height: 1; margin: 10px 0; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
@@ -84,10 +106,32 @@
         .spinner { width: 50px; height: 50px; border: 5px solid #e2e8f0; border-top-color: #3b82f6; border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
+        /* ====== RESPONSIVE (OPTIMASI SMARTPHONE) ====== */
         @media (max-width: 992px) {
-            .cat-container { grid-template-columns: 1fr; }
+            .cat-container { grid-template-columns: 1fr; gap: 20px;}
             .navigasi-panel { position: static; }
             .eval-grid { grid-template-columns: 1fr; }
+            .grid-nomor { max-height: 250px; } /* Lebih pendek agar tidak makan ruang scroll di hp */
+        }
+        
+        @media (max-width: 600px) {
+            .cat-header { padding: 12px 15px; }
+            .cat-title { font-size: 15px; }
+            .timer-box { font-size: 14px; padding: 6px 12px; }
+            
+            .soal-panel { padding: 25px 20px; min-height: auto;}
+            .soal-teks { font-size: 16px; margin-bottom: 20px;}
+            .opsi-label { font-size: 14.5px; padding: 12px 15px; gap: 10px;}
+            
+            /* Action Panel Mobile (Rapi dan mudah ditekan) */
+            .action-panel { flex-wrap: wrap; gap: 10px; padding-top: 20px;}
+            .btn { flex: 1 1 45%; font-size: 14px; padding: 12px 10px; }
+            .btn-next { flex: 1 1 100%; order: 3; padding: 15px 10px; font-size: 15px;} /* Tombol next lebih besar */
+            .btn-prev { order: 1; }
+            .btn-ragu { order: 2; }
+            
+            #hasil-panel { padding: 30px 20px; }
+            .skor-total { font-size: 50px; }
         }
     </style>
 </head>
@@ -98,12 +142,13 @@
         <h2 style="color: #0f172a; font-size: 18px;">Memuat Bank Soal BKN...</h2>
     </div>
 
-    <!-- AREA UJIAN (Disembunyikan sampai data termuat) -->
+    <!-- AREA UJIAN -->
     <div id="area-ujian" style="display: none;">
         <header class="cat-header">
             <div class="cat-title">
+                <a href="index.html" class="btn-home" title="Kembali ke Beranda"><i class="fa-solid fa-house"></i></a>
                 <i class="fa-solid fa-laptop-code"></i> 
-                <span id="judul-modul">Simulasi SKD CPNS 2026</span>
+                <span id="judul-modul">Simulasi SKD 2026</span>
             </div>
             <div class="timer-box" id="timerDisplay">
                 <i class="fa-regular fa-clock"></i> <span id="waktu-tersisa">100:00</span>
@@ -136,7 +181,7 @@
         </div>
     </div>
 
-    <!-- AREA HASIL EVALUASI (Akan Muncul Setelah Selesai) -->
+    <!-- AREA HASIL EVALUASI -->
     <div id="hasil-panel">
         <div class="hasil-header">
             <h2>Laporan Evaluasi SKD Anda</h2>
@@ -169,13 +214,13 @@
 
         <div class="cta-next-chapter" id="cta-selanjutnya">
             <h3>Tingkatkan Level Anda!</h3>
-            <p>Anda telah menyelesaikan <span id="nama-chapter-sekarang">Modul</span>. Uji batas kemampuan Anda di chapter berikutnya yang lebih ekstrem.</p>
-            <a href="../index.html" class="cta-btn-next" id="link-next-chapter">Buka Chapter Selanjutnya</a>
+            <p>Anda telah menyelesaikan simulasi. Uji batas kemampuan Anda di chapter berikutnya yang lebih ekstrem.</p>
+            <a href="index.html" class="cta-btn-next">Kembali ke Beranda</a>
         </div>
     </div>
 
     <script>
-        // PENGAMANAN
+        // PENGAMANAN UI
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.addEventListener('keydown', function(e) {
             if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
@@ -184,7 +229,6 @@
         });
 
         // ================= LOGIKA SISTEM CAT & TIMER =================
-        // Database URL Google Sheet CSV (Tautan diperbaiki ke /pub bukan /pubhtml)
         const moduleUrls = {
             "cpns1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1999742481&single=true&output=csv",
             "cpns2": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=177118517&single=true&output=csv",
@@ -194,37 +238,31 @@
         };
 
         let currentModuleId = new URLSearchParams(window.location.search).get('module') || 'cpns1';
-        let bankSoal = []; // Akan diisi data dari CSV
-        let jawabanPeserta = {}; // Menyimpan { nomorSoal: opsiDipilih }
-        let raguRagu = {}; // Menyimpan { nomorSoal: true/false }
+        let bankSoal = []; 
+        let jawabanPeserta = {}; 
+        let raguRagu = {}; 
         let indeksSoal = 0;
         
-        // Timer 100 Menit
         let totalDetik = 100 * 60; 
         let timerInterval;
 
-        // Dummy Data jika gagal fetch (Fallback Cadangan)
         function generateDummyData() {
             bankSoal = [];
             for(let i=1; i<=110; i++) {
                 let kategori = i <= 30 ? "TWK" : (i <= 65 ? "TIU" : "TKP");
                 bankSoal.push({
                     nomor: i, kategori: kategori,
-                    soal: `Contoh simulasi teks soal untuk nomor ${i} bagian ${kategori}. Ini adalah data sementara karena tautan CSV belum dihubungkan dengan benar.`,
-                    A: "Pilihan Jawaban A", B: "Pilihan Jawaban B", C: "Pilihan Jawaban C", D: "Pilihan Jawaban D", E: "Pilihan Jawaban E",
+                    soal: `Soal no ${i} untuk ${kategori}. (Memakai dummy data karena link gagal diakses)`,
+                    A: "Opsi A", B: "Opsi B", C: "Opsi C", D: "Opsi D", E: "Opsi E",
                     Kunci: kategori === 'TKP' ? "A-5,B-4,C-3,D-2,E-1" : "A"
                 });
             }
             siapMulai();
         }
 
-        // Ambil data CSV asli dari Google Sheets menggunakan PapaParse
         function ambilDataSoal() {
             let url = moduleUrls[currentModuleId];
-            if(!url) {
-                generateDummyData();
-                return;
-            }
+            if(!url) { generateDummyData(); return; }
 
             Papa.parse(url, {
                 download: true,
@@ -232,18 +270,15 @@
                 skipEmptyLines: true,
                 complete: function(results) {
                     if(!results.data || results.data.length === 0) {
-                        generateDummyData();
-                        return;
+                        generateDummyData(); return;
                     }
 
                     let parsedSoal = [];
-
-                    // Fungsi pembantu agar tidak peduli huruf besar/kecil di nama kolom Google Sheet
                     results.data.forEach((row, index) => {
                         const getVal = (possibleKeys) => {
                             for (let k of possibleKeys) {
                                 for (let key in row) {
-                                    if (key.trim().toLowerCase() === k.toLowerCase() && row[key] !== undefined && row[key] !== null) {
+                                    if (key.trim().toLowerCase() === k.toLowerCase() && row[key]) {
                                         return row[key].toString().trim();
                                     }
                                 }
@@ -252,50 +287,40 @@
                         };
 
                         let teksSoal = getVal(["soal", "teks_soal", "question", "pertanyaan"]);
-                        
                         if (teksSoal !== "") {
                             let kat = getVal(["kategori", "category", "jenis"]);
-                            if (!kat) {
-                                kat = (index + 1) <= 30 ? "TWK" : ((index + 1) <= 65 ? "TIU" : "TKP");
-                            }
+                            if (!kat) { kat = (index + 1) <= 30 ? "TWK" : ((index + 1) <= 65 ? "TIU" : "TKP"); }
 
                             parsedSoal.push({
                                 nomor: index + 1,
                                 kategori: kat,
                                 soal: teksSoal,
-                                A: getVal(["a", "opsi_a", "pilihan_a"]),
-                                B: getVal(["b", "opsi_b", "pilihan_b"]),
-                                C: getVal(["c", "opsi_c", "pilihan_c"]),
-                                D: getVal(["d", "opsi_d", "pilihan_d"]),
-                                E: getVal(["e", "opsi_e", "pilihan_e"]),
-                                Kunci: getVal(["kunci", "jawaban", "kunci_jawaban", "key"])
+                                A: getVal(["a", "opsi_a"]),
+                                B: getVal(["b", "opsi_b"]),
+                                C: getVal(["c", "opsi_c"]),
+                                D: getVal(["d", "opsi_d"]),
+                                E: getVal(["e", "opsi_e"]),
+                                Kunci: getVal(["kunci", "jawaban", "key"])
                             });
                         }
                     });
 
-                    if(parsedSoal.length === 0) {
-                        generateDummyData();
-                    } else {
-                        bankSoal = parsedSoal;
-                        siapMulai();
-                    }
+                    if(parsedSoal.length === 0) generateDummyData();
+                    else { bankSoal = parsedSoal; siapMulai(); }
                 },
-                error: function() {
-                    generateDummyData();
-                }
+                error: function() { generateDummyData(); }
             });
         }
 
-        // Ubah layar loading menjadi tombol Start (Menunggu kesiapan peserta)
         function siapMulai() {
             let loadingScreen = document.getElementById('loadingScreen');
             loadingScreen.innerHTML = `
-                <div style="text-align: center;">
+                <div style="text-align: center; max-width: 90%; margin: 0 auto;">
                     <i class="fa-solid fa-clipboard-check" style="font-size: 50px; color: #10b981; margin-bottom: 20px;"></i>
-                    <h2 style="color: #0f172a; font-size: 22px; margin-bottom: 10px;">Soal Berhasil Dimuat</h2>
-                    <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Waktu ujian 100 menit. Waktu akan berjalan saat Anda menekan tombol di bawah.</p>
+                    <h2 style="color: #0f172a; font-size: 22px; margin-bottom: 10px;">Data Modul Siap!</h2>
+                    <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Tekan tombol di bawah ini untuk memulai. Waktu 100 Menit akan langsung dihitung mundur.</p>
                     <button onclick="mulaiUjian()" style="background: #3b82f6; color: white; border: none; padding: 12px 30px; font-size: 16px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
-                        <i class="fa-solid fa-play"></i> Mulai Latihan
+                        <i class="fa-solid fa-play"></i> Mulai Kerjakan
                     </button>
                 </div>
             `;
@@ -305,13 +330,11 @@
             document.getElementById('loadingScreen').style.display = 'none';
             document.getElementById('area-ujian').style.display = 'block';
             
-            // Atur Header
-            document.getElementById('judul-modul').innerText = "Simulasi SKD - " + currentModuleId.toUpperCase();
+            document.getElementById('judul-modul').innerText = "SKD - " + currentModuleId.toUpperCase();
             
             buatNavigasi();
             tampilkanSoal(0);
             
-            // Jalankan Timer
             timerInterval = setInterval(updateTimer, 1000);
         }
 
@@ -324,11 +347,8 @@
             totalDetik--;
             let m = Math.floor(totalDetik / 60);
             let s = totalDetik % 60;
-            let timeStr = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-            let tDisplay = document.getElementById('waktu-tersisa');
-            tDisplay.innerText = timeStr;
+            document.getElementById('waktu-tersisa').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
 
-            // Efek Panik jika sisa 5 menit
             if(totalDetik < 300) {
                 document.getElementById('timerDisplay').classList.add('timer-warning');
             }
@@ -351,15 +371,12 @@
             indeksSoal = indeks;
             let soalObj = bankSoal[indeks];
             
-            // Hapus kelas aktif di navigasi lama
             document.querySelectorAll('.btn-nomor').forEach(b => b.classList.remove('aktif'));
             document.getElementById('nav-' + indeks).classList.add('aktif');
 
-            // Render Teks
             document.getElementById('kategori-soal').innerText = `Nomor ${indeks + 1} (${soalObj.kategori})`;
             document.getElementById('teks-soal').innerText = soalObj.soal;
 
-            // Render Opsi
             let opsHTML = '';
             ['A', 'B', 'C', 'D', 'E'].forEach(huruf => {
                 let isChecked = jawabanPeserta[indeks] === huruf;
@@ -372,7 +389,6 @@
             });
             document.getElementById('opsi-list').innerHTML = opsHTML;
 
-            // Status Tombol Ragu
             let btnRagu = document.getElementById('btnRagu');
             if(raguRagu[indeks]) {
                 btnRagu.innerHTML = '<i class="fa-solid fa-flag"></i> Hapus Ragu';
@@ -385,12 +401,9 @@
 
         function pilihOpsi(indeks, huruf) {
             jawabanPeserta[indeks] = huruf;
-            
-            // Update UI Navigasi
             let navBtn = document.getElementById('nav-' + indeks);
             if(!raguRagu[indeks]) navBtn.classList.add('dijawab');
-            
-            tampilkanSoal(indeks); // Re-render untuk efek highlight
+            tampilkanSoal(indeks); 
         }
 
         function tandaiRagu() {
@@ -418,16 +431,17 @@
             for(let i=0; i<bankSoal.length; i++) {
                 if(!jawabanPeserta[i]) kosong++;
             }
-            let msg = kosong > 0 ? `Terdapat ${kosong} soal belum dijawab. Di sistem CAT tidak ada sistem minus, sangat disarankan untuk menebak sisa soal.\n\nYakin akhiri ujian?` : "Apakah Anda yakin ingin mengakhiri ujian dan melihat nilai?";
-            
+            let msg = kosong > 0 ? `Terdapat ${kosong} soal belum dijawab.\n\nYakin akhiri ujian?` : "Yakin ingin melihat nilai?";
             if(confirm(msg)) kalkulasiHasil();
         }
 
-        // ================= LOGIKA EVALUASI & CTA NEXT CHAPTER =================
         function kalkulasiHasil() {
             clearInterval(timerInterval);
             document.getElementById('area-ujian').style.display = 'none';
             document.getElementById('hasil-panel').style.display = 'block';
+
+            // Bersihkan sesi (Token) agar simulasi direset & pengguna wajib memasukkan Kunci dari beranda lagi nanti (Keamanan Ekstra)
+            sessionStorage.removeItem('token_' + currentModuleId);
 
             let skorTWK = 0, skorTIU = 0, skorTKP = 0;
             
@@ -436,10 +450,8 @@
                 let jawab = jawabanPeserta[i];
                 
                 if(soal.kategori === 'TKP') {
-                    // Logic nilai 1-5 untuk TKP
-                    if(jawab) skorTKP += Math.floor(Math.random() * 2) + 4; // Anggap rata-rata pilih poin 4/5
+                    if(jawab) skorTKP += Math.floor(Math.random() * 2) + 4;
                 } else {
-                    // Benar +5, Salah 0
                     if(jawab === soal.Kunci) {
                         if(soal.kategori === 'TWK') skorTWK += 5;
                         if(soal.kategori === 'TIU') skorTIU += 5;
@@ -447,43 +459,22 @@
                 }
             }
 
-            // Tampilkan Nilai
             document.getElementById('skor-twk').innerText = skorTWK;
             document.getElementById('skor-tiu').innerText = skorTIU;
             document.getElementById('skor-tkp').innerText = skorTKP;
             document.getElementById('skor-total-akhir').innerText = skorTWK + skorTIU + skorTKP;
 
-            // Status Passing Grade (Standar Umum: TWK 65, TIU 80, TKP 166)
             setPassStatus('status-twk', skorTWK, 65);
             setPassStatus('status-tiu', skorTIU, 80);
             setPassStatus('status-tkp', skorTKP, 166);
 
-            // Generasi Feedback AI
             let analisis = "";
             if(skorTIU < 80) analisis += "<strong>TIU Anda dalam Zona Bahaya.</strong> Kemungkinan Anda kehabisan waktu di hitungan kuantitatif. Berlatihlah menggunakan trik pendekatan (estimasi) nilai.<br><br>";
-            if(skorTWK < 65) analisis += "<strong>TWK Masih Lemah.</strong> Anda gagal membedakan kata kunci pengamalan Sila ke-2 dan Sila ke-5 pada soal narasi panjang. Baca panduan di Jurnal Blog MiVida.<br><br>";
-            if(skorTKP < 166) analisis += "<strong>Insting TKP Anda Belum Ideal.</strong> Anda masih sering memilih jawaban Reaktif (poin 3 atau 4). Biasakan mencari opsi yang Proaktif dan Solutif.<br><br>";
+            if(skorTWK < 65) analisis += "<strong>TWK Masih Lemah.</strong> Anda gagal membedakan kata kunci pada soal narasi panjang. Baca panduan di Jurnal Blog MiVida.<br><br>";
+            if(skorTKP < 166) analisis += "<strong>Insting TKP Anda Belum Ideal.</strong> Anda masih sering memilih jawaban Reaktif. Biasakan mencari opsi yang Proaktif dan Solutif.<br><br>";
             if(skorTIU >= 80 && skorTWK >= 65 && skorTKP >= 166) analisis = "<strong>Luar Biasa!</strong> Manajemen waktu dan insting Anda sudah tajam. Anda sudah berada di atas batas aman Passing Grade. Tantang diri Anda di modul berikutnya!";
             
             document.getElementById('teks-analisis').innerHTML = analisis;
-
-            // LOGIKA CTA NEXT CHAPTER
-            document.getElementById('nama-chapter-sekarang').innerText = currentModuleId.toUpperCase();
-            let linkBtn = document.getElementById('link-next-chapter');
-            
-            if(currentModuleId === 'cpns1') {
-                linkBtn.innerText = "Buka Gembok Chapter 2 (HOTS)";
-                linkBtn.href = "../index.html#cpns";
-            } else if (currentModuleId === 'cpns2') {
-                linkBtn.innerText = "Buka Gembok Chapter 3 (Final Tryout)";
-                linkBtn.href = "../index.html#cpns";
-            } else if (currentModuleId === 'cpns3') {
-                linkBtn.innerText = "Buka Gembok Chapter 4 (Elite Level)";
-                linkBtn.href = "../index.html#cpns";
-            } else {
-                linkBtn.innerText = "Kembali ke Beranda";
-                linkBtn.href = "../index.html";
-            }
         }
 
         function setPassStatus(elementId, skor, batas) {
@@ -497,7 +488,6 @@
             }
         }
         
-        // Panggil fetch data saat halaman dimuat
         ambilDataSoal();
     </script>
 </body>
