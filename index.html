@@ -71,6 +71,7 @@
             --primary-gradient: linear-gradient(135deg, #6366f1, #a855f7);
             --cpns-color: #3b82f6; --bumn-color: #f59e0b; --utbk-color: #ec4899; --blog-color: #10b981;
             --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 30px -10px rgba(99, 102, 241, 0.15);
             --saweria-color: #FA8C16;
         }
 
@@ -109,39 +110,68 @@
         .category-header h2 { font-size: 28px; font-weight: 800; margin-bottom: 15px;}
         .category-desc { color: var(--text-muted); font-size: 14.5px; max-width: 800px; margin: 0 auto; background: var(--bg-main); padding: 20px; border-radius: 16px; border: 1px solid var(--card-border); text-align: left;}
         
-        /* === PERUBAHAN GRID: Menghapus scroll-x, menggunakan grid responsif otomatis === */
+        /* === PERAPIHAN KATALOG GRID === */
         .modul-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 25px; 
-            margin-top: 30px; 
+            margin-top: 35px; 
         }
 
         .modul-card { 
-            background: var(--bg-main); border: 1px solid var(--card-border); border-radius: 20px; padding: 25px; 
-            display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; 
+            background: #ffffff; 
+            border: 1px solid var(--card-border); 
+            border-radius: 20px; 
+            padding: 28px 24px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
             height: 100%;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
-        .modul-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); border-color: rgba(99, 102, 241, 0.3);}
+        .modul-card:hover { 
+            transform: translateY(-6px); 
+            box-shadow: var(--shadow-hover); 
+            border-color: rgba(99, 102, 241, 0.4);
+        }
         
-        .modul-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;}
-        .modul-composition { list-style: none; margin-bottom: 20px; flex-grow: 1;}
-        .modul-composition li { font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;}
-        .modul-composition li i { color: #a855f7; margin-top: 4px; font-size: 12px;}
-        
-        .modul-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-        .meta-tag { background: #e2e8f0; padding: 4px 10px; border-radius: 8px; font-size: 11px; color: #475569; font-weight: 700; }
-        .meta-highlight { background: rgba(16, 185, 129, 0.15); color: #059669; }
-        .meta-terabox { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
+        .modul-card-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary-gradient);
+            color: #fff;
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(168, 85, 247, 0.3);
+            text-transform: uppercase;
+        }
 
-        .btn-action { width: 100%; text-decoration: none; text-align: center; padding: 14px; border-radius: 12px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; border: none; cursor: pointer;}
-        .btn-play { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3); }
-        .btn-play:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
-        .btn-secondary { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
-        .btn-secondary:hover { background: #e2e8f0; }
-        .btn-locked { background: #e2e8f0; color: #94a3b8; cursor: not-allowed; }
+        .modul-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--text-main);}
+        .modul-title i { font-size: 18px; color: #6366f1; }
         
-        .password-hint { font-size: 11px; color: #64748b; text-align: center; margin-top: 8px; font-style: italic; }
+        .modul-composition { list-style: none; margin-bottom: 20px; flex-grow: 1;}
+        .modul-composition li { font-size: 13.5px; color: var(--text-muted); margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;}
+        .modul-composition li i { color: #10b981; margin-top: 3px; font-size: 13px; flex-shrink: 0;}
+        
+        .modul-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; padding-top: 10px; border-top: 1px dashed var(--card-border); }
+        .meta-tag { background: #f1f5f9; padding: 5px 12px; border-radius: 8px; font-size: 11.5px; color: #475569; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
+        .meta-highlight { background: rgba(16, 185, 129, 0.12); color: #059669; }
+        .meta-terabox { background: rgba(168, 85, 247, 0.1); color: #9333ea; border: 1px solid rgba(168, 85, 247, 0.2); }
+
+        .btn-action { width: 100%; text-decoration: none; text-align: center; padding: 13px; border-radius: 12px; font-size: 13.5px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; border: none; cursor: pointer;}
+        .btn-play { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.25); }
+        .btn-play:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.35); }
+        .btn-secondary { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
+        .btn-secondary:hover { background: #f1f5f9; border-color: #94a3b8; }
+        .btn-locked { background: #f1f5f9; color: #94a3b8; cursor: not-allowed; border: 1px dashed #cbd5e1; }
+        
+        .password-hint { font-size: 11px; color: #94a3b8; text-align: center; margin-top: 10px; font-style: italic; }
 
         .community-section { background: var(--bg-card); border-top: 1px solid var(--card-border); padding: 80px 20px; text-align: center; }
         .comm-grid { max-width: 1000px; margin: 40px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
@@ -159,7 +189,6 @@
             .category-block { padding: 25px 15px; }
             .floating-saweria { bottom: 15px; right: 15px; padding: 10px 20px; font-size: 13px; }
             .hero-section { padding: 60px 20px 40px 20px; }
-            /* Membuat grid tersusun ke bawah secara rapi di layar HP */
             .modul-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -212,7 +241,6 @@
                     <i class="fa-solid fa-rocket" aria-hidden="true" style="color:#6366f1;"></i> 
                     Platform Tryout & Latihan CAT Terpercaya
                 </div>
-                <!-- Copywriting & SEO: Penekanan pada urgensi latihan & keunggulan -->
                 <h1>Kunci Lulus Seleksi: Sering <span>Latihan Simulasi CAT!</span></h1>
                 <p>Materi hafalan saja tidak cukup. Rahasia sukses menembus <strong>CPNS 2026, Rekrutmen Bersama BUMN, dan UTBK SNBT</strong> adalah konsistensi mengasah manajemen waktu dan insting menjawab soal HOTS. Bersama <b>MiVida.id</b>, nikmati pengalaman <em>tryout online</em> interaktif dengan bank soal berstandar BKN, evaluasi instan, dan platform anti-lag yang dirancang agar Anda 100% siap di hari ujian.</p>
             </div>
@@ -232,81 +260,122 @@
                 </div>
                 
                 <div class="modul-grid">
-                    <!-- CPNS Chapter 1 (Free) -->
+                    <!-- CPNS Chapter 1 -->
                     <div class="modul-card">
+                        <div class="modul-card-badge" style="background: #10b981;">Gratis</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Chapter 1: SKD Fundamental</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Analogi, Silogisme, Deret Angka, Figural.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Nasionalisme, Integritas, Bela Negara.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Pelayanan Publik, Jejaring Kerja, TIK.</li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Analogi, Silogisme, Deret Angka, Figural.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Nasionalisme, Integritas, Bela Negara.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Pelayanan Publik, Jejaring Kerja, TIK.</span></li>
                             </ul>
-                            <div class="modul-meta"><span class="meta-tag meta-highlight">Free Akses</span><span class="meta-tag">110 Soal (100 Menit)</span></div>
+                            <div class="modul-meta">
+                                <span class="meta-tag meta-highlight"><i class="fa-solid fa-unlock"></i> Free Akses</span>
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                            </div>
                         </div>
                         <div>
                             <button onclick="masukGratis('cpns1')" class="btn-action btn-play"><i class="fa-solid fa-play" aria-hidden="true"></i> Latihan Sekarang</button>
                         </div>
                     </div>
 
-                    <!-- CPNS Chapter 2 (Premium) -->
+                    <!-- CPNS Chapter 2 -->
                     <div class="modul-card">
+                        <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-fire" aria-hidden="true"></i> Chapter 2: SKD Ekstrem (HOTS)</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Soal cerita matematika penalaran tinggi.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Studi kasus implementasi Pancasila masa kini.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Skenario konflik manajerial instansi.</li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Soal cerita matematika penalaran tinggi.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Studi kasus implementasi Pancasila masa kini.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Skenario konflik manajerial instansi.</span></li>
                             </ul>
-                            <div class="modul-meta"><span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span><span class="meta-tag">110 Soal (100 Menit)</span></div>
+                            <div class="modul-meta">
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                            </div>
                         </div>
                         <div>
-                            <div style="display: flex; gap: 10px;">
-                                <a href="https://1024terabox.com/s/10RK3_5ncHAwfK-JdCWWV4w" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-eye" aria-hidden="true"></i> Lihat Kunci</a>
-                                <button onclick="bukaPremium('MIVIDACPNS2026', 'cpns2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Akses</button>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="https://1024terabox.com/s/10RK3_5ncHAwfK-JdCWWV4w" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <button onclick="bukaPremium('MIVIDACPNS2026', 'cpns2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF Anda.</div>
+                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
                         </div>
                     </div>
 
                     <!-- CPNS Chapter 3 -->
                     <div class="modul-card">
+                        <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i> Chapter 3: SKD Final Tryout</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Pemecahan masalah kombinatorika & figural 3D.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Hubungan internasional & kebijakan publik.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Indikator anti-radikalisme & etika instansi.</li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Kombinatorika & figural 3D.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Hubungan internasional & kebijakan publik.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Anti-radikalisme & etika instansi.</span></li>
                             </ul>
-                            <div class="modul-meta"><span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span><span class="meta-tag">110 Soal (100 Menit)</span></div>
+                            <div class="modul-meta">
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                            </div>
                         </div>
                         <div>
-                            <div style="display: flex; gap: 10px;">
-                                <a href="https://1024terabox.com/s/1Py65uB2YuwoZFHI1Sy-obQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-eye" aria-hidden="true"></i> Lihat Kunci</a>
-                                <button onclick="bukaPremium('MIVIDA12439CPNS3', 'cpns3')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Akses</button>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="https://1024terabox.com/s/1Py65uB2YuwoZFHI1Sy-obQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <button onclick="bukaPremium('MIVIDA12439CPNS3', 'cpns3')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF Anda.</div>
+                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
                         </div>
                     </div>
 
                     <!-- CPNS Chapter 4 -->
                     <div class="modul-card">
+                        <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-crown" aria-hidden="true"></i> Chapter 4: SKD Elite Simulation</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TIU (35 Soal):</b> Simulasi jebakan waktu & barisan bilangan kompleks.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TWK (30 Soal):</b> Analisis butir-butir UUD amandemen terbaru.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKP (45 Soal):</b> Situasi dilema prioritas ganda tingkat elit.</li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Jebakan waktu & barisan bilangan kompleks.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Analisis amandemen UUD terbaru.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Dilema prioritas ganda tingkat elit.</span></li>
                             </ul>
-                            <div class="modul-meta"><span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span><span class="meta-tag">110 Soal (100 Menit)</span></div>
+                            <div class="modul-meta">
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                            </div>
                         </div>
                         <div>
-                            <div style="display: flex; gap: 10px;">
-                                <a href="https://1024terabox.com/s/1pI8Cot3qGE-YxJ9YTjRvkQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;" onclick="alert('Link TeraBox Chapter 4 sedang dalam proses unggah.')"><i class="fa-solid fa-eye" aria-hidden="true"></i> Lihat Kunci</a>
-                                <button onclick="bukaPremium('Akj19ajdCPNS4', 'cpns4')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Akses</button>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="https://1024terabox.com/s/1pI8Cot3qGE-YxJ9YTjRvkQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <button onclick="bukaPremium('Akj19ajdCPNS4', 'cpns4')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF Anda.</div>
+                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
                         </div>
                     </div>
+
+                    <!-- CPNS Chapter 5 (TERBARU) -->
+                    <div class="modul-card">
+                        <div class="modul-card-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">🔥 HOT</div>
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-award" aria-hidden="true"></i> Chapter 5: SKD Master Challenge</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Penalaran analitis & kecukupan data.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Pengamalan Pancasila & Sejarah Kritis.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Manajemen konflik & kepemimpinan digital.</span></li>
+                            </ul>
+                            <div class="modul-meta">
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="https://1024terabox.com/s/13J8BobgXiMdIxkJMgsECxQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <button onclick="bukaPremium('1hasfh3SIAhsas91', 'cpns5')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
+                            </div>
+                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -323,36 +392,37 @@
                 
                 <div class="modul-grid">
                     <div class="modul-card">
+                        <div class="modul-card-badge" style="background: var(--bumn-color);">BUMN</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-building" aria-hidden="true"></i> Chapter 1: BUMN Foundation</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKD (50 Soal):</b> Deret Angka, Logika Analitik, Spasial.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>AKHLAK (50 Soal):</b> Implementasi Etika Core Values BUMN.</li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKD (50 Soal):</b> Deret Angka, Logika Analitik, Spasial.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>AKHLAK (50 Soal):</b> Core Values BUMN.</span></li>
                             </ul>
                             <div class="modul-meta">
-                                <span class="meta-tag meta-terabox" style="color: #f59e0b; border-color: #f59e0b;"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span>
-                                <span class="meta-tag">100 Soal</span>
+                                <span class="meta-tag meta-terabox" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 100 Soal (120 Mnt)</span>
                             </div>
                         </div>
                         <div>
-                            <div style="display: flex; gap: 10px;">
-                                <a href="https://1024terabox.com/s/1nIiG5wijs_QuYrJhUP55ZQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-eye" aria-hidden="true"></i> Lihat Kunci</a>
-                                <button onclick="bukaPremium('AKHLAKBUMN2026', 'bumn1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--bumn-color); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Akses</button>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="https://1024terabox.com/s/1nIiG5wijs_QuYrJhUP55ZQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <button onclick="bukaPremium('AKHLAKBUMN2026', 'bumn1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--bumn-color); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF Anda.</div>
+                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
                         </div>
                     </div>
 
-                    <div class="modul-card">
+                    <div class="modul-card" style="opacity: 0.85;">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Chapter 2: BUMN Pro Level</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TKD (50 Soal):</b> Studi Numerik Kompleks.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>AKHLAK (50 Soal):</b> Resolusi Konflik Kepemimpinan BUMN.</li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKD (50 Soal):</b> Studi Numerik Kompleks.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>AKHLAK (50 Soal):</b> Resolusi Konflik Kepemimpinan.</span></li>
                             </ul>
                             <div class="modul-meta"><span class="meta-tag">100 Soal</span><span class="meta-tag">Segera Hadir</span></div>
                         </div>
-                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Menyusul</button>
+                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Dalam Penyusunan</button>
                     </div>
                 </div>
             </section>
@@ -370,36 +440,37 @@
                 
                 <div class="modul-grid">
                     <div class="modul-card">
+                        <div class="modul-card-badge" style="background: var(--utbk-color);">SNBT</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Chapter 1: TPS Fundamental</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TPS (40 Soal):</b> Penalaran Umum & Kuantitatif.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>Literasi (70 Soal):</b> B. Indonesia, B. Inggris, & Pen. Matematika.</li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TPS (40 Soal):</b> Penalaran Umum & Kuantitatif.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>Literasi (70 Soal):</b> B. Indo, B. Inggris, & Pen. Matematika.</span></li>
                             </ul>
                             <div class="modul-meta">
-                                <span class="meta-tag meta-terabox" style="color: #ec4899; border-color: rgba(236, 72, 153, 0.2);"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium Akses</span>
-                                <span class="meta-tag">110 Soal</span>
+                                <span class="meta-tag meta-terabox" style="color: #ec4899; border-color: rgba(236, 72, 153, 0.2);"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (195 Mnt)</span>
                             </div>
                         </div>
                         <div>
-                            <div style="display: flex; gap: 10px;">
-                                <a href="https://1024terabox.com/s/1i0rWbgKKwKP2WvHC8hbfPg" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-eye" aria-hidden="true"></i> Lihat Kunci</a>
-                                <button onclick="bukaPremium('123kjas0k2jkaAaj', 'utbk1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Akses</button>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="https://1024terabox.com/s/1i0rWbgKKwKP2WvHC8hbfPg" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <button onclick="bukaPremium('123kjas0k2jkaAaj', 'utbk1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF Anda.</div>
+                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
                         </div>
                     </div>
 
-                    <div class="modul-card">
+                    <div class="modul-card" style="opacity: 0.85;">
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Chapter 2: Tembus PTN Favorit</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>TPS (40 Soal):</b> Hots Matematika Dasar.</li>
-                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <b>Literasi (70 Soal):</b> Analisis Wacana Kritis (Jurnal).</li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TPS (40 Soal):</b> HOTS Matematika Dasar.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>Literasi (70 Soal):</b> Analisis Wacana Kritis.</span></li>
                             </ul>
                             <div class="modul-meta"><span class="meta-tag">110 Soal</span><span class="meta-tag">Segera Hadir</span></div>
                         </div>
-                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Menyusul</button>
+                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Dalam Penyusunan</button>
                     </div>
                 </div>
             </section>
@@ -424,7 +495,7 @@
 
     <!-- SCRIPT PENGAMAN & LOGIKA -->
     <script>
-        // 1. PENGAMAN WEBSITE (Anti Inspect Element Dasar)
+        // 1. PENGAMAN WEBSITE
         document.addEventListener('contextmenu', event => event.preventDefault()); 
         document.addEventListener('keydown', function(e) {
             if(e.keyCode == 123 || 
@@ -512,7 +583,7 @@
             });
         });
 
-        // 4. LOGIKA TOKEN / PASSWORD (Pembaruan Keamanan)
+        // 4. LOGIKA TOKEN / PASSWORD
         function masukGratis(modulTujuan) {
             let confirmMasuk = confirm("Anda akan memulai Latihan Simulasi SKD Fundamental gratis.\n\nPerhatian: Begitu Anda masuk, timer ujian akan langsung berjalan. Latih kecepatan Anda. Apakah Anda sudah siap?");
             if(confirmMasuk) {
@@ -526,7 +597,7 @@
             if (pass === kunciRahasia) {
                 let confirmMasuk = confirm("Akses Diterima!\n\nPerhatian: Begitu Anda masuk, timer simulasi CAT akan langsung berjalan. Apakah Anda sudah siap menguji kemampuan Anda?");
                 if(confirmMasuk) {
-                    sessionStorage.setItem('token_' + modulTujuan, kunciRahasia); // Simpan token di browser
+                    sessionStorage.setItem('token_' + modulTujuan, kunciRahasia);
                     window.location.href = "kuis.html?module=" + modulTujuan; 
                 }
             } else if (pass !== null && pass.trim() !== "") {
