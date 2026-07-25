@@ -80,7 +80,8 @@
         .btn-nomor.ragu { background: #f59e0b; color: white; border-color: #f59e0b;}
         .btn-nomor.aktif { outline: 2px solid #0f172a; outline-offset: 2px; }
 
-        .btn-selesai { width: 100%; background: #10b981; color: white; margin-top: 20px; padding: 15px; font-size: 15px; }
+        .btn-selesai { width: 100%; background: #10b981; color: white; margin-top: 20px; padding: 15px; font-size: 15px; border:none; border-radius:10px; cursor:pointer; font-weight:700; transition:0.3s;}
+        .btn-selesai:hover { background: #059669; }
 
         /* ====== TAMPILAN EVALUASI ====== */
         #hasil-panel { display: none; max-width: 900px; margin: 40px auto; background: #fff; border-radius: 24px; padding: 50px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;}
@@ -96,6 +97,7 @@
         .eval-status { font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 12px; display: inline-block; margin-top: 10px;}
         .status-lulus { background: #d1fae5; color: #065f46; }
         .status-gagal { background: #fee2e2; color: #991b1b; }
+        .status-info { background: #e0f2fe; color: #0369a1; }
 
         .feedback-analisis { background: #fffbeb; border: 1px solid #fcd34d; padding: 25px; border-radius: 16px; font-size: 15px; color: #92400e; margin-bottom: 40px; line-height: 1.7;}
         .feedback-analisis h3 { font-size: 18px; margin-bottom: 15px;}
@@ -236,30 +238,36 @@
                 complete: function(results) {
                     let parsedSoal = [];
                     results.data.forEach((row, index) => {
-                        // Pencari Header Pintar (Anti Case-Sensitive & Toleransi Spasi)
+                        
+                        // FUNGSI INI SUDAH DIPERBARUI: ANTI BOM & ANTI SPACE 
                         const getVal = (possibleKeys) => {
                             for (let k of possibleKeys) {
                                 for (let key in row) {
-                                    if (key.trim().toLowerCase() === k.toLowerCase() && row[key]) return row[key].toString().trim();
+                                    // Menghapus \uFEFF (BOM) yang sering menempel di kolom pertama Google Sheet
+                                    let cleanKey = key.replace(/^\uFEFF/, '').trim().toLowerCase();
+                                    if (cleanKey === k.toLowerCase() && row[key]) {
+                                        return row[key].toString().trim();
+                                    }
                                 }
                             }
                             return "";
                         };
 
-                        let teksSoal = getVal(["soal"]);
+                        let teksSoal = getVal(["soal", "teks soal"]);
                         if (teksSoal !== "") {
-                            let kat = getVal(["kategori"]);
+                            // Ditambahkan banyak alias untuk berjaga-jaga
+                            let kat = getVal(["kategori", "category", "jenis"]);
                             
                             parsedSoal.push({
                                 nomor: index + 1, 
                                 kategori: kat, 
                                 soal: teksSoal,
-                                A: getVal(["opsi_a"]), 
-                                B: getVal(["opsi_b"]),
-                                C: getVal(["opsi_c"]), 
-                                D: getVal(["opsi_d"]),
-                                E: getVal(["opsi_e"]), 
-                                Kunci: getVal(["kunci"])
+                                A: getVal(["opsi_a", "opsi a", "a"]), 
+                                B: getVal(["opsi_b", "opsi b", "b"]),
+                                C: getVal(["opsi_c", "opsi c", "c"]), 
+                                D: getVal(["opsi_d", "opsi d", "d"]),
+                                E: getVal(["opsi_e", "opsi e", "e"]), 
+                                Kunci: getVal(["kunci", "jawaban", "kunci jawaban"])
                             });
                         }
                     });
@@ -335,8 +343,13 @@
             document.querySelectorAll('.btn-nomor').forEach(b => b.classList.remove('aktif'));
             document.getElementById('nav-' + indeks).classList.add('aktif');
 
-            // Format kategori
-            let labelKat = soalObj.kategori ? soalObj.kategori.toUpperCase() : "SOAL";
+            // FALLBACK KATEGORI TAMPILAN:
+            let labelKat = soalObj.kategori ? soalObj.kategori.toUpperCase() : "";
+            if (labelKat === "") {
+                if (indeks < 30) labelKat = "TWK";
+                else if (indeks < 65) labelKat = "TIU";
+                else labelKat = "TKP";
+            }
             document.getElementById('kategori-soal').innerText = `Nomor ${indeks + 1} (${labelKat})`;
             document.getElementById('teks-soal').innerText = soalObj.soal;
 
@@ -396,7 +409,6 @@
 
         function gantiSoal(arah) {
             let baru = indeksSoal + arah;
-            // Jika diklik di soal terakhir, akan me-trigger ini
             if (baru >= bankSoal.length) {
                 konfirmasiSelesai();
             } else if (baru >= 0) {
@@ -424,23 +436,31 @@
 
             let skor1 = 0, skor2 = 0, skor3 = 0, skorTotal = 0;
             
-            // LOGIKA SKORING BKN ASLI
+            // LOGIKA SKORING BKN ASLI - SUDAH DIPERBAIKI TOTAL
             for(let i=0; i<bankSoal.length; i++) {
                 let soal = bankSoal[i];
                 let jawab = jawabanPeserta[i];
-                if (!jawab) continue; 
+                if (!jawab) continue; // Skip jika peserta tidak mengisi nomor ini
                 
                 let jawabStr = jawab.trim().toUpperCase();
-                let kunciStr = soal.Kunci ? soal.Kunci.trim().toUpperCase() : "";
                 
-                // Gunakan .includes() agar tidak sensitif jika ada tambahan kata (misal "Soal TWK", "TIU Silogisme")
+                // Mencegah error jika kunci mengandung spasi atau titik, ambil huruf alphabet pertamanya saja
+                let kunciMentah = soal.Kunci ? soal.Kunci.toUpperCase().replace(/[^A-E]/g, '') : "";
+                let kunciStr = kunciMentah.length > 0 ? kunciMentah[0] : "";
+                
+                // BACKUP PLAN KATEGORI (Jika kolom Kategori error dibaca dari Excel)
                 let kat = soal.kategori ? soal.kategori.toUpperCase() : "";
+                if (kat === "") {
+                    if (i < 30) kat = "TWK";
+                    else if (i < 65) kat = "TIU";
+                    else kat = "TKP";
+                }
 
                 if (currentModuleId.includes('bumn')) {
                     if (kat.includes('TKD') && jawabStr === kunciStr) skor1 += 5;
                     if (kat.includes('AKHLAK')) {
                         if (jawabStr === kunciStr) skor2 += 5;
-                        else skor2 += Math.floor(Math.random() * 4) + 1; // Simulasi poin 1-4
+                        else skor2 += Math.floor(Math.random() * 4) + 1; 
                     }
                 } 
                 else if (currentModuleId.includes('utbk')) {
@@ -449,17 +469,17 @@
                 } 
                 else { 
                     // ===== CPNS SKD =====
-                    if (kat.includes('TWK') && jawabStr === kunciStr) {
-                        skor1 += 5;
+                    if (kat.includes('TWK')) {
+                        if (jawabStr === kunciStr) skor1 += 5;
                     } 
-                    else if (kat.includes('TIU') && jawabStr === kunciStr) {
-                        skor2 += 5;
+                    else if (kat.includes('TIU')) {
+                        if (jawabStr === kunciStr) skor2 += 5;
                     } 
                     else if (kat.includes('TKP')) {
                         if (jawabStr === kunciStr) {
-                            skor3 += 5; // Jawaban terbaik (Sesuai sheet Anda = A/B/C/D/E tunggal)
+                            skor3 += 5; 
                         } else {
-                            // Karena di Sheet Anda poin lain tidak ada, kita simulasi acak dari 1 sampai 4
+                            // Karena Kunci di Excel hanya ada poin 5, simulasi acak 1-4 untuk pilihan lainnya
                             skor3 += Math.floor(Math.random() * 4) + 1; 
                         }
                     }
