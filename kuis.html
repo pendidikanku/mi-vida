@@ -67,7 +67,7 @@
         .btn { padding: 14px 25px; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.2s; border: none; font-size: 14.5px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;}
         .btn-prev { background: #f1f5f9; color: #475569; } .btn-prev:hover { background: #e2e8f0; }
         .btn-ragu { background: #fef3c7; color: #d97706; } .btn-ragu:hover { background: #fde68a; }
-        .btn-next { background: #3b82f6; color: white; } .btn-next:hover { background: #2563eb; }
+        .btn-next { background: #3b82f6; color: white; transition: 0.3s; } .btn-next:hover { background: #2563eb; }
 
         .navigasi-panel { background: #fff; border-radius: 20px; padding: 25px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; position: sticky; top: 90px;}
         .navigasi-title { font-weight: 800; margin-bottom: 15px; font-size: 16px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;}
@@ -170,7 +170,8 @@
                 <div class="action-panel">
                     <button class="btn btn-prev" onclick="gantiSoal(-1)"><i class="fa-solid fa-chevron-left"></i> Sebelumnya</button>
                     <button class="btn btn-ragu" onclick="tandaiRagu()" id="btnRagu"><i class="fa-solid fa-flag"></i> Ragu-Ragu</button>
-                    <button class="btn btn-next" onclick="gantiSoal(1)">Selanjutnya <i class="fa-solid fa-chevron-right"></i></button>
+                    <!-- Tombol Next diberi ID agar bisa dimanipulasi dengan JS -->
+                    <button class="btn btn-next" id="btnNext" onclick="gantiSoal(1)">Selanjutnya <i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </main>
 
@@ -400,6 +401,7 @@
             });
             document.getElementById('opsi-list').innerHTML = opsHTML;
 
+            // Logika Tombol Ragu-ragu
             let btnRagu = document.getElementById('btnRagu');
             if(raguRagu[indeks]) {
                 btnRagu.innerHTML = '<i class="fa-solid fa-flag"></i> Hapus Ragu';
@@ -407,6 +409,16 @@
             } else {
                 btnRagu.innerHTML = '<i class="fa-regular fa-flag"></i> Ragu-Ragu';
                 btnRagu.style.background = '#fef3c7'; btnRagu.style.color = '#d97706';
+            }
+
+            // PERBAIKAN: Ubah tampilan tombol next jika mencapai soal terakhir
+            let btnNext = document.getElementById('btnNext');
+            if (indeks === bankSoal.length - 1) {
+                btnNext.innerHTML = '<i class="fa-solid fa-check-double"></i> Selesai Ujian';
+                btnNext.style.background = '#10b981'; // Warna hijau konfirmasi
+            } else {
+                btnNext.innerHTML = 'Selanjutnya <i class="fa-solid fa-chevron-right"></i>';
+                btnNext.style.background = '#3b82f6'; // Warna biru standar
             }
         }
 
@@ -431,7 +443,12 @@
 
         function gantiSoal(arah) {
             let baru = indeksSoal + arah;
-            if(baru >= 0 && baru < bankSoal.length) tampilkanSoal(baru);
+            // PERBAIKAN: Fungsi klik tombol selanjutnya pada soal terakhir langsung mengarah ke evaluasi
+            if (baru >= 0 && baru < bankSoal.length) {
+                tampilkanSoal(baru);
+            } else if (baru >= bankSoal.length) {
+                konfirmasiSelesai();
+            }
         }
 
         function konfirmasiSelesai() {
@@ -453,24 +470,54 @@
 
             let skor1 = 0, skor2 = 0, skor3 = 0, skorTotal = 0;
             
-            // Proses Penilaian
+            // PERBAIKAN TOTAL SISTEM SKORING
             for(let i=0; i<bankSoal.length; i++) {
                 let soal = bankSoal[i];
                 let jawab = jawabanPeserta[i];
                 
+                // Mencegah error jika belum dijawab
+                if (!jawab) continue; 
+                
+                // Standardisasi string dengan trim dan uppercase untuk mencegah error karena spasi nyelip di Excel/CSV
+                let jawabStr = jawab.trim().toUpperCase();
+                let kunciStr = soal.Kunci ? soal.Kunci.trim().toUpperCase() : "";
+                let kat = soal.kategori ? soal.kategori.trim().toUpperCase() : "";
+
                 if (isBUMN) {
-                    if(soal.kategori.toUpperCase() === 'TKD' && jawab === soal.Kunci) skor1 += 5;
-                    if(soal.kategori.toUpperCase() === 'AKHLAK' && jawab) skor2 += Math.floor(Math.random() * 2) + 4;
-                } else if (isUTBK) {
-                    if(soal.kategori.toUpperCase() === 'TPS' && jawab === soal.Kunci) skor1 += 1;
-                    if(soal.kategori.toUpperCase() === 'LITERASI' && jawab === soal.Kunci) skor2 += 1;
-                } else {
-                    // Default CPNS (TWK, TIU, TKP)
-                    if(soal.kategori.toUpperCase() === 'TKP' && jawab) {
-                        skor3 += Math.floor(Math.random() * 2) + 4;
-                    } else if(jawab === soal.Kunci) {
-                        if(soal.kategori.toUpperCase() === 'TWK') skor1 += 5;
-                        if(soal.kategori.toUpperCase() === 'TIU') skor2 += 5;
+                    if (kat === 'TKD' && jawabStr === kunciStr) skor1 += 5;
+                    
+                    if (kat === 'AKHLAK') {
+                        if (kunciStr.includes("-")) {
+                            // Mencari poin dari format seperti A-5, B-4, C-3, dst
+                            let match = kunciStr.split(',').find(k => k.trim().startsWith(jawabStr));
+                            if (match) skor2 += parseInt(match.split('-')[1]) || 0;
+                        } else if (jawabStr === kunciStr) {
+                            skor2 += 5; // Antisipasi kalau format jawaban di Excel hanya huruf A/B/C/D/E
+                        }
+                    }
+                } 
+                else if (isUTBK) {
+                    if (kat === 'TPS' && jawabStr === kunciStr) skor1 += 1;
+                    if (kat === 'LITERASI' && jawabStr === kunciStr) skor2 += 1;
+                } 
+                else {
+                    // CPNS (TWK, TIU, TKP)
+                    if (kat === 'TKP') {
+                        if (kunciStr.includes("-")) {
+                            // Extract poin dari format A-5, B-4, C-3, D-2, E-1
+                            let match = kunciStr.split(',').find(k => k.trim().startsWith(jawabStr));
+                            if (match) {
+                                skor3 += parseInt(match.split('-')[1]) || 0;
+                            }
+                        } else if (jawabStr === kunciStr) {
+                            skor3 += 5; // Fallback jika author hanya menulis kunci A saja
+                        }
+                    } else {
+                        // Logika untuk TWK dan TIU (5 Poin per jawaban benar)
+                        if (jawabStr === kunciStr) {
+                            if (kat === 'TWK') skor1 += 5;
+                            if (kat === 'TIU') skor2 += 5;
+                        }
                     }
                 }
             }
