@@ -25,6 +25,7 @@
             "cpns2": "MIVIDACPNS2026",
             "cpns3": "MIVIDA12439CPNS3",
             "cpns4": "Akj19ajdCPNS4",
+            "cpns5": "1hasfh3SIAhsas91",
             "bumn1": "AKHLAKBUMN2026",
             "utbk1": "123kjas0k2jkaAaj"
         };
@@ -233,6 +234,7 @@
             "cpns2": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=177118517&single=true&output=csv",
             "cpns3": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=2124912226&single=true&output=csv",
             "cpns4": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1284587631&single=true&output=csv",
+            "cpns5": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=2039958969&single=true&output=csv",
             "bumn1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv",
             "utbk1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=293930227&single=true&output=csv"
         };
@@ -457,15 +459,15 @@
                 let jawab = jawabanPeserta[i];
                 
                 if (isBUMN) {
-                    if(soal.kategori.toUpperCase() === 'TKD' && jawab === soal.Kunci) skor1 += 5; // Asumsi 1 soal TKD 5 poin
-                    if(soal.kategori.toUpperCase() === 'AKHLAK' && jawab) skor2 += Math.floor(Math.random() * 2) + 4; // Asumsi sistem poin untuk AKHLAK
+                    if(soal.kategori.toUpperCase() === 'TKD' && jawab === soal.Kunci) skor1 += 5;
+                    if(soal.kategori.toUpperCase() === 'AKHLAK' && jawab) skor2 += Math.floor(Math.random() * 2) + 4;
                 } else if (isUTBK) {
                     if(soal.kategori.toUpperCase() === 'TPS' && jawab === soal.Kunci) skor1 += 1;
                     if(soal.kategori.toUpperCase() === 'LITERASI' && jawab === soal.Kunci) skor2 += 1;
                 } else {
                     // Default CPNS (TWK, TIU, TKP)
                     if(soal.kategori.toUpperCase() === 'TKP' && jawab) {
-                        skor3 += Math.floor(Math.random() * 2) + 4; // Simulasi poin 1-5 TKP
+                        skor3 += Math.floor(Math.random() * 2) + 4;
                     } else if(jawab === soal.Kunci) {
                         if(soal.kategori.toUpperCase() === 'TWK') skor1 += 5;
                         if(soal.kategori.toUpperCase() === 'TIU') skor2 += 5;
@@ -478,20 +480,18 @@
 
             let stringAnalisis = "<ul>";
 
-            // TAMPILAN BERDASARKAN MODUL
             if (isBUMN) {
                 document.getElementById('title-eval-1').innerText = "SKOR TKD";
                 document.getElementById('skor-box-1').innerText = skor1;
-                setPassStatus('status-box-1', skor1, 150); // Asumsi ambang batas TKD (cth: dari maks)
+                setPassStatus('status-box-1', skor1, 150);
 
                 document.getElementById('title-eval-2').innerText = "SKOR AKHLAK";
                 document.getElementById('skor-box-2').innerText = skor2;
                 setPassStatus('status-box-2', skor2, 195); 
 
-                document.getElementById('kard-3').style.display = 'none'; // Sembunyikan box ke 3
+                document.getElementById('kard-3').style.display = 'none';
                 document.getElementById('eval-grid-container').style.gridTemplateColumns = 'repeat(2, 1fr)';
 
-                // Analisis Terperinci BUMN
                 stringAnalisis += (skor1 < 150) ? 
                     "<li><b><i class='fa-solid fa-triangle-exclamation'></i> Evaluasi TKD:</b> Kemampuan spasial dan logika deret angka Anda butuh percepatan. Kehabisan waktu adalah musuh utama di sesi ini. Latih terus kecepatan *skimming* numerik Anda.</li>" : 
                     "<li><b><i class='fa-solid fa-check-circle' style='color:#10b981'></i> Keunggulan TKD:</b> Kapasitas kognitif Anda sudah di atas rata-rata! Pertahankan ritme ini.</li>";
@@ -514,7 +514,6 @@
                 document.getElementById('kard-3').style.display = 'none';
                 document.getElementById('eval-grid-container').style.gridTemplateColumns = 'repeat(2, 1fr)';
 
-                // Analisis Terperinci UTBK
                 stringAnalisis += (skor1 < 25) ? 
                     "<li><b><i class='fa-solid fa-triangle-exclamation'></i> Evaluasi TPS:</b> Anda masih sering terkecoh oleh distraktor pada logika matematika. Ingat, sistem IRT memberikan bobot tinggi pada soal sulit. Latih membedakan pola premis yang menjebak.</li>" : 
                     "<li><b><i class='fa-solid fa-check-circle' style='color:#10b981'></i> Keunggulan TPS:</b> Nalar kuantitatif dan logika umum Anda sudah di level aman untuk kampus favorit.</li>";
@@ -526,7 +525,7 @@
                 stringAnalisis += "<li><b>Catatan Penting:</b> Penilaian aktual SNBT menggunakan sistem **IRT (Item Response Theory)** di mana skor Anda sangat bergantung pada pembobotan tingkat kesulitan soal secara nasional.</li>";
 
             } else {
-                // Modul CPNS
+                // CPNS
                 document.getElementById('title-eval-1').innerText = "SKOR TWK";
                 document.getElementById('skor-box-1').innerText = skor1;
                 setPassStatus('status-box-1', skor1, 65);
@@ -539,7 +538,6 @@
                 document.getElementById('skor-box-3').innerText = skor3;
                 setPassStatus('status-box-3', skor3, 166);
 
-                // Analisis Terperinci CPNS
                 stringAnalisis += (skor1 < 65) ? 
                     "<li><b><i class='fa-solid fa-triangle-exclamation'></i> Kelemahan TWK:</b> Pemahaman pilar kebangsaan Anda masih di bawah *Passing Grade*. Anda cenderung kewalahan menghadapi soal HOTS bernarasi panjang. <b>Tindakan:</b> Kurangi hafalan buta, perbanyak pahami *studi kasus* pengamalan Pancasila di era modern.</li>" : 
                     "<li><b><i class='fa-solid fa-check-circle' style='color:#10b981'></i> Keunggulan TWK:</b> Insting nasionalisme dan analisis hukum Anda sudah stabil.</li>";
