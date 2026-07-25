@@ -18,14 +18,15 @@
             "cpns1": "FREE",
             "cpns2": "MIVIDACPNS2026",
             "cpns3": "MIVIDA12439CPNS3",
-            "cpns4": "123kjas0k2jkaAaj",
-            "bumn1": "AKHLAKBUMN2026"
+            "cpns4": "Akj19ajdCPNS4",
+            "bumn1": "AKHLAKBUMN2026",
+            "utbk1": "123kjas0k2jkaAaj"
         };
         const userToken = sessionStorage.getItem('token_' + currModule);
         
         // Cek apakah token ada dan valid. Jika tidak, tendang keluar!
         if (!userToken || userToken !== validTokens[currModule]) {
-            alert("Akses Ditolak!\n\nAnda tidak bisa mengakses halaman ini secara langsung tanpa memasukkan Kunci Gembok yang sah.");
+            alert("Akses Ditolak!\n\nAnda tidak bisa mengakses halaman ini secara langsung tanpa memasukkan Kunci Gembok yang sah dari halaman utama.");
             window.location.href = "index.html"; // Mengarahkan kembali ke homepage
         }
     </script>
@@ -111,7 +112,7 @@
             .cat-container { grid-template-columns: 1fr; gap: 20px;}
             .navigasi-panel { position: static; }
             .eval-grid { grid-template-columns: 1fr; }
-            .grid-nomor { max-height: 250px; } /* Lebih pendek agar tidak makan ruang scroll di hp */
+            .grid-nomor { max-height: 250px; } 
         }
         
         @media (max-width: 600px) {
@@ -123,10 +124,10 @@
             .soal-teks { font-size: 16px; margin-bottom: 20px;}
             .opsi-label { font-size: 14.5px; padding: 12px 15px; gap: 10px;}
             
-            /* Action Panel Mobile (Rapi dan mudah ditekan) */
+            /* Action Panel Mobile */
             .action-panel { flex-wrap: wrap; gap: 10px; padding-top: 20px;}
             .btn { flex: 1 1 45%; font-size: 14px; padding: 12px 10px; }
-            .btn-next { flex: 1 1 100%; order: 3; padding: 15px 10px; font-size: 15px;} /* Tombol next lebih besar */
+            .btn-next { flex: 1 1 100%; order: 3; padding: 15px 10px; font-size: 15px;} 
             .btn-prev { order: 1; }
             .btn-ragu { order: 2; }
             
@@ -139,7 +140,7 @@
 
     <div class="loading-screen" id="loadingScreen">
         <div class="spinner"></div>
-        <h2 style="color: #0f172a; font-size: 18px;">Memuat Bank Soal BKN...</h2>
+        <h2 style="color: #0f172a; font-size: 18px;">Memuat Bank Soal...</h2>
     </div>
 
     <!-- AREA UJIAN -->
@@ -148,16 +149,16 @@
             <div class="cat-title">
                 <a href="index.html" class="btn-home" title="Kembali ke Beranda"><i class="fa-solid fa-house"></i></a>
                 <i class="fa-solid fa-laptop-code"></i> 
-                <span id="judul-modul">Simulasi SKD 2026</span>
+                <span id="judul-modul">Simulasi CAT 2026</span>
             </div>
             <div class="timer-box" id="timerDisplay">
-                <i class="fa-regular fa-clock"></i> <span id="waktu-tersisa">100:00</span>
+                <i class="fa-regular fa-clock"></i> <span id="waktu-tersisa">00:00</span>
             </div>
         </header>
 
         <div class="cat-container">
             <main class="soal-panel">
-                <div class="soal-nomor" id="kategori-soal">Nomor 1 (TWK)</div>
+                <div class="soal-nomor" id="kategori-soal">Nomor 1</div>
                 <div class="soal-teks" id="teks-soal">Teks soal akan muncul di sini...</div>
                 
                 <div class="opsi-list" id="opsi-list">
@@ -174,7 +175,7 @@
             <aside class="navigasi-panel">
                 <div class="navigasi-title">Navigasi Soal</div>
                 <div class="grid-nomor" id="grid-nomor">
-                    <!-- Tombol Nomor 1-110 -->
+                    <!-- Tombol Nomor -->
                 </div>
                 <button class="btn btn-selesai" onclick="konfirmasiSelesai()"><i class="fa-solid fa-check-double"></i> Selesai Ujian</button>
             </aside>
@@ -184,24 +185,24 @@
     <!-- AREA HASIL EVALUASI -->
     <div id="hasil-panel">
         <div class="hasil-header">
-            <h2>Laporan Evaluasi SKD Anda</h2>
+            <h2>Laporan Evaluasi Anda</h2>
             <div class="skor-total" id="skor-total-akhir">0</div>
-            <p style="color: #64748b;">(Passing Grade Kumulatif Aman: > 400)</p>
+            <p style="color: #64748b;">(Hasil Kalkulasi Skor)</p>
         </div>
 
         <div class="eval-grid">
             <div class="eval-box twk">
-                <div style="font-size: 13px; font-weight: 800; color: #dc2626;">SKOR TWK</div>
+                <div style="font-size: 13px; font-weight: 800; color: #dc2626;" id="title-eval-1">SKOR BAGIAN 1</div>
                 <div class="eval-nilai" id="skor-twk">0</div>
                 <div class="eval-status" id="status-twk">Status</div>
             </div>
             <div class="eval-box tiu">
-                <div style="font-size: 13px; font-weight: 800; color: #10b981;">SKOR TIU</div>
+                <div style="font-size: 13px; font-weight: 800; color: #10b981;" id="title-eval-2">SKOR BAGIAN 2</div>
                 <div class="eval-nilai" id="skor-tiu">0</div>
                 <div class="eval-status" id="status-tiu">Status</div>
             </div>
             <div class="eval-box tkp">
-                <div style="font-size: 13px; font-weight: 800; color: #3b82f6;">SKOR TKP</div>
+                <div style="font-size: 13px; font-weight: 800; color: #3b82f6;" id="title-eval-3">SKOR BAGIAN 3</div>
                 <div class="eval-nilai" id="skor-tkp">0</div>
                 <div class="eval-status" id="status-tkp">Status</div>
             </div>
@@ -214,7 +215,7 @@
 
         <div class="cta-next-chapter" id="cta-selanjutnya">
             <h3>Tingkatkan Level Anda!</h3>
-            <p>Anda telah menyelesaikan simulasi. Uji batas kemampuan Anda di chapter berikutnya yang lebih ekstrem.</p>
+            <p>Anda telah menyelesaikan simulasi ini. Uji batas kemampuan Anda di chapter berikutnya yang lebih menantang.</p>
             <a href="index.html" class="cta-btn-next">Kembali ke Beranda</a>
         </div>
     </div>
@@ -229,12 +230,14 @@
         });
 
         // ================= LOGIKA SISTEM CAT & TIMER =================
+        // Perhatikan bagian tautan Google Sheet UTBK (telah diubah format URL-nya jadi CSV)
         const moduleUrls = {
             "cpns1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1999742481&single=true&output=csv",
             "cpns2": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=177118517&single=true&output=csv",
             "cpns3": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=2124912226&single=true&output=csv",
-            "cpns4": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=293930227&single=true&output=csv",
-            "bumn1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv"
+            "cpns4": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1284587631&single=true&output=csv",
+            "bumn1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv",
+            "utbk1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=293930227&single=true&output=csv"
         };
 
         let currentModuleId = new URLSearchParams(window.location.search).get('module') || 'cpns1';
@@ -243,13 +246,15 @@
         let raguRagu = {}; 
         let indeksSoal = 0;
         
-        let totalDetik = 100 * 60; 
+        let totalDetik = (currentModuleId.includes('utbk') ? 195 : 100) * 60; // Set 195 menit untuk UTBK
         let timerInterval;
 
         function generateDummyData() {
             bankSoal = [];
             for(let i=1; i<=110; i++) {
                 let kategori = i <= 30 ? "TWK" : (i <= 65 ? "TIU" : "TKP");
+                if (currentModuleId.includes('utbk')) kategori = "TPS";
+                
                 bankSoal.push({
                     nomor: i, kategori: kategori,
                     soal: `Soal no ${i} untuk ${kategori}. (Memakai dummy data karena link gagal diakses)`,
@@ -289,7 +294,10 @@
                         let teksSoal = getVal(["soal", "teks_soal", "question", "pertanyaan"]);
                         if (teksSoal !== "") {
                             let kat = getVal(["kategori", "category", "jenis"]);
-                            if (!kat) { kat = (index + 1) <= 30 ? "TWK" : ((index + 1) <= 65 ? "TIU" : "TKP"); }
+                            if (!kat) { 
+                                kat = (index + 1) <= 30 ? "TWK" : ((index + 1) <= 65 ? "TIU" : "TKP"); 
+                                if (currentModuleId.includes('utbk')) kat = "TPS";
+                            }
 
                             parsedSoal.push({
                                 nomor: index + 1,
@@ -313,12 +321,13 @@
         }
 
         function siapMulai() {
+            let durasi = currentModuleId.includes('utbk') ? 195 : 100;
             let loadingScreen = document.getElementById('loadingScreen');
             loadingScreen.innerHTML = `
                 <div style="text-align: center; max-width: 90%; margin: 0 auto;">
                     <i class="fa-solid fa-clipboard-check" style="font-size: 50px; color: #10b981; margin-bottom: 20px;"></i>
                     <h2 style="color: #0f172a; font-size: 22px; margin-bottom: 10px;">Data Modul Siap!</h2>
-                    <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Tekan tombol di bawah ini untuk memulai. Waktu 100 Menit akan langsung dihitung mundur.</p>
+                    <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">Tekan tombol di bawah ini untuk memulai. Waktu ${durasi} Menit akan langsung dihitung mundur.</p>
                     <button onclick="mulaiUjian()" style="background: #3b82f6; color: white; border: none; padding: 12px 30px; font-size: 16px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
                         <i class="fa-solid fa-play"></i> Mulai Kerjakan
                     </button>
@@ -330,7 +339,7 @@
             document.getElementById('loadingScreen').style.display = 'none';
             document.getElementById('area-ujian').style.display = 'block';
             
-            document.getElementById('judul-modul').innerText = "SKD - " + currentModuleId.toUpperCase();
+            document.getElementById('judul-modul').innerText = "SIMULASI " + currentModuleId.toUpperCase();
             
             buatNavigasi();
             tampilkanSoal(0);
@@ -345,9 +354,15 @@
                 return;
             }
             totalDetik--;
-            let m = Math.floor(totalDetik / 60);
+            let h = Math.floor(totalDetik / 3600);
+            let m = Math.floor((totalDetik % 3600) / 60);
             let s = totalDetik % 60;
-            document.getElementById('waktu-tersisa').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            
+            if(h > 0) {
+                document.getElementById('waktu-tersisa').innerText = `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            } else {
+                document.getElementById('waktu-tersisa').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            }
 
             if(totalDetik < 300) {
                 document.getElementById('timerDisplay').classList.add('timer-warning');
@@ -444,7 +459,14 @@
             sessionStorage.removeItem('token_' + currentModuleId);
 
             let skorTWK = 0, skorTIU = 0, skorTKP = 0;
+            let isUTBK = currentModuleId.includes('utbk');
             
+            if(isUTBK) {
+                document.getElementById('title-eval-1').innerText = "SKOR TPS";
+                document.getElementById('title-eval-2').innerText = "SKOR LITERASI";
+                document.getElementById('title-eval-3').innerText = "TOTAL BENAR";
+            }
+
             for(let i=0; i<bankSoal.length; i++) {
                 let soal = bankSoal[i];
                 let jawab = jawabanPeserta[i];
@@ -453,8 +475,9 @@
                     if(jawab) skorTKP += Math.floor(Math.random() * 2) + 4;
                 } else {
                     if(jawab === soal.Kunci) {
-                        if(soal.kategori === 'TWK') skorTWK += 5;
-                        if(soal.kategori === 'TIU') skorTIU += 5;
+                        if(soal.kategori === 'TWK' || soal.kategori === 'TPS') skorTWK += 5;
+                        else if(soal.kategori === 'TIU' || soal.kategori === 'Literasi') skorTIU += 5;
+                        else skorTIU += 5; // General
                     }
                 }
             }
@@ -464,17 +487,23 @@
             document.getElementById('skor-tkp').innerText = skorTKP;
             document.getElementById('skor-total-akhir').innerText = skorTWK + skorTIU + skorTKP;
 
-            setPassStatus('status-twk', skorTWK, 65);
-            setPassStatus('status-tiu', skorTIU, 80);
-            setPassStatus('status-tkp', skorTKP, 166);
-
-            let analisis = "";
-            if(skorTIU < 80) analisis += "<strong>TIU Anda dalam Zona Bahaya.</strong> Kemungkinan Anda kehabisan waktu di hitungan kuantitatif. Berlatihlah menggunakan trik pendekatan (estimasi) nilai.<br><br>";
-            if(skorTWK < 65) analisis += "<strong>TWK Masih Lemah.</strong> Anda gagal membedakan kata kunci pada soal narasi panjang. Baca panduan di Jurnal Blog MiVida.<br><br>";
-            if(skorTKP < 166) analisis += "<strong>Insting TKP Anda Belum Ideal.</strong> Anda masih sering memilih jawaban Reaktif. Biasakan mencari opsi yang Proaktif dan Solutif.<br><br>";
-            if(skorTIU >= 80 && skorTWK >= 65 && skorTKP >= 166) analisis = "<strong>Luar Biasa!</strong> Manajemen waktu dan insting Anda sudah tajam. Anda sudah berada di atas batas aman Passing Grade. Tantang diri Anda di modul berikutnya!";
-            
-            document.getElementById('teks-analisis').innerHTML = analisis;
+            if(!isUTBK) {
+                setPassStatus('status-twk', skorTWK, 65);
+                setPassStatus('status-tiu', skorTIU, 80);
+                setPassStatus('status-tkp', skorTKP, 166);
+                
+                let analisis = "";
+                if(skorTIU < 80) analisis += "<strong>TIU Anda dalam Zona Bahaya.</strong> Kemungkinan Anda kehabisan waktu di hitungan kuantitatif.<br><br>";
+                if(skorTWK < 65) analisis += "<strong>TWK Masih Lemah.</strong> Anda gagal membedakan kata kunci pada soal narasi panjang.<br><br>";
+                if(skorTKP < 166) analisis += "<strong>Insting TKP Anda Belum Ideal.</strong> Anda masih sering memilih jawaban Reaktif.<br><br>";
+                if(skorTIU >= 80 && skorTWK >= 65 && skorTKP >= 166) analisis = "<strong>Luar Biasa!</strong> Manajemen waktu dan insting Anda sudah tajam.";
+                document.getElementById('teks-analisis').innerHTML = analisis;
+            } else {
+                document.getElementById('status-twk').innerText = "Dievaluasi";
+                document.getElementById('status-tiu').innerText = "Dievaluasi";
+                document.getElementById('status-tkp').innerText = "Akumulasi";
+                document.getElementById('teks-analisis').innerHTML = "<strong>Sistem UTBK menerapkan sistem IRT.</strong> Nilai akhir Anda akan bergantung pada tingkat kesulitan soal yang berhasil Anda jawab dengan benar secara nasional.";
+            }
         }
 
         function setPassStatus(elementId, skor, batas) {
