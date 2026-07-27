@@ -38,7 +38,7 @@
     <meta property="og:site_name" content="Pendidikanku Mi Vida">
     <meta property="og:image" content="https://mivida.id/images/hero-cpns.jpg">
     
-    <!-- Schema Markup JSON-LD (DIPERKUAT UNTUK BRANDING MIVIDA) -->
+    <!-- Schema Markup JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -82,7 +82,6 @@
             --saweria-color: #FA8C16;
         }
 
-        /* Anti-Seleksi Teks Global */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
         input, textarea { -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; }
         
@@ -117,46 +116,12 @@
         .category-header h2 { font-size: 28px; font-weight: 800; margin-bottom: 15px;}
         .category-desc { color: var(--text-muted); font-size: 14.5px; max-width: 800px; margin: 0 auto; background: var(--bg-main); padding: 20px; border-radius: 16px; border: 1px solid var(--card-border); text-align: left;}
         
-        .modul-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 25px; 
-            margin-top: 35px; 
-        }
+        .modul-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 35px; }
 
-        .modul-card { 
-            background: #ffffff; 
-            border: 1px solid var(--card-border); 
-            border-radius: 20px; 
-            padding: 28px 24px; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
-            height: 100%;
-            position: relative;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-        }
-        .modul-card:hover { 
-            transform: translateY(-6px); 
-            box-shadow: var(--shadow-hover); 
-            border-color: rgba(99, 102, 241, 0.4);
-        }
+        .modul-card { background: #ffffff; border: 1px solid var(--card-border); border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); height: 100%; position: relative; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); }
+        .modul-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: rgba(99, 102, 241, 0.4); }
         
-        .modul-card-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--primary-gradient);
-            color: #fff;
-            font-size: 10.5px;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 12px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 10px rgba(168, 85, 247, 0.3);
-            text-transform: uppercase;
-        }
+        .modul-card-badge { position: absolute; top: -12px; right: 20px; background: var(--primary-gradient); color: #fff; font-size: 10.5px; font-weight: 800; padding: 4px 12px; border-radius: 12px; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(168, 85, 247, 0.3); text-transform: uppercase; }
 
         .modul-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--text-main);}
         .modul-title i { font-size: 18px; color: #6366f1; }
@@ -179,7 +144,6 @@
         
         .password-hint { font-size: 11px; color: #94a3b8; text-align: center; margin-top: 10px; font-style: italic; }
 
-        /* SEO TEXT SECTION */
         .seo-section { max-width: 1200px; margin: 0 auto 60px auto; padding: 40px; background: #fff; border-radius: 20px; border: 1px solid var(--card-border); }
         .seo-section h3 { font-size: 22px; font-weight: 800; color: #1e293b; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
         .seo-section h4 { font-size: 16px; font-weight: 700; color: #334155; margin-top: 25px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
@@ -368,9 +332,9 @@
                         </div>
                     </div>
 
-                    <!-- CPNS Chapter 5 (TERBARU) -->
+                    <!-- CPNS Chapter 5 -->
                     <div class="modul-card">
-                        <div class="modul-card-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">🔥 HOT</div>
+                        <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-award" aria-hidden="true"></i> Chapter 5: SKD Master Challenge</h3>
                             <ul class="modul-composition">
@@ -387,6 +351,30 @@
                             <div style="display: flex; gap: 8px;">
                                 <a href="https://1024terabox.com/s/13J8BobgXiMdIxkJMgsECxQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
                                 <button onclick="bukaPremium('1hasfh3SIAhsas91', 'cpns5')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
+                            </div>
+                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- CPNS Chapter 6 (TERBARU) -->
+                    <div class="modul-card">
+                        <div class="modul-card-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">🔥 HOT</div>
+                        <div class="modul-info">
+                            <h3 class="modul-title"><i class="fa-solid fa-star" aria-hidden="true"></i> Chapter 6: SKD Super Intensif</h3>
+                            <ul class="modul-composition">
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Prediksi hitungan cepat & spasial akurat.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Pilar negara & wawasan kebangsaan.</span></li>
+                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Profesionalisme & sosial budaya.</span></li>
+                            </ul>
+                            <div class="modul-meta">
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="https://1024terabox.com/s/1GaIe7BCtxyZOHSE9SZlKmQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <button onclick="bukaPremium('sad129sahklSAKH', 'cpns6')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
                             <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
                         </div>
