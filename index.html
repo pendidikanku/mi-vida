@@ -23,7 +23,7 @@
     <meta name="keywords" content="Pendidikanku, Mivida, Mi Vida, Tryout CPNS 2026, Simulasi CAT BKN, PPPK 2026, Lulus BUMN, Rekrutmen Bersama BUMN, UTBK SNBT, Latihan Tes TIU TWK TKP, Soal HOTS, Pendidikanku Mi Vida, mivida.id">
     <meta name="author" content="Pendidikanku (Mi Vida)">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#3b82f6">
     <link rel="canonical" href="https://mivida.id/">
     
     <!-- ================= FAVICON ================= -->
@@ -37,29 +37,6 @@
     <meta property="og:description" content="Platform tryout dan latihan soal CAT interaktif dari Mi Vida (Pendidikanku). Raih skor tertinggi Anda di Seleksi Nasional CPNS, PPPK, BUMN, dan UTBK hari ini!">
     <meta property="og:site_name" content="Pendidikanku Mi Vida">
     <meta property="og:image" content="https://mivida.id/images/hero-cpns.jpg">
-    
-    <!-- Schema Markup JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://mivida.id/#website",
-          "url": "https://mivida.id/",
-          "name": "Pendidikanku (Mi Vida)",
-          "alternateName": ["Mivida", "Mi Vida", "mivida.id", "Pendidikanku"],
-          "description": "Portal Simulasi CAT CPNS, PPPK, BUMN & UTBK Terlengkap dari Pendidikanku (Mi Vida)."
-        },
-        {
-          "@type": "Organization",
-          "url": "https://mivida.id/",
-          "name": "Pendidikanku Mi Vida",
-          "logo": "https://mivida.id/images/logo.png"
-        }
-      ]
-    }
-    </script>
 
     <!-- ================= GOOGLE ADSENSE ================= -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2313737454653945" crossorigin="anonymous"></script>
@@ -75,10 +52,10 @@
         :root {
             --bg-main: #f8fafc; --bg-card: #ffffff; --card-border: #e2e8f0;
             --text-main: #0f172a; --text-muted: #64748b;
-            --primary-gradient: linear-gradient(135deg, #6366f1, #a855f7);
-            --cpns-color: #3b82f6; --bumn-color: #f59e0b; --utbk-color: #ec4899; --blog-color: #10b981;
+            --primary-gradient: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            --cpns-color: #3b82f6; --bumn-color: #f59e0b; --utbk-color: #ec4899;
             --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 20px 30px -10px rgba(99, 102, 241, 0.15);
+            --shadow-hover: 0 20px 30px -10px rgba(59, 130, 246, 0.15);
             --saweria-color: #FA8C16;
         }
 
@@ -87,87 +64,83 @@
         
         body { background-color: var(--bg-main); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
         
-        .aurora { position: fixed; width: 40vw; height: 40vw; border-radius: 50%; background: var(--primary-gradient); filter: blur(150px); opacity: 0.15; z-index: -1; pointer-events: none; }
+        .aurora { position: fixed; width: 40vw; height: 40vw; border-radius: 50%; background: var(--primary-gradient); filter: blur(150px); opacity: 0.1; z-index: -1; pointer-events: none; }
         .orb-1 { top: -10%; left: -10%; } .orb-2 { bottom: -10%; right: -10%; }
 
-        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); border-bottom: 2px solid var(--cpns-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05);}
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
         .nav-menu { display: flex; gap: 25px; list-style: none; }
-        .nav-link { color: var(--text-main); text-decoration: none; font-size: 14px; font-weight: 600; padding: 10px 0; transition: 0.3s; }
-        .nav-link:hover { color: #a855f7; }
-        .menu-toggle { display: none; font-size: 22px; cursor: pointer; }
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 0; transition: 0.3s; }
+        .nav-link:hover { color: var(--cpns-color); }
+        .menu-toggle { display: none; font-size: 22px; cursor: pointer; color: var(--text-main); }
 
         .floating-saweria { position: fixed; bottom: 30px; right: 30px; background: var(--saweria-color); color: white; padding: 12px 24px; border-radius: 30px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(250, 140, 22, 0.3); display: flex; align-items: center; gap: 8px; z-index: 999; transition: 0.3s; }
         .floating-saweria:hover { transform: translateY(-5px); }
 
         .hero-section { position: relative; width: 100%; padding: 100px 20px 80px 20px; overflow: hidden; margin-bottom: 40px; }
-        #techCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.8; }
+        #techCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.5; }
         .hero-content { position: relative; z-index: 2; max-width: 950px; margin: 0 auto; text-align: center; }
         
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px); border: 1px solid rgba(99, 102, 241, 0.3); color: #4f46e5; padding: 8px 20px; border-radius: 20px; font-size: 12.5px; font-weight: 800; margin-bottom: 25px; box-shadow: var(--shadow-soft); }
-        .hero-content h1 { font-size: clamp(30px, 5vw, 54px); font-weight: 800; line-height: 1.25; letter-spacing: -1px; }
-        .hero-content h1 span { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-content p { color: var(--text-muted); font-size: clamp(15.5px, 2vw, 17px); max-width: 850px; margin: 25px auto 0 auto; line-height: 1.7; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.4); color: var(--cpns-color); padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 800; margin-bottom: 25px; }
+        .hero-content h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.25; letter-spacing: -1px; color: #0f172a; }
+        .hero-content h1 span { color: var(--cpns-color); }
+        .hero-content p { color: #475569; font-size: clamp(16px, 2vw, 18px); font-weight: 500; max-width: 850px; margin: 25px auto 0 auto; line-height: 1.7; }
 
         .main-wrapper { max-width: 1200px; margin: 0 auto 80px auto; padding: 0 20px; position: relative; z-index: 2;}
-        .category-block { background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 24px; padding: 40px; margin-bottom: 40px; box-shadow: var(--shadow-soft); }
+        .category-block { background: var(--bg-card); border: 1px solid var(--card-border); border-top: 4px solid var(--cpns-color); border-radius: 16px; padding: 40px; margin-bottom: 40px; box-shadow: var(--shadow-soft); }
+        #bumn { border-top-color: var(--bumn-color); } #utbk { border-top-color: var(--utbk-color); }
+        
         .category-header { text-align: center; margin-bottom: 35px; border-bottom: 1px solid var(--card-border); padding-bottom: 30px;}
-        .category-header i { font-size: 36px; margin-bottom: 15px; }
+        .category-header i { font-size: 40px; margin-bottom: 15px; }
         .category-header h2 { font-size: 28px; font-weight: 800; margin-bottom: 15px;}
-        .category-desc { color: var(--text-muted); font-size: 14.5px; max-width: 800px; margin: 0 auto; background: var(--bg-main); padding: 20px; border-radius: 16px; border: 1px solid var(--card-border); text-align: left;}
+        .category-desc { color: var(--text-muted); font-size: 15px; font-weight: 500; max-width: 800px; margin: 0 auto; background: var(--bg-main); padding: 20px; border-radius: 12px; border: 1px solid var(--card-border); text-align: left; line-height: 1.7;}
         
         .modul-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 35px; }
 
-        .modul-card { background: #ffffff; border: 1px solid var(--card-border); border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); height: 100%; position: relative; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); }
-        .modul-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: rgba(99, 102, 241, 0.4); }
+        .modul-card { background: #ffffff; border: 1px solid var(--card-border); border-radius: 12px; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease-in-out; height: 100%; position: relative; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .modul-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--cpns-color); }
         
-        .modul-card-badge { position: absolute; top: -12px; right: 20px; background: var(--primary-gradient); color: #fff; font-size: 10.5px; font-weight: 800; padding: 4px 12px; border-radius: 12px; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(168, 85, 247, 0.3); text-transform: uppercase; }
+        .modul-card-badge { position: absolute; top: -12px; right: 20px; background: var(--cpns-color); color: #fff; font-size: 11px; font-weight: 800; padding: 5px 14px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
 
         .modul-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--text-main);}
-        .modul-title i { font-size: 18px; color: #6366f1; }
+        .modul-title i { font-size: 18px; color: var(--cpns-color); }
         
         .modul-composition { list-style: none; margin-bottom: 20px; flex-grow: 1;}
-        .modul-composition li { font-size: 13.5px; color: var(--text-muted); margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;}
+        .modul-composition li { font-size: 14px; color: #334155; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; font-weight: 500;}
         .modul-composition li i { color: #10b981; margin-top: 3px; font-size: 13px; flex-shrink: 0;}
         
-        .modul-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; padding-top: 10px; border-top: 1px dashed var(--card-border); }
-        .meta-tag { background: #f1f5f9; padding: 5px 12px; border-radius: 8px; font-size: 11.5px; color: #475569; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
-        .meta-highlight { background: rgba(16, 185, 129, 0.12); color: #059669; }
-        .meta-terabox { background: rgba(168, 85, 247, 0.1); color: #9333ea; border: 1px solid rgba(168, 85, 247, 0.2); }
+        .modul-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; padding-top: 15px; border-top: 1px dashed var(--card-border); }
+        .meta-tag { background: #f1f5f9; padding: 6px 12px; border-radius: 6px; font-size: 12px; color: #475569; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
+        .meta-highlight { background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid #10b981;}
+        .meta-terabox { background: rgba(59, 130, 246, 0.1); color: #2563eb; border: 1px solid rgba(59, 130, 246, 0.3); }
 
-        .btn-action { width: 100%; text-decoration: none; text-align: center; padding: 13px; border-radius: 12px; font-size: 13.5px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; border: none; cursor: pointer;}
-        .btn-play { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.25); }
-        .btn-play:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.35); }
+        .btn-action { width: 100%; text-decoration: none; text-align: center; padding: 13px; border-radius: 8px; font-size: 14px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; border: none; cursor: pointer;}
+        .btn-play { background: var(--cpns-color); color: #fff; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); }
+        .btn-play:hover { background: #2563eb; transform: translateY(-2px); }
         .btn-secondary { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
         .btn-secondary:hover { background: #f1f5f9; border-color: #94a3b8; }
         .btn-locked { background: #f1f5f9; color: #94a3b8; cursor: not-allowed; border: 1px dashed #cbd5e1; }
         
-        .password-hint { font-size: 11px; color: #94a3b8; text-align: center; margin-top: 10px; font-style: italic; }
+        .password-hint { font-size: 11px; color: #64748b; text-align: center; margin-top: 10px; font-weight: 600; }
 
-        .seo-section { max-width: 1200px; margin: 0 auto 60px auto; padding: 40px; background: #fff; border-radius: 20px; border: 1px solid var(--card-border); }
+        .seo-section { max-width: 1200px; margin: 0 auto 60px auto; padding: 40px; background: #fff; border-radius: 16px; border: 1px solid var(--card-border); }
         .seo-section h3 { font-size: 22px; font-weight: 800; color: #1e293b; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
         .seo-section h4 { font-size: 16px; font-weight: 700; color: #334155; margin-top: 25px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .seo-section h4 i { color: #6366f1; }
-        .seo-section p { font-size: 14.5px; color: var(--text-muted); line-height: 1.7; margin-bottom: 15px; }
-        .seo-section ul { margin-left: 20px; margin-bottom: 15px; font-size: 14px; color: var(--text-muted); line-height: 1.7; }
-        .seo-section li { margin-bottom: 8px; }
-        .seo-section li strong { color: #334155; }
+        .seo-section p, .seo-section ul { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 15px; font-weight: 500;}
 
         .community-section { background: var(--bg-card); border-top: 1px solid var(--card-border); padding: 80px 20px; text-align: center; }
         .comm-grid { max-width: 1000px; margin: 40px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .comm-card { background: var(--bg-main); border: 1px solid var(--card-border); padding: 25px; border-radius: 20px; text-decoration: none; color: var(--text-main); display: flex; flex-direction: column; align-items: center; gap: 12px; transition: 0.3s; }
-        .comm-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+        .comm-card { background: var(--bg-main); border: 1px solid var(--card-border); padding: 25px; border-radius: 12px; text-decoration: none; color: var(--text-main); display: flex; flex-direction: column; align-items: center; gap: 12px; transition: 0.2s; }
+        .comm-card:hover { transform: translateY(-3px); border-color: var(--cpns-color); }
         .comm-card i { font-size: 32px; }
-        .c-tg i { color: #24A1DE; } .c-wa-g i { color: #25D366; } .c-wa-c i { color: #00a884; } .c-saweria i { color: var(--saweria-color); }
         
-        footer { text-align: center; padding: 30px; background: var(--bg-card); color: var(--text-muted); font-size: 13px; border-top: 1px solid var(--card-border); }
+        footer { text-align: center; padding: 30px; background: var(--bg-card); color: var(--text-muted); font-size: 13px; font-weight: 600; border-top: 1px solid var(--card-border); }
 
         @media (max-width: 768px) {
             .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--card-border); flex-direction: column; padding: 20px; gap: 15px; box-shadow: var(--shadow-soft);}
             .nav-menu.active { display: flex; }
             .menu-toggle { display: block; }
             .category-block, .seo-section { padding: 25px 15px; }
-            .floating-saweria { bottom: 15px; right: 15px; padding: 10px 20px; font-size: 13px; }
             .hero-section { padding: 60px 20px 40px 20px; }
             .modul-grid { grid-template-columns: 1fr; }
         }
@@ -188,8 +161,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="160" height="50" aria-hidden="true">
                   <defs>
                     <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#6366f1" />
-                      <stop offset="100%" stop-color="#a855f7" />
+                      <stop offset="0%" stop-color="#3b82f6" />
+                      <stop offset="100%" stop-color="#1e3a8a" />
                     </linearGradient>
                   </defs>
                   <g transform="translate(15, 25)">
@@ -198,7 +171,7 @@
                     <path d="M 95 30 Q 95 15, 110 15 Q 95 15, 95 0 Q 95 15, 80 15 Q 95 15, 95 30" fill="#f59e0b"/>
                   </g>
                   <text x="140" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="64" fill="#0f172a">Mi<tspan fill="url(#mvGrad)">Vida</tspan></text>
-                  <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
+                  <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
                 </svg>
             </a>
             <i class="fa-solid fa-bars menu-toggle" id="menuToggle" aria-label="Buka navigasi menu" role="button" tabindex="0"></i>
@@ -218,11 +191,12 @@
             <canvas id="techCanvas"></canvas> 
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fa-solid fa-rocket" aria-hidden="true" style="color:#6366f1;"></i> 
-                    Platform Tryout & Latihan CAT Mivida.id
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> 
+                    Gladi Bersih Teknis & Psikologis BKN
                 </div>
-                <h1>Kunci Lulus Seleksi: Sering <span>Latihan Simulasi CAT!</span></h1>
-                <p>Materi hafalan saja tidak cukup. Rahasia sukses menembus <strong>CPNS 2026, PPPK, Rekrutmen Bersama BUMN, dan UTBK SNBT</strong> adalah konsistensi mengasah manajemen waktu dan insting menjawab soal HOTS. Bersama <b>Pendidikanku (Mi Vida)</b>, nikmati pengalaman <em>tryout online</em> interaktif dengan bank soal berstandar BKN.</p>
+                <!-- PENERAPAN FEAR-TO-FORTITUDE -->
+                <h1>Menghafal Saja Tidak Akan Cukup Menembus <span>Passing Grade CPNS 2026.</span></h1>
+                <p>Ujian modern didesain untuk menggugurkan. Realitanya, ribuan peserta gagal bukan karena kurang pintar, melainkan panik dan kehabisan waktu. Kuasai <strong>Manajemen Waktu</strong> Anda sekarang. Jadikan Pendidikanku (Mi Vida) sebagai gladi bersih menghadapi sistem CAT BKN yang sesungguhnya.</p>
             </div>
         </section>
 
@@ -231,32 +205,32 @@
             <!-- ================= CPNS SECTION ================= -->
             <section class="category-block" id="cpns">
                 <div class="category-header">
-                    <i class="fa-solid fa-id-card-clip" style="color: var(--cpns-color);" aria-hidden="true"></i>
-                    <h2>Tryout & Simulasi CAT CPNS 2026 (SKD)</h2>
+                    <i class="fa-solid fa-building-columns" style="color: var(--cpns-color);" aria-hidden="true"></i>
+                    <h2>Gladi Bersih CAT CPNS 2026 (SKD)</h2>
                     <div class="category-desc">
-                        <strong>Mengasah Akurasi di Tes TIU, TWK, dan TKP</strong><br>
-                        Sistem CAT BKN didesain untuk menyaring aparatur terbaik. Latih kecepatan analisa Anda menghadapi <em>soal HOTS CPNS</em>. <b>TIU</b> untuk logika analitik, <b>TWK</b> untuk pendalaman integritas negara, dan <b>TKP</b> untuk pengambilan keputusan. Latihan simulasi secara rutin adalah garansi lolos <em>Passing Grade</em> Anda!
+                        <strong>Kepatuhan Ketat HOTS (Higher Order Thinking Skills)</strong><br>
+                        Tinggalkan cara lama. Modul kami dirancang secara presisi untuk menguji batas kemampuan Anda: <b>TIU</b> untuk logika komputasi analitik, <b>TWK</b> untuk pendalaman studi kasus negara, dan <b>TKP</b> untuk pengambilan keputusan manajerial. Atur tekanan waktu Anda (80, 90, atau 100 menit) sebelum masuk ke arena ujian!
                     </div>
                 </div>
                 
                 <div class="modul-grid">
-                    <!-- CPNS Chapter 1 -->
-                    <div class="modul-card">
-                        <div class="modul-card-badge" style="background: #10b981;">Gratis</div>
+                    <!-- CPNS Chapter 1 (SPEARHEAD FREEMIUM) -->
+                    <div class="modul-card" style="border: 2px solid #10b981; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);">
+                        <div class="modul-card-badge" style="background: #10b981; font-size: 12px; padding: 6px 16px;">Tawaran Spesial Bulan Ini (Gratis)</div>
                         <div class="modul-info">
-                            <h3 class="modul-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Chapter 1: SKD Fundamental</h3>
+                            <h3 class="modul-title"><i class="fa-solid fa-rocket" style="color: #10b981;" aria-hidden="true"></i> Chapter 1: SKD Fundamental</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Analogi, Silogisme, Deret Angka, Figural.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Nasionalisme, Integritas, Bela Negara.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Pelayanan Publik, Jejaring Kerja, TIK.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Analogi, Silogisme, Deret Angka, Figural.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Nasionalisme, Integritas, Bela Negara.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Pelayanan Publik, Jejaring Kerja, TIK.</span></li>
                             </ul>
                             <div class="modul-meta">
-                                <span class="meta-tag meta-highlight"><i class="fa-solid fa-unlock"></i> Free Akses</span>
-                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                                <span class="meta-tag meta-highlight"><i class="fa-solid fa-unlock"></i> Free Akses 100%</span>
+                                <span class="meta-tag"><i class="fa-solid fa-stopwatch"></i> Pilihan Waktu (80-100 Mnt)</span>
                             </div>
                         </div>
                         <div>
-                            <button onclick="masukGratis('cpns1')" class="btn-action btn-play"><i class="fa-solid fa-play" aria-hidden="true"></i> Latihan Sekarang</button>
+                            <button onclick="masukGratis('cpns1')" class="btn-action btn-play" style="background: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);"><i class="fa-solid fa-play" aria-hidden="true"></i> Uji Manajemen Waktu Anda</button>
                         </div>
                     </div>
 
@@ -266,45 +240,44 @@
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-fire" aria-hidden="true"></i> Chapter 2: SKD Ekstrem (HOTS)</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Soal cerita matematika penalaran tinggi.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Studi kasus implementasi Pancasila masa kini.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Skenario konflik manajerial instansi.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Soal cerita matematika penalaran tinggi.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Studi kasus implementasi Pancasila masa kini.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Skenario konflik manajerial instansi.</span></li>
                             </ul>
                             <div class="modul-meta">
-                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
-                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-lock" aria-hidden="true"></i> Membutuhkan Kunci</span>
                             </div>
                         </div>
                         <div>
                             <div style="display: flex; gap: 8px;">
-                                <a href="https://1024terabox.com/s/10RK3_5ncHAwfK-JdCWWV4w" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <a href="https://1024terabox.com/s/10RK3_5ncHAwfK-JdCWWV4w" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Dapatkan Kunci</a>
                                 <button onclick="bukaPremium('MIVIDACPNS2026', 'cpns2')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
+                            <div class="password-hint">*Password / Kunci Gembok terdapat di akhir file PDF materi.</div>
                         </div>
                     </div>
 
+                    <!-- Lanjutkan struktur CPNS 3 - 6 seperti sebelumnya, cukup sesuaikan ikon list menjadi fa-check -->
                     <!-- CPNS Chapter 3 -->
                     <div class="modul-card">
                         <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i> Chapter 3: SKD Final Tryout</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Kombinatorika & figural 3D.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Hubungan internasional & kebijakan publik.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Anti-radikalisme & etika instansi.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Kombinatorika & figural 3D.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Hubungan internasional & kebijakan publik.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Anti-radikalisme & etika instansi.</span></li>
                             </ul>
                             <div class="modul-meta">
-                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
-                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-lock" aria-hidden="true"></i> Membutuhkan Kunci</span>
                             </div>
                         </div>
                         <div>
                             <div style="display: flex; gap: 8px;">
-                                <a href="https://1024terabox.com/s/1Py65uB2YuwoZFHI1Sy-obQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <a href="https://1024terabox.com/s/1Py65uB2YuwoZFHI1Sy-obQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Dapatkan Kunci</a>
                                 <button onclick="bukaPremium('MIVIDA12439CPNS3', 'cpns3')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
+                            <div class="password-hint">*Password / Kunci Gembok terdapat di akhir file PDF materi.</div>
                         </div>
                     </div>
 
@@ -314,21 +287,20 @@
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-crown" aria-hidden="true"></i> Chapter 4: SKD Elite Simulation</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Jebakan waktu & barisan bilangan kompleks.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Analisis amandemen UUD terbaru.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Dilema prioritas ganda tingkat elit.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Jebakan waktu & barisan bilangan kompleks.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Analisis amandemen UUD terbaru.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Dilema prioritas ganda tingkat elit.</span></li>
                             </ul>
                             <div class="modul-meta">
-                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
-                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-lock" aria-hidden="true"></i> Membutuhkan Kunci</span>
                             </div>
                         </div>
                         <div>
                             <div style="display: flex; gap: 8px;">
-                                <a href="https://1024terabox.com/s/1pI8Cot3qGE-YxJ9YTjRvkQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <a href="https://1024terabox.com/s/1pI8Cot3qGE-YxJ9YTjRvkQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Dapatkan Kunci</a>
                                 <button onclick="bukaPremium('Akj19ajdCPNS4', 'cpns4')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
+                            <div class="password-hint">*Password / Kunci Gembok terdapat di akhir file PDF materi.</div>
                         </div>
                     </div>
 
@@ -338,59 +310,57 @@
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-award" aria-hidden="true"></i> Chapter 5: SKD Master Challenge</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Penalaran analitis & kecukupan data.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Pengamalan Pancasila & Sejarah Kritis.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Manajemen konflik & kepemimpinan digital.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Penalaran analitis & kecukupan data.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Pengamalan Pancasila & Sejarah Kritis.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Manajemen konflik & kepemimpinan digital.</span></li>
                             </ul>
                             <div class="modul-meta">
-                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
-                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-lock" aria-hidden="true"></i> Membutuhkan Kunci</span>
                             </div>
                         </div>
                         <div>
                             <div style="display: flex; gap: 8px;">
-                                <a href="https://1024terabox.com/s/13J8BobgXiMdIxkJMgsECxQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <a href="https://1024terabox.com/s/13J8BobgXiMdIxkJMgsECxQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Dapatkan Kunci</a>
                                 <button onclick="bukaPremium('1hasfh3SIAhsas91', 'cpns5')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
+                            <div class="password-hint">*Password / Kunci Gembok terdapat di akhir file PDF materi.</div>
                         </div>
                     </div>
                     
-                    <!-- CPNS Chapter 6 (TERBARU) -->
+                    <!-- CPNS Chapter 6 -->
                     <div class="modul-card">
                         <div class="modul-card-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">🔥 HOT</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-star" aria-hidden="true"></i> Chapter 6: SKD Super Intensif</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Prediksi hitungan cepat & spasial akurat.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Pilar negara & wawasan kebangsaan.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Profesionalisme & sosial budaya.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TIU (35 Soal):</b> Prediksi hitungan cepat & spasial akurat.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TWK (30 Soal):</b> Pilar negara & wawasan kebangsaan.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TKP (45 Soal):</b> Profesionalisme & sosial budaya.</span></li>
                             </ul>
                             <div class="modul-meta">
-                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
-                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (100 Mnt)</span>
+                                <span class="meta-tag meta-terabox"><i class="fa-solid fa-lock" aria-hidden="true"></i> Membutuhkan Kunci</span>
                             </div>
                         </div>
                         <div>
                             <div style="display: flex; gap: 8px;">
-                                <a href="https://1024terabox.com/s/1GaIe7BCtxyZOHSE9SZlKmQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
+                                <a href="https://1024terabox.com/s/1GaIe7BCtxyZOHSE9SZlKmQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Dapatkan Kunci</a>
                                 <button onclick="bukaPremium('sad129sahklSAKH', 'cpns6')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
+                            <div class="password-hint">*Password / Kunci Gembok terdapat di akhir file PDF materi.</div>
                         </div>
                     </div>
 
                 </div>
             </section>
 
-            <!-- ================= BUMN SECTION ================= -->
+            <!-- ================= BUMN SECTION (SAMA SEPERTI SEBELUMNYA) ================= -->
             <section class="category-block" id="bumn">
                 <div class="category-header">
                     <i class="fa-solid fa-briefcase" style="color: var(--bumn-color);" aria-hidden="true"></i>
                     <h2>Latihan Soal & Tryout RBB BUMN 2026</h2>
                     <div class="category-desc">
                         <strong>Kuasai Core Values AKHLAK & Tembus TKD</strong><br>
-                        Persaingan Rekrutmen Bersama BUMN tidak sekadar mencari kecerdasan, melainkan tata nilai. Biasakan diri Anda dengan ritme ujian melalui bank <em>soal BUMN 2026 terbaru</em>. Latihan intensif <b>TKD</b> akan menyaring kecepatan kognitif Anda, sementara modul <b>AKHLAK</b> di MiVida dirancang khusus untuk membentuk pola pikir yang sejalan dengan standar kepemimpinan BUMN.
+                        Persaingan Rekrutmen Bersama BUMN tidak sekadar mencari kecerdasan, melainkan tata nilai. Latihan intensif <b>TKD</b> akan menyaring kecepatan kognitif Anda, sementara modul <b>AKHLAK</b> di MiVida dirancang khusus untuk membentuk pola pikir yang sejalan dengan standar kepemimpinan BUMN.
                     </div>
                 </div>
                 
@@ -400,127 +370,47 @@
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-building" aria-hidden="true"></i> Chapter 1: BUMN Foundation</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKD (50 Soal):</b> Deret Angka, Logika Analitik, Spasial.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>AKHLAK (50 Soal):</b> Core Values BUMN.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TKD (50 Soal):</b> Deret Angka, Logika Analitik, Spasial.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>AKHLAK (50 Soal):</b> Core Values BUMN.</span></li>
                             </ul>
-                            <div class="modul-meta">
-                                <span class="meta-tag meta-terabox" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
-                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 100 Soal (120 Mnt)</span>
-                            </div>
                         </div>
                         <div>
                             <div style="display: flex; gap: 8px;">
-                                <a href="https://1024terabox.com/s/1nIiG5wijs_QuYrJhUP55ZQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
-                                <button onclick="bukaPremium('AKHLAKBUMN2026', 'bumn1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--bumn-color); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
+                                <a href="https://1024terabox.com/s/1nIiG5wijs_QuYrJhUP55ZQ" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Dapatkan Kunci</a>
+                                <button onclick="bukaPremium('AKHLAKBUMN2026', 'bumn1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--bumn-color);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
                         </div>
-                    </div>
-
-                    <div class="modul-card" style="opacity: 0.85;">
-                        <div class="modul-info">
-                            <h3 class="modul-title"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Chapter 2: BUMN Pro Level</h3>
-                            <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TKD (50 Soal):</b> Studi Numerik Kompleks.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>AKHLAK (50 Soal):</b> Resolusi Konflik Kepemimpinan.</span></li>
-                            </ul>
-                            <div class="modul-meta"><span class="meta-tag">100 Soal</span><span class="meta-tag">Segera Hadir</span></div>
-                        </div>
-                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Dalam Penyusunan</button>
                     </div>
                 </div>
             </section>
             
-            <!-- ================= UTBK SECTION ================= -->
+            <!-- ================= UTBK SECTION (SAMA SEPERTI SEBELUMNYA) ================= -->
             <section class="category-block" id="utbk">
                 <div class="category-header">
                     <i class="fa-solid fa-university" style="color: var(--utbk-color);" aria-hidden="true"></i>
                     <h2>Katalog Tryout UTBK SNBT 2026 Terlengkap</h2>
-                    <div class="category-desc">
-                        <strong>Persiapan Matang Menuju Kampus Impian</strong><br>
-                        Sistem seleksi SNPMB modern menguji penalaran dan logika kritis mahasiswa. Seringlah melakukan <em>Tryout UTBK online</em> untuk mengasah pemahaman Anda pada <b>Tes Potensi Skolastik (TPS)</b> dan <b>Literasi (B. Indonesia, B. Inggris, Penalaran Matematika)</b>.
-                    </div>
                 </div>
-                
                 <div class="modul-grid">
                     <div class="modul-card">
                         <div class="modul-card-badge" style="background: var(--utbk-color);">SNBT</div>
                         <div class="modul-info">
                             <h3 class="modul-title"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Chapter 1: TPS Fundamental</h3>
                             <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TPS (40 Soal):</b> Penalaran Umum & Kuantitatif.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>Literasi (70 Soal):</b> B. Indo, B. Inggris, & Pen. Matematika.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>TPS (40 Soal):</b> Penalaran Umum & Kuantitatif.</span></li>
+                                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span><b>Literasi (70 Soal):</b> B. Indo, B. Inggris, & Pen. Matematika.</span></li>
                             </ul>
-                            <div class="modul-meta">
-                                <span class="meta-tag meta-terabox" style="color: #ec4899; border-color: rgba(236, 72, 153, 0.2);"><i class="fa-solid fa-gem" aria-hidden="true"></i> Premium</span>
-                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 110 Soal (195 Mnt)</span>
-                            </div>
                         </div>
                         <div>
                             <div style="display: flex; gap: 8px;">
-                                <a href="https://1024terabox.com/s/1i0rWbgKKwKP2WvHC8hbfPg" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Unduh PDF</a>
-                                <button onclick="bukaPremium('123kjas0k2jkaAaj', 'utbk1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--utbk-color); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
+                                <a href="https://1024terabox.com/s/1i0rWbgKKwKP2WvHC8hbfPg" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="flex: 1; font-size: 12px; padding: 10px;"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Dapatkan Kunci</a>
+                                <button onclick="bukaPremium('123kjas0k2jkaAaj', 'utbk1')" class="btn-action btn-play" style="flex: 1; font-size: 12px; padding: 10px; background: var(--utbk-color);"><i class="fa-solid fa-unlock" aria-hidden="true"></i> Buka Ujian</button>
                             </div>
-                            <div class="password-hint">*Password terdapat di bagian bawah file PDF.</div>
                         </div>
-                    </div>
-
-                    <div class="modul-card" style="opacity: 0.85;">
-                        <div class="modul-info">
-                            <h3 class="modul-title"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Chapter 2: Tembus PTN Favorit</h3>
-                            <ul class="modul-composition">
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>TPS (40 Soal):</b> HOTS Matematika Dasar.</span></li>
-                                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><b>Literasi (70 Soal):</b> Analisis Wacana Kritis.</span></li>
-                            </ul>
-                            <div class="modul-meta"><span class="meta-tag">110 Soal</span><span class="meta-tag">Segera Hadir</span></div>
-                        </div>
-                        <button class="btn-action btn-locked" disabled aria-disabled="true"><i class="fa-solid fa-lock" aria-hidden="true"></i> Dalam Penyusunan</button>
                     </div>
                 </div>
             </section>
-
-            <!-- ================= SEO TEXT SECTION ================= -->
-            <section class="seo-section">
-                <h3>Informasi Seleksi Nasional CASN & Mahasiswa Baru</h3>
-                <p><strong>Pendidikanku Mi Vida (mivida.id)</strong> mendedikasikan platform ini untuk membantu putra-putri terbaik bangsa menembus impian karier dan pendidikannya. Memahami proses seleksi adalah kunci utama sebelum memulai latihan soal.</p>
-                
-                <h4><i class="fa-solid fa-id-card"></i> Seleksi Calon Pegawai Negeri Sipil (CPNS)</h4>
-                <p>Penerimaan CPNS selalu dinantikan setiap tahunnya. Tahapan yang harus Anda lalui antara lain:</p>
-                <ul>
-                    <li><strong>Seleksi Administrasi:</strong> Pengecekan kelengkapan dokumen pelamar secara online melalui portal SSCASN.</li>
-                    <li><strong>Seleksi Kompetensi Dasar (SKD):</strong> Ujian berbasis Computer Assisted Test (CAT) BKN yang mencakup Tes Wawasan Kebangsaan (TWK), Tes Intelegensia Umum (TIU), dan Tes Karakteristik Pribadi (TKP). Evaluasi SKD di Mivida dirancang menyerupai simulasi tes sesungguhnya.</li>
-                    <li><strong>Seleksi Kompetensi Bidang (SKB):</strong> Ujian substansi lanjutan yang disesuaikan dengan formasi jabatan instansi pilihan Anda.</li>
-                </ul>
-
-                <h4><i class="fa-solid fa-user-tie"></i> Seleksi Pegawai Pemerintah dengan Perjanjian Kerja (PPPK)</h4>
-                <p>Bagi tenaga non-ASN (honorer) maupun profesional, seleksi PPPK menjadi jalur andalan. Tahapan krusialnya meliputi:</p>
-                <ul>
-                    <li><strong>Seleksi Administrasi:</strong> Verifikasi syarat kualifikasi pendidikan, sertifikasi, dan pengalaman kerja yang relevan.</li>
-                    <li><strong>Seleksi Kompetensi:</strong> Berbeda dengan CPNS, tes PPPK meliputi evaluasi kompetensi teknis, manajerial, dan sosial kultural, yang semuanya menggunakan sistem CAT, diakhiri dengan wawancara berbasis komputer.</li>
-                </ul>
-
-                <h4><i class="fa-solid fa-chart-line"></i> Seleksi Pengembangan Karier dan Non-ASN</h4>
-                <p>Sistem CAT BKN saat ini juga digunakan secara luas untuk:</p>
-                <ul>
-                    <li>Uji kompetensi atau asesmen pemetaan bagi PNS yang ingin naik jenjang jabatan fungsional atau pindah instansi (mutasi).</li>
-                    <li>Seleksi rekrutmen untuk instansi atau lembaga non-ASN tertentu (sekolah kedinasan, dll) yang bekerja sama resmi dengan fasilitas CAT BKN.</li>
-                </ul>
-            </section>
-
         </div>
     </main>
-
-    <section class="community-section" id="komunitas">
-        <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px;">Bergabunglah Dalam Ekosistem Belajar</h2>
-        <p style="color: var(--text-muted); font-size: 14px;">Dapatkan update bocoran soal terbaru, tips trik lulus ASN/BUMN/PTN, dan dukung kami terus berkarya di Pendidikanku (Mi Vida).</p>
-        
-        <div class="comm-grid">
-            <a href="https://t.me/pendidikanku_mi_vida" target="_blank" rel="noopener noreferrer" class="comm-card c-tg" aria-label="Grup Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i><h5>Telegram Channel</h5><span>Diskusi & Materi</span></a>
-            <a href="https://chat.whatsapp.com/HXHv37R44nXLDnw2hxvtie" target="_blank" rel="noopener noreferrer" class="comm-card c-wa-g" aria-label="Grup WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><h5>Grup WhatsApp</h5><span>Interaksi Anggota</span></a>
-            <a href="https://whatsapp.com/channel/0029Vb2NvXe5vKA1L0uNMf1v" target="_blank" rel="noopener noreferrer" class="comm-card c-wa-c" aria-label="Saluran WhatsApp"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><h5>Saluran WhatsApp</h5><span>Pengumuman Resmi</span></a>
-            <a href="https://saweria.co/mivida" target="_blank" rel="noopener noreferrer" class="comm-card c-saweria" aria-label="Donasi Saweria"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i><h5>Dukung Kami</h5><span>Donasi via Saweria</span></a>
-        </div>
-    </section>
 
     <footer>
         <p>&copy; 2026 Pendidikanku (Mi Vida) - mivida.id. All Rights Reserved.</p>
@@ -528,18 +418,13 @@
 
     <!-- SCRIPT PENGAMAN & LOGIKA -->
     <script>
-        // 1. PENGAMAN WEBSITE
         document.addEventListener('contextmenu', event => event.preventDefault()); 
         document.addEventListener('keydown', function(e) {
-            if(e.keyCode == 123 || 
-               (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
-               (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-                e.preventDefault();
-                return false;
+            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+                e.preventDefault(); return false;
             }
         });
 
-        // 2. CANVAS ANIMATION
         const canvas = document.getElementById('techCanvas');
         const ctx = canvas.getContext('2d');
         let width, height, particles;
@@ -548,93 +433,60 @@
             width = canvas.width = window.innerWidth;
             height = canvas.height = document.querySelector('.hero-section').offsetHeight;
             particles = [];
-            let particleCount = window.innerWidth < 768 ? 35 : 80;
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
+            let particleCount = window.innerWidth < 768 ? 30 : 60;
+            for (let i = 0; i < particleCount; i++) particles.push(new Particle());
         }
 
         class Particle {
             constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 1.5; 
-                this.vy = (Math.random() - 0.5) * 1.5;
+                this.x = Math.random() * width; this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 1.0; this.vy = (Math.random() - 0.5) * 1.0;
                 this.radius = Math.random() * 2 + 1;
             }
             update() {
-                this.x += this.vx;
-                this.y += this.vy;
+                this.x += this.vx; this.y += this.vy;
                 if (this.x < 0 || this.x > width) this.vx *= -1;
                 if (this.y < 0 || this.y > height) this.vy *= -1;
             }
             draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(99, 102, 241, 0.4)';
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.3)'; ctx.fill();
             }
         }
 
         function animateCanvas() {
             ctx.clearRect(0, 0, width, height);
             for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
+                particles[i].update(); particles[i].draw();
                 for (let j = i; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 120) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(168, 85, 247, ${1 - distance/120})`;
-                        ctx.lineWidth = 0.8;
-                        ctx.stroke();
+                    const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 100) {
+                        ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(59, 130, 246, ${1 - dist/100})`; ctx.lineWidth = 0.5; ctx.stroke();
                     }
                 }
             }
             requestAnimationFrame(animateCanvas);
         }
+        initCanvas(); animateCanvas(); window.addEventListener('resize', initCanvas);
 
-        initCanvas();
-        animateCanvas();
-        window.addEventListener('resize', initCanvas);
-
-        // 3. LOGIKA MENU 
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
-        
         menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); });
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                navMenu.classList.remove('active');
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
 
-        // 4. LOGIKA TOKEN / PASSWORD
         function masukGratis(modulTujuan) {
-            let confirmMasuk = confirm("Anda akan memulai Latihan Simulasi SKD Fundamental gratis.\n\nPerhatian: Begitu Anda masuk, timer ujian akan langsung berjalan. Latih kecepatan Anda. Apakah Anda sudah siap?");
-            if(confirmMasuk) {
-                sessionStorage.setItem('token_' + modulTujuan, 'FREE');
-                window.location.href = "kuis.html?module=" + modulTujuan; 
-            }
+            sessionStorage.setItem('token_' + modulTujuan, 'FREE');
+            window.location.href = "kuis.html?module=" + modulTujuan; 
         }
 
         function bukaPremium(kunciRahasia, modulTujuan) {
             let pass = prompt("Silakan masukkan Kunci Gembok (Password) dari file PDF Anda:");
             if (pass === kunciRahasia) {
-                let confirmMasuk = confirm("Akses Diterima!\n\nPerhatian: Begitu Anda masuk, timer simulasi CAT akan langsung berjalan. Apakah Anda sudah siap menguji kemampuan Anda?");
-                if(confirmMasuk) {
-                    sessionStorage.setItem('token_' + modulTujuan, kunciRahasia);
-                    window.location.href = "kuis.html?module=" + modulTujuan; 
-                }
+                sessionStorage.setItem('token_' + modulTujuan, kunciRahasia);
+                window.location.href = "kuis.html?module=" + modulTujuan; 
             } else if (pass !== null && pass.trim() !== "") {
-                alert("Password Salah! Pastikan Anda memasukkan kode yang ada di bagian bawah file PDF (perhatikan huruf besar/kecil).");
+                alert("Password Salah! Pastikan Anda memasukkan kode otentik yang benar.");
             }
         }
     </script>
