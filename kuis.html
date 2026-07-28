@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem CAT BKN Simulation - Pendidikanku (Mi Vida)</title>
     
+    <!-- ================= FAVICON ================= -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%23a855f7'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23g)'/><path d='M25 70 L25 40 C25 20 50 20 50 40 L50 70 M50 70 L50 40 C50 20 75 20 75 40 L75 70' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/><circle cx='80' cy='20' r='6' fill='%23f59e0b'/></svg>">
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
@@ -14,6 +17,7 @@
         const validTokens = {
             "cpns1": "FREE", "cpns2": "MIVIDACPNS2026", "cpns3": "MIVIDA12439CPNS3",
             "cpns4": "Akj19ajdCPNS4", "cpns5": "1hasfh3SIAhsas91", "cpns6": "sad129sahklSAKH",
+            "cpns7": "AS*&!kasja*HASk",
             "bumn1": "AKHLAKBUMN2026", "utbk1": "123kjas0k2jkaAaj"
         };
         const userToken = sessionStorage.getItem('token_' + currModule);
@@ -30,8 +34,8 @@
         
         .cat-header { background: #3b82f6; padding: 12px 30px; border-bottom: 5px solid #1d4ed8; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
         .cat-title { font-weight: 800; font-size: 18px; color: #ffffff; display: flex; align-items: center; gap: 12px;}
-        .btn-home { color: #3b82f6; background: #ffffff; padding: 6px 12px; border-radius: 6px; text-decoration: none; transition: 0.2s; font-size: 14px;}
-        .btn-home:hover { background: #f1f5f9; color: #1e3a8a; }
+        .btn-home { background: #ffffff; padding: 5px 12px; border-radius: 6px; text-decoration: none; transition: 0.2s; display: flex; align-items: center;}
+        .btn-home:hover { background: #f1f5f9; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
 
         .timer-box { background: #ffffff; color: #dc2626; padding: 6px 20px; border-radius: 6px; font-weight: 800; font-size: 18px; border: 2px solid #ef4444; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
         .timer-warning { background: #991b1b; color: white; border-color: #7f1d1d; animation: pulse 1s infinite; }
@@ -96,8 +100,25 @@
     <div id="area-ujian" style="display: none;">
         <header class="cat-header">
             <div class="cat-title">
-                <a href="index.html" class="btn-home" title="Kembali ke Beranda"><i class="fa-solid fa-power-off"></i></a>
-                <i class="fa-solid fa-laptop-code"></i> <span id="judul-modul">SISTEM CAT</span>
+                <a href="index.html" class="btn-home" title="Kembali ke Beranda">
+                    <!-- LOGO MIVIDA (Sama Seperti index.html) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="100" height="30" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#3b82f6" />
+                          <stop offset="100%" stop-color="#1e3a8a" />
+                        </linearGradient>
+                      </defs>
+                      <g transform="translate(15, 25)">
+                        <path d="M 15 95 L 15 45 C 15 25, 45 25, 45 45 L 45 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 45 95 L 45 45 C 45 25, 75 25, 75 45 L 75 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 95 30 Q 95 15, 110 15 Q 95 15, 95 0 Q 95 15, 80 15 Q 95 15, 95 30" fill="#f59e0b"/>
+                      </g>
+                      <text x="140" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="64" fill="#0f172a">Mi<tspan fill="url(#mvGrad)">Vida</tspan></text>
+                      <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
+                    </svg>
+                </a>
+                <span id="judul-modul" style="border-left: 2px solid rgba(255,255,255,0.3); padding-left: 12px; margin-left: 5px;">SISTEM CAT</span>
             </div>
             <div class="timer-box" id="timerDisplay">
                 <i class="fa-solid fa-hourglass-half"></i> SISA WAKTU : <span id="waktu-tersisa">00:00</span>
@@ -172,6 +193,7 @@
             "cpns4": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1284587631&single=true&output=csv",
             "cpns5": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=2039958969&single=true&output=csv",
             "cpns6": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=235989538&single=true&output=csv",
+            "cpns7": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=2031764124&single=true&output=csv",
             "bumn1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=1111447607&single=true&output=csv",
             "utbk1": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTTT7q1J0uPg7HDQ48JydQFZmZj5hro3QFjAq_4eGNKeNvcSs49M1kAU6kt93Jpe8haqeuvAPeC3THB/pub?gid=293930227&single=true&output=csv"
         };
