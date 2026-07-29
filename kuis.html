@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- TAG SEO PENTING: Mencegah Google mengindeks halaman sistem tertutup ini -->
+    <meta name="robots" content="noindex, nofollow">
+    
     <title>Sistem CAT BKN Simulation - Pendidikanku (Mi Vida)</title>
     
     <!-- ================= FAVICON ================= -->
@@ -23,7 +27,8 @@
         const userToken = sessionStorage.getItem('token_' + currModule);
         if (!userToken || userToken !== validTokens[currModule]) {
             alert("Sesi Tidak Sah! Harap mulai dari portal utama.");
-            window.location.href = "index.html"; 
+            // PERBAIKAN LINK 1
+            window.location.href = "/"; 
         }
     </script>
 
@@ -100,7 +105,8 @@
     <div id="area-ujian" style="display: none;">
         <header class="cat-header">
             <div class="cat-title">
-                <a href="index.html" class="btn-home" title="Kembali ke Beranda">
+                <!-- PERBAIKAN LINK 2 -->
+                <a href="/" class="btn-home" title="Kembali ke Beranda">
                     <!-- LOGO MIVIDA (Sama Seperti index.html) -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="100" height="30" aria-hidden="true">
                       <defs>
@@ -147,7 +153,7 @@
         </div>
     </div>
 
-    <!-- AREA HASIL (Disederhanakan untuk Nuansa Profesional) -->
+    <!-- AREA HASIL -->
     <div id="hasil-panel">
         <div style="text-align: center; margin-bottom: 30px;">
             <h2 style="font-weight: 800; font-size: 28px; color: #0f172a;">LEMBAR EVALUASI SKD</h2>
@@ -174,7 +180,8 @@
         </div>
 
         <div style="text-align:center;">
-            <a href="index.html" style="display: inline-block; background: #0f172a; color: white; text-decoration: none; font-weight: 800; padding: 14px 30px; border-radius: 6px; text-transform: uppercase;">Kembali ke Portal</a>
+            <!-- PERBAIKAN LINK 3 -->
+            <a href="/" style="display: inline-block; background: #0f172a; color: white; text-decoration: none; font-weight: 800; padding: 14px 30px; border-radius: 6px; text-transform: uppercase;">Kembali ke Portal</a>
         </div>
     </div>
 
