@@ -41,160 +41,8 @@
         }
     </script>
 
-    <style>
-        /* === UI MENDUPLIKASI KETEGASAN SOFTWARE BKN === */
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; user-select: none; }
-        body { background-color: #e2e8f0; color: #0f172a; overflow-x: hidden; }
-        
-        .cat-header { background: #3b82f6; padding: 12px 30px; border-bottom: 5px solid #1d4ed8; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
-        .cat-title { font-weight: 800; font-size: 18px; color: #ffffff; display: flex; align-items: center; gap: 12px;}
-        .btn-home { background: #ffffff; padding: 5px 12px; border-radius: 6px; text-decoration: none; transition: 0.2s; display: flex; align-items: center;}
-        .btn-home:hover { background: #f1f5f9; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
-
-        .timer-box { background: #ffffff; color: #dc2626; padding: 6px 20px; border-radius: 6px; font-weight: 800; font-size: 18px; border: 2px solid #ef4444; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
-        .timer-warning { background: #991b1b; color: white; border-color: #7f1d1d; animation: pulse 1s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
-
-        .cat-container { display: grid; grid-template-columns: 1fr 340px; gap: 20px; max-width: 1400px; margin: 25px auto; padding: 0 20px; align-items: start;}
-        
-        .soal-panel { background: #fff; border-radius: 8px; padding: 40px; border: 1px solid #cbd5e1; min-height: 550px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
-        .soal-nomor { font-weight: 800; color: #1e3a8a; font-size: 16px; margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;}
-        .soal-teks { font-size: 17px; line-height: 1.8; margin-bottom: 35px; font-weight: 600; color: #0f172a;}
-        
-        .opsi-list { display: flex; flex-direction: column; gap: 10px; }
-        .opsi-label { display: flex; align-items: flex-start; gap: 15px; padding: 14px 20px; border: 1px solid #94a3b8; border-radius: 6px; cursor: pointer; transition: 0.1s; font-size: 16px; font-weight: 500;}
-        .opsi-label:hover { background: #f8fafc; border-color: #64748b; }
-        .opsi-label input[type="radio"] { margin-top: 5px; transform: scale(1.3); accent-color: #3b82f6;}
-        .opsi-label.terpilih { background: #eff6ff; border-color: #2563eb; outline: 1px solid #2563eb; font-weight: 700;}
-
-        .action-panel { display: flex; justify-content: space-between; gap: 10px; margin-top: 40px; border-top: 2px solid #e2e8f0; padding-top: 20px;}
-        .btn { padding: 12px 25px; border-radius: 6px; font-weight: 800; cursor: pointer; transition: 0.1s; border: 1px solid transparent; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;}
-        .btn-prev { background: #f1f5f9; color: #334155; border-color: #cbd5e1;} 
-        .btn-prev:hover { background: #e2e8f0; }
-        .btn-ragu { background: #fef3c7; color: #b45309; border-color: #f59e0b;} 
-        .btn-ragu:hover { background: #fde68a; }
-        .btn-next { background: #3b82f6; color: white; border-color: #2563eb;} 
-        .btn-next:hover { background: #2563eb; }
-
-        .navigasi-panel { background: #fff; border-radius: 8px; padding: 20px; border: 1px solid #cbd5e1; position: sticky; top: 85px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
-        .navigasi-title { font-weight: 800; margin-bottom: 15px; font-size: 15px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #1e3a8a; text-align: center;}
-        .grid-nomor { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; max-height: 400px; overflow-y: auto; padding-right: 5px;}
-        
-        .btn-nomor { aspect-ratio: 1; border: 1px solid #94a3b8; border-radius: 4px; background: #fff; font-weight: 700; font-size: 13px; cursor: pointer; transition: 0.1s;}
-        .btn-nomor:hover { border-color: #475569; background: #f8fafc;}
-        .btn-nomor.dijawab { background: #10b981; color: white; border-color: #059669;}
-        .btn-nomor.ragu { background: #f59e0b; color: white; border-color: #d97706;}
-        .btn-nomor.aktif { outline: 3px solid #0f172a; outline-offset: -1px; z-index: 2;}
-
-        .btn-selesai { width: 100%; background: #dc2626; color: white; margin-top: 15px; padding: 12px; font-size: 14px; border:1px solid #b91c1c; border-radius:6px; cursor:pointer; font-weight:800; text-transform: uppercase;}
-        .btn-selesai:hover { background: #b91c1c; }
-
-        /* ====== WAKTU SELECTION UI ====== */
-        .waktu-card { background: #fff; padding: 40px; border-radius: 12px; max-width: 550px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 5px solid #3b82f6;}
-        .waktu-card h2 { color: #0f172a; font-weight: 800; font-size: 24px; margin-bottom: 10px;}
-        .waktu-btn { padding: 14px; background: #f8fafc; border: 2px solid #cbd5e1; color: #334155; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.2s; font-size: 15px;}
-        .waktu-btn:hover { background: #f1f5f9; border-color: #94a3b8; }
-        .waktu-btn.primary { border-color: #3b82f6; color: #2563eb; background: #eff6ff;}
-        .waktu-btn.warning { border-color: #f59e0b; color: #d97706; background: #fffbeb;}
-        .waktu-btn.danger { border-color: #dc2626; color: #b91c1c; background: #fef2f2;}
-
-        .loading-screen { position: fixed; top:0; left:0; width:100%; height:100%; background: #e2e8f0; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;}
-        
-        #hasil-panel { display: none; max-width: 900px; margin: 40px auto; background: #fff; border-radius: 12px; padding: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #cbd5e1;}
-        .skor-total { font-size: 72px; font-weight: 800; color: #1e3a8a; margin: 10px 0;}
-    </style>
-</head>
-<body oncontextmenu="return false;">
-
-    <div class="loading-screen" id="loadingScreen">
-        <h2 style="color: #0f172a; font-size: 18px;">Memuat Basis Data Sistem...</h2>
-    </div>
-
-    <!-- AREA UJIAN -->
-    <div id="area-ujian" style="display: none;">
-        <header class="cat-header">
-            <div class="cat-title">
-                <!-- PERBAIKAN LINK 2 -->
-                <a href="/" class="btn-home" title="Kembali ke Beranda">
-                    <!-- LOGO MIVIDA (Sama Seperti index.html) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="100" height="30" aria-hidden="true">
-                      <defs>
-                        <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stop-color="#3b82f6" />
-                          <stop offset="100%" stop-color="#1e3a8a" />
-                        </linearGradient>
-                      </defs>
-                      <g transform="translate(15, 25)">
-                        <path d="M 15 95 L 15 45 C 15 25, 45 25, 45 45 L 45 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M 45 95 L 45 45 C 45 25, 75 25, 75 45 L 75 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M 95 30 Q 95 15, 110 15 Q 95 15, 95 0 Q 95 15, 80 15 Q 95 15, 95 30" fill="#f59e0b"/>
-                      </g>
-                      <text x="140" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="64" fill="#0f172a">Mi<tspan fill="url(#mvGrad)">Vida</tspan></text>
-                      <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
-                    </svg>
-                </a>
-                <span id="judul-modul" style="border-left: 2px solid rgba(255,255,255,0.3); padding-left: 12px; margin-left: 5px;">SISTEM CAT</span>
-            </div>
-            <div class="timer-box" id="timerDisplay">
-                <i class="fa-solid fa-hourglass-half"></i> SISA WAKTU : <span id="waktu-tersisa">00:00</span>
-            </div>
-        </header>
-
-        <div class="cat-container">
-            <main class="soal-panel">
-                <div class="soal-nomor" id="kategori-soal">NOMOR 1</div>
-                <div class="soal-teks" id="teks-soal">Memuat soal...</div>
-                
-                <div class="opsi-list" id="opsi-list"></div>
-
-                <div class="action-panel">
-                    <button class="btn btn-prev" onclick="gantiSoal(-1)"><i class="fa-solid fa-arrow-left"></i> SEBELUMNYA</button>
-                    <button class="btn btn-ragu" onclick="tandaiRagu()" id="btnRagu"><i class="fa-solid fa-flag"></i> RAGU-RAGU</button>
-                    <button class="btn btn-next" id="btnNext" onclick="gantiSoal(1)">SELANJUTNYA <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </main>
-
-            <aside class="navigasi-panel">
-                <div class="navigasi-title">PAPAN NAVIGASI</div>
-                <div class="grid-nomor" id="grid-nomor"></div>
-                <button class="btn btn-selesai" onclick="konfirmasiSelesai()"><i class="fa-solid fa-paper-plane"></i> SELESAIKAN UJIAN</button>
-            </aside>
-        </div>
-    </div>
-
-    <!-- AREA HASIL -->
-    <div id="hasil-panel">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="font-weight: 800; font-size: 28px; color: #0f172a;">LEMBAR EVALUASI SKD</h2>
-            <div class="skor-total" id="skor-total-akhir">0</div>
-            <p style="color: #64748b; font-weight: 700; text-transform: uppercase;">Total Akumulasi Poin</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; text-align: center;" id="eval-grid-container">
-            <div style="padding: 20px; border: 2px solid #e2e8f0; border-radius: 8px;">
-                <div style="font-weight: 800; color: #0f172a;" id="title-eval-1">TWK</div>
-                <div style="font-size: 28px; font-weight: 800; color: #dc2626;" id="skor-box-1">0</div>
-                <div id="status-box-1" style="font-size: 13px; font-weight: 700; margin-top: 10px;">Status</div>
-            </div>
-            <div style="padding: 20px; border: 2px solid #e2e8f0; border-radius: 8px;">
-                <div style="font-weight: 800; color: #0f172a;" id="title-eval-2">TIU</div>
-                <div style="font-size: 28px; font-weight: 800; color: #3b82f6;" id="skor-box-2">0</div>
-                <div id="status-box-2" style="font-size: 13px; font-weight: 700; margin-top: 10px;">Status</div>
-            </div>
-            <div style="padding: 20px; border: 2px solid #e2e8f0; border-radius: 8px;" id="kard-3">
-                <div style="font-weight: 800; color: #0f172a;" id="title-eval-3">TKP</div>
-                <div style="font-size: 28px; font-weight: 800; color: #10b981;" id="skor-box-3">0</div>
-                <div id="status-box-3" style="font-size: 13px; font-weight: 700; margin-top: 10px;">Status</div>
-            </div>
-        </div>
-
-        <div style="text-align:center;">
-            <!-- PERBAIKAN LINK 3 -->
-            <a href="/" style="display: inline-block; background: #0f172a; color: white; text-decoration: none; font-weight: 800; padding: 14px 30px; border-radius: 6px; text-transform: uppercase;">Kembali ke Portal</a>
-        </div>
-    </div>
-
     <script>
+        // === PROTEKSI UI ===
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.addEventListener('keydown', function(e) {
             if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
@@ -217,6 +65,28 @@
         let currentModuleId = new URLSearchParams(window.location.search).get('module') || 'cpns1';
         let bankSoal = [], jawabanPeserta = {}, raguRagu = {}, indeksSoal = 0;
         let durasiMenit = 100, totalDetik = 0, timerInterval;
+
+        // === FUNGSI SISTEM ANTI-REFRESH ===
+        function simpanSesiUjian() {
+            sessionStorage.setItem('jawaban_' + currentModuleId, JSON.stringify(jawabanPeserta));
+            sessionStorage.setItem('ragu_' + currentModuleId, JSON.stringify(raguRagu));
+            sessionStorage.setItem('waktu_' + currentModuleId, totalDetik);
+            sessionStorage.setItem('indeks_' + currentModuleId, indeksSoal);
+        }
+
+        function muatSesiUjian() {
+            let sJawab = sessionStorage.getItem('jawaban_' + currentModuleId);
+            if(sJawab) jawabanPeserta = JSON.parse(sJawab);
+
+            let sRagu = sessionStorage.getItem('ragu_' + currentModuleId);
+            if(sRagu) raguRagu = JSON.parse(sRagu);
+
+            let sWaktu = sessionStorage.getItem('waktu_' + currentModuleId);
+            if(sWaktu) totalDetik = parseInt(sWaktu);
+
+            let sIndeks = sessionStorage.getItem('indeks_' + currentModuleId);
+            if(sIndeks) indeksSoal = parseInt(sIndeks);
+        }
 
         function ambilDataSoal() {
             Papa.parse(moduleUrls[currentModuleId], {
@@ -246,7 +116,15 @@
 
                     if(parsedSoal.length > 0) {
                         bankSoal = parsedSoal; 
-                        tampilkanKonfigurasiWaktu();
+                        
+                        // Cek apakah ada sesi berjalan sebelum menanyakan durasi
+                        let sWaktu = sessionStorage.getItem('waktu_' + currentModuleId);
+                        if(sWaktu && parseInt(sWaktu) > 0) {
+                            muatSesiUjian();
+                            resumeWaktuUjian();
+                        } else {
+                            tampilkanKonfigurasiWaktu();
+                        }
                     } else {
                         alert("Gagal membaca bank soal dari sistem.");
                     }
@@ -254,10 +132,8 @@
             });
         }
 
-        // --- FITUR BARU: GLADI BERSIH MANAJEMEN WAKTU ---
         function tampilkanKonfigurasiWaktu() {
             let isCPNS = currentModuleId.includes('cpns');
-            
             if (isCPNS) {
                 document.getElementById('loadingScreen').innerHTML = `
                     <div class="waktu-card">
@@ -280,7 +156,6 @@
                     </div>
                 `;
             } else {
-                // Konfigurasi BUMN / UTBK
                 durasiMenit = currentModuleId.includes('utbk') ? 195 : 120;
                 setWaktuMulai(durasiMenit);
             }
@@ -293,9 +168,15 @@
         }
 
         function setWaktuMulai(menit) {
-            durasiMenit = menit;
-            totalDetik = durasiMenit * 60;
-            
+            totalDetik = menit * 60;
+            mulaiUjianUI();
+        }
+
+        function resumeWaktuUjian() {
+            mulaiUjianUI();
+        }
+
+        function mulaiUjianUI() {
             document.getElementById('loadingScreen').style.display = 'none';
             document.getElementById('area-ujian').style.display = 'block';
             
@@ -303,7 +184,7 @@
             document.getElementById('judul-modul').innerText = "SISTEM CAT " + namaModul;
             
             buatNavigasi();
-            tampilkanSoal(0);
+            tampilkanSoal(indeksSoal); // Tampilkan index dari session
             timerInterval = setInterval(updateTimer, 1000);
         }
 
@@ -315,8 +196,11 @@
                 return;
             }
             totalDetik--;
+            simpanSesiUjian(); // Simpan detik secara konstan
+
             let h = Math.floor(totalDetik / 3600), m = Math.floor((totalDetik % 3600) / 60), s = totalDetik % 60;
             document.getElementById('waktu-tersisa').innerText = h > 0 ? `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}` : `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            
             if(totalDetik < 300) document.getElementById('timerDisplay').classList.add('timer-warning');
         }
 
@@ -326,6 +210,11 @@
             for(let i=0; i<bankSoal.length; i++) {
                 let btn = document.createElement('button');
                 btn.className = 'btn-nomor'; btn.id = 'nav-' + i; btn.innerText = i + 1;
+                
+                // Warnai navigasi berdasarkan sesi yang dimuat
+                if(raguRagu[i]) btn.classList.add('ragu');
+                else if (jawabanPeserta[i]) btn.classList.add('dijawab');
+                
                 btn.onclick = () => tampilkanSoal(i);
                 grid.appendChild(btn);
             }
@@ -333,6 +222,8 @@
 
         function tampilkanSoal(indeks) {
             indeksSoal = indeks;
+            simpanSesiUjian(); // Simpan history navigasi
+
             let soalObj = bankSoal[indeks];
             
             document.querySelectorAll('.btn-nomor').forEach(b => b.classList.remove('aktif'));
@@ -377,19 +268,25 @@
 
         function pilihOpsi(indeks, huruf) {
             jawabanPeserta[indeks] = huruf;
+            
             let navBtn = document.getElementById('nav-' + indeks);
-            if(!raguRagu[indeks]) navBtn.classList.add('dijawab');
+            if(!raguRagu[indeks]) navBtn.className = 'btn-nomor dijawab aktif';
+            
+            simpanSesiUjian(); // Simpan jawaban secara instan
             tampilkanSoal(indeks); 
         }
 
         function tandaiRagu() {
             raguRagu[indeksSoal] = !raguRagu[indeksSoal];
+            
             let nav = document.getElementById('nav-' + indeksSoal);
             if(raguRagu[indeksSoal]) {
                 nav.className = 'btn-nomor ragu aktif';
             } else {
                 nav.className = jawabanPeserta[indeksSoal] ? 'btn-nomor dijawab aktif' : 'btn-nomor aktif';
             }
+            
+            simpanSesiUjian(); // Simpan status ragu-ragu
             tampilkanSoal(indeksSoal);
         }
 
@@ -411,7 +308,13 @@
             clearInterval(timerInterval);
             document.getElementById('area-ujian').style.display = 'none';
             document.getElementById('hasil-panel').style.display = 'block';
+            
+            // Hapus semua storage agar sesi bisa dimulai ulang
             sessionStorage.removeItem('token_' + currentModuleId); 
+            sessionStorage.removeItem('jawaban_' + currentModuleId);
+            sessionStorage.removeItem('ragu_' + currentModuleId);
+            sessionStorage.removeItem('waktu_' + currentModuleId);
+            sessionStorage.removeItem('indeks_' + currentModuleId);
 
             let skor1 = 0, skor2 = 0, skor3 = 0;
             
@@ -465,5 +368,5 @@
         
         ambilDataSoal();
     </script>
-</body>
+    </body>
 </html>
