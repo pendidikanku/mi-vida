@@ -16,26 +16,17 @@
 
     <script>
         const currModule = new URLSearchParams(window.location.search).get('module') || 'cpns1';
-        
-        // Obfuscation: Token disandikan menggunakan Base64
-        const validTokensEncoded = {
-            "cpns1": "RlJFRQ==",                   // FREE
-            "cpns2": "TUlWSURBQ1BOUzIwMjY=",       // MIVIDACPNS2026
-            "cpns3": "TUlWSURBMTI0MzlDUE5TMw==",   // MIVIDA12439CPNS3
-            "cpns4": "QWtqMTlhamRDUG5TNA==",       // Akj19ajdCPNS4
-            "cpns5": "MWhhc2ZoM1NJQWhzYXM5MQ==",   // 1hasfh3SIAhsas91
-            "cpns6": "c2FkMTI5c2Foa2xTQUtI",       // sad129sahklSAKH
-            "cpns7": "QVMqJiFrYXNqYSpIQVNr",       // AS*&!kasja*HASk
-            "bumn1": "QUtITEFLQlVNTjIwMjY=",       // AKHLAKBUMN2026
-            "utbk1": "MTIza2phczBrMmprYUFhag=="    // 123kjas0k2jkaAaj
+        const validTokens = {
+            "cpns1": "FREE", "cpns2": "MIVIDACPNS2026", "cpns3": "MIVIDA12439CPNS3",
+            "cpns4": "Akj19ajdCPNS4", "cpns5": "1hasfh3SIAhsas91", "cpns6": "sad129sahklSAKH",
+            "cpns7": "AS*&!kasja*HASk",
+            "bumn1": "AKHLAKBUMN2026", "utbk1": "123kjas0k2jkaAaj"
         };
-        
         const userToken = sessionStorage.getItem('token_' + currModule);
-        
-        // Validasi
-        if (!userToken || btoa(userToken) !== validTokensEncoded[currModule]) {
-            alert("Sesi Tidak Sah atau Token Kunci salah! Harap mulai dari portal utama.");
-            window.location.href = "/"; 
+        if (!userToken || userToken !== validTokens[currModule]) {
+            alert("Sesi Tidak Sah! Harap mulai dari portal utama.");
+            // PERBAIKAN LINK KE INDEX
+            window.location.href = "index.html"; 
         }
     </script>
 
@@ -103,23 +94,11 @@
 
         /* === OPTIMASI SMARTPHONE (MOBILE RESPONSIVE) === */
         @media (max-width: 992px) {
-            .cat-container { 
-                grid-template-columns: 1fr; 
-                margin: 15px auto;
-            }
-            .navigasi-panel { 
-                position: relative; 
-                top: 0; 
-                margin-top: 20px;
-            }
-            .action-panel { 
-                flex-direction: column; 
-            }
+            .cat-container { grid-template-columns: 1fr; margin: 15px auto; }
+            .navigasi-panel { position: relative; top: 0; margin-top: 20px; }
+            .action-panel { flex-direction: column; }
             .btn { width: 100%; margin-bottom: 8px; }
-            .cat-header { 
-                flex-direction: column; 
-                gap: 15px; 
-            }
+            .cat-header { flex-direction: column; gap: 15px; }
             .timer-box { width: 100%; justify-content: center; }
             .waktu-card { width: 90%; padding: 25px; }
         }
@@ -134,7 +113,7 @@
     <div id="area-ujian" style="display: none;">
         <header class="cat-header">
             <div class="cat-title">
-                <a href="/" class="btn-home" title="Kembali ke Beranda">
+                <a href="index.html" class="btn-home" title="Kembali ke Beranda">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="100" height="30" aria-hidden="true">
                       <defs>
                         <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -206,12 +185,11 @@
         </div>
 
         <div style="text-align:center;">
-            <a href="/" style="display: inline-block; background: #0f172a; color: white; text-decoration: none; font-weight: 800; padding: 14px 30px; border-radius: 6px; text-transform: uppercase;">Kembali ke Portal</a>
+            <a href="index.html" style="display: inline-block; background: #0f172a; color: white; text-decoration: none; font-weight: 800; padding: 14px 30px; border-radius: 6px; text-transform: uppercase;">Kembali ke Portal</a>
         </div>
     </div>
 
     <script>
-        // === PROTEKSI UI ===
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.addEventListener('keydown', function(e) {
             if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
@@ -303,6 +281,7 @@
 
         function tampilkanKonfigurasiWaktu() {
             let isCPNS = currentModuleId.includes('cpns');
+            
             if (isCPNS) {
                 document.getElementById('loadingScreen').innerHTML = `
                     <div class="waktu-card">
@@ -337,7 +316,8 @@
         }
 
         function setWaktuMulai(menit) {
-            totalDetik = menit * 60;
+            durasiMenit = menit;
+            totalDetik = durasiMenit * 60;
             mulaiUjianUI();
         }
 
@@ -353,7 +333,7 @@
             document.getElementById('judul-modul').innerText = "SISTEM CAT " + namaModul;
             
             buatNavigasi();
-            tampilkanSoal(indeksSoal); // Tampilkan index dari session
+            tampilkanSoal(indeksSoal); // Gunakan indeks yang tersimpan di sesi
             timerInterval = setInterval(updateTimer, 1000);
         }
 
@@ -365,11 +345,10 @@
                 return;
             }
             totalDetik--;
-            simpanSesiUjian(); // Simpan detik secara konstan
+            simpanSesiUjian(); // Simpan waktu tiap detik
 
             let h = Math.floor(totalDetik / 3600), m = Math.floor((totalDetik % 3600) / 60), s = totalDetik % 60;
             document.getElementById('waktu-tersisa').innerText = h > 0 ? `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}` : `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-            
             if(totalDetik < 300) document.getElementById('timerDisplay').classList.add('timer-warning');
         }
 
@@ -380,7 +359,7 @@
                 let btn = document.createElement('button');
                 btn.className = 'btn-nomor'; btn.id = 'nav-' + i; btn.innerText = i + 1;
                 
-                // Warnai navigasi berdasarkan sesi yang dimuat
+                // Warnai navigasi berdasarkan history jawaban/ragu yang diload
                 if(raguRagu[i]) btn.classList.add('ragu');
                 else if (jawabanPeserta[i]) btn.classList.add('dijawab');
                 
@@ -437,17 +416,15 @@
 
         function pilihOpsi(indeks, huruf) {
             jawabanPeserta[indeks] = huruf;
-            
             let navBtn = document.getElementById('nav-' + indeks);
             if(!raguRagu[indeks]) navBtn.className = 'btn-nomor dijawab aktif';
             
-            simpanSesiUjian(); // Simpan jawaban secara instan
+            simpanSesiUjian(); // Simpan setiap kali ada perubahan jawaban
             tampilkanSoal(indeks); 
         }
 
         function tandaiRagu() {
             raguRagu[indeksSoal] = !raguRagu[indeksSoal];
-            
             let nav = document.getElementById('nav-' + indeksSoal);
             if(raguRagu[indeksSoal]) {
                 nav.className = 'btn-nomor ragu aktif';
@@ -455,7 +432,7 @@
                 nav.className = jawabanPeserta[indeksSoal] ? 'btn-nomor dijawab aktif' : 'btn-nomor aktif';
             }
             
-            simpanSesiUjian(); // Simpan status ragu-ragu
+            simpanSesiUjian(); // Simpan status ragu
             tampilkanSoal(indeksSoal);
         }
 
@@ -478,7 +455,7 @@
             document.getElementById('area-ujian').style.display = 'none';
             document.getElementById('hasil-panel').style.display = 'block';
             
-            // Hapus semua storage agar sesi bisa dimulai ulang
+            // Bersihkan sesi agar ketika mulai lagi semuanya dari 0
             sessionStorage.removeItem('token_' + currentModuleId); 
             sessionStorage.removeItem('jawaban_' + currentModuleId);
             sessionStorage.removeItem('ragu_' + currentModuleId);
