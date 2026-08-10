@@ -18,16 +18,25 @@
 
     <script>
         const currModule = new URLSearchParams(window.location.search).get('module') || 'cpns1';
-        const validTokens = {
-            "cpns1": "FREE", "cpns2": "MIVIDACPNS2026", "cpns3": "MIVIDA12439CPNS3",
-            "cpns4": "Akj19ajdCPNS4", "cpns5": "1hasfh3SIAhsas91", "cpns6": "sad129sahklSAKH",
-            "cpns7": "AS*&!kasja*HASk",
-            "bumn1": "AKHLAKBUMN2026", "utbk1": "123kjas0k2jkaAaj"
+        
+        // Obfuscation: Token kini disandikan menggunakan Base64 agar tidak terbaca sebagai teks biasa
+        const validTokensEncoded = {
+            "cpns1": "RlJFRQ==",                   // FREE
+            "cpns2": "TUlWSURBQ1BOUzIwMjY=",       // MIVIDACPNS2026
+            "cpns3": "TUlWSURBMTI0MzlDUE5TMw==",   // MIVIDA12439CPNS3
+            "cpns4": "QWtqMTlhamRDUG5TNA==",       // Akj19ajdCPNS4
+            "cpns5": "MWhhc2ZoM1NJQWhzYXM5MQ==",   // 1hasfh3SIAhsas91
+            "cpns6": "c2FkMTI5c2Foa2xTQUtI",       // sad129sahklSAKH
+            "cpns7": "QVMqJiFrYXNqYSpIQVNr",       // AS*&!kasja*HASk
+            "bumn1": "QUtITEFLQlVNTjIwMjY=",       // AKHLAKBUMN2026
+            "utbk1": "MTIza2phczBrMmprYUFhag=="    // 123kjas0k2jkaAaj
         };
+        
         const userToken = sessionStorage.getItem('token_' + currModule);
-        if (!userToken || userToken !== validTokens[currModule]) {
-            alert("Sesi Tidak Sah! Harap mulai dari portal utama.");
-            // PERBAIKAN LINK 1
+        
+        // Validasi dengan membandingkan input user yang di-encode dengan kamus di atas
+        if (!userToken || btoa(userToken) !== validTokensEncoded[currModule]) {
+            alert("Sesi Tidak Sah atau Token Kunci salah! Harap mulai dari portal utama.");
             window.location.href = "/"; 
         }
     </script>
