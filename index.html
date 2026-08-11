@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ================= VERIFIKASI SEARCH ENGINE ================= -->
     <meta name="google-site-verification" content="75ubCjiYygPqON9b7GRoJXlubSUXxWrpn52Il3S9M7U" />
     <meta name="msvalidate.01" content="DC56E95D067F86B7D99F9548AEA3F639" />
 
-    <!-- ================= GOOGLE ANALYTICS ========================= -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P72TBW9CTL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,7 +15,6 @@
       gtag('config', 'G-P72TBW9CTL');
     </script>
     
-    <!-- ================= SEO & META TAGS ================= -->
     <title>Pendidikanku Mi Vida - Platform Tryout CPNS, PPPK, BUMN & UTBK Terlengkap</title>
     <meta name="description" content="Mivida.id adalah platform resmi Pendidikanku (Mi Vida) untuk latihan soal simulasi CAT. Lulus tes CPNS 2026, PPPK, Rekrutmen Bersama BUMN, dan UTBK SNBT dengan bank soal HOTS terbaru.">
     <meta name="keywords" content="Pendidikanku, Mivida, Mi Vida, Tryout CPNS 2026, Simulasi CAT BKN, PPPK 2026, Lulus BUMN, Rekrutmen Bersama BUMN, UTBK SNBT, Latihan Tes TIU TWK TKP, Soal HOTS, Pendidikanku Mi Vida, mivida.id">
@@ -26,10 +23,8 @@
     <meta name="theme-color" content="#3b82f6">
     <link rel="canonical" href="https://mivida.id/">
     
-    <!-- ================= FAVICON ================= -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%23a855f7'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23g)'/><path d='M25 70 L25 40 C25 20 50 20 50 40 L50 70 M50 70 L50 40 C50 20 75 20 75 40 L75 70' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/><circle cx='80' cy='20' r='6' fill='%23f59e0b'/></svg>">
     
-    <!-- ================= OPEN GRAPH & TWITTER CARDS ================= -->
     <meta property="og:locale" content="id_ID">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mivida.id/">
@@ -38,10 +33,8 @@
     <meta property="og:site_name" content="Pendidikanku Mi Vida">
     <meta property="og:image" content="https://mivida.id/images/hero-cpns.jpg">
 
-    <!-- ================= GOOGLE ADSENSE ================= -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2313737454653945" crossorigin="anonymous"></script>
     
-    <!-- ================= FONTS & ICONS ================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
@@ -134,7 +127,18 @@
         .comm-card:hover { transform: translateY(-3px); border-color: var(--cpns-color); }
         .comm-card i { font-size: 32px; }
         
-        footer { text-align: center; padding: 30px; background: var(--bg-card); color: var(--text-muted); font-size: 13px; font-weight: 600; border-top: 1px solid var(--card-border); }
+        /* ================= TAMBAHAN CSS UNTUK SEO MEGA FOOTER ================= */
+        footer { padding: 60px 20px 20px 20px; background: var(--bg-card); color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--card-border); }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
+        .footer-col h4 { font-size: 16px; font-weight: 800; color: var(--text-main); margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: var(--cpns-color); border-radius: 2px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: var(--text-muted); text-decoration: none; font-size: 14px; transition: 0.3s ease; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+        .footer-col ul li a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 12px; color: var(--cpns-color); opacity: 0.5; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--cpns-color); }
+        .footer-col ul li a:hover::before { opacity: 1; transform: translateX(3px); }
+        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid var(--card-border); color: var(--text-muted); font-size: 13px; font-weight: 600; }
 
         @media (max-width: 768px) {
             .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--card-border); flex-direction: column; padding: 20px; gap: 15px; box-shadow: var(--shadow-soft);}
@@ -146,17 +150,44 @@
         }
     </style>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Pendidikanku Mi Vida",
-      "url": "https://mivida.id/",
-      "logo": "https://mivida.id/images/logo.png",
-      "description": "Platform tryout simulasi CAT interaktif untuk persiapan CPNS, PPPK, BUMN, dan UTBK SNBT dengan sistem penilaian real-time.",
-      "sameAs": [
-        "https://saweria.co/mivida"
-      ]
-    }
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Pendidikanku Mi Vida",
+        "url": "https://mivida.id/",
+        "logo": "https://mivida.id/images/logo.png",
+        "description": "Platform tryout simulasi CAT interaktif untuk persiapan CPNS, PPPK, BUMN, dan UTBK SNBT dengan sistem penilaian real-time.",
+        "sameAs": [
+          "https://saweria.co/mivida"
+        ]
+      },
+      /* ================= TAMBAHAN SCHEMA UNTUK DAFTAR KURSUS / TRYOUT (SEO) ================= */
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://mivida.id/#cpns",
+            "name": "Tryout CAT BKN CPNS 2026 (SKD)"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://mivida.id/#bumn",
+            "name": "Tryout Rekrutmen Bersama BUMN 2026 (TKD & AKHLAK)"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://mivida.id/#utbk",
+            "name": "Tryout UTBK SNBT 2026"
+          }
+        ]
+      }
+    ]
     </script>
 </head>
 <body oncontextmenu="return false;">
@@ -207,7 +238,6 @@
                     <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> 
                     Gladi Bersih Teknis & Psikologis BKN
                 </div>
-                <!-- PENERAPAN FEAR-TO-FORTITUDE -->
                 <h1>Menghafal Saja Tidak Akan Cukup Menembus <span>Passing Grade CPNS 2026.</span></h1>
                 <p>Ujian modern didesain untuk menggugurkan. Realitanya, ribuan peserta gagal bukan karena kurang pintar, melainkan panik dan kehabisan waktu. Kuasai <strong>Manajemen Waktu</strong> Anda sekarang. Jadikan Pendidikanku (Mi Vida) sebagai gladi bersih menghadapi sistem CAT BKN yang sesungguhnya.</p>
             </div>
@@ -215,7 +245,6 @@
 
         <div class="main-wrapper">
             
-            <!-- ================= CPNS SECTION ================= -->
             <section class="category-block" id="cpns">
                 <div class="category-header">
                     <i class="fa-solid fa-building-columns" style="color: var(--cpns-color);" aria-hidden="true"></i>
@@ -223,11 +252,14 @@
                     <div class="category-desc">
                         <strong>Kepatuhan Ketat HOTS (Higher Order Thinking Skills)</strong><br>
                         Tinggalkan cara lama. Modul kami dirancang secara presisi untuk menguji batas kemampuan Anda: <b>TIU</b> untuk logika komputasi analitik, <b>TWK</b> untuk pendalaman studi kasus negara, dan <b>TKP</b> untuk pengambilan keputusan manajerial. Atur tekanan waktu Anda (80, 90, atau 100 menit) sebelum masuk ke arena ujian!
+                        
+                        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--card-border); font-size: 14px;">
+                            <i class="fa-solid fa-book-open" style="color: var(--cpns-color);"></i> <b>Belum Paham Materi?</b> Baca panduan lengkapnya di <a href="blog/panduan-lengkap-lolos-skd-cpns" style="color: var(--cpns-color); font-weight: 700; text-decoration: none;">Panduan Lolos SKD CPNS 2026</a>.
+                        </div>
                     </div>
                 </div>
                 
                 <div class="modul-grid">
-                    <!-- CPNS Chapter 1 (SPEARHEAD FREEMIUM) -->
                     <div class="modul-card" style="border: 2px solid #10b981; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);">
                         <div class="modul-card-badge" style="background: #10b981; font-size: 12px; padding: 6px 16px;">Tawaran Spesial Bulan Ini (Gratis)</div>
                         <div class="modul-info">
@@ -247,7 +279,6 @@
                         </div>
                     </div>
 
-                    <!-- CPNS Chapter 2 -->
                     <div class="modul-card">
                         <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
@@ -270,8 +301,6 @@
                         </div>
                     </div>
 
-                    <!-- Lanjutkan struktur CPNS 3 - 6 seperti sebelumnya, cukup sesuaikan ikon list menjadi fa-check -->
-                    <!-- CPNS Chapter 3 -->
                     <div class="modul-card">
                         <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
@@ -294,7 +323,6 @@
                         </div>
                     </div>
 
-                    <!-- CPNS Chapter 4 -->
                     <div class="modul-card">
                         <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
@@ -317,7 +345,6 @@
                         </div>
                     </div>
 
-                    <!-- CPNS Chapter 5 -->
                     <div class="modul-card">
                         <div class="modul-card-badge">Premium</div>
                         <div class="modul-info">
@@ -340,7 +367,6 @@
                         </div>
                     </div>
                     
-                    <!-- CPNS Chapter 6 -->
                     <div class="modul-card">
                         <div class="modul-card-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">🔥 HOT</div>
                         <div class="modul-info">
@@ -363,7 +389,6 @@
                         </div>
                     </div>
 
-                    <!-- CPNS Chapter 7 -->
                     <div class="modul-card">
                         <div class="modul-card-badge" style="background: linear-gradient(135deg, #6366f1, #a855f7);">Terbaru</div>
                         <div class="modul-info">
@@ -389,7 +414,6 @@
                 </div>
             </section>
 
-            <!-- ================= BUMN SECTION (SAMA SEPERTI SEBELUMNYA) ================= -->
             <section class="category-block" id="bumn">
                 <div class="category-header">
                     <i class="fa-solid fa-briefcase" style="color: var(--bumn-color);" aria-hidden="true"></i>
@@ -420,7 +444,6 @@
                 </div>
             </section>
             
-            <!-- ================= UTBK SECTION (SAMA SEPERTI SEBELUMNYA) ================= -->
             <section class="category-block" id="utbk">
                 <div class="category-header">
                     <i class="fa-solid fa-university" style="color: var(--utbk-color);" aria-hidden="true"></i>
@@ -449,10 +472,38 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Pendidikanku (Mi Vida) - mivida.id. All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Info CPNS & Pendaftaran</h4>
+                <ul>
+                    <li><a href="blog/cara-daftar-cpns-panduan-lengkap-sscasn">Cara Daftar CPNS SSCASN</a></li>
+                    <li><a href="blog/rincian-formasi-cpns-jurusan-paling-dicari">Rincian Formasi CPNS 2026</a></li>
+                    <li><a href="blog/jadwal-cpns-pendaftaran-dan-timeline-lengkap">Jadwal Seleksi Pendaftaran</a></li>
+                    <li><a href="blog/kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru">Kisi-Kisi Resmi CPNS</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Panduan SKD & Strategi</h4>
+                <ul>
+                    <li><a href="blog/panduan-lengkap-lolos-skd-cpns">Panduan Lengkap Lolos SKD</a></li>
+                    <li><a href="blog/panduan-latihan-cat-cpns-terlengkap">Panduan Latihan Sistem CAT</a></li>
+                    <li><a href="blog/passing-grade-cpns-nilai-ambang-batas">Nilai Ambang Batas (Passing Grade)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bedah Materi (Content Hub)</h4>
+                <ul>
+                    <li><a href="blog/materi-tiu-cpns-lengkap">Materi Lengkap TIU CPNS</a></li>
+                    <li><a href="blog/tembus-twk-cpns-hots">Strategi Tembus TWK HOTS</a></li>
+                    <li><a href="blog/rahasia-skor-maksimal-tkp-cpns">Rahasia Skor Maksimal TKP</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pendidikanku (Mi Vida) - mivida.id. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- SCRIPT PENGAMAN & LOGIKA -->
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault()); 
         document.addEventListener('keydown', function(e) {
