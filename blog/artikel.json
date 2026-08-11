@@ -60,16 +60,6 @@
         "date": "Juli 2026"
     },
     {
-        "url": "tembus-twk-cpns-hots.html",
-        "image": "../images/twk-cpns.png",
-        "badgeIcon": "fa-flag",
-        "badgeText": "Nasionalisme & TWK",
-        "badgeColor": "#dc2626",
-        "title": "Tembus TWK CPNS 2026: Cara Jitu Menjawab Soal HOTS Tanpa Menghafal Buta",
-        "desc": "Kuasai materi TWK CPNS dengan trik penalaran Pancasila. Jawab soal cerita panjang dengan mudah melalui metode kata kunci (keyword).",
-        "date": "Juli 2026"
-    },
-    {
         "url": "panduan-latihan-cat-cpns-terlengkap.html",
         "image": "../images/ilustrasi-peserta-ujian-cpns-fokus.png",
         "badgeIcon": "fa-laptop-code",
@@ -290,16 +280,6 @@
         "date": "Juli 2026"
     },
     {
-        "url": "hots-tiu-cpns.html",
-        "image": "../images/tiu-cpns.png",
-        "badgeIcon": "fa-fire",
-        "badgeText": "HOTS TIU",
-        "badgeColor": "#dc2626",
-        "title": "Rahasia Tembus Soal HOTS TIU CPNS 2026: Trik Nalar Tingkat Tinggi Anti Blank",
-        "desc": "Bongkar taktik memfilter dummy data dan trik estimasi ekstrem untuk menaklukkan soal hitungan panjang HOTS TIU CPNS tanpa nge-blank.",
-        "date": "Juli 2026"
-    },
-    {
         "url": "kesalahan-fatal-tiu.html",
         "image": "../images/tiu-cpns.png",
         "badgeIcon": "fa-triangle-exclamation",
@@ -347,6 +327,216 @@
         "badgeColor": "#4f46e5",
         "title": "Sering Gagal Tryout? Ini Panduan Latihan TIU CPNS 2026 yang Bikin Skor Meroket",
         "desc": "Rancang jadwal simulasi CAT harian dan bangun 'muscle memory' untuk menghadapi soal numerik CPNS lewat panduan latihan efektif ini.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "tembus-twk-cpns-hots.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-brain",
+        "badgeText": "HOTS TWK",
+        "badgeColor": "#dc2626",
+        "title": "Tembus TWK CPNS 2026: Cara Jitu Menjawab Soal HOTS Tanpa Menghafal Buta",
+        "desc": "Bongkar jebakan soal cerita panjang (HOTS) di TWK CPNS 2026. Kuasai trik mencari kata kunci dan mengeliminasi jawaban pengecoh dalam hitungan detik.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "pancasila-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-star",
+        "badgeText": "Pancasila",
+        "badgeColor": "#dc2626",
+        "title": "Trik Menjawab Soal Pancasila TWK CPNS 2026 Tanpa Menghafal Butir-Butir",
+        "desc": "Jangan terjebak menghafal 45 butir! Kuasai cara jitu menjawab soal penalaran Pancasila di TWK CPNS 2026 dengan metode kata kunci (keyword).",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "uud-1945-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-book-bookmark",
+        "badgeText": "Konstitusi Negara",
+        "badgeColor": "#dc2626",
+        "title": "Trik Menjawab Soal UUD 1945 TWK CPNS 2026 Tanpa Menghafal Semua Pasal",
+        "desc": "Jangan terjebak menghafal teks kaku! Kuasai cara jitu menjawab soal penalaran UUD 1945 di TWK CPNS 2026 dengan metode kata kunci (keyword).",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "bhinneka-tunggal-ika-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-users",
+        "badgeText": "Keberagaman",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Bhinneka Tunggal Ika TWK CPNS 2026: Trik Jawab Cepat Anti Galau",
+        "desc": "Bongkar jebakan soal Bhinneka Tunggal Ika di TWK CPNS 2026. Kuasai beda etnosentrisme dan primordialisme dengan trik kata kunci.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "nkri-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-map-location",
+        "badgeText": "Tata Negara NKRI",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal NKRI TWK CPNS 2026: Trik Jawab Cepat Materi Sejarah & Tata Negara",
+        "desc": "Jangan terjebak menghafal tanggal dan tahun! Kuasai cara jitu menjawab soal penalaran NKRI dan sejarah kemerdekaan di TWK CPNS dengan metode kata kunci.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "ham-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-scale-balanced",
+        "badgeText": "Hak Asasi Manusia",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal HAM TWK CPNS 2026: Trik Jawab Cepat Kasus Pelanggaran Hak Asasi",
+        "desc": "Bongkar jebakan soal HAM di TWK CPNS 2026. Kuasai beda pelanggaran HAM berat dan ringan dengan trik kata kunci tanpa menghafal buta.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "integritas-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-shield-halved",
+        "badgeText": "Integritas ASN",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Integritas TWK CPNS 2026: Trik Jawab Cepat Kasus Korupsi & Etika",
+        "desc": "Bongkar jebakan soal Integritas di TWK CPNS. Kuasai 9 nilai anti-korupsi KPK dan trik menjawab studi kasus etika ASN tanpa menghafal panjang lebar.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "nasionalisme-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-flag",
+        "badgeText": "Nasionalisme",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Nasionalisme TWK CPNS 2026: Trik Jawab Cepat Anti Terkecoh",
+        "desc": "Bongkar jebakan soal Nasionalisme di TWK CPNS 2026. Kuasai beda Nasionalisme, Patriotisme, dan Bela Negara dengan trik kata kunci.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "bela-negara-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-person-military-rifle",
+        "badgeText": "Bela Negara",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Bela Negara TWK CPNS 2026: Trik Jawab Cepat Berdasarkan Profesi",
+        "desc": "Bongkar jebakan soal Bela Negara di TWK CPNS 2026. Kuasai beda wujud fisik dan non-fisik serta trik menjawab studi kasus berdasarkan profesi.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "sejarah-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-clock-rotate-left",
+        "badgeText": "Sejarah Bangsa",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Sejarah TWK CPNS 2026: Trik Cepat Ingat Peristiwa Kemerdekaan Tanpa Pusing",
+        "desc": "Bongkar jebakan soal sejarah di TWK CPNS 2026. Kuasai urutan peristiwa kemerdekaan dan pergerakan nasional tanpa menghafal tanggal mati.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "lembaga-negara-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-building-columns",
+        "badgeText": "Lembaga Negara",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Lembaga Negara TWK CPNS 2026: Trik Cepat Pahami Tugas & Wewenang",
+        "desc": "Bongkar jebakan soal tata negara di TWK CPNS 2026. Kuasai wewenang Lembaga Eksekutif, Legislatif, dan Yudikatif dengan trik kata kunci.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "amandemen-uud-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-pen-to-square",
+        "badgeText": "Amandemen",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Amandemen UUD 1945 TWK CPNS 2026: Trik Cepat Hafal Sejarah & Perubahan",
+        "desc": "Jangan terjebak menghafal pasal demi pasal! Kuasai cara jitu menjawab soal penalaran Amandemen UUD 1945 di TWK CPNS dengan metode kata kunci.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "demokrasi-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-check-to-slot",
+        "badgeText": "Demokrasi",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Demokrasi TWK CPNS 2026: Trik Jawab Cepat Sistem & Pilar Negara",
+        "desc": "Bongkar jebakan soal Demokrasi di TWK CPNS 2026. Kuasai prinsip Demokrasi Pancasila, hak kebebasan berpendapat, dan trik menjawab studi kasus politik.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "otonomi-daerah-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-map-pin",
+        "badgeText": "Otonomi Daerah",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Otonomi Daerah TWK CPNS 2026: Trik Jawab Cepat Asas & Wewenang Pemda",
+        "desc": "Bongkar jebakan soal Otonomi Daerah di TWK CPNS 2026. Kuasai perbedaan desentralisasi, dekonsentrasi, dan tugas pembantuan dengan trik kata kunci.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "wawasan-nusantara-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-earth-asia",
+        "badgeText": "Wawasan Nusantara",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Wawasan Nusantara TWK CPNS 2026: Trik Jawab Cepat Konsep Geopolitik",
+        "desc": "Bongkar jebakan soal Wawasan Nusantara di TWK CPNS. Kuasai konsep Geopolitik, Astagatra, dan wawasan kewilayahan dengan trik kata kunci jitu.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "konstitusi-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-gavel",
+        "badgeText": "Konstitusi",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Konstitusi TWK CPNS 2026: Trik Cepat Pahami Hukum Dasar & Hierarki",
+        "desc": "Bongkar jebakan soal Konstitusi di TWK CPNS 2026. Kuasai beda Konvensi dan Hierarki Hukum dengan trik kata kunci tanpa harus menghafal pasal.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "ideologi-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-lightbulb",
+        "badgeText": "Ideologi Negara",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Ideologi TWK CPNS 2026: Trik Jawab Cepat Beda Pancasila & Isme Dunia",
+        "desc": "Bongkar jebakan soal Ideologi di TWK CPNS 2026. Kuasai perbedaan Pancasila sebagai ideologi terbuka dengan Komunisme dan Liberalisme lewat kata kunci.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "nilai-dasar-asn-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-user-tie",
+        "badgeText": "BerAKHLAK",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Nilai Dasar ASN TWK CPNS 2026: Trik Cepat Hafal Core Values BerAKHLAK",
+        "desc": "Bongkar jebakan soal Nilai Dasar ASN di TWK CPNS 2026. Kuasai 7 Core Values BerAKHLAK dengan trik kata kunci untuk melibas soal studi kasus.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "anti-korupsi-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-ban",
+        "badgeText": "Anti Korupsi",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal Anti Korupsi TWK CPNS 2026: Trik Jawab Cepat Beda Suap & Gratifikasi",
+        "desc": "Bongkar jebakan soal Anti Korupsi di TWK CPNS 2026. Kuasai perbedaan suap, gratifikasi, pemerasan, dan uang pelicin untuk melibas soal studi kasus.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "hots-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-brain",
+        "badgeText": "HOTS TWK",
+        "badgeColor": "#dc2626",
+        "title": "Tembus Soal HOTS TWK CPNS 2026: Trik Cepat Nalar Tingkat Tinggi Anti Blank",
+        "desc": "Bongkar jebakan soal cerita panjang (HOTS) di TWK CPNS 2026. Kuasai trik mencari kata kunci dan mengeliminasi jawaban pengecoh dalam hitungan detik.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "latihan-twk-cpns.html",
+        "image": "../images/twk-cpns.png",
+        "badgeIcon": "fa-dumbbell",
+        "badgeText": "Latihan TWK",
+        "badgeColor": "#4f46e5",
+        "title": "Panduan Lengkap Latihan TWK CPNS 2026: Strategi Drill Soal & Simulasi CAT Anti Gagal",
+        "desc": "Jangan biarkan hafalanmu menguap saat ujian! Kuasai teknik latihan soal TWK CPNS, evaluasi tryout, dan manajemen waktu CAT yang terbukti ampuh.",
         "date": "Juli 2026"
     }
 ]
