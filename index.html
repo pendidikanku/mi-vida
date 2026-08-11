@@ -116,17 +116,6 @@
         
         .password-hint { font-size: 11px; color: #64748b; text-align: center; margin-top: 10px; font-weight: 600; }
 
-        .seo-section { max-width: 1200px; margin: 0 auto 60px auto; padding: 40px; background: #fff; border-radius: 16px; border: 1px solid var(--card-border); }
-        .seo-section h3 { font-size: 22px; font-weight: 800; color: #1e293b; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
-        .seo-section h4 { font-size: 16px; font-weight: 700; color: #334155; margin-top: 25px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .seo-section p, .seo-section ul { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 15px; font-weight: 500;}
-
-        .community-section { background: var(--bg-card); border-top: 1px solid var(--card-border); padding: 80px 20px; text-align: center; }
-        .comm-grid { max-width: 1000px; margin: 40px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .comm-card { background: var(--bg-main); border: 1px solid var(--card-border); padding: 25px; border-radius: 12px; text-decoration: none; color: var(--text-main); display: flex; flex-direction: column; align-items: center; gap: 12px; transition: 0.2s; }
-        .comm-card:hover { transform: translateY(-3px); border-color: var(--cpns-color); }
-        .comm-card i { font-size: 32px; }
-        
         /* ================= TAMBAHAN CSS UNTUK SEO MEGA FOOTER ================= */
         footer { padding: 60px 20px 20px 20px; background: var(--bg-card); color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--card-border); }
         .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
@@ -144,7 +133,7 @@
             .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--card-border); flex-direction: column; padding: 20px; gap: 15px; box-shadow: var(--shadow-soft);}
             .nav-menu.active { display: flex; }
             .menu-toggle { display: block; }
-            .category-block, .seo-section { padding: 25px 15px; }
+            .category-block { padding: 25px 15px; }
             .hero-section { padding: 60px 20px 40px 20px; }
             .modul-grid { grid-template-columns: 1fr; }
         }
@@ -162,7 +151,6 @@
           "https://saweria.co/mivida"
         ]
       },
-      /* ================= TAMBAHAN SCHEMA UNTUK DAFTAR KURSUS / TRYOUT (SEO) ================= */
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
@@ -249,12 +237,16 @@
                 <div class="category-header">
                     <i class="fa-solid fa-building-columns" style="color: var(--cpns-color);" aria-hidden="true"></i>
                     <h2>Gladi Bersih CAT CPNS 2026 (SKD)</h2>
+                    
                     <div class="category-desc">
-                        <strong>Kepatuhan Ketat HOTS (Higher Order Thinking Skills)</strong><br>
-                        Tinggalkan cara lama. Modul kami dirancang secara presisi untuk menguji batas kemampuan Anda: <b>TIU</b> untuk logika komputasi analitik, <b>TWK</b> untuk pendalaman studi kasus negara, dan <b>TKP</b> untuk pengambilan keputusan manajerial. Atur tekanan waktu Anda (80, 90, atau 100 menit) sebelum masuk ke arena ujian!
+                        <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+                            <i class="fa-solid fa-brain" style="color: var(--cpns-color);"></i> Kepatuhan Ketat HOTS (Higher Order Thinking Skills)
+                        </div>
+                        <p style="margin-bottom: 15px;">Tinggalkan cara lama. Modul kami dirancang secara presisi untuk menguji batas kemampuan Anda: <b>TIU</b> untuk logika komputasi analitik, <b>TWK</b> untuk pendalaman studi kasus negara, dan <b>TKP</b> untuk pengambilan keputusan manajerial. Atur tekanan waktu Anda (80, 90, atau 100 menit) sebelum masuk ke arena ujian!</p>
                         
-                        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--card-border); font-size: 14px;">
-                            <i class="fa-solid fa-book-open" style="color: var(--cpns-color);"></i> <b>Belum Paham Materi?</b> Baca panduan lengkapnya di <a href="blog/panduan-lengkap-lolos-skd-cpns" style="color: var(--cpns-color); font-weight: 700; text-decoration: none;">Panduan Lolos SKD CPNS 2026</a>.
+                        <div style="padding-top: 15px; border-top: 1px dashed var(--card-border); font-size: 14px; display: flex; align-items: flex-start; gap: 10px;">
+                            <i class="fa-solid fa-book-open" style="color: var(--cpns-color); margin-top: 4px;"></i> 
+                            <div><b>Belum Paham Materi?</b> Baca panduan lengkapnya di <a href="blog/panduan-lengkap-lolos-skd-cpns" style="color: var(--cpns-color); font-weight: 700; text-decoration: none;">Panduan Lolos SKD CPNS 2026</a>.</div>
                         </div>
                     </div>
                 </div>
@@ -418,9 +410,12 @@
                 <div class="category-header">
                     <i class="fa-solid fa-briefcase" style="color: var(--bumn-color);" aria-hidden="true"></i>
                     <h2>Latihan Soal & Tryout RBB BUMN 2026</h2>
+                    
                     <div class="category-desc">
-                        <strong>Kuasai Core Values AKHLAK & Tembus TKD</strong><br>
-                        Persaingan Rekrutmen Bersama BUMN tidak sekadar mencari kecerdasan, melainkan tata nilai. Latihan intensif <b>TKD</b> akan menyaring kecepatan kognitif Anda, sementara modul <b>AKHLAK</b> di MiVida dirancang khusus untuk membentuk pola pikir yang sejalan dengan standar kepemimpinan BUMN.
+                        <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+                            <i class="fa-solid fa-medal" style="color: var(--bumn-color);"></i> Kuasai Core Values AKHLAK & Tembus TKD
+                        </div>
+                        <p>Persaingan Rekrutmen Bersama BUMN tidak sekadar mencari kecerdasan, melainkan tata nilai. Latihan intensif <b>TKD</b> akan menyaring kecepatan kognitif Anda, sementara modul <b>AKHLAK</b> di MiVida dirancang khusus untuk membentuk pola pikir yang sejalan dengan standar kepemimpinan BUMN.</p>
                     </div>
                 </div>
                 
