@@ -538,5 +538,205 @@
         "title": "Panduan Lengkap Latihan TWK CPNS 2026: Strategi Drill Soal & Simulasi CAT Anti Gagal",
         "desc": "Jangan biarkan hafalanmu menguap saat ujian! Kuasai teknik latihan soal TWK CPNS, evaluasi tryout, dan manajemen waktu CAT yang terbukti ampuh.",
         "date": "Juli 2026"
+    },
+    {
+        "url": "pelayanan-publik-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-users",
+        "badgeText": "Pelayanan Publik",
+        "badgeColor": "#059669",
+        "title": "Rahasia Poin Penuh Pelayanan Publik TKP CPNS: Trik Memanjakan Warga Sesuai SOP",
+        "desc": "Kuasai cara jitu menjawab soal pelayanan publik di TKP CPNS. Temukan trik mendapatkan poin 5 dengan melayani tanpa melanggar aturan birokrasi.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "profesionalisme-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-user-tie",
+        "badgeText": "Profesionalisme",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Profesionalisme TKP CPNS: Trik Jitu Menuntaskan Tugas Tanpa Baper",
+        "desc": "Bongkar rahasia soal profesionalisme di TKP CPNS. Pelajari cara memilih jawaban paling objektif dan fokus pada penyelesaian tugas prioritas instansi.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "jejaring-kerja-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-network-wired",
+        "badgeText": "Jejaring Kerja",
+        "badgeColor": "#059669",
+        "title": "Bongkar Trik Poin 5 Jejaring Kerja TKP CPNS: Rahasia Membangun Relasi Emas",
+        "desc": "Jangan salah pilih rekan kerja! Kuasai teknik kolaborasi dan berbagi informasi yang tepat demi poin maksimal di soal jejaring kerja TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "sosial-budaya-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-hands-holding-circle",
+        "badgeText": "Sosial Budaya",
+        "badgeColor": "#059669",
+        "title": "Bongkar Trik Poin 5 Sosial Budaya TKP CPNS: Rahasia Adaptasi & Toleransi Tingkat Dewa",
+        "desc": "Raih poin 5 mutlak pada soal sosial budaya TKP CPNS dengan menunjukkan sikap empati, toleransi tinggi, dan penolakan keras terhadap diskriminasi.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "teknologi-informasi-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-computer",
+        "badgeText": "Teknologi TIK",
+        "badgeColor": "#059669",
+        "title": "Bongkar Trik Poin 5 Teknologi Informasi TKP CPNS: Rahasia Tampil Melek Digital Anti Gaptek",
+        "desc": "Kuasai trik menjawab soal TIK di TKP CPNS. Tunjukkan sikap adaptif terhadap inovasi sistem digital dan mau belajar teknologi baru.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "anti-radikalisme-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-shield-halved",
+        "badgeText": "Anti Radikalisme",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Anti Radikalisme TKP CPNS: Trik Sapu Bersih Soal Ekstremisme Tanpa Ragu",
+        "desc": "Jangan pernah kompromi dengan radikalisme. Pelajari cara bersikap tegas menjaga keutuhan NKRI dan Pancasila demi poin sempurna di TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "adaptif-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-arrows-rotate",
+        "badgeText": "Adaptif",
+        "badgeColor": "#059669",
+        "title": "Bongkar Trik Poin 5 Adaptif TKP CPNS: Rahasia Lincah Hadapi Badai Perubahan",
+        "desc": "Lingkungan kerja tiba-tiba berubah? Pelajari trik jitu menjawab soal adaptabilitas TKP CPNS agar selalu dinilai sebagai ASN yang siap menghadapi tantangan.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "kolaboratif-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-handshake",
+        "badgeText": "Kolaboratif",
+        "badgeColor": "#059669",
+        "title": "Bongkar Trik Poin 5 Kolaboratif TKP CPNS: Rahasia Sinergi Tim Tanpa Ego Sektoral",
+        "desc": "Jangan kerja sendirian! Temukan kunci jawaban poin 5 TKP CPNS untuk materi kolaborasi dengan menyingkirkan ego sektoral demi tujuan bersama.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "komunikasi-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-comments",
+        "badgeText": "Komunikasi",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Komunikasi TKP CPNS: Trik Ampuh Bicara Efektif Anti Salah Paham",
+        "desc": "Bongkar trik menghindari miskomunikasi di lingkungan kerja. Kuasai seni komunikasi asertif yang jadi incaran poin 5 pada ujian TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "kreatif-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-lightbulb",
+        "badgeText": "Kreatif",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Kreatif TKP CPNS: Trik Memecahkan Kebuntuan Tanpa Melanggar SOP",
+        "desc": "Instansi butuh inovasi! Cari tahu cara memilih jawaban TKP CPNS yang menunjukkan sisi kreatif dan solutif tanpa harus menabrak batas aturan (SOP).",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "empati-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-heart",
+        "badgeText": "Empati",
+        "badgeColor": "#059669",
+        "title": "Bongkar Trik Poin 5 Empati TKP CPNS: Rahasia Peduli Rekan Tanpa Mengorbankan Tugas",
+        "desc": "Bongkar cara menyeimbangkan kepedulian terhadap masalah rekan kerja dengan penyelesaian tugas instansi agar kamu dapat poin 5 mutlak di TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "etika-asn-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-scale-balanced",
+        "badgeText": "Etika ASN",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Etika ASN TKP CPNS: Trik Menjaga Wibawa & Moral Birokrasi",
+        "desc": "Simak panduan menjawab soal studi kasus pelanggaran etika ASN. Tunjukkan moral birokrasi yang tinggi untuk merebut skor maksimal TKP.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "pelayanan-prima-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-medal",
+        "badgeText": "Pelayanan Prima",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Pelayanan Prima TKP CPNS: Trik Eksekusi Cepat Tanpa Menabrak Aturan",
+        "desc": "Ketahui cara membedakan antara sekadar 'melayani' dengan 'pelayanan prima' di TKP CPNS yang akan langsung diganjar poin 5 oleh sistem BKN.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "orientasi-pelayanan-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-compass",
+        "badgeText": "Orientasi Pelayanan",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Orientasi Pelayanan TKP CPNS: Rahasia Service Cepat & Solutif",
+        "desc": "Hadapi komplain warga dengan tenang! Kuasai trik penyelesaian keluhan layanan publik yang selalu menjadi kunci poin tinggi pada soal TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "pengambilan-keputusan-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-chess",
+        "badgeText": "Ambil Keputusan",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Pengambilan Keputusan TKP CPNS: Trik Eksekusi Solusi Tanpa Ragu",
+        "desc": "Pilih keputusan terbaik di bawah tekanan. Bongkar taktik memilih opsi jawaban yang rasional dan mengutamakan kepentingan publik di TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "kerja-tim-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-people-group",
+        "badgeText": "Kerja Tim",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Kerja Tim TKP CPNS: Trik Membangun Sinergi Solid Tanpa Drama",
+        "desc": "Tinggalkan drama kantor! Kuasai cara jitu menjawab studi kasus konflik internal tim dan ubah menjadi poin 5 lewat pilihan sinergi di TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "kepemimpinan-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-crown",
+        "badgeText": "Kepemimpinan",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Kepemimpinan TKP CPNS: Trik Elegan Memimpin Tanpa Otoriter",
+        "desc": "Tunjukkan bakat *leadership* Anda! Pelajari trik mengelola bawahan dan mengambil kendali dalam situasi genting pada studi kasus kepemimpinan TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "integritas-kerja-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-gem",
+        "badgeText": "Integritas Kerja",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Integritas Kerja TKP CPNS: Trik Elegan Menepis Jebakan Kolusi",
+        "desc": "Godaannya besar, namun poin 5 menanti. Bongkar strategi menepis tawaran KKN dan mengedepankan kejujuran mutlak pada ujian integritas TKP CPNS.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "hots-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-fire-flame-curved",
+        "badgeText": "HOTS TKP",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Soal HOTS TKP CPNS: Trik Membaca Niat Terselubung Pembuat Soal",
+        "desc": "Soal TKP cerita super panjang menjebak? Pelajari teknik membaca *skimming* untuk langsung menangkap inti masalah dan membuang opsi jawaban pengecoh.",
+        "date": "Juli 2026"
+    },
+    {
+        "url": "latihan-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-dumbbell",
+        "badgeText": "Latihan TKP",
+        "badgeColor": "#059669",
+        "title": "Hack Poin 5 Latihan TKP CPNS: Trik Drill Soal Membentuk Insting Abdi Negara",
+        "desc": "Bangun insting jawaban otomatis poin 5. Simak panduan latihan intensif simulasi TKP CPNS agar Anda terbiasa dengan pola soal menjebak BKN.",
+        "date": "Juli 2026"
     }
 ]
