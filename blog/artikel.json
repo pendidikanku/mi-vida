@@ -1,13 +1,23 @@
 [
     {
+        "url": "panduan-lengkap-lolos-skd-cpns.html",
+        "image": "../images/lolos-skd-cpns.png",
+        "badgeIcon": "fa-book-open",
+        "badgeText": "Panduan Utama SKD",
+        "badgeColor": "#4f46e5",
+        "title": "Panduan Lengkap Lolos SKD CPNS 2026: Bedah Materi, Strategi, & Simulasi",
+        "desc": "Pelajari strategi lolos SKD CPNS 2026 lengkap dengan materi TWK, TIU, TKP, sistem CAT, jadwal belajar, dan tips sukses anti gagal.",
+        "date": "Agustus 2026"
+    },
+    {
         "url": "cara-daftar-cpns-panduan-lengkap-sscasn.html",
         "image": "../images/hero-daftar-cpns.png",
         "badgeIcon": "fa-laptop-file",
         "badgeText": "Tutorial Pendaftaran",
         "badgeColor": "#db2777",
-        "title": "Cara Daftar CPNS 2026 Lengkap dengan Gambar: Panduan SSCASN Anti Gagal",
+        "title": "Awas Gugur Administrasi! Ini Cara Daftar CPNS 2026 di SSCASN Tanpa Drama",
         "desc": "Ikuti panduan langkah demi langkah cara daftar CPNS 2026 di portal SSCASN. Dilengkapi syarat dokumen, cara buat akun, hingga trik e-meterai.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "rincian-formasi-cpns-jurusan-paling-dicari.html",
@@ -15,9 +25,9 @@
         "badgeIcon": "fa-building-user",
         "badgeText": "Analisis Instansi",
         "badgeColor": "#059669",
-        "title": "Rincian Formasi CPNS 2026: Jurusan Paling Dicari & Cara Cek Kuotanya",
+        "title": "Bongkar Rincian Formasi CPNS 2026: Jurusan Paling Diburu & Trik Lolos Jalur Sepi",
         "desc": "Cari tahu rincian formasi CPNS 2026 terbaru. Cek jurusan yang paling banyak dicari untuk lulusan SMA hingga S1, daftar instansi IKN, dan trik memilih formasi.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "jadwal-cpns-pendaftaran-dan-timeline-lengkap.html",
@@ -25,9 +35,9 @@
         "badgeIcon": "fa-calendar-days",
         "badgeText": "Jadwal & Timeline",
         "badgeColor": "#7c3aed",
-        "title": "Jadwal CPNS 2026 Terlengkap: Kapan Pendaftaran Dibuka?",
+        "title": "Bocoran Jadwal CPNS 2026: Kapan Pendaftaran SSCASN Dibuka? Catat Tanggal Penting Ini!",
         "desc": "Cek prediksi jadwal CPNS 2026 terbaru dari BKN. Mulai dari tanggal pendaftaran SSCASN, ujian SKD, hingga pengumuman kelulusan. Jangan sampai terlewat!",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru.html",
@@ -37,7 +47,7 @@
         "badgeColor": "#d97706",
         "title": "Bocoran Resmi Kisi-Kisi CPNS 2026: Formasi, Materi SKD, dan Perubahannya",
         "desc": "Bedah tuntas kisi-kisi CPNS 2026 resmi Kemenpan-RB. Cek bocoran formasi, materi SKD (TWK, TIU, TKP), dan perubahan sistem terbaru.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "passing-grade-cpns-nilai-ambang-batas.html",
@@ -45,19 +55,9 @@
         "badgeIcon": "fa-circle-info",
         "badgeText": "Info Resmi",
         "badgeColor": "#2563eb",
-        "title": "Passing Grade CPNS 2026 Terbaru: Benarkah Masih Berlaku? Ini Penjelasan Resminya",
+        "title": "Passing Grade CPNS 2026 Terbaru: Rincian Skor & Aturan Ambang Batas SKD",
         "desc": "Cari tahu rincian resmi passing grade CPNS 2026. Cek nilai ambang batas TIU, TWK, TKP terbaru dan strategi lolos perankingan SKD.",
-        "date": "Juli 2026"
-    },
-    {
-        "url": "rahasia-skor-maksimal-tkp-cpns.html",
-        "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-user-shield",
-        "badgeText": "Karakter & Kepribadian",
-        "badgeColor": "#059669",
-        "title": "Rahasia Skor Maksimal TKP CPNS 2026: Trik Menemukan Jawaban Poin 5",
-        "desc": "Bedah tuntas 6 pilar kisi-kisi TKP ASN 2026. Pelajari rahasia membedakan jawaban bernilai 4 dan poin 5 agar lulus passing grade.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "panduan-latihan-cat-cpns-terlengkap.html",
@@ -66,28 +66,18 @@
         "badgeText": "Panduan Sukses",
         "badgeColor": "#4f46e5",
         "title": "Panduan Lengkap Latihan CAT CPNS 2026: Strategi Tembus SKD dari Nol",
-        "desc": "Pelajari panduan lengkap latihan CAT CPNS 2026 dari nol. Temukan strategi jitu, kisi-kisi TWK, TIU, TKP, dan simulasi tryout terbaik.",
-        "date": "Juli 2026"
+        "desc": "Pelajari panduan lengkap latihan CAT CPNS 2026 dari nol. Temukan strategi jitu, simulasi tryout terbaik, dan adaptasi UI sistem BKN.",
+        "date": "Agustus 2026"
     },
     {
         "url": "materi-tiu-cpns-lengkap.html",
         "image": "../images/tiu-cpns.png",
         "badgeIcon": "fa-calculator",
-        "badgeText": "TIU / Numerik",
+        "badgeText": "Master Guide TIU",
         "badgeColor": "#10b981",
-        "title": "Bedah Tuntas Materi TIU CPNS 2026: Rumus Cepat & Cara Jawab Kilat",
+        "title": "Bedah Tuntas Materi TIU CPNS 2026: Rumus Cepat & Cara Jawab Kurang dari 40 Detik",
         "desc": "Kuasai rumus cepat numerik, trik silogisme verbal, dan pola figural rahasia. Taklukkan soal hitungan sulit dalam waktu singkat!",
-        "date": "Juli 2026"
-    },
-    {
-        "url": "panduan-lengkap-lolos-skd-cpns.html",
-        "image": "../images/lolos-skd-cpns.png",
-        "badgeIcon": "fa-book-open",
-        "badgeText": "CPNS",
-        "badgeColor": "#4f46e5",
-        "title": "Panduan Lengkap Lolos SKD CPNS 2026: Bedah Materi & Strategi",
-        "desc": "Pelajari strategi lolos SKD CPNS 2026 lengkap dengan materi TWK, TIU, TKP, sistem CAT, jadwal belajar, dan tips sukses anti gagal.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "trik-menjawab-analogi-tiu-cpns.html",
@@ -97,7 +87,7 @@
         "badgeColor": "#8b5cf6",
         "title": "Kuasai Soal Analogi TIU CPNS 2026: Trik Jitu Menjawab Cepat Tanpa Terkecoh",
         "desc": "Pelajari trik cepat menaklukkan soal analogi kata TIU CPNS 2026. Temukan hubungan tersembunyi antar kata tanpa mudah terkecoh opsi jebakan.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "sinonim-tiu-cpns.html",
@@ -107,7 +97,7 @@
         "badgeColor": "#8b5cf6",
         "title": "Kuasai Soal Sinonim TIU CPNS 2026: Trik Jitu Menjawab Cepat Tanpa Menghafal Buta",
         "desc": "Bongkar rahasia menjawab soal sinonim persamaan kata TIU CPNS 2026 dengan cepat menggunakan teknik eliminasi dan analisis imbuhan.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "antonim-tiu-cpns-lengkap.html",
@@ -115,9 +105,9 @@
         "badgeIcon": "fa-font",
         "badgeText": "TIU / Verbal",
         "badgeColor": "#8b5cf6",
-        "title": "Trik Cepat Menjawab Soal Antonim TIU CPNS 2026 Tanpa Menghafal Kamus",
+        "title": "Trik Logika Terbalik: Jawaban Tepat Soal Antonim TIU CPNS 2026 Tanpa Hafal KBBI",
         "desc": "Kuasai teknik jitu menemukan lawan kata (antonim) di soal TIU CPNS 2026. Lolos tes verbal tanpa harus pusing menghafal ribuan kosa kata KBBI.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "deret-angka-tiu-cpns.html",
@@ -127,7 +117,7 @@
         "badgeColor": "#10b981",
         "title": "Rumus Cepat Deret Angka TIU CPNS 2026: Trik Menjawab Tanpa Menghitung Lama",
         "desc": "Pusing dengan soal deret angka TIU CPNS? Pelajari pola rahasia fibonacci, deret bertingkat, dan trik lompat angka yang sering keluar.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "aritmatika-tiu-cpns-cepat.html",
@@ -137,7 +127,7 @@
         "badgeColor": "#10b981",
         "title": "Trik Cepat Aritmatika TIU CPNS 2026: Rumus Jitu Hitung Tanpa Kalkulator",
         "desc": "Kuasai rumus hitung kilat aritmatika dasar, pecahan, dan desimal untuk persiapan tes numerik TIU CPNS 2026 tanpa bantuan kalkulator.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "persentase-tiu-cpns-cepat.html",
@@ -145,9 +135,9 @@
         "badgeIcon": "fa-percent",
         "badgeText": "TIU / Numerik",
         "badgeColor": "#10b981",
-        "title": "Trik Hitung Cepat Persentase TIU CPNS 2026: Rumus & Soal Cerita",
+        "title": "Trik Hitung Cepat Persentase TIU CPNS 2026 Anti Kalkulator",
         "desc": "Bongkar trik cepat menyelesaikan soal persentase untung rugi, diskon, dan aritmatika sosial di ujian TIU CPNS 2026 tanpa rumus rumit.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "perbandingan-tiu-cpns-cepat.html",
@@ -157,7 +147,7 @@
         "badgeColor": "#10b981",
         "title": "Trik Cepat Perbandingan TIU CPNS 2026: Senilai & Berbalik Nilai",
         "desc": "Jangan sampai tertukar! Pelajari rumus jitu membedakan soal perbandingan senilai dan berbalik nilai (pekerja & waktu) di tes TIU CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "kecepatan-tiu-cpns.html",
@@ -167,7 +157,7 @@
         "badgeColor": "#10b981",
         "title": "Trik Cepat Soal Kecepatan TIU CPNS 2026: Rumus Jarak dan Waktu",
         "desc": "Pusing hitung kecepatan rata-rata? Kuasai rumus segitiga JKW dan trik menyusul & berpapasan di soal numerik TIU CPNS 2026.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "jarak-tiu-cpns.html",
@@ -177,7 +167,7 @@
         "badgeColor": "#10b981",
         "title": "Trik Cepat Menghitung Jarak TIU CPNS 2026: Rumus JKW & Variasinya",
         "desc": "Kuasai cara gampang mencari total jarak tempuh pada ujian TIU CPNS 2026 lengkap dengan teknik konversi satuan waktu.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "waktu-tiu-cpns.html",
@@ -187,7 +177,7 @@
         "badgeColor": "#10b981",
         "title": "Trik Cepat Menghitung Waktu TIU CPNS 2026: Rumus JKW & Menyusul",
         "desc": "Pelajari rumus sakti menentukan jam berapa dua kendaraan berpapasan dan menyusul pada tes numerik TIU CPNS 2026.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "peluang-tiu-cpns.html",
@@ -197,7 +187,7 @@
         "badgeColor": "#10b981",
         "title": "Bongkar Rahasia Peluang TIU CPNS 2026: Trik Anti Pusing Beda Permutasi & Kombinasi",
         "desc": "Kuasai cara membedakan permutasi dan kombinasi di soal peluang kelereng dan dadu TIU CPNS 2026 agar tidak terjebak.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "statistika-cpns.html",
@@ -207,7 +197,7 @@
         "badgeColor": "#10b981",
         "title": "Trik Cepat Menjawab Soal Statistika TIU CPNS 2026 Tanpa Pusing",
         "desc": "Pelajari trik selisih untuk menghitung mean (rata-rata gabungan), median, dan modus dengan kilat di tes numerik TIU CPNS 2026.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "logika-tiu-cpns.html",
@@ -215,9 +205,9 @@
         "badgeIcon": "fa-brain",
         "badgeText": "TIU / Logika",
         "badgeColor": "#3b82f6",
-        "title": "Rahasia Tembus Logika TIU CPNS 2026: Trik Cepat Silogisme & Analitik Anti Galau",
+        "title": "Trik Cepat Menjawab Soal Logika TIU CPNS 2026: Silogisme & Analitik",
         "desc": "Sering galau jawab logika? Bongkar trik eliminasi jawaban silogisme dan cara menyusun posisi di tes penalaran analitik CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "silogisme-tiu.html",
@@ -227,7 +217,7 @@
         "badgeColor": "#3b82f6",
         "title": "Bongkar Rahasia Silogisme TIU CPNS 2026: Cara Jitu Tarik Kesimpulan Anti Tersesat",
         "desc": "Pelajari hukum pasti logika deduktif, rumus eliminasi kata 'Sebagian' dan 'Semua' untuk menjawab soal silogisme TIU CPNS dengan sempurna.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "penalaran-analitik-tiu.html",
@@ -237,7 +227,7 @@
         "badgeColor": "#3b82f6",
         "title": "Hack Penalaran Analitik TIU CPNS 2026: Trik Susun Posisi Tanpa Pusing",
         "desc": "Teks cerita panjang bikin pusing? Gunakan teknik sketsa meja bundar dan urutan posisi untuk melibas soal penalaran analitik TIU CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "figural-rotasi-tiu.html",
@@ -247,7 +237,7 @@
         "badgeColor": "#f59e0b",
         "title": "Hack Cepat Jawab Figural Rotasi TIU CPNS 2026: Anti Pusing Putar Gambar",
         "desc": "Jangan putar kepala! Kuasai teknik 'focal point' (titik acuan) untuk memecahkan tes visual figural rotasi TIU CPNS dengan instan.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "figural-lipatan-tiu.html",
@@ -257,7 +247,7 @@
         "badgeColor": "#f59e0b",
         "title": "Hack Jitu Soal Figural Lipatan TIU CPNS 2026: Trik Visual Tanpa Halu",
         "desc": "Bongkar rahasia jaring-jaring bangun ruang (kubus) dengan hukum sisi berlawanan agar tak perlu berhalusinasi saat tes figural TIU CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "figural-cermin-tiu.html",
@@ -267,7 +257,7 @@
         "badgeColor": "#f59e0b",
         "title": "Rahasia Lolos Figural Cermin TIU CPNS 2026: Trik Mata Elang Anti Terkecoh",
         "desc": "Matamu lelah? Gunakan metode isolasi elemen untuk menemukan bayangan pantulan di tes figural pencerminan TIU CPNS tanpa terjebak rotasi.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "figural-pola-tiu.html",
@@ -277,7 +267,17 @@
         "badgeColor": "#f59e0b",
         "title": "Hack Bongkar Pola Figural TIU CPNS 2026: Trik Cepat Nebak Gambar Lanjutan",
         "desc": "Pelajari trik menebak irama kelanjutan deret gambar menggunakan teknik fokus satu elemen untuk menyapu bersih soal figural pola TIU CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
+    },
+    {
+        "url": "hots-tiu-cpns.html",
+        "image": "../images/tiu-cpns.png",
+        "badgeIcon": "fa-brain",
+        "badgeText": "HOTS TIU",
+        "badgeColor": "#3b82f6",
+        "title": "Rahasia Tembus Soal HOTS TIU CPNS 2026: Trik Nalar Tingkat Tinggi Anti Blank",
+        "desc": "Taklukkan soal HOTS TIU CPNS 2026 dengan strategi penalaran tingkat tinggi. Pelajari cara membongkar logika soal cerita tanpa nge-blank.",
+        "date": "Agustus 2026"
     },
     {
         "url": "kesalahan-fatal-tiu.html",
@@ -287,7 +287,7 @@
         "badgeColor": "#f43f5e",
         "title": "Bikin Nangis! 5 Kesalahan Fatal TIU CPNS 2026 yang Bikin Gagal Passing Grade",
         "desc": "Jangan ulangi kebodohan ini! Pelajari 5 jebakan waktu dan ego yang paling sering membuat peserta ujian CPNS gagal memenuhi ambang batas TIU.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "strategi-tiu-cpns.html",
@@ -297,7 +297,7 @@
         "badgeColor": "#eab308",
         "title": "Bongkar Habis! Strategi TIU CPNS 2026: Cara Cerdik Panen Skor Tanpa Otak Mendidih",
         "desc": "Terapkan manajemen waktu 'The 40 Seconds Rule' dan strategi prioritas tembak jawaban untuk meraup skor TIU CPNS 2026 semaksimal mungkin.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "target-nilai-tiu-cpns.html",
@@ -307,7 +307,7 @@
         "badgeColor": "#eab308",
         "title": "Bongkar Target Nilai TIU CPNS 2026: Berapa Skor Aman Biar Lolos SKD?",
         "desc": "Lulus saja tak cukup! Pahami taktik simulasi mematok target skor TIU yang ideal agar posisimu aman di perankingan formasi SKB CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "passing-grade-tiu.html",
@@ -317,7 +317,7 @@
         "badgeColor": "#2563eb",
         "title": "Bongkar Rahasia Passing Grade TIU CPNS 2026: Trik Aman Tembus Ambang Batas",
         "desc": "Panduan taktis mendapatkan 16 jawaban benar dengan cepat untuk mengunci poin 80 di ujian TIU CPNS 2026 tanpa harus jago matematika.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "latihan-tiu-cpns.html",
@@ -327,17 +327,17 @@
         "badgeColor": "#4f46e5",
         "title": "Sering Gagal Tryout? Ini Panduan Latihan TIU CPNS 2026 yang Bikin Skor Meroket",
         "desc": "Rancang jadwal simulasi CAT harian dan bangun 'muscle memory' untuk menghadapi soal numerik CPNS lewat panduan latihan efektif ini.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "tembus-twk-cpns-hots.html",
         "image": "../images/twk-cpns.png",
         "badgeIcon": "fa-brain",
-        "badgeText": "HOTS TWK",
+        "badgeText": "Master Guide TWK",
         "badgeColor": "#dc2626",
         "title": "Tembus TWK CPNS 2026: Cara Jitu Menjawab Soal HOTS Tanpa Menghafal Buta",
         "desc": "Bongkar jebakan soal cerita panjang (HOTS) di TWK CPNS 2026. Kuasai trik mencari kata kunci dan mengeliminasi jawaban pengecoh dalam hitungan detik.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "pancasila-twk-cpns.html",
@@ -347,7 +347,7 @@
         "badgeColor": "#dc2626",
         "title": "Trik Menjawab Soal Pancasila TWK CPNS 2026 Tanpa Menghafal Butir-Butir",
         "desc": "Jangan terjebak menghafal 45 butir! Kuasai cara jitu menjawab soal penalaran Pancasila di TWK CPNS 2026 dengan metode kata kunci (keyword).",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "uud-1945-twk-cpns.html",
@@ -357,7 +357,7 @@
         "badgeColor": "#dc2626",
         "title": "Trik Menjawab Soal UUD 1945 TWK CPNS 2026 Tanpa Menghafal Semua Pasal",
         "desc": "Jangan terjebak menghafal teks kaku! Kuasai cara jitu menjawab soal penalaran UUD 1945 di TWK CPNS 2026 dengan metode kata kunci (keyword).",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "bhinneka-tunggal-ika-twk-cpns.html",
@@ -367,7 +367,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Bhinneka Tunggal Ika TWK CPNS 2026: Trik Jawab Cepat Anti Galau",
         "desc": "Bongkar jebakan soal Bhinneka Tunggal Ika di TWK CPNS 2026. Kuasai beda etnosentrisme dan primordialisme dengan trik kata kunci.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "nkri-twk-cpns.html",
@@ -377,7 +377,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal NKRI TWK CPNS 2026: Trik Jawab Cepat Materi Sejarah & Tata Negara",
         "desc": "Jangan terjebak menghafal tanggal dan tahun! Kuasai cara jitu menjawab soal penalaran NKRI dan sejarah kemerdekaan di TWK CPNS dengan metode kata kunci.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "ham-twk-cpns.html",
@@ -387,7 +387,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal HAM TWK CPNS 2026: Trik Jawab Cepat Kasus Pelanggaran Hak Asasi",
         "desc": "Bongkar jebakan soal HAM di TWK CPNS 2026. Kuasai beda pelanggaran HAM berat dan ringan dengan trik kata kunci tanpa menghafal buta.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "integritas-twk-cpns.html",
@@ -397,7 +397,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Integritas TWK CPNS 2026: Trik Jawab Cepat Kasus Korupsi & Etika",
         "desc": "Bongkar jebakan soal Integritas di TWK CPNS. Kuasai 9 nilai anti-korupsi KPK dan trik menjawab studi kasus etika ASN tanpa menghafal panjang lebar.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "nasionalisme-twk-cpns.html",
@@ -407,7 +407,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Nasionalisme TWK CPNS 2026: Trik Jawab Cepat Anti Terkecoh",
         "desc": "Bongkar jebakan soal Nasionalisme di TWK CPNS 2026. Kuasai beda Nasionalisme, Patriotisme, dan Bela Negara dengan trik kata kunci.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "bela-negara-twk-cpns.html",
@@ -417,7 +417,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Bela Negara TWK CPNS 2026: Trik Jawab Cepat Berdasarkan Profesi",
         "desc": "Bongkar jebakan soal Bela Negara di TWK CPNS 2026. Kuasai beda wujud fisik dan non-fisik serta trik menjawab studi kasus berdasarkan profesi.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "sejarah-twk-cpns.html",
@@ -427,7 +427,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Sejarah TWK CPNS 2026: Trik Cepat Ingat Peristiwa Kemerdekaan Tanpa Pusing",
         "desc": "Bongkar jebakan soal sejarah di TWK CPNS 2026. Kuasai urutan peristiwa kemerdekaan dan pergerakan nasional tanpa menghafal tanggal mati.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "lembaga-negara-twk-cpns.html",
@@ -437,7 +437,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Lembaga Negara TWK CPNS 2026: Trik Cepat Pahami Tugas & Wewenang",
         "desc": "Bongkar jebakan soal tata negara di TWK CPNS 2026. Kuasai wewenang Lembaga Eksekutif, Legislatif, dan Yudikatif dengan trik kata kunci.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "amandemen-uud-twk-cpns.html",
@@ -447,7 +447,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Amandemen UUD 1945 TWK CPNS 2026: Trik Cepat Hafal Sejarah & Perubahan",
         "desc": "Jangan terjebak menghafal pasal demi pasal! Kuasai cara jitu menjawab soal penalaran Amandemen UUD 1945 di TWK CPNS dengan metode kata kunci.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "demokrasi-twk-cpns.html",
@@ -457,7 +457,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Demokrasi TWK CPNS 2026: Trik Jawab Cepat Sistem & Pilar Negara",
         "desc": "Bongkar jebakan soal Demokrasi di TWK CPNS 2026. Kuasai prinsip Demokrasi Pancasila, hak kebebasan berpendapat, dan trik menjawab studi kasus politik.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "otonomi-daerah-twk-cpns.html",
@@ -467,7 +467,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Otonomi Daerah TWK CPNS 2026: Trik Jawab Cepat Asas & Wewenang Pemda",
         "desc": "Bongkar jebakan soal Otonomi Daerah di TWK CPNS 2026. Kuasai perbedaan desentralisasi, dekonsentrasi, dan tugas pembantuan dengan trik kata kunci.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "wawasan-nusantara-twk-cpns.html",
@@ -477,7 +477,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Wawasan Nusantara TWK CPNS 2026: Trik Jawab Cepat Konsep Geopolitik",
         "desc": "Bongkar jebakan soal Wawasan Nusantara di TWK CPNS. Kuasai konsep Geopolitik, Astagatra, dan wawasan kewilayahan dengan trik kata kunci jitu.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "konstitusi-twk-cpns.html",
@@ -487,7 +487,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Konstitusi TWK CPNS 2026: Trik Cepat Pahami Hukum Dasar & Hierarki",
         "desc": "Bongkar jebakan soal Konstitusi di TWK CPNS 2026. Kuasai beda Konvensi dan Hierarki Hukum dengan trik kata kunci tanpa harus menghafal pasal.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "ideologi-twk-cpns.html",
@@ -497,7 +497,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Ideologi TWK CPNS 2026: Trik Jawab Cepat Beda Pancasila & Isme Dunia",
         "desc": "Bongkar jebakan soal Ideologi di TWK CPNS 2026. Kuasai perbedaan Pancasila sebagai ideologi terbuka dengan Komunisme dan Liberalisme lewat kata kunci.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "nilai-dasar-asn-twk-cpns.html",
@@ -507,7 +507,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Nilai Dasar ASN TWK CPNS 2026: Trik Cepat Hafal Core Values BerAKHLAK",
         "desc": "Bongkar jebakan soal Nilai Dasar ASN di TWK CPNS 2026. Kuasai 7 Core Values BerAKHLAK dengan trik kata kunci untuk melibas soal studi kasus.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "anti-korupsi-twk-cpns.html",
@@ -517,7 +517,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal Anti Korupsi TWK CPNS 2026: Trik Jawab Cepat Beda Suap & Gratifikasi",
         "desc": "Bongkar jebakan soal Anti Korupsi di TWK CPNS 2026. Kuasai perbedaan suap, gratifikasi, pemerasan, dan uang pelicin untuk melibas soal studi kasus.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "hots-twk-cpns.html",
@@ -527,7 +527,7 @@
         "badgeColor": "#dc2626",
         "title": "Tembus Soal HOTS TWK CPNS 2026: Trik Cepat Nalar Tingkat Tinggi Anti Blank",
         "desc": "Bongkar jebakan soal cerita panjang (HOTS) di TWK CPNS 2026. Kuasai trik mencari kata kunci dan mengeliminasi jawaban pengecoh dalam hitungan detik.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "latihan-twk-cpns.html",
@@ -537,206 +537,216 @@
         "badgeColor": "#4f46e5",
         "title": "Panduan Lengkap Latihan TWK CPNS 2026: Strategi Drill Soal & Simulasi CAT Anti Gagal",
         "desc": "Jangan biarkan hafalanmu menguap saat ujian! Kuasai teknik latihan soal TWK CPNS, evaluasi tryout, dan manajemen waktu CAT yang terbukti ampuh.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
+    },
+    {
+        "url": "rahasia-skor-maksimal-tkp-cpns.html",
+        "image": "../images/tkp-cpns.png",
+        "badgeIcon": "fa-crown",
+        "badgeText": "Master Guide TKP",
+        "badgeColor": "#4f46e5",
+        "title": "Rahasia Skor Maksimal TKP CPNS 2026: Trik Jawab Poin 5 Mutlak",
+        "desc": "Bedah tuntas 6 pilar kisi-kisi TKP CPNS 2026. Pelajari rahasia masterclass membedakan jawaban poin 4 dengan poin 5 mutlak untuk lolos Passing Grade SKD.",
+        "date": "Agustus 2026"
     },
     {
         "url": "pelayanan-publik-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-users",
+        "badgeIcon": "fa-user-tie",
         "badgeText": "Pelayanan Publik",
-        "badgeColor": "#059669",
+        "badgeColor": "#2563eb",
         "title": "Rahasia Poin Penuh Pelayanan Publik TKP CPNS: Trik Memanjakan Warga Sesuai SOP",
         "desc": "Kuasai cara jitu menjawab soal pelayanan publik di TKP CPNS. Temukan trik mendapatkan poin 5 dengan melayani tanpa melanggar aturan birokrasi.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "profesionalisme-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-user-tie",
+        "badgeIcon": "fa-briefcase",
         "badgeText": "Profesionalisme",
-        "badgeColor": "#059669",
+        "badgeColor": "#2563eb",
         "title": "Hack Poin 5 Profesionalisme TKP CPNS: Trik Jitu Menuntaskan Tugas Tanpa Baper",
         "desc": "Bongkar rahasia soal profesionalisme di TKP CPNS. Pelajari cara memilih jawaban paling objektif dan fokus pada penyelesaian tugas prioritas instansi.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "jejaring-kerja-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
         "badgeIcon": "fa-network-wired",
         "badgeText": "Jejaring Kerja",
-        "badgeColor": "#059669",
+        "badgeColor": "#2563eb",
         "title": "Bongkar Trik Poin 5 Jejaring Kerja TKP CPNS: Rahasia Membangun Relasi Emas",
         "desc": "Jangan salah pilih rekan kerja! Kuasai teknik kolaborasi dan berbagi informasi yang tepat demi poin maksimal di soal jejaring kerja TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "sosial-budaya-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-hands-holding-circle",
+        "badgeIcon": "fa-earth-asia",
         "badgeText": "Sosial Budaya",
-        "badgeColor": "#059669",
+        "badgeColor": "#d97706",
         "title": "Bongkar Trik Poin 5 Sosial Budaya TKP CPNS: Rahasia Adaptasi & Toleransi Tingkat Dewa",
         "desc": "Raih poin 5 mutlak pada soal sosial budaya TKP CPNS dengan menunjukkan sikap empati, toleransi tinggi, dan penolakan keras terhadap diskriminasi.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "teknologi-informasi-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-computer",
+        "badgeIcon": "fa-desktop",
         "badgeText": "Teknologi TIK",
-        "badgeColor": "#059669",
+        "badgeColor": "#3b82f6",
         "title": "Bongkar Trik Poin 5 Teknologi Informasi TKP CPNS: Rahasia Tampil Melek Digital Anti Gaptek",
         "desc": "Kuasai trik menjawab soal TIK di TKP CPNS. Tunjukkan sikap adaptif terhadap inovasi sistem digital dan mau belajar teknologi baru.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "anti-radikalisme-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
         "badgeIcon": "fa-shield-halved",
         "badgeText": "Anti Radikalisme",
-        "badgeColor": "#059669",
+        "badgeColor": "#ef4444",
         "title": "Hack Poin 5 Anti Radikalisme TKP CPNS: Trik Sapu Bersih Soal Ekstremisme Tanpa Ragu",
         "desc": "Jangan pernah kompromi dengan radikalisme. Pelajari cara bersikap tegas menjaga keutuhan NKRI dan Pancasila demi poin sempurna di TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "adaptif-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-arrows-rotate",
+        "badgeIcon": "fa-bolt",
         "badgeText": "Adaptif",
-        "badgeColor": "#059669",
+        "badgeColor": "#8b5cf6",
         "title": "Bongkar Trik Poin 5 Adaptif TKP CPNS: Rahasia Lincah Hadapi Badai Perubahan",
         "desc": "Lingkungan kerja tiba-tiba berubah? Pelajari trik jitu menjawab soal adaptabilitas TKP CPNS agar selalu dinilai sebagai ASN yang siap menghadapi tantangan.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "kolaboratif-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
         "badgeIcon": "fa-handshake",
         "badgeText": "Kolaboratif",
-        "badgeColor": "#059669",
+        "badgeColor": "#4f46e5",
         "title": "Bongkar Trik Poin 5 Kolaboratif TKP CPNS: Rahasia Sinergi Tim Tanpa Ego Sektoral",
         "desc": "Jangan kerja sendirian! Temukan kunci jawaban poin 5 TKP CPNS untuk materi kolaborasi dengan menyingkirkan ego sektoral demi tujuan bersama.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "komunikasi-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
         "badgeIcon": "fa-comments",
         "badgeText": "Komunikasi",
-        "badgeColor": "#059669",
+        "badgeColor": "#0d9488",
         "title": "Hack Poin 5 Komunikasi TKP CPNS: Trik Ampuh Bicara Efektif Anti Salah Paham",
         "desc": "Bongkar trik menghindari miskomunikasi di lingkungan kerja. Kuasai seni komunikasi asertif yang jadi incaran poin 5 pada ujian TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "kreatif-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
         "badgeIcon": "fa-lightbulb",
         "badgeText": "Kreatif",
-        "badgeColor": "#059669",
+        "badgeColor": "#db2777",
         "title": "Hack Poin 5 Kreatif TKP CPNS: Trik Memecahkan Kebuntuan Tanpa Melanggar SOP",
         "desc": "Instansi butuh inovasi! Cari tahu cara memilih jawaban TKP CPNS yang menunjukkan sisi kreatif dan solutif tanpa harus menabrak batas aturan (SOP).",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "empati-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
         "badgeIcon": "fa-heart",
         "badgeText": "Empati",
-        "badgeColor": "#059669",
+        "badgeColor": "#f43f5e",
         "title": "Bongkar Trik Poin 5 Empati TKP CPNS: Rahasia Peduli Rekan Tanpa Mengorbankan Tugas",
         "desc": "Bongkar cara menyeimbangkan kepedulian terhadap masalah rekan kerja dengan penyelesaian tugas instansi agar kamu dapat poin 5 mutlak di TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "etika-asn-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-scale-balanced",
+        "badgeIcon": "fa-user-check",
         "badgeText": "Etika ASN",
-        "badgeColor": "#059669",
+        "badgeColor": "#0891b2",
         "title": "Hack Poin 5 Etika ASN TKP CPNS: Trik Menjaga Wibawa & Moral Birokrasi",
         "desc": "Simak panduan menjawab soal studi kasus pelanggaran etika ASN. Tunjukkan moral birokrasi yang tinggi untuk merebut skor maksimal TKP.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "pelayanan-prima-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
         "badgeIcon": "fa-medal",
         "badgeText": "Pelayanan Prima",
-        "badgeColor": "#059669",
+        "badgeColor": "#2563eb",
         "title": "Hack Poin 5 Pelayanan Prima TKP CPNS: Trik Eksekusi Cepat Tanpa Menabrak Aturan",
         "desc": "Ketahui cara membedakan antara sekadar 'melayani' dengan 'pelayanan prima' di TKP CPNS yang akan langsung diganjar poin 5 oleh sistem BKN.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "orientasi-pelayanan-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-compass",
+        "badgeIcon": "fa-headset",
         "badgeText": "Orientasi Pelayanan",
-        "badgeColor": "#059669",
+        "badgeColor": "#0ea5e9",
         "title": "Hack Poin 5 Orientasi Pelayanan TKP CPNS: Rahasia Service Cepat & Solutif",
         "desc": "Hadapi komplain warga dengan tenang! Kuasai trik penyelesaian keluhan layanan publik yang selalu menjadi kunci poin tinggi pada soal TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "pengambilan-keputusan-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-chess",
+        "badgeIcon": "fa-balance-scale",
         "badgeText": "Ambil Keputusan",
-        "badgeColor": "#059669",
+        "badgeColor": "#ca8a04",
         "title": "Hack Poin 5 Pengambilan Keputusan TKP CPNS: Trik Eksekusi Solusi Tanpa Ragu",
         "desc": "Pilih keputusan terbaik di bawah tekanan. Bongkar taktik memilih opsi jawaban yang rasional dan mengutamakan kepentingan publik di TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "kerja-tim-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-people-group",
+        "badgeIcon": "fa-users-viewfinder",
         "badgeText": "Kerja Tim",
-        "badgeColor": "#059669",
+        "badgeColor": "#ea580c",
         "title": "Hack Poin 5 Kerja Tim TKP CPNS: Trik Membangun Sinergi Solid Tanpa Drama",
         "desc": "Tinggalkan drama kantor! Kuasai cara jitu menjawab studi kasus konflik internal tim dan ubah menjadi poin 5 lewat pilihan sinergi di TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "kepemimpinan-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-crown",
+        "badgeIcon": "fa-chess-king",
         "badgeText": "Kepemimpinan",
-        "badgeColor": "#059669",
+        "badgeColor": "#ca8a04",
         "title": "Hack Poin 5 Kepemimpinan TKP CPNS: Trik Elegan Memimpin Tanpa Otoriter",
         "desc": "Tunjukkan bakat *leadership* Anda! Pelajari trik mengelola bawahan dan mengambil kendali dalam situasi genting pada studi kasus kepemimpinan TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "integritas-kerja-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-gem",
+        "badgeIcon": "fa-shield-halved",
         "badgeText": "Integritas Kerja",
-        "badgeColor": "#059669",
+        "badgeColor": "#ef4444",
         "title": "Hack Poin 5 Integritas Kerja TKP CPNS: Trik Elegan Menepis Jebakan Kolusi",
         "desc": "Godaannya besar, namun poin 5 menanti. Bongkar strategi menepis tawaran KKN dan mengedepankan kejujuran mutlak pada ujian integritas TKP CPNS.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "hots-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-fire-flame-curved",
+        "badgeIcon": "fa-brain",
         "badgeText": "HOTS TKP",
-        "badgeColor": "#059669",
+        "badgeColor": "#4338ca",
         "title": "Hack Poin 5 Soal HOTS TKP CPNS: Trik Membaca Niat Terselubung Pembuat Soal",
         "desc": "Soal TKP cerita super panjang menjebak? Pelajari teknik membaca *skimming* untuk langsung menangkap inti masalah dan membuang opsi jawaban pengecoh.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     },
     {
         "url": "latihan-tkp-cpns.html",
         "image": "../images/tkp-cpns.png",
-        "badgeIcon": "fa-dumbbell",
+        "badgeIcon": "fa-laptop-code",
         "badgeText": "Latihan TKP",
-        "badgeColor": "#059669",
+        "badgeColor": "#10b981",
         "title": "Hack Poin 5 Latihan TKP CPNS: Trik Drill Soal Membentuk Insting Abdi Negara",
         "desc": "Bangun insting jawaban otomatis poin 5. Simak panduan latihan intensif simulasi TKP CPNS agar Anda terbiasa dengan pola soal menjebak BKN.",
-        "date": "Juli 2026"
+        "date": "Agustus 2026"
     }
 ]
