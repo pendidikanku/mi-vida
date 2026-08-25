@@ -140,6 +140,7 @@
         
         header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 2px solid var(--cpns-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-menu { display: flex; gap: 25px; list-style: none; }
         .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px; font-weight: 700; padding: 10px 15px; transition: 0.3s; }
         .nav-link:hover { color: var(--cpns-color); }
         .menu-toggle { display: none; font-size: 22px; cursor: pointer; color: var(--text-main); }
@@ -234,19 +235,14 @@
             .article-content { padding: 25px; font-size: 16px;} 
             table { font-size: 14.5px; display: block; overflow-x: auto; white-space: nowrap;}
         }
-        @media (max-width: 768px) {
-            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--card-border); flex-direction: column; padding: 20px; gap: 15px; box-shadow: var(--shadow-soft);}
-            .nav-menu.active { display: flex; }
-            .menu-toggle { display: block; }
-        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="nav-container">
-            <a href="https://mivida.id" class="logo" style="display: flex; align-items: center; text-decoration: none; border: none;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="120" height="35">
+            <a href="/" class="logo" style="display: flex; align-items: center; text-decoration: none;" aria-label="Beranda Mivida">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="160" height="50" aria-hidden="true">
                   <defs>
                     <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stop-color="#0ea5e9" />
@@ -259,14 +255,15 @@
                       <path d="M 95 30 Q 95 15, 110 15 Q 95 15, 95 0 Q 95 15, 80 15 Q 95 15, 95 30" fill="#f59e0b"/>
                   </g>
                   <text x="140" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="64" fill="#0f172a">Mi<tspan fill="url(#mvGrad)">Vida</tspan></text>
+                  <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
                 </svg>
             </a>
             <i class="fa-solid fa-bars menu-toggle" id="menuToggle" aria-label="Buka navigasi menu" role="button" tabindex="0"></i>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html#skd" class="nav-link">SKD</a></li>
-                <li><a href="../index.html#tkd" class="nav-link">TKD & AKHLAK</a></li>
-                <li><a href="../index.html#snbt" class="nav-link">SNBT</a></li>
-                <li><a href="../blog/" class="nav-link">Jurnal Edukasi</a></li>
+                <li><a href="/#skd" class="nav-link">SKD</a></li>
+                <li><a href="/#tkd" class="nav-link">TKD & AKHLAK</a></li>
+                <li><a href="/#snbt" class="nav-link">SNBT</a></li>
+                <li><a href="/blog/" class="nav-link">Jurnal Edukasi</a></li>
             </ul>
         </div>
     </header>
@@ -289,7 +286,7 @@
                 <div class="article-content">
                     
                     <div class="article-image-container">
-                        <!-- Peringatan Upload: Pastikan gambar hero-sinonim-ekstrem.png diunggah ke folder /images/ -->
+                        <!-- Gambar berformat .png sesuai pedoman Mivida -->
                         <img src="../images/hero-sinonim-ekstrem.png" alt="Peserta ujian simulasi cat bkn kebingungan melihat kosakata sulit, sementara peserta lain tersenyum karena tahu trik eliminasinya." loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMmU4ZjAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzY0NzQ4YiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbHVzdHJhc2kgU2lub25pbSBUSVU8L3RleHQ+PC9zdmc+'">
                         <div class="article-image-caption">Berhenti membuang waktumu dengan menghafal ribuan halaman KBBI. Gunakan logika eliminasi untuk meraup poin emas di soal Sinonim.</div>
                     </div>
@@ -554,34 +551,34 @@
             <div class="footer-col">
                 <h4>Info CPNS & Pendaftaran</h4>
                 <ul>
-                    <li><a href="cara-daftar-cpns-panduan-lengkap-sscasn">Cara Daftar CPNS SSCASN</a></li>
-                    <li><a href="rincian-formasi-cpns-jurusan-paling-dicari">Rincian Formasi CPNS 2027</a></li>
-                    <li><a href="jadwal-cpns-pendaftaran-dan-timeline-lengkap">Jadwal Seleksi Pendaftaran</a></li>
-                    <li><a href="kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru">Kisi-Kisi Resmi CPNS</a></li>
+                    <li><a href="/blog/cara-daftar-cpns-panduan-lengkap-sscasn">Cara Daftar CPNS SSCASN</a></li>
+                    <li><a href="/blog/rincian-formasi-cpns-jurusan-paling-dicari">Rincian Formasi CPNS 2027</a></li>
+                    <li><a href="/blog/jadwal-cpns-pendaftaran-dan-timeline-lengkap">Jadwal Seleksi Pendaftaran</a></li>
+                    <li><a href="/blog/kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru">Kisi-Kisi Resmi CPNS</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Panduan SKD & Strategi</h4>
                 <ul>
-                    <li><a href="panduan-lengkap-lolos-skd-cpns">Panduan Lengkap Lolos SKD</a></li>
-                    <li><a href="panduan-latihan-cat-cpns-terlengkap">Panduan Latihan Sistem CAT</a></li>
-                    <li><a href="passing-grade-cpns-nilai-ambang-batas">Nilai Ambang Batas (Passing Grade)</a></li>
+                    <li><a href="/blog/panduan-lengkap-lolos-skd-cpns">Panduan Lengkap Lolos SKD</a></li>
+                    <li><a href="/blog/panduan-latihan-cat-cpns-terlengkap">Panduan Latihan Sistem CAT</a></li>
+                    <li><a href="/blog/passing-grade-cpns-nilai-ambang-batas">Nilai Ambang Batas (Passing Grade)</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Bedah Materi (Content Hub)</h4>
                 <ul>
-                    <li><a href="materi-tiu-cpns-lengkap">Materi Lengkap TIU CPNS</a></li>
-                    <li><a href="tembus-twk-cpns-hots">Strategi Tembus TWK HOTS</a></li>
-                    <li><a href="rahasia-skor-maksimal-tkp-cpns">Rahasia Skor Maksimal TKP</a></li>
+                    <li><a href="/blog/materi-tiu-cpns-lengkap">Materi Lengkap TIU CPNS</a></li>
+                    <li><a href="/blog/tembus-twk-cpns-hots">Strategi Tembus TWK HOTS</a></li>
+                    <li><a href="/blog/rahasia-skor-maksimal-tkp-cpns">Rahasia Skor Maksimal TKP</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-links-inline">
-                <a href="../tentang-kami">Tentang Kami</a>
+                <a href="/tentang-kami">Tentang Kami</a>
                 <span style="color: var(--card-border);">|</span>
-                <a href="../kebijakan-privasi">Kebijakan Privasi</a>
+                <a href="/kebijakan-privasi">Kebijakan Privasi</a>
             </div>
             <p>&copy; 2027 Mivida (Pendidikanku) - mivida.id. All Rights Reserved.</p>
         </div>
