@@ -35,7 +35,7 @@
     <meta property="og:locale" content="id_ID">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mivida.id/blog/sinonim-tiu-cpns">
-    <meta property="og:title" content="Kuasai Soal Sinonim TIU CPNS 2027: Trik Jitu Menjawab Cepat Tanpa Menghafal Buta">
+    <meta property="og:title" content="Kuasai Soal Sinonim TIU CPNS 2027: Trik Jitu Menjawab Cepat">
     <meta property="og:description" content="Berhenti menghafal kamus! Pelajari cara menganalisis soal Sinonim TIU CPNS 2027 dengan teknik eliminasi dan kuasai daftar kosakata yang sering diujikan.">
     <meta property="og:site_name" content="Mivida (Pendidikanku)">
     <meta property="og:image" content="https://mivida.id/images/hero-sinonim-ekstrem.png">
@@ -138,12 +138,10 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.8; }
         
-        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 2px solid var(--cpns-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-menu { display: flex; gap: 25px; list-style: none; }
         .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px; font-weight: 700; padding: 10px 15px; transition: 0.3s; }
         .nav-link:hover { color: var(--cpns-color); }
-        .menu-toggle { display: none; font-size: 22px; cursor: pointer; color: var(--text-main); }
 
         .blog-layout { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
         
@@ -241,7 +239,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo" style="display: flex; align-items: center; text-decoration: none;" aria-label="Beranda Mivida">
+            <a href="/" class="logo" style="display: flex; align-items: center; text-decoration: none; border: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="160" height="50" aria-hidden="true">
                   <defs>
                     <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -258,13 +256,7 @@
                   <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
                 </svg>
             </a>
-            <i class="fa-solid fa-bars menu-toggle" id="menuToggle" aria-label="Buka navigasi menu" role="button" tabindex="0"></i>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="/#skd" class="nav-link">SKD</a></li>
-                <li><a href="/#tkd" class="nav-link">TKD & AKHLAK</a></li>
-                <li><a href="/#snbt" class="nav-link">SNBT</a></li>
-                <li><a href="/blog/" class="nav-link">Jurnal Edukasi</a></li>
-            </ul>
+            <nav><a href="/blog/" class="nav-link" style="border: none;"><i class="fa-solid fa-arrow-left"></i> Kembali ke Jurnal Edukasi</a></nav>
         </div>
     </header>
 
@@ -286,8 +278,7 @@
                 <div class="article-content">
                     
                     <div class="article-image-container">
-                        <!-- Gambar berformat .png sesuai pedoman Mivida -->
-                        <img src="../images/hero-sinonim-ekstrem.png" alt="Peserta ujian simulasi cat bkn kebingungan melihat kosakata sulit, sementara peserta lain tersenyum karena tahu trik eliminasinya." loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMmU4ZjAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzY0NzQ4YiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbHVzdHJhc2kgU2lub25pbSBUSVU8L3RleHQ+PC9zdmc+'">
+                        <img src="/images/hero-sinonim-ekstrem.png" alt="Peserta ujian simulasi cat bkn kebingungan melihat kosakata sulit, sementara peserta lain tersenyum karena tahu trik eliminasinya." loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMmU4ZjAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzY0NzQ4YiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbHVzdHJhc2kgU2lub25pbSBUSVU8L3RleHQ+PC9zdmc+'">
                         <div class="article-image-caption">Berhenti membuang waktumu dengan menghafal ribuan halaman KBBI. Gunakan logika eliminasi untuk meraup poin emas di soal Sinonim.</div>
                     </div>
 
@@ -297,7 +288,7 @@
 
                     <p>Kabar baiknya: <strong>Kamu memang sama sekali tidak disuruh untuk menghafal kamus KBBI!</strong></p>
 
-                    <p>Sebagai panduan pendamping dari jurnal master kami di <a href="materi-tiu-cpns-lengkap" class="internal-link">Bedah Tuntas Materi TIU CPNS 2027</a>, artikel ini akan secara khusus membongkar rahasia di balik layar dapur pembuatan <strong>bank soal cpns</strong> BKN. Terdapat pola psikologis linguistik, teknik eliminasi ekstrem, dan trik membedah akar kata serapan yang siap menyelamatkanmu. Jika kamu berhasil menguasai strategi di artikel ini dan mempraktikkannya pada sesi <strong>try out cpns gratis</strong>, kamu bisa menyingkirkan opsi jawaban pengecoh dalam hitungan detik, sekalipun kamu tidak mengetahui makna asli dari kata yang ditanyakan!</p>
+                    <p>Sebagai panduan pendamping dari jurnal master kami di <a href="/blog/materi-tiu-cpns-lengkap" class="internal-link">Bedah Tuntas Materi TIU CPNS 2027</a>, artikel ini akan secara khusus membongkar rahasia di balik layar dapur pembuatan <strong>bank soal cpns</strong> BKN. Terdapat pola psikologis linguistik, teknik eliminasi ekstrem, dan trik membedah akar kata serapan yang siap menyelamatkanmu. Jika kamu berhasil menguasai strategi di artikel ini dan mempraktikkannya pada sesi <strong>try out cpns gratis</strong>, kamu bisa menyingkirkan opsi jawaban pengecoh dalam hitungan detik, sekalipun kamu tidak mengetahui makna asli dari kata yang ditanyakan!</p>
 
                     <div id="mengapa-sulit" class="snippet-box">
                         <strong>🎯 Fakta Unik Jebakan BKN:</strong><br><br>
@@ -305,7 +296,7 @@
                     </div>
 
                     <h2 id="teknik-eliminasi">3 Teknik Logika untuk Menebak Sinonim Secara Akurat</h2>
-                    <p>Daripada pasrah menebak asal-asalan dan menghitung kancing, lebih baik gunakan tiga pisau bedah linguistik berikut untuk memangkas pilihan jawabanmu. Trik ini sangat relevan untuk mempercepat durasi pengerjaanmu, sejalan dengan anjuran dalam <a href="panduan-latihan-cat-cpns-terlengkap" class="internal-link">Panduan Latihan Simulasi CAT BKN Terlengkap 2027</a>.</p>
+                    <p>Daripada pasrah menebak asal-asalan dan menghitung kancing, lebih baik gunakan tiga pisau bedah linguistik berikut untuk memangkas pilihan jawabanmu. Trik ini sangat relevan untuk mempercepat durasi pengerjaanmu, sejalan dengan anjuran dalam <a href="/blog/panduan-latihan-cat-cpns-terlengkap" class="internal-link">Panduan Latihan Simulasi CAT BKN Terlengkap 2027</a>.</p>
 
                     <div class="tip-box">
                         <h4>1. Teknik Eliminasi Ganda (Mencari "Geng" Kata)</h4>
@@ -343,10 +334,10 @@
                         <li><strong>Multi- / Poli- :</strong> Bermakna "banyak" atau "beragam". Contoh jelasnya: <em>Multilateral</em> (melibatkan banyak pihak/negara), <em>Poligami</em> (memiliki banyak pasangan).</li>
                     </ul>
 
-                    <p>Membangun pemahaman struktural semacam ini akan sangat membantumu menekan tombol <em>mouse</em> dengan penuh percaya diri. Sebuah ketangguhan mental yang amat sangat ditekankan untuk menyintas dari kejamnya <a href="passing-grade-cpns-nilai-ambang-batas" class="internal-link">Ambang Batas (Passing Grade) CPNS 2027</a>.</p>
+                    <p>Membangun pemahaman struktural semacam ini akan sangat membantumu menekan tombol <em>mouse</em> dengan penuh percaya diri. Sebuah ketangguhan mental yang amat sangat ditekankan untuk menyintas dari kejamnya <a href="/blog/passing-grade-cpns-nilai-ambang-batas" class="internal-link">Ambang Batas (Passing Grade) CPNS 2027</a>.</p>
 
                     <h2 id="bank-kosakata">Bank Kosakata "Langganan" SKD CPNS (Update 2027)</h2>
-                    <p>Berdasarkan rekapitulasi data <em>field report</em> (bocoran pengalaman) dari ratusan peserta yang telah lulus, serta hasil bedah mendalam terhadap <a href="kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru" class="internal-link">Kisi-kisi Resmi SKD CPNS</a>, berikut adalah rangkuman kosakata di level medium hingga HOTS yang paling wajib kamu tanamkan ke dalam memori otakmu:</p>
+                    <p>Berdasarkan rekapitulasi data <em>field report</em> (bocoran pengalaman) dari ratusan peserta yang telah lulus, serta hasil bedah mendalam terhadap <a href="/blog/kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru" class="internal-link">Kisi-kisi Resmi SKD CPNS</a>, berikut adalah rangkuman kosakata di level medium hingga HOTS yang paling wajib kamu tanamkan ke dalam memori otakmu:</p>
 
                     <h3>Kategori 1: Istilah Serapan / Jurnal Ilmiah</h3>
                     <table>
@@ -482,20 +473,19 @@
                     <div class="cta-box">
                         <h3>Hancurkan Rasa Gugup dan Kebingunganmu Sekarang!</h3>
                         <p>Mivida dengan bangga menyediakan platform <strong>Tryout SKD CPNS Terpadu</strong> dengan pengalaman UI/UX yang dibuat persis 1:1 menyerupai layar <strong>cat bkn go id simulasi</strong> asli. Uji seberapa liar kecepatanmu menjawab puluhan soal TIU Verbal dengan tekanan timer yang berjalan secara *real-time*.</p>
-                        <a href="../kuis.html?module=cpns1" class="cta-btn">Mulai Uji Coba Tryout CAT Gratis <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="/kuis.html?module=cpns1" class="cta-btn">Mulai Uji Coba Tryout CAT Gratis <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
 
                     <div class="internal-links-box">
                         <h3>📚 Susun Masterplan Kelulusan ASN-mu Bersama Mivida</h3>
                         <p style="margin-bottom: 15px; color: #475569; font-size: 16px;">Sembari terus mengasah ketajaman logika TIU, pastikan urusan administrasi dan pondasi strategi SKD-mu sudah terkunci rapat melalui literatur panduan komprehensif kami:</p>
                         <ul>
-                            <li><a href="panduan-lengkap-lolos-skd-cpns" class="internal-link">Roadmap & Panduan Utama Menembus Ujian SKD CPNS 2027</a></li>
-                            <li><a href="antonim-tiu-cpns-lengkap" class="internal-link">Trik Logika Terbalik: Mengunci Poin Sempurna di Soal Antonim TIU</a></li>
-                            <li><a href="trik-menjawab-analogi-tiu-cpns" class="internal-link">Bongkar Jembatan Keledai: Cara Instan Melibas Soal Analogi Kata TIU</a></li>
-                            <li><a href="cara-daftar-cpns-panduan-lengkap-sscasn" class="internal-link">Awas Tumbang! Tutorial Detail Pendaftaran SSCASN & Penggunaan E-Meterai</a></li>
-                            <li><a href="rincian-formasi-cpns-jurusan-paling-dicari" class="internal-link">Cek Potensi: Rincian Formasi CPNS & Analisis Jurusan Paling Strategis</a></li>
-                            <li><a href="tembus-twk-cpns-hots" class="internal-link">Strategi Eksekusi: Cara Jitu Menjawab Soal HOTS TWK Tanpa Hafalan</a></li>
-                            <li><a href="rahasia-skor-maksimal-tkp-cpns" class="internal-link">Psikologi BKN: Rahasia Menemukan Jawaban Berpoin 5 Sempurna di Tes TKP</a></li>
+                            <li><a href="/blog/panduan-lengkap-lolos-skd-cpns" class="internal-link">Roadmap & Panduan Utama Menembus Ujian SKD CPNS 2027</a></li>
+                            <li><a href="/blog/trik-menjawab-analogi-tiu-cpns" class="internal-link">Bongkar Jembatan Keledai: Cara Instan Melibas Soal Analogi Kata TIU</a></li>
+                            <li><a href="/blog/cara-daftar-cpns-panduan-lengkap-sscasn" class="internal-link">Awas Tumbang! Tutorial Detail Pendaftaran SSCASN & Penggunaan E-Meterai</a></li>
+                            <li><a href="/blog/rincian-formasi-cpns-jurusan-paling-dicari" class="internal-link">Cek Potensi: Rincian Formasi CPNS & Analisis Jurusan Paling Strategis</a></li>
+                            <li><a href="/blog/tembus-twk-cpns-hots" class="internal-link">Strategi Eksekusi: Cara Jitu Menjawab Soal HOTS TWK Tanpa Hafalan</a></li>
+                            <li><a href="/blog/rahasia-skor-maksimal-tkp-cpns" class="internal-link">Psikologi BKN: Rahasia Menemukan Jawaban Berpoin 5 Sempurna di Tes TKP</a></li>
                         </ul>
                     </div>
 
@@ -539,7 +529,7 @@
             <div style="margin-top: 30px; background: #f8fafc; padding: 25px; border-radius: 16px; border: 1px solid var(--card-border); text-align: center; box-shadow: var(--shadow-soft);">
                 <h4 style="margin-top: 0; margin-bottom: 12px; color: #0f172a; font-size: 18px;"><i class="fa-solid fa-laptop-medical" style="color: #4f46e5;"></i> Butuh Latihan CAT?</h4>
                 <p style="font-size: 14.5px; color: #475569; margin-bottom: 20px; line-height: 1.5;">Jangan biarkan persiapanmu hanya mentok sebatas teori. Evaluasi skor dan *passing grade* mu sekarang juga.</p>
-                <a href="../kuis.html?module=cpns1" target="_blank" style="display: inline-block; width: 100%; background: #4f46e5; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);">Mulai Uji Tryout <i class="fa-solid fa-caret-right"></i></a>
+                <a href="/kuis.html?module=cpns1" target="_blank" style="display: inline-block; width: 100%; background: #4f46e5; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);">Mulai Uji Tryout <i class="fa-solid fa-caret-right"></i></a>
             </div>
         </aside>
 
