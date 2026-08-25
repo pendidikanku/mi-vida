@@ -19,7 +19,7 @@
     <title>Kuasai Soal Analogi TIU CPNS 2027: Trik Jitu Cepat Menjawab</title>
     <meta name="description" content="Kesulitan tes tiu online? Pelajari trik jitu jembatan keledai, jenis hubungan kata, dan contoh soal Analogi TIU CPNS 2027 agar bisa menjawab di bawah 10 detik!">
     
-    <!-- INJEKSI KEYWORD RAKSASA (TIDAK DIUBAH EJAANNYA) -->
+    <!-- INJEKSI KEYWORD RAKSASA -->
     <meta name="keywords" content="simulasi cat bkn, try out cpns, try out cpns gratis, tryout cpns gratis, cat bkn go id simulasi, cat bkn, tes cpns, simulasi cat, try out skd gratis, tryout skd gratis, to cpns gratis, try out skd, try out cpns online gratis, tryout cpns online gratis, tes cpns online, ebook soal cpns dan pembahasan, tryout skd, tes tiu online, simulasi bkn, simulasi cat online gratis, simulasi cat cpns, simulasi skd bkn, bank soal cpns, latihan soal cpns gratis, tes soal cpns, soal try out cpns, latihan cpns, latihan soal cpns, soal-soal cpns, soal tes cpns, soal soal cpns, kumpulan soal cpns, kumpulan soal cpns pdf, latihan tes cpns, latihan skd cpns">
     
     <meta name="author" content="Mivida (Pendidikanku)">
@@ -134,42 +134,39 @@
             --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         
-        /* MENGUNCI LAYAR AGAR TIDAK HORIZONTAL SCROLL */
-        html, body { 
-            width: 100%; 
-            max-width: 100%; 
-            overflow-x: hidden; /* ULTIMATE KILL-SWITCH ANTI GOYANG */
-            background-color: var(--bg-main); 
-            color: var(--text-main); 
-            line-height: 1.8; 
-        }
-
+        /* MENGUNCI LAYAR AGAR TIDAK HORIZONTAL SCROLL & OVERFLOW */
+        html, body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; background-color: var(--bg-main); color: var(--text-main); line-height: 1.8; }
+        
+        /* MEMAKSA TEKS DAN URL PANJANG PATAH */
+        p, h1, h2, h3, h4, li, a { overflow-wrap: break-word; word-wrap: break-word; }
         img { max-width: 100%; height: auto; }
         
-        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 2px solid var(--cpns-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-menu { display: flex; gap: 25px; list-style: none; }
-        .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px; font-weight: 700; padding: 10px 0; transition: 0.3s; }
-        .nav-link:hover { color: var(--cpns-color); }
-        .menu-toggle { display: none; font-size: 22px; cursor: pointer; color: var(--text-main); padding: 5px; }
+        /* PENYELARASAN GRID HEADER, MAIN CONTENT, DAN FOOTER (MAX 1200px) */
+        .nav-container, .blog-layout, .footer-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
 
-        .blog-layout { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 2px solid var(--cpns-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
+        .nav-container { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-menu { display: flex; gap: 25px; list-style: none; }
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px; font-weight: 700; padding: 10px 0px; transition: 0.3s; }
+        .nav-link:hover { color: var(--cpns-color); }
+        .menu-toggle { display: none; font-size: 22px; cursor: pointer; color: var(--text-main); padding: 5px;}
+
+        /* BLOG LAYOUT DISERAGAMKAN SEJAJAR 1200px SEPERTI INDEX */
+        .blog-layout { padding: 0 20px; margin-top: 40px; margin-bottom: 80px; display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
         
         .article-header { margin-bottom: 40px; }
         .article-badge { display: inline-block; background: rgba(14, 165, 233, 0.1); color: #0284c7; padding: 8px 18px; border-radius: 20px; font-weight: 800; font-size: 13px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;}
-        .article-header h1 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; line-height: 1.25; margin-bottom: 20px; color: #0f172a; letter-spacing: -0.5px;}
+        .article-header h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.25; margin-bottom: 20px; color: #0f172a; letter-spacing: -0.5px;}
         .article-meta { color: var(--text-muted); font-size: 14px; display: flex; align-items: center; gap: 12px; }
         .author-avatar { width: 45px; height: 45px; background: var(--primary-gradient); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; flex-shrink: 0;}
 
-        /* MEMAKSA TEKS WRAP AGAR TIDAK LEWAT LAYAR */
-        .article-content { background: var(--bg-card); padding: 45px; border-radius: 24px; border: 1px solid var(--card-border); box-shadow: var(--shadow-soft); font-size: 17.5px; color: #334155; word-wrap: break-word; overflow-wrap: break-word; }
+        .article-content { background: var(--bg-card); padding: 45px; border-radius: 24px; border: 1px solid var(--card-border); box-shadow: var(--shadow-soft); font-size: 17.5px; color: #334155; }
         .article-content h2 { font-size: 26px; font-weight: 800; color: var(--text-main); margin: 45px 0 20px 0; border-bottom: 2px solid var(--card-border); padding-bottom: 12px; line-height: 1.4;}
         .article-content h3 { font-size: 21px; font-weight: 700; color: var(--text-main); margin: 35px 0 15px 0; line-height: 1.4;}
         .article-content p { margin-bottom: 22px; }
@@ -181,9 +178,9 @@
         .article-image-container img { width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-soft); border: 1px solid var(--card-border); display: block; background: #f1f5f9; min-height: 200px;}
         .article-image-caption { font-size: 14.5px; color: var(--text-muted); margin-top: 15px; font-style: italic; font-weight: 600;}
         
-        /* CSS TABEL RESPONSIVE SEMPURNA */
-        .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 30px 0; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid var(--card-border); background: #fff;}
-        table { width: 100%; min-width: 500px; border-collapse: collapse; font-size: 16px; margin: 0; }
+        /* CSS TABEL RESPONSIVE SEMPURNA AGAR ANTI GESER */
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 30px 0; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid var(--card-border); }
+        table { width: 100%; border-collapse: collapse; font-size: 16px; margin: 0; }
         th, td { border-bottom: 1px solid var(--card-border); border-right: 1px solid var(--card-border); padding: 16px; text-align: left; vertical-align: top;}
         th:last-child, td:last-child { border-right: none; }
         tr:last-child td { border-bottom: none; }
@@ -202,7 +199,7 @@
         .reference-box a { color: var(--cpns-color); text-decoration: none; font-weight: 600; }
         .reference-box a:hover { text-decoration: underline; }
 
-        a.internal-link { color: var(--cpns-color); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--cpns-color); transition: 0.2s; word-wrap: break-word; }
+        a.internal-link { color: var(--cpns-color); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--cpns-color); transition: 0.2s; }
         a.internal-link:hover { border-bottom-style: solid; color: #3730a3; }
 
         .cta-box { background: var(--primary-gradient); padding: 45px; border-radius: 20px; color: white; text-align: center; margin: 50px 0; box-shadow: 0 15px 30px rgba(14, 165, 233, 0.2); }
@@ -230,9 +227,9 @@
         .faq-item h3 { margin: 0 0 12px 0; font-size: 19px; color: #0f172a; border: none; padding: 0; line-height: 1.4;}
         .faq-item p { margin: 0; color: #475569; font-size: 16px; line-height: 1.7;}
 
-        /* ================= MEGA FOOTER ================= */
+        /* ================= MEGA FOOTER SEJAJAR 1200PX ================= */
         footer { padding: 60px 20px 20px 20px; background: var(--bg-card); color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--card-border); margin-top: 50px; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
+        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
         .footer-col h4 { font-size: 16px; font-weight: 800; color: var(--text-main); margin-bottom: 20px; position: relative; padding-bottom: 10px; }
         .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: var(--cpns-color); border-radius: 2px; }
         .footer-col ul { list-style: none; }
@@ -256,6 +253,10 @@
             .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--card-border); flex-direction: column; padding: 20px; gap: 15px; box-shadow: var(--shadow-soft);}
             .nav-menu.active { display: flex; }
             .menu-toggle { display: block; }
+            
+            /* Penyesuaian Tabel di HP agar text wrap dengan rapi */
+            table { font-size: 15px; }
+            th, td { padding: 12px; }
         }
     </style>
 </head>
@@ -329,7 +330,7 @@
                     <h2 id="jenis-hubungan">Jenis-Jenis Hubungan Kata dalam Analogi TIU</h2>
                     <p>Sebelum masuk ke trik eksekusinya dalam <strong>try out cpns</strong>, kamu wajib mengenali terlebih dahulu pola-pola hubungan kata yang menjadi "langganan" keluar dalam mesin CAT BKN. Jika kamu sudah hafal polanya, otakmu akan secara otomatis melakukan pemindaian kilat saat membaca layar monitor.</p>
 
-                    <div class="table-responsive">
+                    <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
