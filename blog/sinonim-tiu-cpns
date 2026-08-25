@@ -24,8 +24,7 @@
     
     <meta name="author" content="Mivida (Pendidikanku)">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="theme-color" content="#4f46e5">
-    
+    <meta name="theme-color" content="#10b981">
     <link rel="canonical" href="https://mivida.id/blog/sinonim-tiu-cpns">
     
     <!-- ================= FAVICON ================= -->
@@ -38,7 +37,7 @@
     <meta property="og:title" content="Kuasai Soal Sinonim TIU CPNS 2027: Trik Jitu Menjawab Cepat">
     <meta property="og:description" content="Berhenti menghafal kamus! Pelajari cara menganalisis soal Sinonim TIU CPNS 2027 dengan teknik eliminasi dan kuasai daftar kosakata yang sering diujikan.">
     <meta property="og:site_name" content="Mivida (Pendidikanku)">
-    <meta property="og:image" content="https://mivida.id/images/hero-sinonim-ekstrem.png">
+    <meta property="og:image" content="https://mivida.id/images/hero-sinonim-ekstrem.jpg">
     <meta name="twitter:card" content="summary_large_image">
     
     <!-- ================= SCHEMA JSON-LD ================= -->
@@ -48,8 +47,8 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Kuasai Soal Sinonim TIU CPNS 2027: Trik Jitu Menjawab Cepat Tanpa Menghafal Buta",
-        "description": "Kupas tuntas strategi menjawab soal sinonim TIU CPNS 2027, mencakup teknik eliminasi, analisis nuansa kata, hingga kumpulan soal cpns pdf yang sering muncul.",
-        "image": "https://mivida.id/images/hero-sinonim-ekstrem.png",
+        "description": "Kupas tuntas strategi menjawab soal sinonim TIU CPNS 2027, mencakup teknik eliminasi, analisis nuansa kata, hingga daftar lengkap kosakata yang sering muncul di tes BKN.",
+        "image": "https://mivida.id/images/hero-sinonim-ekstrem.jpg",
         "author": {
           "@type": "Organization",
           "name": "Mivida (Pendidikanku)"
@@ -98,10 +97,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Apakah menghafal KBBI efektif untuk menghadapi latihan tes cpns Sinonim TIU?",
+            "name": "Apakah menghafal KBBI efektif untuk menghadapi Sinonim TIU CPNS?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sangat tidak efektif. Menghafal ribuan kata hanya akan menguras energimu. Pendekatan terbaik adalah menguasai teknik eliminasi ganda, memahami awalan/akhiran kata serapan, dan banyak mengerjakan simulasi cat online gratis untuk membiasakan insting."
+              "text": "Sangat tidak efektif. Menghafal ribuan kata hanya akan menguras energimu. Pendekatan terbaik adalah menguasai teknik eliminasi ganda, memahami awalan/akhiran kata serapan, dan banyak mengerjakan simulasi tryout untuk membiasakan insting."
             }
           },
           {
@@ -130,23 +129,25 @@
         :root {
             --bg-main: #f8fafc; --bg-card: #ffffff; --card-border: #e2e8f0;
             --text-main: #0f172a; --text-muted: #475569;
-            --primary-gradient: linear-gradient(135deg, #0ea5e9, #4f46e5);
-            --cpns-color: #4f46e5;
+            --primary-gradient: linear-gradient(135deg, #10b981, #3b82f6);
+            --cpns-color: #3b82f6;
             --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.8; }
         
-        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 2px solid var(--cpns-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-menu { display: flex; gap: 25px; list-style: none; }
         .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px; font-weight: 700; padding: 10px 15px; transition: 0.3s; }
         .nav-link:hover { color: var(--cpns-color); }
+        .menu-toggle { display: none; font-size: 22px; cursor: pointer; color: var(--text-main); }
 
         .blog-layout { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
         
         .article-header { margin-bottom: 40px; }
-        .article-badge { display: inline-block; background: rgba(14, 165, 233, 0.1); color: #0284c7; padding: 8px 18px; border-radius: 20px; font-weight: 800; font-size: 13px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;}
+        .article-badge { display: inline-block; background: rgba(16, 185, 129, 0.1); color: #059669; padding: 8px 18px; border-radius: 20px; font-weight: 800; font-size: 13px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;}
         .article-header h1 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; line-height: 1.25; margin-bottom: 20px; color: #0f172a; letter-spacing: -0.5px;}
         .article-meta { color: var(--text-muted); font-size: 14px; display: flex; align-items: center; gap: 12px; }
         .author-avatar { width: 45px; height: 45px; background: var(--primary-gradient); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px;}
@@ -169,27 +170,21 @@
         tr:nth-child(even) { background: #f8fafc; }
         tr:hover { background-color: #f1f5f9; }
         
-        .snippet-box { background: #f0f9ff; border-left: 5px solid #0ea5e9; padding: 25px; border-radius: 0 12px 12px 0; margin: 30px 0; font-size: 17px; color: #0369a1; box-shadow: 0 4px 6px rgba(14, 165, 233, 0.05);}
-        .tip-box { background: #eff6ff; border-left: 5px solid #4f46e5; padding: 25px; border-radius: 0 12px 12px 0; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02);}
-        .tip-box h4 { margin-top: 0; color: #3730a3; font-size: 18px; margin-bottom: 10px;}
+        .snippet-box { background: #f0fdf4; border-left: 5px solid #10b981; padding: 25px; border-radius: 0 12px 12px 0; margin: 30px 0; font-size: 17px; color: #065f46; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.05);}
+        .tip-box { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 25px; border-radius: 0 12px 12px 0; margin: 30px 0; }
+        .tip-box h4 { margin-top: 0; color: #1e3a8a; font-size: 18px; margin-bottom: 10px;}
         .warning-box { background: #fff1f2; border-left: 5px solid #e11d48; padding: 25px; border-radius: 0 12px 12px 0; margin: 30px 0; }
         .warning-box h4 { margin-top: 0; color: #9f1239; font-size: 18px; margin-bottom: 10px;}
-        .practice-box { background: #f8fafc; border: 1px solid var(--card-border); padding: 25px; border-radius: 16px; margin: 35px 0; }
+        .practice-box { background: #f8fafc; border: 1px solid #cbd5e1; padding: 25px; border-radius: 12px; margin: 30px 0; }
         .practice-box h4 { margin-top: 0; margin-bottom: 15px; font-size: 18px; color: var(--text-main);}
 
-        .reference-box { background: #f8fafc; border: 1px solid var(--card-border); padding: 25px; border-radius: 16px; margin-top: 40px; font-size: 15px; }
-        .reference-box h4 { margin-top: 0; margin-bottom: 12px; font-size: 18px; color: var(--text-main); border: none; padding-bottom: 0; }
-        .reference-box ul { list-style-type: disc; margin-bottom: 0; padding-left: 20px; }
-        .reference-box a { color: var(--cpns-color); text-decoration: none; font-weight: 600; }
-        .reference-box a:hover { text-decoration: underline; }
+        a.internal-link { color: #10b981; font-weight: 700; text-decoration: none; border-bottom: 1px dashed #10b981; transition: 0.2s; }
+        a.internal-link:hover { border-bottom-style: solid; color: #059669; }
 
-        a.internal-link { color: var(--cpns-color); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--cpns-color); transition: 0.2s; }
-        a.internal-link:hover { border-bottom-style: solid; color: #3730a3; }
-
-        .cta-box { background: var(--primary-gradient); padding: 45px; border-radius: 20px; color: white; text-align: center; margin: 50px 0; box-shadow: 0 15px 30px rgba(14, 165, 233, 0.2); }
+        .cta-box { background: var(--primary-gradient); padding: 45px; border-radius: 20px; color: white; text-align: center; margin: 50px 0; box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2); }
         .cta-box h3 { color: white !important; margin-top: 0; font-size: 28px; border: none; padding: 0;}
-        .cta-box p { color: #f0f9ff; font-size: 18px;}
-        .cta-btn { display: inline-block; background: white; color: #0ea5e9 !important; padding: 16px 36px; border-radius: 12px; font-weight: 800; text-decoration: none !important; border: none !important; margin-top: 20px; transition: 0.3s; font-size: 17px; text-transform: uppercase; letter-spacing: 0.5px;}
+        .cta-box p { color: #f1f5f9; font-size: 18px;}
+        .cta-btn { display: inline-block; background: white; color: #059669 !important; padding: 16px 36px; border-radius: 12px; font-weight: 800; text-decoration: none !important; border: none !important; margin-top: 20px; transition: 0.3s; font-size: 17px; text-transform: uppercase; letter-spacing: 0.5px;}
         .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
         .sidebar { position: sticky; top: 100px; }
@@ -198,13 +193,13 @@
         .toc ul { list-style: none; padding: 0; }
         .toc li { margin-bottom: 14px; font-size: 15px; }
         .toc a { color: var(--text-muted); text-decoration: none; border: none; transition: 0.2s; display: block; line-height: 1.5; font-weight: 600; }
-        .toc a:hover { color: var(--cpns-color); transform: translateX(5px); }
+        .toc a:hover { color: #10b981; transform: translateX(5px); }
 
-        .internal-links-box { background: #f0f9ff; padding: 30px; border-radius: 16px; border: 1px solid var(--card-border); margin-top: 50px;}
+        .internal-links-box { background: #f0fdf4; padding: 30px; border-radius: 16px; border: 1px solid var(--card-border); margin-top: 50px;}
         .internal-links-box h3 { margin-top: 0; font-size: 20px; color: #0f172a; border: none; padding: 0;}
         .internal-links-box ul { list-style-type: none; padding-left: 0; }
         .internal-links-box li { margin-bottom: 12px; display: flex; align-items: flex-start;}
-        .internal-links-box li::before { content: "\f101"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #0ea5e9; margin-right: 12px; font-size: 14px; margin-top: 4px;}
+        .internal-links-box li::before { content: "\f101"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #10b981; margin-right: 12px; font-size: 14px; margin-top: 4px;}
 
         .faq-section { margin-top: 50px; }
         .faq-item { border-bottom: 1px solid var(--card-border); padding: 25px 0; }
@@ -240,23 +235,23 @@
     <header>
         <div class="nav-container">
             <a href="/" class="logo" style="display: flex; align-items: center; text-decoration: none; border: none;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="160" height="50" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#0ea5e9" />
-                      <stop offset="100%" stop-color="#4f46e5" />
-                    </linearGradient>
-                  </defs>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" width="120" height="35">
+                  <defs><linearGradient id="mvGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1e3a8a"/></linearGradient></defs>
                   <g transform="translate(15, 25)">
                       <path d="M 15 95 L 15 45 C 15 25, 45 25, 45 45 L 45 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M 45 95 L 45 45 C 45 25, 75 25, 75 45 L 75 95" fill="none" stroke="url(#mvGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M 95 30 Q 95 15, 110 15 Q 95 15, 95 0 Q 95 15, 80 15 Q 95 15, 95 30" fill="#f59e0b"/>
                   </g>
                   <text x="140" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="64" fill="#0f172a">Mi<tspan fill="url(#mvGrad)">Vida</tspan></text>
-                  <text x="145" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#64748b" letter-spacing="6">PENDIDIKANKU</text>
                 </svg>
             </a>
-            <nav><a href="/blog/" class="nav-link" style="border: none;"><i class="fa-solid fa-arrow-left"></i> Kembali ke Jurnal Edukasi</a></nav>
+            <i class="fa-solid fa-bars menu-toggle" id="menuToggle" aria-label="Buka navigasi menu" role="button" tabindex="0"></i>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/#skd" class="nav-link">SKD</a></li>
+                <li><a href="/#tkd" class="nav-link">TKD & AKHLAK</a></li>
+                <li><a href="/#snbt" class="nav-link">SNBT</a></li>
+                <li><a href="/blog/" class="nav-link">Jurnal Edukasi</a></li>
+            </ul>
         </div>
     </header>
 
@@ -269,7 +264,7 @@
                     <div class="article-meta">
                         <div class="author-avatar">MV</div>
                         <div>
-                            <strong>Tim Edukasi Mivida</strong><br>
+                            <strong>Tim Edukasi Mivida (Pendidikanku)</strong><br>
                             Diperbarui: Menjelang Seleksi 2027 • 10 Menit Baca
                         </div>
                     </div>
@@ -278,54 +273,54 @@
                 <div class="article-content">
                     
                     <div class="article-image-container">
-                        <img src="/images/hero-sinonim-ekstrem.png" alt="Peserta ujian simulasi cat bkn kebingungan melihat kosakata sulit, sementara peserta lain tersenyum karena tahu trik eliminasinya." loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMmU4ZjAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzY0NzQ4YiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbHVzdHJhc2kgU2lub25pbSBUSVU8L3RleHQ+PC9zdmc+'">
+                        <img src="../images/hero-sinonim-ekstrem.jpg" alt="Peserta ujian TIU kebingungan melihat kosakata sulit saat simulasi cat bkn, sementara peserta lain tersenyum karena tahu trik eliminasinya." loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMmU4ZjAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzY0NzQ4YiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbHVzdHJhc2kgU2lub25pbSBUSVU8L3RleHQ+PC9zdmc+'">
                         <div class="article-image-caption">Berhenti membuang waktumu dengan menghafal ribuan halaman KBBI. Gunakan logika eliminasi untuk meraup poin emas di soal Sinonim.</div>
                     </div>
 
-                    <p>Dari ratusan ribu peserta yang berguguran di tahapan Seleksi Kompetensi Dasar (SKD), banyak yang tumbang bukan semata-mata karena mereka lemah dalam hitungan matematika <strong>tes cpns</strong>. Justru, banyak yang kehabisan waktu berharga saat menatap layar komputer hanya untuk menebak arti sebuah kata yang belum pernah mereka dengar seumur hidupnya di dalam <strong>latihan soal cpns</strong>.</p>
+                    <p>Dari ratusan ribu peserta yang berguguran di tahapan Seleksi Kompetensi Dasar (SKD), banyak yang tumbang bukan semata-mata karena mereka lemah dalam hitungan matematika. Justru, saat melakukan <strong>simulasi cat bkn</strong> maupun tes aslinya, banyak yang kehabisan waktu berharga menatap layar komputer hanya untuk menebak arti sebuah kata yang belum pernah mereka dengar seumur hidupnya.</p>
 
-                    <p>Menghadapi <strong>soal-soal cpns</strong> kategori <strong>Sinonim (Persamaan Kata)</strong> pada Tes Intelegensia Umum (TIU) memang sering kali terasa seperti bermain lotre nasib. Para peserta pemula kerap kali mengeluh, <em>"Bagaimana mungkin saya dituntut untuk menghafal seluruh isi Kamus Besar Bahasa Indonesia (KBBI) yang tebalnya ribuan halaman itu demi lulus tes tiu online?"</em></p>
+                    <p>Menghadapi <strong>tes cpns</strong> pada bagian <strong>Sinonim (Persamaan Kata)</strong> di Tes Intelegensia Umum (TIU) sering kali terasa seperti bermain lotre nasib. Para peserta pemula yang baru pertama kali mengikuti <strong>try out cpns</strong> kerap mengeluh, <em>"Bagaimana mungkin saya dituntut untuk menghafal seluruh isi Kamus Besar Bahasa Indonesia (KBBI) yang tebalnya ribuan halaman itu?"</em></p>
 
                     <p>Kabar baiknya: <strong>Kamu memang sama sekali tidak disuruh untuk menghafal kamus KBBI!</strong></p>
 
-                    <p>Sebagai panduan pendamping dari jurnal master kami di <a href="/blog/materi-tiu-cpns-lengkap" class="internal-link">Bedah Tuntas Materi TIU CPNS 2027</a>, artikel ini akan secara khusus membongkar rahasia di balik layar dapur pembuatan <strong>bank soal cpns</strong> BKN. Terdapat pola psikologis linguistik, teknik eliminasi ekstrem, dan trik membedah akar kata serapan yang siap menyelamatkanmu. Jika kamu berhasil menguasai strategi di artikel ini dan mempraktikkannya pada sesi <strong>try out cpns gratis</strong>, kamu bisa menyingkirkan opsi jawaban pengecoh dalam hitungan detik, sekalipun kamu tidak mengetahui makna asli dari kata yang ditanyakan!</p>
+                    <p>Sebagai panduan pendamping dari jurnal <em>masterclass</em> kami di <a href="materi-tiu-cpns-lengkap" class="internal-link">Bedah Tuntas Materi TIU CPNS 2027</a>, artikel ini akan secara khusus membongkar rahasia di balik layar dapur pembuatan soal verbal BKN. Terdapat pola psikologis linguistik, teknik eliminasi ekstrem, dan trik membedah akar kata serapan yang siap menyelamatkanmu di <strong>latihan soal cpns gratis</strong> maupun ujian aslinya. Jika kamu berhasil menguasai strategi ini, kamu bisa menyingkirkan opsi jawaban pengecoh dalam hitungan detik!</p>
 
                     <div id="mengapa-sulit" class="snippet-box">
-                        <strong>🎯 Fakta Unik Jebakan BKN:</strong><br><br>
-                        Tahukah kamu? Tim pembuat soal <strong>tes soal cpns</strong> secara sengaja mendesain pilihan ganda (opsi A sampai E) untuk "bermain-main" dengan kepanikanmu. Mereka sering meletakkan kata-kata yang <em>pelafalannya (bunyinya) mirip</em> dengan soal utama sebagai jebakan. Selain itu, mereka sengaja menaruh 3 atau 4 kata yang saling bersinonim di dalam satu deret opsi untuk menguji ketajaman logika eliminasimu saat berpacu dengan waktu <strong>simulasi cat</strong>.
+                        <strong>🎯 Fakta Unik Soal Sinonim CAT BKN:</strong><br><br>
+                        Tahukah kamu? Tim pembuat <strong>bank soal cpns</strong> secara sengaja mendesain pilihan ganda (opsi A sampai E) untuk "bermain-main" dengan kepanikanmu. Mereka sering meletakkan kata-kata yang <em>pelafalannya (bunyinya) mirip</em> dengan soal utama sebagai jebakan. Selain itu, mereka sengaja menaruh 3 atau 4 kata yang saling bersinonim di dalam satu deret opsi untuk menguji ketajaman logika eliminasimu.
                     </div>
 
                     <h2 id="teknik-eliminasi">3 Teknik Logika untuk Menebak Sinonim Secara Akurat</h2>
-                    <p>Daripada pasrah menebak asal-asalan dan menghitung kancing, lebih baik gunakan tiga pisau bedah linguistik berikut untuk memangkas pilihan jawabanmu. Trik ini sangat relevan untuk mempercepat durasi pengerjaanmu, sejalan dengan anjuran dalam <a href="/blog/panduan-latihan-cat-cpns-terlengkap" class="internal-link">Panduan Latihan Simulasi CAT BKN Terlengkap 2027</a>.</p>
+                    <p>Daripada pasrah menebak asal-asalan dan menghitung kancing di sesi <strong>tes tiu online</strong>, lebih baik gunakan tiga pisau bedah linguistik berikut untuk memangkas pilihan jawabanmu. Trik ini sangat relevan untuk mempercepat durasi pengerjaanmu di layar <strong>cat bkn go id simulasi</strong>.</p>
 
                     <div class="tip-box">
                         <h4>1. Teknik Eliminasi Ganda (Mencari "Geng" Kata)</h4>
-                        <p>Ini adalah senjata logikamu yang paling ampuh saat mengerjakan <strong>try out skd gratis</strong>. Dalam soal pilihan ganda (A, B, C, D, E), aturannya mutlak: hanya boleh ada <strong>satu jawaban yang benar</strong>. Gunakanlah logika terbaliknya: Jika matamu menemukan 2, 3, atau bahkan 4 pilihan jawaban yang memiliki nuansa makna yang serupa (satu geng/bersinonim), maka <strong>semua kata di dalam geng tersebut PASTI SALAH</strong>.</p>
+                        <p>Ini adalah senjata logikamu yang paling ampuh. Dalam setiap <strong>soal tes cpns</strong> pilihan ganda (A, B, C, D, E), aturannya mutlak: hanya boleh ada <strong>satu jawaban yang benar</strong>. Gunakanlah logika terbaliknya: Jika matamu menemukan 2, 3, atau bahkan 4 pilihan jawaban yang memiliki nuansa makna yang serupa (satu geng/bersinonim), maka <strong>semua kata di dalam geng tersebut PASTI SALAH</strong>.</p>
                         <ul>
                             <li><strong>Contoh Soal:</strong> TENTATIF = ...</li>
                             <li>A. Pasti &nbsp;|&nbsp; B. Tentu &nbsp;|&nbsp; C. Sementara &nbsp;|&nbsp; D. Jelas &nbsp;|&nbsp; E. Mutlak</li>
-                            <li><strong>Bedah Logika:</strong> Mari kita sapu pandangan ke arah opsinya. Kata "Pasti", "Tentu", "Jelas", dan "Mutlak" pada dasarnya memiliki nuansa makna yang sangat identik (bersinonim kuat satu sama lain). Tidak mungkin sistem komputer <strong>cat bkn</strong> mengizinkan ada 4 jawaban benar sekaligus, bukan? Maka, tanpa pikir panjang, coret keempatnya! Jawaban yang tersisa dan paling berbeda sendirian adalah <strong>C. Sementara</strong>.</li>
+                            <li><strong>Bedah Logika:</strong> Mari kita sapu pandangan ke arah opsinya. Kata "Pasti", "Tentu", "Jelas", dan "Mutlak" pada dasarnya memiliki nuansa makna yang sangat identik (bersinonim kuat satu sama lain). Tidak mungkin sistem <strong>simulasi bkn</strong> mengizinkan ada 4 jawaban benar sekaligus, bukan? Maka, tanpa pikir panjang, coret keempatnya! Jawaban yang tersisa dan paling berbeda sendirian adalah <strong>C. Sementara</strong>.</li>
                         </ul>
                     </div>
                     
                     <div class="tip-box">
                         <h4>2. Analisis Nuansa Kata (Energi Positif vs Negatif)</h4>
-                        <p>Setiap kata dalam bahasa Indonesia secara alami membawa "energi" atau nuansa emosi tertentu. Ada kata yang memiliki frekuensi baik/positif (contoh: <em>progresif, afeksi, harmoni</em>) dan ada pula yang memancarkan nuansa buruk/negatif (contoh: <em>apatis, destruktif, stagnan</em>). Jika kamu berhasil menebak nuansa dari kata di soal utamanya, kamu bisa dengan mudah mencoret opsi jawaban yang memancarkan nuansa berlawanan saat menjalani <strong>tes cpns online</strong>.</p>
-                        <p>Sebagai contoh, kata <strong>KREDO</strong> (yang bermakna keyakinan/dasar tuntunan hidup) terdengar sangat ilmiah dan positif. Jika di opsi jawaban terselip kata yang bernuansa gelap seperti <em>keraguan</em> atau <em>tipu muslihat</em>, langsung eliminasi opsi tersebut dari radarmu.</p>
+                        <p>Setiap kata dalam <strong>kumpulan soal cpns</strong> secara alami membawa "energi" atau nuansa emosi tertentu. Ada kata yang memiliki frekuensi baik/positif (contoh: <em>progresif, afeksi, harmoni</em>) dan ada pula yang memancarkan nuansa buruk/negatif (contoh: <em>apatis, destruktif, stagnan</em>). Jika kamu berhasil menebak nuansa dari kata di soal utamanya, kamu bisa dengan mudah mencoret opsi jawaban yang memancarkan nuansa berlawanan.</p>
+                        <p>Sebagai contoh, kata <strong>KREDO</strong> (yang bermakna keyakinan/dasar tuntunan hidup) terdengar sangat ilmiah dan positif. Jika di opsi jawaban <strong>tryout cpns online gratis</strong> terselip kata yang bernuansa gelap seperti <em>keraguan</em> atau <em>tipu muslihat</em>, langsung eliminasi opsi tersebut dari radarmu.</p>
                     </div>
 
                     <div class="warning-box">
                         <h4><i class="fa-solid fa-triangle-exclamation"></i> 3. Hindari Jebakan Homofon (Bunyi yang Mirip)</h4>
-                        <p>Ini adalah teknik jebakan favorit para penyusun <strong>bank soal cpns</strong>. Jika kamu menemukan ada pilihan jawaban yang pelafalannya (bunyinya) hampir sama persis dengan kata pada soal utama, <strong>maka 90% itu adalah jebakan (distraktor) murni!</strong></p>
+                        <p>Ini adalah teknik jebakan favorit para penyusun <strong>kumpulan soal cpns pdf</strong>. Jika kamu menemukan ada pilihan jawaban yang pelafalannya (bunyinya) hampir sama persis dengan kata pada soal utama, <strong>maka 90% itu adalah jebakan (distraktor) murni!</strong></p>
                         <ul>
                             <li><strong>Kasus 1:</strong> Soal menanyakan "APATIS". Tiba-tiba di opsi A tersaji kata "Apatriot".</li>
                             <li><strong>Kasus 2:</strong> Soal menanyakan "PREMIS". Tiba-tiba di opsi B tersaji kata "Meringis" atau "Kumis".</li>
-                            <li><strong>Aturan Emas Mivida:</strong> Jangan pernah gegabah memilih kata yang terdengar mirip bunyinya, kecuali jika kamu sudah 100% yakin dan pernah membacanya langsung di literatur resmi bahwa itu adalah bentuk baku bahasa Indonesianya.</li>
+                            <li><strong>Aturan Emas Mivida:</strong> Jangan pernah gegabah memilih kata yang terdengar mirip bunyinya saat <strong>latihan skd cpns</strong>, kecuali jika kamu sudah 100% yakin dan pernah membacanya langsung di literatur resmi bahwa itu adalah bentuk baku bahasa Indonesianya.</li>
                         </ul>
                     </div>
 
                     <h2 id="bedah-kata">Membelah Kata Serapan (Bermain Etimologi Dasar)</h2>
-                    <p>Tahukah kamu bahwa persentase terbesar dari kata-kata sulit yang nangkring di layar monitor <strong>simulasi cat online gratis</strong> sebenarnya berakar dari kata serapan bahasa asing (seperti Inggris, Belanda, atau Latin)? Jika kamu membekali dirimu dengan sedikit saja pemahaman tentang dasar pembentukan awalan kata (<em>prefixes</em>), kamu bisa meraba artinya dengan mudah.</p>
+                    <p>Tahukah kamu bahwa persentase terbesar dari kata-kata sulit yang nangkring di layar <strong>soal try out cpns</strong> TIU sebenarnya berakar dari kata serapan bahasa asing (seperti Inggris, Belanda, atau Latin)? Jika kamu membekali dirimu dengan sedikit saja pemahaman tentang dasar pembentukan awalan kata (<em>prefixes</em>), kamu bisa meraba artinya dengan mudah.</p>
 
                     <ul>
                         <li><strong>A- / Ab- / Anti- :</strong> Selalu memancarkan makna "tidak", "melawan", atau "menyimpang dari pakem". Contohnya: <em>Abnormal</em> (tidak normal), <em>Apatis</em> (tidak peduli), <em>Antipati</em> (menolak secara keras).</li>
@@ -334,10 +329,10 @@
                         <li><strong>Multi- / Poli- :</strong> Bermakna "banyak" atau "beragam". Contoh jelasnya: <em>Multilateral</em> (melibatkan banyak pihak/negara), <em>Poligami</em> (memiliki banyak pasangan).</li>
                     </ul>
 
-                    <p>Membangun pemahaman struktural semacam ini akan sangat membantumu menekan tombol <em>mouse</em> dengan penuh percaya diri. Sebuah ketangguhan mental yang amat sangat ditekankan untuk menyintas dari kejamnya <a href="/blog/passing-grade-cpns-nilai-ambang-batas" class="internal-link">Ambang Batas (Passing Grade) CPNS 2027</a>.</p>
+                    <p>Membangun pemahaman struktural semacam ini akan sangat membantumu mengeksekusi <strong>try out cpns gratis</strong> dengan penuh percaya diri. Sebuah ketangguhan mental yang amat ditekankan untuk menyintas dari kejamnya <a href="passing-grade-cpns-nilai-ambang-batas" class="internal-link">Ambang Batas (Passing Grade) CPNS 2027</a>.</p>
 
                     <h2 id="bank-kosakata">Bank Kosakata "Langganan" SKD CPNS (Update 2027)</h2>
-                    <p>Berdasarkan rekapitulasi data <em>field report</em> (bocoran pengalaman) dari ratusan peserta yang telah lulus, serta hasil bedah mendalam terhadap <a href="/blog/kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru" class="internal-link">Kisi-kisi Resmi SKD CPNS</a>, berikut adalah rangkuman kosakata di level medium hingga HOTS yang paling wajib kamu tanamkan ke dalam memori otakmu:</p>
+                    <p>Berdasarkan rekapitulasi data dari ratusan peserta yang telah lulus, serta hasil bedah mendalam terhadap <a href="kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru" class="internal-link">Kisi-kisi Resmi SKD CPNS</a>, berikut adalah rangkuman kosakata yang paling wajib kamu tanamkan ke dalam memori otakmu:</p>
 
                     <h3>Kategori 1: Istilah Serapan / Jurnal Ilmiah</h3>
                     <table>
@@ -392,7 +387,7 @@
                         </tbody>
                     </table>
 
-                    <h3 style="margin-top: 30px;">Kategori 2: Kata Baku Bahasa Indonesia Klasik</h3>
+                    <h3 style="margin-top: 40px;">Kategori 2: Kata Baku Bahasa Indonesia Klasik</h3>
                     <table>
                         <thead>
                             <tr>
@@ -431,7 +426,7 @@
                     </table>
 
                     <h2 id="latihan-soal">Simulasi Mandiri: Uji Ketajaman Logika Eliminasimu</h2>
-                    <p>Mari kita langsung mempraktikkan teknik eliminasi sakti yang sudah kamu pelajari di atas pada format <strong>soal try out cpns</strong> yang sesungguhnya.</p>
+                    <p>Mari kita langsung mempraktikkan teknik eliminasi sakti yang sudah kamu pelajari di atas pada format <strong>soal-soal cpns</strong> simulasi yang sesungguhnya.</p>
 
                     <div class="practice-box">
                         <h4>Simulasi Soal 1</h4>
@@ -445,7 +440,7 @@
                         </p>
                         
                         <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #cbd5e1;">
-                            <p><strong>Bedah Analitis Mivida:</strong> Perhatikan tajam-tajam opsinya. Opsi A (Terbuka), B (Terang), D (Nyata), dan E (Jelas) adalah sekumpulan geng kata yang maknanya sama persis. Mereka semua pada dasarnya adalah <em>antonim (lawan kata)</em> dari kata implisit. Karena ada 4 jawaban serupa yang mustahil dibenarkan semua oleh sistem, coret keempatnya tanpa sisa! Jawaban yang tersisa dan mutlak benar secara logika adalah <strong>C. Tersirat</strong>.</p>
+                            <p><strong>Bedah Analitis Mivida:</strong> Perhatikan tajam-tajam opsinya. Opsi A (Terbuka), B (Terang), D (Nyata), dan E (Jelas) adalah sekumpulan geng kata yang maknanya sama persis. Mereka semua pada dasarnya adalah <em>antonim (lawan kata)</em> dari kata implisit. Karena ada 4 jawaban serupa yang mustahil dibenarkan semua oleh sistem <strong>tryout skd</strong>, coret keempatnya tanpa sisa! Jawaban yang tersisa dan mutlak benar secara logika adalah <strong>C. Tersirat</strong>.</p>
                         </div>
                     </div>
 
@@ -466,26 +461,27 @@
                     </div>
 
                     <h2 id="platform-simulasi">Eksekusi Strategimu: Jangan Sekadar Membaca Teori!</h2>
-                    <p>Sebagus apa pun ingatanmu dalam merekam trik dan daftar kata di atas, jika mental tempurmu tidak dilatih menghadapi himpitan waktu di sesi <strong>latihan skd cpns</strong>, kamu dijamin akan tetap mengalami kondisi *blank* saat ujian sungguhan tiba. Sistem <em>Computer Assisted Test</em> (CAT) milik pemerintah tidak memiliki hati nurani maupun belas kasihan pada peserta yang telat mengeklik jawaban.</p>
+                    <p>Sebagus apa pun ingatanmu dalam merekam trik dan membaca <strong>ebook soal cpns dan pembahasan</strong> di atas, jika mental tempurmu tidak pernah dilatih menghadapi himpitan waktu, kamu dijamin akan tetap mengalami kondisi *blank* saat ujian sungguhan tiba. Sistem <em>Computer Assisted Test</em> (CAT) milik pemerintah tidak memiliki hati nurani pada peserta yang telat mengeklik jawaban.</p>
                     
-                    <p>Satu-satunya cara yang terbukti secara klinis untuk merajut insting membaca cepat dan menebak akurat adalah melalui rutinitas <strong>tryout cpns online gratis</strong> yang terus diulang-ulang.</p>
+                    <p>Satu-satunya cara yang terbukti secara klinis untuk merajut insting membaca cepat dan menebak akurat adalah melalui rutinitas <strong>latihan tes cpns</strong> yang terus diulang-ulang di platform yang akurat.</p>
 
                     <div class="cta-box">
                         <h3>Hancurkan Rasa Gugup dan Kebingunganmu Sekarang!</h3>
-                        <p>Mivida dengan bangga menyediakan platform <strong>Tryout SKD CPNS Terpadu</strong> dengan pengalaman UI/UX yang dibuat persis 1:1 menyerupai layar <strong>cat bkn go id simulasi</strong> asli. Uji seberapa liar kecepatanmu menjawab puluhan soal TIU Verbal dengan tekanan timer yang berjalan secara *real-time*.</p>
-                        <a href="/kuis.html?module=cpns1" class="cta-btn">Mulai Uji Coba Tryout CAT Gratis <i class="fa-solid fa-arrow-right"></i></a>
+                        <p>Mivida (Pendidikanku) dengan bangga menyediakan platform <strong>Tryout SKD CPNS Terpadu</strong> dengan pengalaman yang dibuat persis menyerupai layar aplikasi BKN asli. Uji seberapa liar kecepatanmu menjawab puluhan <strong>soal soal cpns</strong> TIU Verbal dengan tekanan timer yang berjalan secara *real-time*.</p>
+                        <a href="../kuis.html?module=cpns1" class="cta-btn">Mulai Try Out SKD Gratis <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
 
                     <div class="internal-links-box">
                         <h3>📚 Susun Masterplan Kelulusan ASN-mu Bersama Mivida</h3>
-                        <p style="margin-bottom: 15px; color: #475569; font-size: 16px;">Sembari terus mengasah ketajaman logika TIU, pastikan urusan administrasi dan pondasi strategi SKD-mu sudah terkunci rapat melalui literatur panduan komprehensif kami:</p>
+                        <p style="margin-bottom: 15px; color: #0f172a; font-size: 16px;">Sembari terus mengasah ketajaman logika TIU, pastikan urusan administrasi dan pondasi strategi <strong>latihan cpns</strong>-mu sudah terkunci rapat melalui literatur panduan komprehensif kami:</p>
                         <ul>
-                            <li><a href="/blog/panduan-lengkap-lolos-skd-cpns" class="internal-link">Roadmap & Panduan Utama Menembus Ujian SKD CPNS 2027</a></li>
-                            <li><a href="/blog/trik-menjawab-analogi-tiu-cpns" class="internal-link">Bongkar Jembatan Keledai: Cara Instan Melibas Soal Analogi Kata TIU</a></li>
-                            <li><a href="/blog/cara-daftar-cpns-panduan-lengkap-sscasn" class="internal-link">Awas Tumbang! Tutorial Detail Pendaftaran SSCASN & Penggunaan E-Meterai</a></li>
-                            <li><a href="/blog/rincian-formasi-cpns-jurusan-paling-dicari" class="internal-link">Cek Potensi: Rincian Formasi CPNS & Analisis Jurusan Paling Strategis</a></li>
-                            <li><a href="/blog/tembus-twk-cpns-hots" class="internal-link">Strategi Eksekusi: Cara Jitu Menjawab Soal HOTS TWK Tanpa Hafalan</a></li>
-                            <li><a href="/blog/rahasia-skor-maksimal-tkp-cpns" class="internal-link">Psikologi BKN: Rahasia Menemukan Jawaban Berpoin 5 Sempurna di Tes TKP</a></li>
+                            <li><a href="panduan-lengkap-lolos-skd-cpns" class="internal-link">Roadmap & Panduan Utama Menembus Ujian SKD CPNS 2027</a></li>
+                            <li><a href="antonim-tiu-cpns-lengkap" class="internal-link">Trik Logika Terbalik: Mengunci Poin Sempurna di Soal Antonim TIU</a></li>
+                            <li><a href="trik-menjawab-analogi-tiu-cpns" class="internal-link">Bongkar Jembatan Keledai: Cara Instan Melibas Soal Analogi Kata TIU</a></li>
+                            <li><a href="cara-daftar-cpns-panduan-lengkap-sscasn" class="internal-link">Awas Tumbang! Tutorial Detail Pendaftaran SSCASN & Penggunaan E-Meterai</a></li>
+                            <li><a href="rincian-formasi-cpns-jurusan-paling-dicari" class="internal-link">Cek Potensi: Rincian Formasi CPNS & Analisis Jurusan Paling Strategis</a></li>
+                            <li><a href="tembus-twk-cpns-hots" class="internal-link">Strategi Eksekusi: Cara Jitu Menjawab Soal HOTS TWK Tanpa Hafalan</a></li>
+                            <li><a href="rahasia-skor-maksimal-tkp-cpns" class="internal-link">Psikologi BKN: Rahasia Menemukan Jawaban Berpoin 5 Sempurna di Tes TKP</a></li>
                         </ul>
                     </div>
 
@@ -493,19 +489,19 @@
                     
                     <div class="faq-item">
                         <h3>1. Kira-kira, berapa banyak soal Sinonim yang biasanya dikeluarkan oleh sistem?</h3>
-                        <p>Dari total pagu 35 soal TIU, porsi uji kemampuan verbal (yang mencakup ranah Sinonim, Antonim, Analogi, Silogisme, hingga Penalaran Analitis) biasanya meraup porsi yang cukup besar dan menentukan. Khusus untuk materi Sinonim saja, kamu memiliki peluang untuk berhadapan dengan 2 hingga 4 butir soal. Mengingat bobot 1 soal benar adalah 5 poin, mengamankan sektor ini di <strong>latihan tes cpns</strong> setara dengan menyuntikkan 20 poin gratis ke dalam tabungan passing grade-mu.</p>
+                        <p>Dari total pagu 35 soal TIU, porsi uji kemampuan verbal (yang mencakup ranah Sinonim, Antonim, Analogi, Silogisme, hingga Penalaran Analitis) biasanya meraup porsi yang cukup besar dan menentukan. Khusus untuk materi Sinonim saja saat kamu melakukan <strong>simulasi cat online gratis</strong>, kamu memiliki peluang untuk berhadapan dengan 2 hingga 4 butir soal. Mengingat bobot 1 soal benar adalah 5 poin, mengamankan sektor ini setara dengan menyuntikkan 20 poin gratis ke dalam tabungan passing grade-mu.</p>
                     </div>
                     <div class="faq-item">
                         <h3>2. Apakah kosa kata soal Sinonim ini selalu bersumber dari murni bahasa Indonesia?</h3>
-                        <p>Tidak selalu! Realitanya, banyak sekali <strong>kumpulan soal cpns pdf</strong> yang secara spesifik mengambil akar kata serapan dari bahasa asing (Inggris, Belanda, Sanskerta) atau memungut istilah-istilah teknis dari dunia medis dan hukum pidana yang telah resmi dibakukan ke dalam KBBI. Inilah mengapa kebiasaan membaca <strong>ebook soal cpns dan pembahasan</strong> sangat membantu dalam memperluas cakrawala insting bahasamu.</p>
+                        <p>Tidak selalu! Realitanya, banyak sekali <em>database</em> soal <strong>to cpns gratis</strong> yang secara spesifik mengambil akar kata serapan dari bahasa asing (Inggris, Belanda, Sanskerta) atau memungut istilah-istilah teknis dari dunia medis dan hukum pidana yang telah resmi dibakukan ke dalam KBBI. Inilah mengapa kebiasaan membaca jurnal, tajuk rencana koran, atau berita formal sangat membantu dalam memperluas cakrawala insting bahasamu.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>3. Apa yang harus saya lakukan jika di layar <strong>simulasi cat bkn</strong> ada dua pilihan jawaban yang menurut saya maknanya sama-sama benar?</h3>
-                        <p>Pertama, tenanglah. Sistem BKN tidak mungkin ceroboh dengan memasukkan dua jawaban benar sekaligus. Jika kamu menemui jalan buntu ini, perhatikan tajam-tajam <strong>"Kelas Kata-nya"</strong>. Jika kata pada soal utamanya adalah sebuah *kata kerja* (contoh: Mengakselerasi), maka pastikan kamu secara presisi memilih opsi yang wujudnya juga berupa *kata kerja* (Mempercepat), bukan malah memilih opsi yang berwujud *kata sifat* (Cepat).</p>
+                        <h3>3. Apa yang harus saya lakukan jika di monitor ada dua pilihan jawaban yang menurut saya maknanya sama-sama benar?</h3>
+                        <p>Pertama, tenanglah. Sistem <strong>simulasi cat cpns</strong> BKN tidak mungkin ceroboh dengan memasukkan dua jawaban benar sekaligus. Jika kamu menemui jalan buntu ini, perhatikan tajam-tajam <strong>"Kelas Kata-nya"</strong>. Jika kata pada soal utamanya adalah sebuah <em>kata kerja</em> (contoh: Mengakselerasi), maka pastikan kamu secara presisi memilih opsi yang wujudnya juga berupa <em>kata kerja</em> (Mempercepat), bukan malah memilih opsi yang berwujud <em>kata sifat</em> (Cepat).</p>
                     </div>
                     <div class="faq-item">
-                        <h3>4. Jika saya benar-benar *blank* dan waktu <strong>tryout skd</strong> tinggal sedikit, apakah lebih baik dikosongkan saja?</h3>
-                        <p><strong>SANGAT DILARANG KERAS MENGOSONGKAN JAWABAN!</strong> Ingat aturan emas ini: Sistem *Computer Assisted Test* (CAT) SKD CPNS yang berlaku hingga tahun ini <strong>sama sekali tidak memberlakukan sistem minus (pengurangan hukuman nilai)</strong> untuk tebakan jawaban yang salah. Jika batas waktumu tinggal menyisakan 10 detik dan otakmu buntu, segera tebak dan klik sembarang opsi menggunakan insting pertamamu. Siapa tahu semesta merestuimu untuk mendulang 5 poin krusial secara cuma-cuma.</p>
+                        <h3>4. Jika saya benar-benar *blank* dan waktu tinggal sedikit, apakah lebih baik dikosongkan saja?</h3>
+                        <p><strong>SANGAT DILARANG KERAS MENGOSONGKAN JAWABAN!</strong> Ingat aturan emas ini: Sistem <em>Computer Assisted Test</em> (CAT) SKD CPNS yang berlaku hingga saat ini <strong>sama sekali tidak memberlakukan sistem minus (pengurangan hukuman nilai)</strong> untuk tebakan jawaban yang salah. Jika batas waktumu tinggal menyisakan 10 detik di layar <strong>simulasi skd bkn</strong> dan otakmu buntu, segera tebak dan klik sembarang opsi menggunakan insting pertamamu. Siapa tahu semesta merestuimu untuk mendulang 5 poin krusial secara cuma-cuma.</p>
                     </div>
 
                 </div>
@@ -527,9 +523,9 @@
             </div>
             
             <div style="margin-top: 30px; background: #f8fafc; padding: 25px; border-radius: 16px; border: 1px solid var(--card-border); text-align: center; box-shadow: var(--shadow-soft);">
-                <h4 style="margin-top: 0; margin-bottom: 12px; color: #0f172a; font-size: 18px;"><i class="fa-solid fa-laptop-medical" style="color: #4f46e5;"></i> Butuh Latihan CAT?</h4>
+                <h4 style="margin-top: 0; margin-bottom: 12px; color: #0f172a; font-size: 18px;"><i class="fa-solid fa-laptop-medical" style="color: #10b981;"></i> Butuh Latihan CAT?</h4>
                 <p style="font-size: 14.5px; color: #475569; margin-bottom: 20px; line-height: 1.5;">Jangan biarkan persiapanmu hanya mentok sebatas teori. Evaluasi skor dan *passing grade* mu sekarang juga.</p>
-                <a href="/kuis.html?module=cpns1" target="_blank" style="display: inline-block; width: 100%; background: #4f46e5; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);">Mulai Uji Tryout <i class="fa-solid fa-caret-right"></i></a>
+                <a href="../kuis.html?module=cpns1" style="display: inline-block; width: 100%; background: #10b981; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 15px; transition: 0.3s; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);">Mulai Uji Tryout <i class="fa-solid fa-caret-right"></i></a>
             </div>
         </aside>
 
