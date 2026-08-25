@@ -138,10 +138,10 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.8; }
         
-        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 2px solid var(--cpns-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02);}
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
         .nav-menu { display: flex; gap: 25px; list-style: none; }
-        .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px; font-weight: 700; padding: 10px 15px; transition: 0.3s; }
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px; font-weight: 700; padding: 10px 0px; transition: 0.3s; }
         .nav-link:hover { color: var(--cpns-color); }
         .menu-toggle { display: none; font-size: 22px; cursor: pointer; color: var(--text-main); }
 
@@ -165,6 +165,7 @@
         .article-image-container img { width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-soft); border: 1px solid var(--card-border); display: block; background: #f1f5f9; min-height: 200px;}
         .article-image-caption { font-size: 14.5px; color: var(--text-muted); margin-top: 15px; font-style: italic; font-weight: 600;}
         
+        .table-responsive { width: 100%; overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 16px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.02);}
         th, td { border: 1px solid var(--card-border); padding: 18px; text-align: left; }
         th { background: #f0f9ff; font-weight: 800; color: #0369a1; }
@@ -230,7 +231,7 @@
             .blog-layout { grid-template-columns: 1fr; } 
             .sidebar { position: static; order: -1; margin-bottom: 30px; } 
             .article-content { padding: 25px; font-size: 16px;} 
-            table { font-size: 14.5px; display: block; overflow-x: auto; white-space: nowrap;}
+            .article-content table { font-size: 14.5px; display: block; overflow-x: auto; white-space: nowrap;}
         }
         @media (max-width: 768px) {
             .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--card-border); flex-direction: column; padding: 20px; gap: 15px; box-shadow: var(--shadow-soft);}
@@ -297,60 +298,62 @@
 
                     <p>Namun, jangan sampai kamu terjebak dalam ilusi kemudahan ini! Meskipun sekilas terlihat sederhana karena hanya menyuruhmu mencocokkan kemiripan antar kata, faktanya banyak peserta cerdas justru gagal meraih poin maksimal di sesi <strong>latihan skd cpns</strong> ini. Mereka sering kali terjebak pada pilihan jawaban yang sengaja dibuat mengecoh (<em>distractor</em>) oleh pembuat soal, atau malah menghabiskan terlalu banyak menit berharga untuk menebak-nebak arti kosakata yang asing di dalam KBBI.</p>
 
-                    <p>Melalui artikel ini, Mivida akan mengupas tuntas trik secepat kilat dalam menjawab soal analogi, membedah jenis-jenis pola hubungan kata, hingga mensimulasikan contoh soal yang paling relevan dengan standar <strong>simulasi cat bkn</strong> tahun ini. Sebelum memulai, pastikan kamu juga sudah mematangkan struktur dasar ujian melalui artikel pilar utama kami: <a href="materi-tiu-cpns-lengkap" class="internal-link">Bedah Tuntas Materi TIU CPNS 2027: Rumus Cepat & Cara Jawab Kurang dari 40 Detik</a>.</p>
+                    <p>Melalui artikel ini, Mivida akan mengupas tuntas trik secepat kilat dalam menjawab soal analogi, membedah jenis-jenis pola hubungan kata, hingga mensimulasikan contoh soal yang paling relevan dengan standar <strong>simulasi cat bkn</strong> tahun ini. Sebelum memulai, pastikan kamu juga sudah mematangkan struktur dasar ujian melalui artikel pilar utama kami: <a href="/blog/materi-tiu-cpns-lengkap" class="internal-link">Bedah Tuntas Materi TIU CPNS 2027: Rumus Cepat & Cara Jawab Kurang dari 40 Detik</a>.</p>
 
                     <div id="apa-itu-analogi" class="snippet-box">
                         <strong>🎯 Apa Itu Soal Analogi TIU?</strong><br><br>
                         Soal analogi adalah jenis <strong>tes soal cpns</strong> kemampuan verbal murni yang meminta peserta untuk mengidentifikasi dan menemukan hubungan logis antara dua kata kunci (atau lebih), kemudian <strong>menerapkan pola hubungan yang persis sama</strong> pada pasangan kata lain yang tersedia di opsi pilihan ganda. Tujuan utama BKN menggunakan tes ini adalah untuk mengukur kapasitas logika bahasamu, kekayaan perbendaharaan kosakata, dan tingkat ketelitian saat berpacu dengan batas waktu <strong>simulasi cat</strong>.
                     </div>
 
-                    <p>Untuk bisa memanen skor sempurna di tahap ini dan menyelesaikan <strong>kumpulan soal cpns</strong> dengan mulus, kamu tidak sekadar butuh hafalan kosakata, tetapi juga kepekaan insting dalam menemukan benang merah antar kata. Hal ini sangat sejalan dengan <a href="kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru" class="internal-link">Bocoran Resmi Kisi-Kisi CPNS 2027</a>, di mana kemampuan nalar kritis (HOTS) menjadi salah satu indikator kelulusan yang sangat diperhitungkan.</p>
+                    <p>Untuk bisa memanen skor sempurna di tahap ini dan menyelesaikan <strong>kumpulan soal cpns</strong> dengan mulus, kamu tidak sekadar butuh hafalan kosakata, tetapi juga kepekaan insting dalam menemukan benang merah antar kata. Hal ini sangat sejalan dengan <a href="/blog/kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru" class="internal-link">Bocoran Resmi Kisi-Kisi CPNS 2027</a>, di mana kemampuan nalar kritis (HOTS) menjadi salah satu indikator kelulusan yang sangat diperhitungkan.</p>
 
                     <h2 id="jenis-hubungan">Jenis-Jenis Hubungan Kata dalam Analogi TIU</h2>
                     <p>Sebelum masuk ke trik eksekusinya dalam <strong>try out cpns</strong>, kamu wajib mengenali terlebih dahulu pola-pola hubungan kata yang menjadi "langganan" keluar dalam mesin CAT BKN. Jika kamu sudah hafal polanya, otakmu akan secara otomatis melakukan pemindaian kilat saat membaca layar monitor.</p>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Pola / Kategori Hubungan</th>
-                                <th>Contoh Pasangan Kata di Soal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Sinonim (Persamaan Makna Kata)</strong></td>
-                                <td>KEDAP : RAPAT</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Antonim (Lawan Kata)</strong></td>
-                                <td>TERIK : SEJUK</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Fungsi / Kegunaan Benda</strong></td>
-                                <td>GUNTING : MEMOTONG</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Sebab - Akibat (Kausalitas)</strong></td>
-                                <td>MENGANTUK : TIDUR (Sebab mengantuk, akibatnya tidur)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Bagian dari Keseluruhan (Part to Whole)</strong></td>
-                                <td>POHON : DAUN (Daun adalah bagian dari pohon)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Golongan / Klasifikasi Kategori</strong></td>
-                                <td>KAMBING : MAMALIA (Kambing masuk dalam golongan mamalia)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Sifat Mutlak / Karakteristik</strong></td>
-                                <td>ES : DINGIN (Sifat mutlak es adalah dingin)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Benda dan Tempat Asalnya</strong></td>
-                                <td>GURU : SEKOLAH</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pola / Kategori Hubungan</th>
+                                    <th>Contoh Pasangan Kata di Soal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sinonim (Persamaan Makna Kata)</strong></td>
+                                    <td>KEDAP : RAPAT</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Antonim (Lawan Kata)</strong></td>
+                                    <td>TERIK : SEJUK</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Fungsi / Kegunaan Benda</strong></td>
+                                    <td>GUNTING : MEMOTONG</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sebab - Akibat (Kausalitas)</strong></td>
+                                    <td>MENGANTUK : TIDUR (Sebab mengantuk, akibatnya tidur)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bagian dari Keseluruhan (Part to Whole)</strong></td>
+                                    <td>POHON : DAUN (Daun adalah bagian dari pohon)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Golongan / Klasifikasi Kategori</strong></td>
+                                    <td>KAMBING : MAMALIA (Kambing masuk dalam golongan mamalia)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sifat Mutlak / Karakteristik</strong></td>
+                                    <td>ES : DINGIN (Sifat mutlak es adalah dingin)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Benda dan Tempat Asalnya</strong></td>
+                                    <td>GURU : SEKOLAH</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="tip-box" style="background: #fff1f2; border-left-color: #e11d48;">
                         <h4 style="color: #9f1239;"><i class="fa-solid fa-triangle-exclamation"></i> Peringatan Keras: Perhatikan Urutan Kata!</h4>
@@ -358,7 +361,7 @@
                     </div>
 
                     <h2 id="trik-cepat">Trik Jitu Menjawab Soal Analogi (Kurang dari 10 Detik!)</h2>
-                    <p>Berdasarkan rumusan dari <a href="panduan-latihan-cat-cpns-terlengkap" class="internal-link">Panduan Lengkap Latihan CAT CPNS 2027</a>, manajemen detik adalah nyawamu. Kamu sangat dilarang menghabiskan lebih dari 40 detik untuk sebuah soal TIU verbal. Gunakan strategi <strong>latihan soal cpns gratis</strong> ini untuk memangkas durasi berpikirmu:</p>
+                    <p>Berdasarkan rumusan dari <a href="/blog/panduan-latihan-cat-cpns-terlengkap" class="internal-link">Panduan Lengkap Latihan CAT CPNS 2027</a>, manajemen detik adalah nyawamu. Kamu sangat dilarang menghabiskan lebih dari 40 detik untuk sebuah soal TIU verbal. Gunakan strategi <strong>latihan soal cpns gratis</strong> ini untuk memangkas durasi berpikirmu:</p>
 
                     <div class="tip-box">
                         <h4><i class="fa-solid fa-bolt"></i> 1. Gunakan Trik "Jembatan Keledai" (Kalimat Penghubung)</h4>
@@ -425,24 +428,24 @@
                     </div>
 
                     <h2 id="kesimpulan">Kesimpulan Eksekusi</h2>
-                    <p>Soal Analogi di subtes TIU adalah area perburuan lumbung poin yang harus kamu panen secara maksimal. Dengan membiasakan diri merumuskan teknik Jembatan Keledai (kalimat penghubung logis) dan mengenali pola jebakan secara cepat, kamu dipastikan bisa melibas soal ini dalam hitungan detik. Poin sempurna dari materi verbal ini sangat krusial sebagai tabungan nilaimu untuk menembus <a href="passing-grade-cpns-nilai-ambang-batas" class="internal-link">Passing Grade SKD CPNS 2027</a> yang kian menantang.</p>
+                    <p>Soal Analogi di subtes TIU adalah area perburuan lumbung poin yang harus kamu panen secara maksimal. Dengan membiasakan diri merumuskan teknik Jembatan Keledai (kalimat penghubung logis) dan mengenali pola jebakan secara cepat, kamu dipastikan bisa melibas soal ini dalam hitungan detik. Poin sempurna dari materi verbal ini sangat krusial sebagai tabungan nilaimu untuk menembus <a href="/blog/passing-grade-cpns-nilai-ambang-batas" class="internal-link">Passing Grade SKD CPNS 2027</a> yang kian menantang.</p>
 
                     <p>Agar insting nalar verbalmu semakin tajam dan anti-blank saat hari H, pastikan kamu juga secara konsisten menguji kemampuanmu melalui fasilitas <strong>try out cpns gratis</strong> dan menatap layar monitor <strong>simulasi cat online gratis</strong> yang tepat.</p>
 
                     <div class="cta-box">
                         <h3>Latih Kecepatan Tanganmu Menjawab Analogi!</h3>
                         <p>Menguasai teori Jembatan Keledai tidak akan membantumu jika kamu gugup saat melihat <em>timer</em> di layar. Uji langsung pemahaman materi TIU Verbalmu melalui akses <strong>try out skd gratis</strong> di Mivida, yang sudah kami lengkapi dengan sistem waktu persis seperti <strong>cat bkn go id simulasi</strong> aslinya!</p>
-                        <a href="../kuis.html?module=cpns1" class="cta-btn">Mulai Tryout SKD CAT Gratis <i class="fa-solid fa-rocket"></i></a>
+                        <a href="/kuis.html?module=cpns1" class="cta-btn">Mulai Tryout SKD CAT Gratis <i class="fa-solid fa-rocket"></i></a>
                     </div>
 
                     <div class="internal-links-box">
                         <h3>📚 Lanjutkan Persiapan TIU dan SKD-mu Hari Ini</h3>
                         <p style="margin-bottom: 15px; color: #0f172a; font-size: 16px;">Jadikan artikel trik ini sebagai langkah pemanasan awal, dan selesaikan asupan strategi krusial <strong>latihan cpns</strong> lainnya melalui direktori panduan komprehensif Mivida berikut:</p>
                         <ul>
-                            <li><a href="materi-tiu-cpns-lengkap" class="internal-link">Pusat Komando: Bedah Tuntas Materi TIU CPNS 2027 Beserta Rumus Hitungnya</a></li>
-                            <li><a href="panduan-lengkap-lolos-skd-cpns" class="internal-link">Roadmap & Panduan Utama Meraih Skor Aman SKD CPNS 2027</a></li>
-                            <li><a href="kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru" class="internal-link">Pembaruan Bocoran Resmi Kisi-Kisi CPNS: Peta Materi SKD & Perubahannya</a></li>
-                            <li><a href="panduan-latihan-cat-cpns-terlengkap" class="internal-link">Panduan Super Terlengkap Mengatur Simulasi Latihan Sistem CAT</a></li>
+                            <li><a href="/blog/materi-tiu-cpns-lengkap" class="internal-link">Pusat Komando: Bedah Tuntas Materi TIU CPNS 2027 Beserta Rumus Hitungnya</a></li>
+                            <li><a href="/blog/panduan-lengkap-lolos-skd-cpns" class="internal-link">Roadmap & Panduan Utama Meraih Skor Aman SKD CPNS 2027</a></li>
+                            <li><a href="/blog/kisi-kisi-cpns-materi-twk-tiu-tkp-terbaru" class="internal-link">Pembaruan Bocoran Resmi Kisi-Kisi CPNS: Peta Materi SKD & Perubahannya</a></li>
+                            <li><a href="/blog/panduan-latihan-cat-cpns-terlengkap" class="internal-link">Panduan Super Terlengkap Mengatur Simulasi Latihan Sistem CAT</a></li>
                         </ul>
                     </div>
 
@@ -481,8 +484,8 @@
             <div class="toc" style="margin-top: 30px; background: #f0f9ff; border-color: #0ea5e9;">
                 <h3 style="color: #0369a1; border-bottom-color: #bae6fd;"><i class="fa-solid fa-map-location-dot"></i> Artikel Pilar</h3>
                 <ul>
-                    <li><a href="materi-tiu-cpns-lengkap" style="color: #0ea5e9; margin-bottom: 10px; font-weight: 700; display: block;">➔ Bedah Lengkap Materi TIU</a></li>
-                    <li><a href="passing-grade-cpns-nilai-ambang-batas" style="color: #0ea5e9; font-weight: 700; display: block;">➔ Target Passing Grade TIU</a></li>
+                    <li><a href="/blog/materi-tiu-cpns-lengkap" style="color: #0ea5e9; margin-bottom: 10px; font-weight: 700; display: block;">➔ Bedah Lengkap Materi TIU</a></li>
+                    <li><a href="/blog/passing-grade-cpns-nilai-ambang-batas" style="color: #0ea5e9; font-weight: 700; display: block;">➔ Target Passing Grade TIU</a></li>
                 </ul>
             </div>
         </aside>
@@ -519,10 +522,10 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-links-inline">
-                <a href="/tentang-kami">Tentang Kami</a>
+            <div class="footer-links-inline" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 10px;">
+                <a href="/tentang-kami" style="color: var(--text-muted); text-decoration: none; transition: 0.2s;">Tentang Kami</a>
                 <span style="color: var(--card-border);">|</span>
-                <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+                <a href="/kebijakan-privasi" style="color: var(--text-muted); text-decoration: none; transition: 0.2s;">Kebijakan Privasi</a>
             </div>
             <p>&copy; 2027 Mivida (Pendidikanku) - mivida.id. All Rights Reserved.</p>
         </div>
