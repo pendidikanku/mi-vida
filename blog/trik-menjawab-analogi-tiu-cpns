@@ -27,8 +27,8 @@
     <meta name="theme-color" content="#4f46e5">
     <link rel="canonical" href="https://mivida.id/blog/trik-menjawab-analogi-tiu-cpns">
     
-    <!-- ================= FAVICON ================= -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%23a855f7'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23g)'/><path d='M25 70 L25 40 C25 20 50 20 50 40 L50 70 M50 70 L50 40 C50 20 75 20 75 40 L75 70' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/><circle cx='80' cy='20' r='6' fill='%23f59e0b'/></svg>">
+    <!-- ================= FAVICON (DIENKODE AMAN BASE64) ================= -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2MzY2ZjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhODU1ZjciLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI1IiBmaWxsPSJ1cmwoI2cpIi8+PHBhdGggZD0iTTI1IDcwIEwyNSA0MCBDMjUgMjAgNTAgMjAgNTAgNDAgTDUwIDcwIE01MCA3MCBMNTAgNDAgQzUwIDIwIDc1IDIwIDc1IDQwIEw3NSA3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjIwIiByPSI2IiBmaWxsPSIjZjU5ZTBiIi8+PC9zdmc+">
     
     <!-- ================= OPEN GRAPH ================= -->
     <meta property="og:locale" content="id_ID">
